@@ -403,18 +403,19 @@
     }
   ],
   "screenshots": {
-    "Nuz-guide_Menu": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Nuz-guide_Menu.png",
-    "Baconmon_Menu": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Baconmon_Menu.png",
-    "Baconmon_Intro": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Baconmon_Intro.png",
-    "Core_Changes": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Core_Changes.png",
-    "Score": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Score.png",
-    "About": "/workspace/scratch/40598f2ab57d/public-patcher/screens/About.png",
-    "Classic_Guide": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Classic_Guide.png",
-    "Modern_Guide": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Modern_Guide.png",
-    "Dungeon_Log": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Dungeon_Log.png",
-    "Bag": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Bag.png",
-    "Bag_Use": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Bag_Use.png",
-    "Bag_Guide": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Bag_Guide.png"
+    "Nuz-guide_Menu": "Nuz-guide_Menu.png",
+    "Baconmon_Menu": "Baconmon_Menu.png",
+    "Baconmon_Intro": "Baconmon_Intro.png",
+    "Core_Changes": "Core_Changes.png",
+    "Score": "Score.png",
+    "About": "About.png",
+    "Classic_Guide": "Classic_Guide.png",
+    "Modern_Guide": "Modern_Guide.png",
+    "Dungeon_Log": "Dungeon_Log.png",
+    "Bag": "Bag.png",
+    "Bag_Use": "Bag_Use.png",
+    "Bag_Guide": "Bag_Guide.png"
   },
-  "limitations": "Desktop mGBA and controlled fixtures. No Android hardware test or complete challenge playthrough."
+  "limitations": "Desktop mGBA and controlled fixtures. No Android hardware test or complete challenge playthrough.",
+  "screenshots_included": false
 }

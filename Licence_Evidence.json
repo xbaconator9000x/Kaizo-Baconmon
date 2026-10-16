@@ -1,6 +1,6 @@
 {
   "checked": "2026-10-16",
-  "method": "Unauthenticated read-only GitHub repository, root contents and licence API calls; licence files retained unchanged in source notices. Rules and runtime terms linked in the accompanying report.",
+  "method": "Recorded checks of upstream repository metadata and published licence files. Original licence notices are retained with the source.",
   "repositories": [
     {
       "repository": "https://github.com/Ajarmar/universal-pokemon-randomizer-zx",
@@ -243,9 +243,6 @@
     "source": "Faster FireRed 1.3.2",
     "author": "DrMaple",
     "received": "2026-10-16",
-    "channel": "Discord",
-    "scope": "Utilise and modify aspects of Faster FireRed for the described Kaizo Baconmon build.",
-    "follow_up": "Send GitHub link when ready for review.",
-    "record": "Screenshot supplied by the project developer; retained privately."
+    "scope": "Utilise and modify aspects of Faster FireRed for the described Kaizo Baconmon build."
   }
 }

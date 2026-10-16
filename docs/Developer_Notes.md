@@ -1,87 +1,74 @@
-# Kaizo Baconmon patcher
+# Developer notes
 
-Developed by xbaconator9000x.
+This repository contains the browser patcher, patch manifests, randomiser integration and verification reports. It is not a full FireRed decompilation. No playable ROM, APK or save is included.
 
-Open the HTML file in a current browser. Choose your ROM, then press **Check and apply**. Everything runs locally. The original file and saves are left alone.
+## Repository layout
 
-## ROM patcher
+| Path | Contents |
+| --- | --- |
+| index.html | Self-contained patcher served by GitHub Pages. |
+| public-patcher/ | Page builder, patch application code, embedded manifests and verification scripts. |
+| public-patcher/randomizer/ | UPR-ZX 4.6.0, its corresponding source, presets and the Java adapter. |
+| patch-work/ | Byte, hash and BPS utilities used for independent patch checks. |
+| reports/ | Recorded compatibility, browser and desktop emulator results. |
+| notices/ and public-patcher/notices/ | Third-party licence notices. |
+| Kaizo_Baconmon_Patcher_Source.zip | A packaged copy of the public files, excluding the ZIP itself. |
 
-Choose a GBA ROM to run the selected feature checks. Unfamiliar titles, headers, revision numbers and unrelated engine edits produce a notice instead of stopping the attempt. Matching changes are applied; conflicting scripts, hooks or occupied space are skipped and listed in the patch notes/changelog. The features are built around FireRed 1.1, so a different layout may have few matching changes or none. Selecting a ROM does not guarantee every feature will work on it.
+## Build the HTML page
 
-**Core Baconmon Package** selects all gameplay options. Individual checkboxes control Classic/Modern, lab start and early balls, early encounter rotation, field HMs/Town Map Fly, friendship services, Nuz-guide/scoring, battle descriptions/category icons, and the Fuchsia TM relearner. Rival level is separate and accepts whole numbers from 1 to 100, defaulting to 8. Title graphics, Rock Tunnel, renewable hidden items, the forest nurse and custom dialogue also have their own choices.
+Python 3 and the checked-in files are sufficient to rebuild the page:
 
-Shared support relocates graphics away from injected code and installs required scripts when needed, but unchecked gameplay features have their entry points disabled. For example, Modern without the lab start still offers the mode choice when you enter Oak’s lab; turning Modern off restores Gen 3 battle hooks and removes the prompt. Turning the lab start off restores the original introduction and bedroom start. Nuz-guide off removes its grant and monitoring hooks; friendship off removes the machine’s events and disables the added friendship service. The relearner off setting restores the original house/tutor arrangement.
+```sh
+python3 public-patcher/build_page.py
+```
 
-Shared support needs matching code, structures and available space. The broad engine fingerprint is advisory; a change elsewhere does not block a matching feature. Each gameplay switch checks its own hooks before activation. A conflicting hook skips that switch while other matching switches can be applied. Occupied shared code space can still block the features that need it. Changing feature combinations is tested for fresh runs. Keep an active run on its matching ROM and keep backups; no save migration or removal of old save data is performed. Independent title/lighting/item options left unticked leave existing modifications alone. The guide describes the standard full package even when extras are disabled.
+The output is public-output/Kaizo_Baconmon_Patcher.html. Copy it to index.html to update the hosted page. The builder embeds the current manifest, payload, JavaScript, presets, JARs, help text and licence notices; it does not need a ROM.
 
-Custom rival levels bypass the automatic level-8 correction. Apply them after randomization. The default level-8 correction remains in place with the default setting.
+To rebuild the Java adapter with a Java 17+ JDK:
 
-Expandable help covers the project, rules summary, full Baconmon rules, mode changes, Nuz-guide, scoring, and PC/Android randomization, with links to the original references. Android generation and automatic rerolling have not been tested on hardware. The separate batch beta can now randomize ROMs in the browser.
+```sh
+python3 public-patcher/randomizer/build_bridge.py
+python3 public-patcher/build_page.py
+```
 
-Randomized Pokemon, moves, learnsets, trainer species and other unrelated data are preserved. The lab rival's level and early ball gift are deliberate changes. Expanded 32 MB files are accepted without cutting off their extra data. Space used by another modification is not treated as empty space.
+The adapter targets Java 8 bytecode. The UPR-ZX engine is retained unmodified, with its exact corresponding v4.6.0 source archive.
 
-Matching scripts are not a guarantee that every ROM hack will work. Engine replacements, changed layouts or conflicting scripts can stop a feature from being installed. Read the notes before starting a run. A partial patch includes only the features marked Applied or Already present; the in-game Nuz-guide describes the full Baconmon rules and features.
+## Patch manifests and ROM inputs
 
-Downloads produced by the patcher:
+The checked-in manifest.json and payload.txt are the inputs for the page build. Regenerating compatibility signatures with build_manifest.py requires the original development inputs and helpers, which are not all included in this public package: clean US FireRed 1.1, the Faster FireRed patch, the audited Baconmon reference builds, symbol metadata, native build helpers and earlier fixtures.
 
-- **Patched ROM:** a separate copy of your ROM, when anything changed.
-- **Patch notes/changelog:** notices and a list of changes applied, already present, skipped or not selected.
-- **BPS patch:** repeats those exact changes on the exact input ROM.
-- **Undo patch:** restores that exact original ROM from the patched copy.
-- **Detailed report:** hashes, checks and changed locations for troubleshooting.
+The ROM-dependent scripts retain their expected project-relative paths. They are supplied for inspection and development with those inputs; a clean checkout alone cannot run the complete native test suite or recreate all ROM signatures.
 
-Save normally in-game and close the emulator before switching ROMs. Keep the original ROM and battery save. Copy or import the battery save as needed to match the new ROM filename. Continue from the normal in-game save, not an old save state. Undo patches restore ROM files, not save progress.
+Feature application uses local hook, script and allocation guards. Matching features apply independently where possible; conflicts are reported as skipped. The patcher preserves unrelated seed data, expanded ROM bytes and detected copier headers. A matching byte layout does not guarantee that every feature of another hack will work at runtime.
 
-For a new run, you can patch first and then randomize the result. If you patch an existing randomized seed, the patcher keeps that seed's data except for the changes listed in its notes.
+Shared support installs code and scripts without enabling unticked gameplay entry points. Changing the feature combination is intended for fresh runs. The patcher does not migrate or remove old save data.
 
-## Testing and source
+## Browser randomiser
 
-The accompanying reports distinguish JavaScript compatibility checks, exported-file checks and desktop emulator checks. Desktop Chromium batch generation has been tested. Physical Android generation, touch and memory limits have not been tested.
+The beta randomiser uses unmodified UPR-ZX 4.6.0 through BaconBridge and CheerpJ 4.3. CheerpJ loads from the vendor on first use; patching itself remains offline.
 
-The source ZIP contains the patcher code, embedded patch manifests, tests and notices. HTML files can be rebuilt from those manifests without distributing a full ROM. Regenerating the compatibility signatures needs the original reference inputs.
+Each generated ROM starts from the same patched base. The root seed, per-ROM seeds, selected options, engine, settings and hashes identify reproducible output. Selected rival levels are checked again after randomisation.
 
-Credits: Faster FireRed by DrMaple; Ironmon by iateyourpie; Ironmon VS / WaffleSmacker and the VS community; Ironmon Tracker reference data by UTDZac, besteon and contributors; mGBA; pret/pokefirered as the engine reference. BPS export checks use Marc Robledo's Rom Patcher JS.
+Batches accept 1–100 ROMs, defaulting to 10, and 1–100 batches. ZIP parts contain up to 10 ROMs. Part boundaries preserve numbering and seed order, and only the latest ZIP link is retained in memory. Spoiler logs are packaged separately.
 
-New Baconmon patcher components are MIT licensed. UPR-ZX, the Java adapter and randomiser integration are GPLv3; the combined program code is distributed under GPLv3 with the component notices retained. These code licences do not license all embedded ROM patch data. The unmodified UPR-ZX engine and its exact corresponding v4.6.0 source archive are included. CheerpJ is loaded from its vendor CDN under the Community License and is not redistributed in this download. No full ROM or personal save is included in the source ZIP.
+## Verification
 
-See [Credits and reuse permissions](Credits_and_Permissions.md) for the checked upstream terms and developer contact links. DrMaple granted permission via Discord on 16 October 2026 to utilise and modify aspects of Faster FireRed 1.3.2 for Baconmon, and asked for a GitHub link when ready. The permission record is retained privately; it is not a new blanket licence for Faster FireRed. The browser page and source include the VS, tracker, randomiser and patch-tool code notices.
+[Recorded reports](../reports/README.md) describe the scope of each check. Historical reports are not a claim that every test was rerun for the current documentation update.
 
-Patcher developed with guided assistance from AI tools (I don’t know how to code).
+- Compatibility and export checks cover independent feature selection, guards, preserved seed data, BPS output and undo round trips.
+- Desktop mGBA checks cover selected game behavior, guide navigation, normal Save/Continue, field helpers and the lab status repair in both modes.
+- Real desktop browser generation covered two 10-ROM batches and an 11-ROM batch split into 10+1. Equal seeds matched across batch and part boundaries.
+- The 100-ROM scheduling, numbering and retry checks used a stub engine. An actual 100-ROM batch and a complete campaign playthrough are outside those results.
+- Automated desktop reports do not establish physical Android installation, layout, touch or controller coverage. Manual device results are separate from those checks.
 
-## Batch randomiser beta
+Verification scripts are in public-patcher/. JavaScript checks use Node.js; browser checks also require Playwright. Native and field checks need the earlier ROM fixtures and emulator/native harness. Generated output is written to public-output/ and randomizer-work/.
 
-Choose an unrandomized US FireRed 1.1 ROM, adjust the patch options, then open Batch randomiser. A root seed is generated when the page opens and can be replaced. Select Kaizo, Standard or Ultimate using the published FireRed settings, Encounters only for wild-species randomization, or Custom for a compatible 321-format settings string.
+The lab status repair is implemented in status_refresh.py and status_refresh.s. It replaces the Oak/tutorial controller's empty status-icon handler, redraws on the normal status-update command and completes the command through the Oak controller. It also removes the earlier action-menu workaround. It does not change Pokémon data or the save format.
 
-Choose 1–100 ROMs per batch and 1–100 batches. Each ZIP holds up to 10 ROMs; download each part before continuing. Parts preserve the original seed sequence and numbering across the complete batch. The page keeps only the latest ZIP link to limit memory use. Each ZIP contains numbered ROMs, a seed/settings manifest, patch notes and clearly separated spoiler logs. Never read the spoiler logs during a blind run.
+## Downloads and saves
 
-The engine is pinned to unmodified UPR-ZX 4.6.0. Each ROM starts from the same patched base, rather than randomizing the previous output. Selected rival-level changes are checked again after randomization. A reproducible run needs the same base ROM, feature choices, engine, settings and root seed. The manifest records hashes and per-ROM seeds. Original ROMs and saves are not edited.
+The patcher can export a separate ROM, patch notes, an exact-input BPS patch, an undo patch and a detailed report. Undo restores the ROM, not save progress. Preserve normal battery saves and their matching ROM filenames when changing versions; old emulator states are not a save-migration mechanism.
 
-Patching remains offline. Randomization loads CheerpJ 4.3 from Leaning Technologies on first use and needs a connection. Generation then runs locally in the browser. Desktop Chromium has generated a real downloadable ZIP. Android performance and automatic rerolling are not tested.
+The source ZIP contains the same public files as the repository, excluding generated working directories and the ZIP itself. Rebuild the page before repackaging it.
 
-Credits: UPR-ZX by Ajarmar, darkeye, cleartonic and contributors, based on Dabomstew’s Universal Pokémon Randomizer. Official FireRed Ironmon settings by UTDZac and contributors. Browser Java runtime: CheerpJ by Leaning Technologies.
-
-## Battle status icons
-
-The Battle status display option fixes FireRed’s empty status-icon handler in the Oak/tutorial controller used by the lab rival battle. It draws the icon as soon as the normal status-update command arrives, including paralysis, poison, bad poison, sleep, burn, freeze and cures. It preserves the Oak controller’s command-completion routine and waits for battle sound effects like the normal player controller.
-
-The bug and correction were reproduced in the actual lab controller in desktop mGBA, in Classic and Modern. A controlled Sandstorm → Glare battle also reproduced the missing icon in the original and the visible icon in the fixed ROM. Android hardware confirmation remains outstanding. No save format or Pokémon data changes.
-
-**Note:** Fairy typing is intentionally omitted. Modern mode retains the Gen 3 type roster.
-
-## Compatibility checks
-
-The patcher works on a separate copy and preserves the input size, any detected 512-byte copier header and unrelated data. It can produce a partial patch. If nothing matches, it makes no changes and still provides the notes and detailed report. An empty file, ZIP archive, image/save-state file, invalid rival level or damaged patch payload produces a specific input error.
-
-There is no automatic port between game engines. The code-layout checks and local guards remain in place so an unmatched script is skipped rather than overwritten. Runtime compatibility with every ROM hack cannot be established from matching bytes alone. The batch randomiser is separate and still uses compatible, unrandomized FireRed inputs.
-
-## Patcher beta update
-
-The batch randomiser accepts 1–100 ROMs per batch, defaulting to 10. Larger batches download in ZIP parts of up to 10 ROMs. Download each part before continuing. Splitting the downloads keeps memory use down and doesn't change seed numbering or the generated ROMs.
-
-Desktop Chromium generated and downloaded two 10-ROM batches and one 11-ROM batch in 10+1 parts. The same seeds produced identical ROMs across batch and ZIP-part boundaries. The 100-ROM scheduling, numbering and retry checks use a stubbed engine; an actual 100-ROM run and Android hardware still need testing. See Batch_Size_Tests.json and Batch_Browser_Tests.json.
-
-The compatibility blurb is shorter, and the project explains why VS-style points were included: personal progress, chasing PBs and competing with friends. The game itself is unchanged by this patcher update.
-
-## Hosting
-
-The website bundle can be hosted on GitHub Pages. Extract its contents to a public repository and enable Pages from the chosen branch and folder. Keep index.html, the source ZIP and this document's linked permissions file together. Patching and seed generation stay in the visitor's browser.
+[User guide](Patcher_Guide.md) · [Credits and permissions](../Credits_and_Permissions.md) · [Development disclosure](../README.md#disclosure)
