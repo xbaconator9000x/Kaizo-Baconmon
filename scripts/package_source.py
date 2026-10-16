@@ -24,12 +24,16 @@ def package_source():
             if name and name != ARCHIVE_NAME and (PROJECT_ROOT / name).is_file()
         }
     )
-    with ZipFile(PROJECT_ROOT / ARCHIVE_NAME, "w", ZIP_DEFLATED, compresslevel=9) as archive:
+    staging_directory = PROJECT_ROOT / "public-output"
+    staging_directory.mkdir(parents=True, exist_ok=True)
+    staged_archive = staging_directory / ARCHIVE_NAME
+    with ZipFile(staged_archive, "w", ZIP_DEFLATED, compresslevel=9) as archive:
         for name in paths:
             entry = ZipInfo(name, (1980, 1, 1, 0, 0, 0))
             entry.compress_type = ZIP_DEFLATED
             entry.external_attr = 0o100644 << 16
             archive.writestr(entry, (PROJECT_ROOT / name).read_bytes())
+    staged_archive.replace(PROJECT_ROOT / ARCHIVE_NAME)
     print(f"Packaged {len(paths)} public files in {ARCHIVE_NAME}.")
 
 

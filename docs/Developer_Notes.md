@@ -87,6 +87,10 @@ npm run test:batch
 
 The lab status fix is in status_refresh.py and status_refresh.s. It redraws status icons through the Oak/tutorial controller and removes the earlier action-menu workaround. It doesn't change Pokémon data or the save format.
 
+## Reusing the ROM changes
+
+The [reuse licence](../LICENSE.txt) covers my original ROM changes. The patcher and randomiser software keep their existing MIT/GPLv3 terms. Don't apply the custom non-commercial conditions to that software or third-party material. See [credits and permissions](../Credits_and_Permissions.md) before reusing anything in another project.
+
 ## Package an update
 
 Rebuild the page, copy it to index.html, then run:

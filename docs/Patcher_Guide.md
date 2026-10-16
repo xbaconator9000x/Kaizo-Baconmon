@@ -49,4 +49,8 @@ When something changes, you can download the patched ROM, patch notes, a BPS pat
 
 If nothing matches, you'll still get the notes and report. Your original stays as it was.
 
+## Reusing Baconmon changes
+
+You're welcome to use my original ROM changes in your own project under the [reuse licence](../LICENSE.txt): no sale or monetisation, credit xbaconator9000x, notify me before sharing it, and don't use the work to degrade, discriminate against or intentionally harm anyone. Just playing privately doesn't require a credit or message. This only covers my contributions; the patcher software and other creators' work keep their own terms.
+
 [Credits and permissions](../Credits_and_Permissions.md) · [Developer notes](Developer_Notes.md)

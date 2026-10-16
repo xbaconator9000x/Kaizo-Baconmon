@@ -9,6 +9,7 @@ from string import Template
 from help_content import help_html
 
 SOURCE_DIRECTORY = Path(__file__).resolve().parent
+PROJECT_DIRECTORY = SOURCE_DIRECTORY.parent
 OUTPUT_DIRECTORY = SOURCE_DIRECTORY.parent / "public-output"
 
 
@@ -73,6 +74,7 @@ def feature_choices(manifest):
 
 def licence_notices():
     notices = [
+        ("Patcher components — MIT", PROJECT_DIRECTORY / "PATCHER_LICENSE.txt"),
         ("Ironmon VS — MIT", "notices/Ironmon_VS_MIT.txt"),
         ("Ironmon Tracker — MIT", "notices/Ironmon_Tracker_MIT.txt"),
         ("Rom Patcher JS — MIT", "notices/Rom_Patcher_JS_MIT.txt"),
@@ -93,6 +95,7 @@ def build_page():
     page = template.substitute(
         style_tag="<style>" + stylesheet + "</style>",
         licence_notices=licence_notices(),
+        reuse_licence=escape((PROJECT_DIRECTORY / "LICENSE.txt").read_text()),
         choices=feature_choices(manifest),
         help_sections=help_html(),
         batch=(SOURCE_DIRECTORY / "batch_template.html").read_text(),
