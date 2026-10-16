@@ -8,6 +8,29 @@ I drew heavily from DrMaple's fantastic Faster FireRed 1.3.2 build. He has kindl
 
 The patcher lets you use the full **Core Baconmon Package**, or untick the bits you don't want. You can use the extras for ordinary Nuzlockes, Ironmon or your own rules.
 
+## Classic vs Modern
+
+Same Pokemon, levels, stats and moves in each comparison. Only the mode changes. These are controlled emulator battles; the end frames pause so you can read the result.
+
+### Shadow Ball: Attack or Sp. Atk?
+
+![Gengar uses Shadow Ball against the same Banette in Classic and Modern. Banette survives in Classic and faints in Modern.](docs/media/classic-modern-shadow-ball.gif)
+
+Shadow Ball is physical in Classic and special in Modern. Gengar gets a lot more out of that Sp. Atk stat.
+
+### Sturdy gets an upgrade
+
+![A full-health Geodude takes Water Gun in both modes. It faints in Classic and hangs on with 1 HP using Sturdy in Modern.](docs/media/classic-modern-sturdy.gif)
+
+Same hit, different outcome. Modern Sturdy saves a full-health Geodude from a knockout. Classic Sturdy only blocks one-hit KO moves.
+
+## A few extras
+
+| Happiness machine | Nuz-guide | Move details: press L |
+| --- | --- | --- |
+| <img src="docs/media/happiness-machine.png" alt="Oak's lab happiness machine with Maximise, Plummet and Cancel options" width="260"> | <img src="docs/media/nuz-guide.png" alt="The open Nuz-guide with its challenge, score and information sections" width="260"> | <img src="docs/media/battle-move-details.png" alt="The in-battle Shadow Ball details panel with category, type, power, accuracy and description" width="260"> |
+| Make your lead Pokemon like or hate you more. | Rules, challenge guides and your score log. | Check a move without leaving the battle. |
+
 ## What's included?
 
 - **Classic / Modern:** play with the original Gen 3 battle mechanics, or use the physical/special split and updated effects for the existing abilities. Pokemon, BSTs, learnsets and available abilities stay as they were. **Note: Fairy typing is intentionally omitted.**
