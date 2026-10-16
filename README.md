@@ -72,4 +72,4 @@ The new patcher code is MIT licensed. The randomiser integration is GPLv3. The o
 
 ## Disclosure
 
-I don't know how to code, so I've used AI-assisted tools to help with code, scripting, debugging, testing and some text and title-screen graphics. I directed the project and chose the features and rule changes.
+I am not the best coder, and so I accessed external tools and advice to help with development. In some cases this included AI-assisted tools that helped with general guidance, coding, scripting, debugging, testing, and some text/title-screen graphics. The patcher itself was entirely created using ChatGPT with my directed input. AI useage was otherwise minimal and was not used when reasonably avoidable. I am hesitant to support the use of AI tools in any creative project. Without such tools in this case, I am not sure I would have ever figured out how to implement this project. All creative input was contributed by myself and the aforementioned sources.
