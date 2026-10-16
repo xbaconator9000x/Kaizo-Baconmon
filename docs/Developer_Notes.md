@@ -28,6 +28,8 @@ This only needs Python 3 and the files already in the repo. It writes public-out
 
 The builder puts the scripts, patch data, presets, Java files, help and licence notices into one HTML file. The layout and wording are in page_template.html, help_template.html and batch_template.html. The stylesheet is patcher.css.
 
+The version in manifest.json supplies the release build number shown on the page and included in patch notes, reports, BPS metadata and batch records. The current patcher is Release build 1.0.
+
 The in-game rule articles come from guide_content.json. The patch signatures and payload are generated data, so they keep their existing compact format.
 
 ## Keep the formatting consistent

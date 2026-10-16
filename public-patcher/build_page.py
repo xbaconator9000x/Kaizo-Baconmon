@@ -93,6 +93,7 @@ def build_page():
     template = Template((SOURCE_DIRECTORY / "page_template.html").read_text())
     stylesheet = (SOURCE_DIRECTORY / "patcher.css").read_text()
     page = template.substitute(
+        release_label=escape(f"Release build {manifest['version']}"),
         style_tag="<style>" + stylesheet + "</style>",
         licence_notices=licence_notices(),
         reuse_licence=escape((PROJECT_DIRECTORY / "LICENSE.txt").read_text()),

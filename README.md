@@ -63,7 +63,7 @@ The patcher makes a separate copy and leaves your original ROM and saves alone. 
 
 [Full instructions](docs/Patcher_Guide.md)
 
-The current version of the patcher is here:
+The current patcher is **Release build 1.0**:
 
 https://xbaconator9000x.github.io/Kaizo-Baconmon/
 

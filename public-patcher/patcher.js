@@ -104,7 +104,7 @@ async function patchROM(source, enabled, pool, options = {}) {
     selected = new Set(enabled.includes('package') ? CONFIG.groups.map((g) => g.id) : enabled),
     report = {
       project: 'Kaizo Baconmon',
-      patcher: '1.11',
+      patcher: CONFIG.version,
       source_sha256: await hash(source),
       output_sha256: null,
       features: [],
@@ -498,7 +498,7 @@ function makeBPS(source, target, metadata) {
   return out.slice(0, pos);
 }
 function patchNotes(report, file) {
-  const title = 'Kaizo Baconmon — Patch notes';
+  const title = 'Kaizo Baconmon — Release build ' + report.patcher + ' — Patch notes';
   let text = title + '\nDeveloped by xbaconator9000x\n\nInput: ' + file + '\n\n';
   if (report.warnings?.length)
     text += 'NOTICES\n' + report.warnings.map((w) => '- ' + w).join('\n') + '\n\n';
@@ -599,8 +599,16 @@ if (typeof document !== 'undefined') {
         notes = patchNotes(report, file.name);
       if (report.changed) {
         link(rom, stem + '.gba', 'Patched ROM');
-        link(makeBPS(source, rom, 'Kaizo Baconmon'), stem + '.bps', 'BPS patch');
-        link(makeBPS(rom, source, 'Undo Kaizo Baconmon patch'), stem + '_Undo.bps', 'Undo patch');
+        link(
+          makeBPS(source, rom, 'Kaizo Baconmon — Release build ' + report.patcher),
+          stem + '.bps',
+          'BPS patch',
+        );
+        link(
+          makeBPS(rom, source, 'Undo Kaizo Baconmon patch — Release build ' + report.patcher),
+          stem + '_Undo.bps',
+          'Undo patch',
+        );
       }
       link(notes, stem + '_Patch_Notes.txt', 'Patch notes', 'text/plain');
       link(

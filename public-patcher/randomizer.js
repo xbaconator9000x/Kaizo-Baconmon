@@ -240,6 +240,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
       }
       const manifest = {
         format: 'Baconmon batch v1',
+        patcher: CONFIG.version,
         engine: 'UPR-ZX 4.6.0',
         root_seed: s.root,
         batch,
@@ -261,7 +262,9 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
         name: 'Patch_notes.txt',
         data: s.report
           ? patchNotes(s.report, 'Batch base')
-          : 'No Baconmon patches selected. Randomization only.',
+          : 'Kaizo Baconmon — Release build ' +
+            CONFIG.version +
+            '\nNo Baconmon patches selected. Randomization only.',
       });
       const zip = storedZip(entries);
       downloadURL = URL.createObjectURL(zip);

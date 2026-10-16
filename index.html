@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kaizo Baconmon patcher</title>
+    <title>Kaizo Baconmon patcher · Release build 1.0</title>
     <style>:root {
   color-scheme: dark;
 }
@@ -138,7 +138,7 @@ input:disabled {
   </head>
   <body>
     <h1>Kaizo Baconmon</h1>
-    <p class="small">FireRed patch · Developed by xbaconator9000x</p>
+    <p class="small">Release build 1.0 · FireRed patch · Developed by xbaconator9000x</p>
     <p>
       Ironmon, but tastier. Based on Kaizo Ironmon, with changes inspired by Ironmon VS and a few
       extra conveniences.
@@ -1326,7 +1326,7 @@ and rights provided by law still apply.
       </details>
     </details>
     <footer>
-      Kaizo Baconmon · xbaconator9000x ·
+      Kaizo Baconmon · Release build 1.0 · xbaconator9000x ·
       <a href="https://github.com/xbaconator9000x/Kaizo-Baconmon/blob/main/LICENSE.txt"
         >Reuse licence</a
       >·
@@ -1563,7 +1563,7 @@ async function patchROM(source, enabled, pool, options = {}) {
     selected = new Set(enabled.includes('package') ? CONFIG.groups.map((g) => g.id) : enabled),
     report = {
       project: 'Kaizo Baconmon',
-      patcher: '1.11',
+      patcher: CONFIG.version,
       source_sha256: await hash(source),
       output_sha256: null,
       features: [],
@@ -1957,7 +1957,7 @@ function makeBPS(source, target, metadata) {
   return out.slice(0, pos);
 }
 function patchNotes(report, file) {
-  const title = 'Kaizo Baconmon — Patch notes';
+  const title = 'Kaizo Baconmon — Release build ' + report.patcher + ' — Patch notes';
   let text = title + '\nDeveloped by xbaconator9000x\n\nInput: ' + file + '\n\n';
   if (report.warnings?.length)
     text += 'NOTICES\n' + report.warnings.map((w) => '- ' + w).join('\n') + '\n\n';
@@ -2058,8 +2058,16 @@ if (typeof document !== 'undefined') {
         notes = patchNotes(report, file.name);
       if (report.changed) {
         link(rom, stem + '.gba', 'Patched ROM');
-        link(makeBPS(source, rom, 'Kaizo Baconmon'), stem + '.bps', 'BPS patch');
-        link(makeBPS(rom, source, 'Undo Kaizo Baconmon patch'), stem + '_Undo.bps', 'Undo patch');
+        link(
+          makeBPS(source, rom, 'Kaizo Baconmon — Release build ' + report.patcher),
+          stem + '.bps',
+          'BPS patch',
+        );
+        link(
+          makeBPS(rom, source, 'Undo Kaizo Baconmon patch — Release build ' + report.patcher),
+          stem + '_Undo.bps',
+          'Undo patch',
+        );
       }
       link(notes, stem + '_Patch_Notes.txt', 'Patch notes', 'text/plain');
       link(
@@ -2328,6 +2336,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
       }
       const manifest = {
         format: 'Baconmon batch v1',
+        patcher: CONFIG.version,
         engine: 'UPR-ZX 4.6.0',
         root_seed: s.root,
         batch,
@@ -2349,7 +2358,9 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
         name: 'Patch_notes.txt',
         data: s.report
           ? patchNotes(s.report, 'Batch base')
-          : 'No Baconmon patches selected. Randomization only.',
+          : 'Kaizo Baconmon — Release build ' +
+            CONFIG.version +
+            '\nNo Baconmon patches selected. Randomization only.',
       });
       const zip = storedZip(entries);
       downloadURL = URL.createObjectURL(zip);
