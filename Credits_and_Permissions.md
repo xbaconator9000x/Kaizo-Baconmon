@@ -36,7 +36,11 @@ The Nuz-guide explains these challenges in my own wording and credits the origin
 
 ## Included licences
 
-New patcher components are MIT licensed. The UPR-ZX engine, Java adapter and randomiser integration are GPLv3; the combined program code is distributed under GPLv3 with component notices retained. These licences do not relicense the original game, embedded ROM patch data or separately sourced upstream work.
+My original Baconmon ROM changes are covered by the [Kaizo Baconmon Reuse Licence](LICENSE.txt). You can use those contributions in your own project if you don't sell or monetise it, credit me, notify me before sharing it, and don't use the work to degrade, discriminate against or intentionally harm anyone. The full licence defines the scope and conditions. Private play doesn't require a credit or notification.
+
+The patcher components already released under MIT keep that licence. The UPR-ZX engine, Java adapter and randomiser integration are GPLv3; the combined program code is distributed under GPLv3 with component notices retained. The custom reuse conditions do not restrict that software or take back rights granted for earlier releases.
+
+These permissions cover only rights the relevant contributor holds. Pokémon, original game content and other creators' work keep their own rights and terms. DrMaple's project-specific permission is for Baconmon and doesn't automatically extend to another project. No included licence grants permission from the original game rights holders to distribute complete game ROMs.
 
 Notices are in [notices/](notices/), [public-patcher/notices/](public-patcher/notices/) and the [randomiser directory](public-patcher/randomizer/). [Licence evidence](Licence_Evidence.json) records the upstream checks dated 16 October 2026.
 

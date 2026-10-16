@@ -68,7 +68,13 @@ The browser randomiser uses UPR-ZX by Ajarmar and contributors, based on Dabomst
 
 The patcher code, randomiser integration, tests and ROM patch data are included here and in the [source ZIP](Kaizo_Baconmon_Patcher_Source.zip). This isn't a full decompilation of the game. [Developer notes](docs/Developer_Notes.md) cover rebuilding and the test reports.
 
-The new patcher code is MIT licensed. The randomiser integration is GPLv3. The original projects keep their own terms; their notices are included.
+The patcher software keeps its existing MIT/GPLv3 terms. The original projects keep their own terms too; their notices are included.
+
+## Reusing my changes
+
+You're welcome to use my original Baconmon ROM changes in your own project, so long as you don't sell or monetise that project in any way, credit me as **xbaconator9000x**, and let me know before sharing it. Don't use them to degrade, discriminate against or intentionally harm anyone. [The full reuse licence](LICENSE.txt) explains the conditions, including what counts as monetisation and how to notify me. Just playing the hack privately doesn't require a credit or message.
+
+That permission only covers rights I hold in my own contributions. Pokémon and the original game content belong to their respective rights holders. Other creators' work needs its own permission; DrMaple's permission for Baconmon doesn't automatically extend to another project. This isn't permission to distribute complete game ROMs, and it doesn't withdraw permissions already granted under other licences.
 
 ## Disclosure
 
