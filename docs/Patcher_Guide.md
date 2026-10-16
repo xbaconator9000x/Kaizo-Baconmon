@@ -3,50 +3,50 @@
 ## Patch a ROM
 
 1. Open index.html in a current browser.
-2. Choose your ROM. FireRed 1.1 is the tested base.
-3. Leave Core Baconmon Package selected for the standard setup, or untick the features you don't want. The lab rival defaults to level 8; you can choose a whole number from 1 to 100.
+2. Choose your ROM. US FireRed 1.1 is the tested base.
+3. Leave Core Baconmon Package ticked for the full setup, or untick the bits you don't want. The lab rival defaults to level 8; you can choose any whole number from 1 to 100.
 4. Click Check and apply.
-5. Read the patch notes. They list what was applied, already installed, skipped or left unticked.
-6. Download the new ROM. Keep the notes and your original files.
+5. Read the patch notes to see what worked, what was already there and what was skipped.
+6. Download your patched ROM and keep the original.
 
-The patcher works on a copy. It doesn't change your saves. Save normally before changing ROMs, keep a backup, and continue from your normal in-game save rather than an old save state.
+The patcher makes a separate copy and leaves your saves alone. Save normally before changing ROMs, keep a backup, and continue from the in-game save. An old save state can put you back into the previous version's code.
 
-You can try a different modified ROM. Matching features are applied and conflicting changes are skipped. Some hacks may have no matching features at all. Read the notes before playing; matching checks don't guarantee every part of another hack will work.
+You can try other modified ROMs. Matching changes are applied and conflicts are skipped. Some hacks may have nothing that matches. I can't guarantee compatibility with a particular hack, so read the output log before playing.
 
-## Randomise a new run
+## Make new seeds
 
-Patch a fresh, unrandomised FireRed 1.1 copy first. Keep that patched copy as your base for new seeds. Don't randomise an active run again.
+Patch a fresh, unrandomised FireRed 1.1 copy first. Keep that as your base for new runs. Don't randomise a run you're already playing.
 
-Open Batch randomiser (beta), choose a preset and adjust the batch seed if you want. You can choose 1–100 ROMs per batch and 1–100 batches. Large batches download in ZIP parts of up to 10 ROMs. Download each part before continuing; this keeps the browser from holding the entire batch in memory at once.
+Open Batch randomiser (beta), choose your preset and set the batch seed if you want. You can make 1–100 ROMs per batch and 1–100 batches. Larger batches download in ZIP parts of up to 10 ROMs. Download each part before continuing so the browser doesn't have to hold the whole batch at once.
 
-The Kaizo, Standard and Ultimate presets use UTDZac's published FireRed settings. Encounters only changes wild species. Custom accepts a compatible settings string. Choose settings for the challenge you're actually playing.
+Kaizo, Standard and Ultimate use UTDZac's published FireRed settings. Encounters only changes wild species. Custom lets you paste a compatible settings string. Pick the settings for the challenge you're playing.
 
-Each batch includes numbered ROMs, seeds, settings and patch notes. Spoiler logs are in a separate folder for after the run. Keep the same base, options, engine, settings and seed if you want to reproduce the output.
+Each ZIP includes numbered ROMs, seeds, settings and patch notes. Spoiler logs are kept in a separate folder for after the run. To reproduce the results, keep the same base ROM, options, engine, settings and seed.
 
-The browser randomiser loads CheerpJ from its vendor on first use, so it needs an internet connection. Generation then runs in your browser. It has been tested on desktop Chrome and Android Chrome; performance on an Android is slower but has worked in testing.
+The randomiser loads CheerpJ the first time, so you'll need internet. Generation then runs in your browser. It has worked in desktop Chrome and Android Chrome testing; Android is slower.
 
-You can also use [UPR-ZX on PC](https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases) or [UPR-Android](https://github.com/champred/UPR-Android/releases). Use the matching [official FireRed Ironmon settings](https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621) and follow the linked projects' instructions. The patcher has more setup help in its dropdowns.
+You can also use [UPR-ZX on PC](https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases) or [UPR-Android](https://github.com/champred/UPR-Android/releases), with the matching [FireRed Ironmon settings](https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621). There's more setup help in the patcher's dropdowns.
 
-If you choose a custom rival level, check it after randomisation. Later randomisation can change a custom level; patch the finished seed with your chosen value if needed. The default level-8 setting has its own correction during play.
+If you choose a custom rival level, check it after randomisation. Later randomisation can change it; patch the finished seed with your chosen level if needed. The default level-8 option has its own correction during play.
 
-## Rules and progress
+## Rules and points
 
 I included the VS-style points because I find tracking progress and chasing a PB more fun than only counting a Champion win. Kaizo Ironmon can take dozens, hundreds or even thousands of attempts. Points give you smaller milestones to aim for, a way to see yourself improving, and something to compete over with friends—even when nobody wins the seed.
 
-The in-game log tracks the current run. Keep a note of your PB to compare attempts.
+The in-game log keeps the current run's score. Keep a note of your PB to compare attempts.
 
-The full Baconmon rules are in the patcher's dropdowns and the in-game Nuz-guide. The guide also explains other challenge types, Classic and Modern, credits and the score log.
+The full Baconmon rules are in the patcher's dropdowns and the Nuz-guide key item. The guide also covers other challenges, Classic and Modern, credits and scoring.
 
-Baconmon's VS-style maximum is 33 points. Dungeon bonuses require every required trainer in one visit, without leaving unfinished or using a Pokemon Center-equivalent heal. The Silph bed and ship healer don't become legal just because you can use them.
+The maximum score is 33. Dungeon bonuses need every required trainer in one visit, without leaving unfinished or using a Pokémon Center-equivalent heal. The Silph bed and ship healer are still banned.
 
-The log helps track progress; it can't prove that every catch, move or item was legal. The guide describes the full package even if you've switched some extras off.
+The log can't check every catch, move or item. You still need to follow the rules. The guide explains the full package, including any extras you've unticked.
 
-Classic keeps Gen 3 battle mechanics. Modern adds the move-based physical/special split and updates the existing abilities described in the guide. **Note: Fairy typing is intentionally omitted.**
+Classic keeps Gen 3 battle mechanics. Modern adds the move-based physical/special split and updates the existing abilities listed in the guide. Fairy typing is intentionally omitted.
 
 ## Downloads and backups
 
-When the patcher changes something, it offers the new ROM, patch notes, a BPS patch, an undo patch and a detailed report. The BPS and undo files are for those exact ROM versions. Undo restores the ROM, not your save progress.
+When something changes, you can download the patched ROM, patch notes, a BPS patch, an undo patch and a detailed report. The BPS and undo patches work with those exact ROM versions. Undo restores the ROM file; it doesn't undo save progress.
 
-If nothing matches, you still get the notes and report. Your original is left alone.
+If nothing matches, you'll still get the notes and report. Your original stays as it was.
 
 [Credits and permissions](../Credits_and_Permissions.md) · [Developer notes](Developer_Notes.md)

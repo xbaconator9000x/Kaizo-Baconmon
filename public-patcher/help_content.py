@@ -1,19 +1,50 @@
-from html import escape as esc
+"""Render the patcher help and the existing in-game rule articles."""
+
+from html import escape
 import json
 from pathlib import Path
-R=Path(__file__).parent
-A=json.loads((R/'guide_content.json').read_text())
-def article(k):
- a=A[k];return '<details><summary>'+esc(a['title'])+'</summary>'+''.join('<p>'+esc(p).replace('\n','<br>')+'</p>' for p in a['text'].split('\n\n'))+'</details>'
+from string import Template
+
+SOURCE_DIRECTORY = Path(__file__).resolve().parent
+ARTICLES = json.loads((SOURCE_DIRECTORY / "guide_content.json").read_text())
+ARTICLE_GROUPS = {
+    "mode_articles": [
+        "bacon_changes",
+        "classic",
+        "modern_split",
+        "modern_a",
+        "modern_b",
+        "modern_c",
+        "modern_limits",
+    ],
+    "rule_articles": [
+        "bacon_goal",
+        "bacon_setup",
+        "bacon_selection",
+        "bacon_catches",
+        "bacon_clauses",
+        "bacon_moves",
+        "bacon_items",
+        "bacon_healing",
+        "bacon_progress",
+        "bacon_helpers",
+        "bacon_travel",
+    ],
+}
+
+
+def article(key):
+    content = ARTICLES[key]
+    paragraphs = "".join(
+        "<p>" + escape(paragraph).replace("\n", "<br>") + "</p>"
+        for paragraph in content["text"].split("\n\n")
+    )
+    return f"<details><summary>{escape(content['title'])}</summary>{paragraphs}</details>"
+
+
 def help_html():
- return '''<details class="help"><summary>About this patcher</summary><p>I built Kaizo Baconmon to make FireRed more convenient for Nuzlockes, Ironmon and similar runs, including my own Kaizo Ironmon variant based on <a href="https://ironmonvs.com/about">Ironmon VS</a>. Ironmon, but tastier.</p><p>Use the full Core Baconmon Package, or adjust the available features before patching. You can use the extras for a normal Nuzlocke, an Ironmon run or your own mix. Choosing extras does not automatically make a run legal under another challenge’s rules.</p><p>Designed for maximum compatibility between ROMs. Changes that cannot be applied are skipped and listed in the output log. I can’t guarantee compatibility with any particular ROM. Designed for clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2; other modified ROMs may also work.</p></details>
-<details class="help"><summary>What is Kaizo Baconmon?</summary><p>Kaizo Baconmon is my variation of Kaizo Ironmon, designed around the solo-runner challenge with changes inspired by Ironmon VS and a few extra conveniences. Developed by xbaconator9000x. The standard Baconmon setup uses every package feature, a level 8 lab rival and your choice of Classic or Modern.</p><p>Ironmon was created by iateyourpie. The underlying rules are documented in the <a href="https://gist.github.com/valiant-code/adb18d248fa0fae7da6b639e2ee8f9c1">Ironmon rules reference</a>. Credit to WaffleSmacker and the VS community for <a href="https://ironmonvs.com/about">Ironmon VS</a>, including early encounter rotation, the early balls and the scoring system. Baconmon is a separate variant: VS normally uses a level 6 lab rival; Baconmon defaults to 8.</p>
-<details><summary>Rules summary and key differences from Kaizo</summary><p>Reach the Hall of Fame with one runner. Fainting ends the attempt. Use a fresh randomized seed after a loss; no reloading to undo outcomes. Use Set battles, follow the catch and pivot limits, and obey the item, move, ability and dungeon restrictions in the full rules below.</p><p>Pick a starter-ball position before seeing the choices and keep that position between runs. Baconmon allows that starter regardless of BST, and keeps the evolution exception. It does not allow over-limit wild pivots. Wild pivots still require committing before checking the caught Pokémon’s stats.</p><p>The added TM-paid relearner is allowed under Baconmon’s rules. Field HMs need no taught move, but still need their HM, badge and normal prerequisites. The lab machine can raise or lower friendship, Rock Tunnel is lit, and the forest nurse accepts poisoned parties. Optional dungeon healers remain banned. Guaranteed hidden-item refreshes do not permit farming.</p><p>Classic keeps Gen 3 battle mechanics. Modern adds the move-based physical/special split and updates existing abilities without adding abilities, learnsets or base stats. Choose the mode before the attempt. These are Baconmon exceptions, not changes to the official Kaizo rules.</p><p><strong>Note:</strong> Fairy typing is intentionally omitted.</p></details>
-<details><summary>Modified ROM features and mode details</summary>'''+''.join(article(k) for k in ['bacon_changes','classic','modern_split','modern_a','modern_b','modern_c','modern_limits'])+'''</details>
-<details><summary>Full Kaizo Baconmon rule list</summary><p>This is the full Baconmon rule set included in the ROM, with inherited restrictions and Baconmon exceptions together. The default package is assumed. A custom selection or rival level is a custom variant; agree on those changes before comparing runs.</p>'''+''.join(article(k) for k in ['bacon_goal','bacon_setup','bacon_selection','bacon_catches','bacon_clauses','bacon_moves','bacon_items','bacon_healing','bacon_progress','bacon_helpers','bacon_travel'])+'''<p>Sources: <a href="https://gist.github.com/valiant-code/adb18d248fa0fae7da6b639e2ee8f9c1">Standard, Ultimate and Kaizo Ironmon</a>; <a href="https://ironmonvs.com/about">Ironmon VS</a>. These describe their own formats; the Baconmon exceptions above belong to this project.</p></details>
-<details><summary>Nuz-guide key item and point tracking</summary><p>I included the VS-style points because I find tracking progress and chasing a PB more fun than only counting a Champion win. Kaizo Ironmon can take dozens, hundreds or even thousands of attempts. Points give you smaller milestones to aim for, a way to see yourself improving, and something to compete over with friends—even when nobody wins the seed.</p><p>The Nuz-guide option adds a key item given at the start. It contains challenge directories, the full Baconmon rules, mode details, credits and a score log. A selects and turns pages; B goes back. It is a guide and progress log, not an automatic rules referee. It describes the full package even when optional features are left out.</p><p>The VS-style total is 33: Brock 2; each other Gym Leader 1; each Elite Four member 2; Champion 5. Clean dungeon bonuses are Mt. Moon 1, S.S. Anne 1, Rock Tunnel 1, Silph Co. 3 and Victory Road 5.</p><p>A dungeon bonus needs every required trainer in one uninterrupted visit, without a Pokémon Center or equivalent heal. Leaving unfinished, healing and returning does not count. Silph’s bed and the S.S. Anne healer are not permitted. The ROM monitors visits, trainer flags and full heals, but it cannot prove every rule was followed.</p><p>The ROM keeps the current run’s score and clean-clear log. Keep your PB separately so you can compare future runs. It does not connect to the official VS competition service.</p></details></details>
-<details class="help"><summary>How to randomise: Android or PC</summary><p>For a new seed, patch a separate, unrandomized US FireRed 1.1 copy first, then randomize that patched copy. Keep it as your reusable base. Do not randomize an existing active seed again. Check and apply changes the ROM. The batch randomiser beta can also generate seeds in your browser.</p>
-<details><summary>Pick settings for your challenge</summary><p>A normal Nuzlocke does not require randomization. If you want one, choose your own encounter and trainer settings and agree on clauses first. For Standard, Ultimate or Kaizo Ironmon, use the matching <a href="https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621">official FireRed settings</a>, with a compatible randomizer version. Do not use a NatDex or another game’s preset for this ROM.</p><p>For Baconmon, start with the FireRed Kaizo settings and follow the Seed and battle setup page in the full rules above. Keep the prescribed trainer teams, level boosts, growth rates and forced evolutions; Modern mode does not set them for you. With the default rival adjustment selected, the opening rival stays at level 8 during play. If you choose a different rival level, patch the finished randomized seed with your chosen value before playing, and verify the battle level. Later randomization can change a custom trainer level.</p><p>Keep the same settings and Classic/Modern choice when comparing seeds. Keep the spoiler log for after the run; do not read it during a blind attempt. Patch notes list deliberate changes and anything skipped.</p></details>
-<details><summary>On PC</summary><ol><li>Get <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases">Universal Pokémon Randomizer ZX</a>. Extract the download and use its launcher. Follow its <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/wiki/About-Java">Java instructions</a> if needed.</li><li>Open your patched, unrandomized FireRed copy. Import the matching settings string or .rnqs preset from the official settings reference.</li><li>Check the game and challenge, then randomize to a new filename. Batch generation can produce a set of fresh seeds. The <a href="https://github.com/besteon/Ironmon-Tracker/wiki/New-Runs-Setup">Ironmon Tracker setup guide</a> explains its PC automation.</li><li>If using a custom rival level, apply that option to the generated seed before playing. Read its notes. Test the opening on a separate save.</li><li>For Android play, transfer the generated .gba files to your phone and select their folder in the emulator. Keep the original files and your battery saves.</li></ol></details>
-<details><summary>On Android, without a PC</summary><ol><li>Get <a href="https://github.com/champred/UPR-Android/releases">UPR-Android</a> from champred’s releases. Its <a href="https://github.com/champred/UPR-Android">usage instructions</a> cover opening ROMs and importing settings.</li><li>Open your patched, unrandomized FireRed copy. Paste a compatible FireRed settings string or choose the appropriate preset, then check it against your chosen rules. Use the ordinary FireRed format, not NatDex/MAX support.</li><li>Generate a new ROM, or a batch of numbered ROMs. Save them in a folder you can open in your chosen GBA emulator. Start from a fresh save for each seed.</li><li>Batch mode is the simpler fallback. IronMon Emu also supports UPR mode through compatible UPR-Android builds: load the base and settings in the randomizer, then long-press the ROM family in the emulator to select UPR mode. See the <a href="https://github.com/billgreenwald/ironmon_emu#how-to-set-up-roms">upstream setup guide</a>. Follow the emulator’s own instructions for automatic rerolling.</li></ol><p>If a settings string is rejected, check the randomizer version instead of silently choosing different settings. Custom rival levels need checking after randomization; use batch mode and patch the completed seeds when required.</p></details>
-<p class="small">Sources checked 16 October 2026. Randomizer instructions are based on the linked projects. Android generation and automatic rerolling have not been tested here on hardware.</p></details>'''
+    template = Template((SOURCE_DIRECTORY / "help_template.html").read_text())
+    sections = {
+        name: "".join(article(key) for key in keys) for name, keys in ARTICLE_GROUPS.items()
+    }
+    return template.substitute(sections)

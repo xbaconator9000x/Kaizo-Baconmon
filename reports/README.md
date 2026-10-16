@@ -1,19 +1,19 @@
-# Verification reports
+# Test reports
 
-These JSON files retain the recorded results of patcher, browser, native and desktop emulator checks. Read each file's scope and limitations alongside its results. Reports from earlier checks are retained for reference; they are not a statement that the full suite was rerun for a documentation change.
+These files record the patcher, browser and desktop emulator checks. Each report explains what it tested and its limits. Older results are kept for reference; they don't mean the whole suite was rerun for every later edit.
 
-| Reports | Coverage |
-| --- | --- |
-| Compatibility_Tests, Best_Effort_Compatibility_Tests | Input handling, guarded feature application and seed-data preservation. |
-| Download_Tests | Exported files, patch notes and download behavior. |
-| Selection_Tests, Independent_*, Faster_Separation_* | Feature switches and shared-support behavior. |
-| Rival_Runtime_Tests | Lab rival level handling. |
-| ROM_Emulator_Tests | Guide navigation, field helpers, normal saves and selected desktop game behavior. |
-| Status_Refresh_Tests | Lab status-icon reproduction and repair. |
-| Mode_Documentation_Checks, Credit_Text_Checks | In-game text layout and bounded text changes. |
-| Randomiser_Tests, Batch_Browser_Tests | Recorded real browser generation and deterministic output. |
-| Batch_Size_Tests | Stubbed large-batch scheduling, numbering, validation and retries. |
+| Reports                                              | What they check                                                      |
+| ---------------------------------------------------- | -------------------------------------------------------------------- |
+| Compatibility_Tests, Best_Effort_Compatibility_Tests | Input handling, feature checks and preserved seed data.              |
+| Download_Tests                                       | Downloads, patch notes and exported files.                           |
+| Selection*Tests, Independent*_, Faster*Separation*_  | Feature switches and shared support.                                 |
+| Rival_Runtime_Tests                                  | Lab rival levels.                                                    |
+| ROM_Emulator_Tests                                   | Guide menus, field helpers, normal saves and selected game features. |
+| Status_Refresh_Tests                                 | The missing lab status icons and their fix.                          |
+| Mode_Documentation_Checks, Credit_Text_Checks        | In-game text layout and the text changes made.                       |
+| Randomiser_Tests, Batch_Browser_Tests                | Browser generation and matching-seed results.                        |
+| Batch_Size_Tests                                     | Scheduling, numbering, limits and retries with a stub engine.        |
 
-Capture filenames in ROM_Emulator_Tests identify images from the recorded run; those images are not included. Original machine paths have been omitted.
+Screenshot names in ROM_Emulator_Tests refer to captures from that test run. The images aren't included, and the original machine paths have been removed.
 
-Desktop and stubbed checks do not establish a complete campaign playthrough, actual 100-ROM performance or physical Android device coverage. The verification scripts and their external input requirements are described in [Developer notes](../docs/Developer_Notes.md).
+The desktop and stubbed checks don't cover a full playthrough, real 100-ROM performance or physical Android testing. [Developer notes](../docs/Developer_Notes.md) explain how to run the scripts and which extra inputs they need.

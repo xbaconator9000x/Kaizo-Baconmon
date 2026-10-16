@@ -1,0 +1,61 @@
+<details class="help">
+  <summary>Batch randomiser · beta</summary>
+  <p>
+    Choose a fresh, unrandomised US FireRed 1.1 ROM above. The randomiser applies your selected
+    patches first, then makes new seeds. Choose 1–100 ROMs per batch. Larger batches download in ZIP
+    parts of up to 10 ROMs. Download each part before continuing. Seeds, settings and patch notes
+    are included; spoiler logs are kept separate for after the run.
+  </p>
+  <p class="small">
+    Runs in your browser with UPR-ZX 4.6.0. You’ll need internet to load its Java runtime the first
+    time. This is a beta; the desktop reports don’t cover Android performance or actual 100-ROM
+    batches.
+  </p>
+  <label
+    >Preset
+    <select id="batch-preset">
+      <option>Kaizo</option>
+      <option>Standard</option>
+      <option>Ultimate</option>
+      <option>Encounters only</option>
+      <option>Custom</option>
+    </select></label
+  ><small
+    >Ironmon presets use UTDZac’s published FireRed settings. Encounters only is a simple Nuzlocke
+    option: wild species change; trainer teams, learnsets and stats stay as supplied. Patch features
+    above are independent of the preset.</small
+  ><label>Batch seed <input id="batch-seed" inputmode="numeric" style="width: 220px" /></label
+  ><button id="batch-new-seed" type="button">New seed</button
+  ><label
+    >ROMs per batch
+    <input id="batch-size" type="number" value="10" min="1" max="100" list="batch-sizes" /></label
+  ><datalist id="batch-sizes">
+    <option value="10"></option>
+    <option value="20"></option>
+    <option value="50"></option>
+    <option value="100"></option></datalist
+  ><label
+    >Number of batches <input id="batch-count" type="number" value="1" min="1" max="100"
+  /></label>
+  <details>
+    <summary>Settings string</summary>
+    <textarea id="batch-settings" rows="4" style="width: 100%; box-sizing: border-box"></textarea>
+    <p class="small">
+      Use Custom to paste a compatible 321-format FireRed settings string. Keep the same engine,
+      settings, base ROM and seed to reproduce a batch.
+    </p>
+  </details>
+  <button id="batch-generate" type="button">Generate first batch</button>
+  <p id="batch-status" role="status"></p>
+  <div id="batch-download"></div>
+  <p class="small">
+    Randomizer:
+    <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases/tag/v4.6.0"
+      >UPR-ZX by Ajarmar, based on Dabomstew’s randomizer</a
+    >
+    (GPLv3). Presets:
+    <a href="https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621"
+      >UTDZac and contributors</a
+    >. Browser Java runtime: <a href="https://cheerpj.com">CheerpJ by Leaning Technologies</a>.
+  </p>
+</details>

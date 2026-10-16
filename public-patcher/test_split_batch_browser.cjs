@@ -1,2 +1,84 @@
-const {chromium}=require('playwright');const fs=require('fs');fs.mkdirSync('batch-update',{recursive:true});
-(async()=>{fs.mkdirSync('randomizer-work',{recursive:true});const server=require('http').createServer((req,res)=>{res.setHeader('Content-Type','text/html');res.end(fs.readFileSync('public-output/Kaizo_Baconmon_Patcher.html'));});await new Promise(r=>server.listen(8765,'127.0.0.1',r));const proxyText=process.env.HTTPS_PROXY||process.env.https_proxy;const proxyURL=proxyText?new URL(proxyText):null;const browser=await chromium.launch({...(proxyURL?{proxy:{server:proxyURL.protocol+'//'+proxyURL.host,username:decodeURIComponent(proxyURL.username),password:decodeURIComponent(proxyURL.password),bypass:'127.0.0.1,localhost'}}:{}),headless:true,executablePath:process.env.BACON_CHROME||undefined,args:['--no-sandbox','--ignore-certificate-errors']});const page=await browser.newPage({acceptDownloads:true,ignoreHTTPSErrors:true});page.on('pageerror',e=>console.log('PAGE ERROR',e.message));page.on('console',m=>{if(m.type()==='error')console.log('BROWSER ERROR',m.text().slice(0,200))});await page.goto('http://127.0.0.1:8765/Kaizo_Baconmon_Patcher.html');console.log('Page loaded, generated seed',await page.locator('#batch-seed').inputValue());await page.locator('#file').setInputFiles(process.env.BACON_ROM||'patch-inputs/Pokemon - Fire Red Version (U) (V1.1).gba');await page.locator('summary').filter({hasText:'Batch randomiser'}).click();await page.locator('#batch-seed').fill('12345');await page.locator('#batch-size').fill(process.env.BACON_BATCH_SIZE||'10');await page.locator('#batch-count').fill('1');await page.locator('#batch-generate').click();const timer=setInterval(async()=>{try{console.log(await page.locator('#batch-status').innerText())}catch{}},10000);try{await page.waitForFunction(()=>document.querySelector('#batch-status').textContent.includes('ready.')||(!document.querySelector('#batch-generate').disabled&&document.querySelector('#batch-status').textContent.length>0),{},{timeout:300000});console.log('Final',await page.locator('#batch-status').innerText());if(!await page.locator('#batch-download a').count())throw Error('No ZIP output');const download=page.waitForEvent('download');await page.locator('#batch-download a').click();await (await download).saveAs('batch-update/browser-split-part.zip');console.log('Downloaded browser ZIP');await page.locator('#batch-generate').click();await page.waitForFunction(()=>document.querySelector('#batch-status').textContent.startsWith('Batch 1 ready.'),{},{timeout:180000});const second=page.waitForEvent('download');await page.locator('#batch-download a').click();await (await second).saveAs('batch-update/browser-split-part-2.zip');console.log('Downloaded second ZIP part');await page.screenshot({path:'randomizer-work/browser-preview.png',fullPage:true});}finally{clearInterval(timer);await browser.close();server.close();}})().catch(e=>{console.error(e);process.exit(1)});
+const { chromium } = require('playwright');
+const fs = require('fs');
+fs.mkdirSync('batch-update', { recursive: true });
+(async () => {
+  fs.mkdirSync('randomizer-work', { recursive: true });
+  const server = require('http').createServer((req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.end(fs.readFileSync('public-output/Kaizo_Baconmon_Patcher.html'));
+  });
+  await new Promise((r) => server.listen(8765, '127.0.0.1', r));
+  const proxyText = process.env.HTTPS_PROXY || process.env.https_proxy;
+  const proxyURL = proxyText ? new URL(proxyText) : null;
+  const browser = await chromium.launch({
+    ...(proxyURL
+      ? {
+          proxy: {
+            server: proxyURL.protocol + '//' + proxyURL.host,
+            username: decodeURIComponent(proxyURL.username),
+            password: decodeURIComponent(proxyURL.password),
+            bypass: '127.0.0.1,localhost',
+          },
+        }
+      : {}),
+    headless: true,
+    executablePath: process.env.BACON_CHROME || undefined,
+    args: ['--no-sandbox', '--ignore-certificate-errors'],
+  });
+  const page = await browser.newPage({ acceptDownloads: true, ignoreHTTPSErrors: true });
+  page.on('pageerror', (e) => console.log('PAGE ERROR', e.message));
+  page.on('console', (m) => {
+    if (m.type() === 'error') console.log('BROWSER ERROR', m.text().slice(0, 200));
+  });
+  await page.goto('http://127.0.0.1:8765/Kaizo_Baconmon_Patcher.html');
+  console.log('Page loaded, generated seed', await page.locator('#batch-seed').inputValue());
+  await page
+    .locator('#file')
+    .setInputFiles(
+      process.env.BACON_ROM || 'patch-inputs/Pokemon - Fire Red Version (U) (V1.1).gba',
+    );
+  await page.locator('summary').filter({ hasText: 'Batch randomiser' }).click();
+  await page.locator('#batch-seed').fill('12345');
+  await page.locator('#batch-size').fill(process.env.BACON_BATCH_SIZE || '10');
+  await page.locator('#batch-count').fill('1');
+  await page.locator('#batch-generate').click();
+  const timer = setInterval(async () => {
+    try {
+      console.log(await page.locator('#batch-status').innerText());
+    } catch {}
+  }, 10000);
+  try {
+    await page.waitForFunction(
+      () =>
+        document.querySelector('#batch-status').textContent.includes('ready.') ||
+        (!document.querySelector('#batch-generate').disabled &&
+          document.querySelector('#batch-status').textContent.length > 0),
+      {},
+      { timeout: 300000 },
+    );
+    console.log('Final', await page.locator('#batch-status').innerText());
+    if (!(await page.locator('#batch-download a').count())) throw Error('No ZIP output');
+    const download = page.waitForEvent('download');
+    await page.locator('#batch-download a').click();
+    await (await download).saveAs('batch-update/browser-split-part.zip');
+    console.log('Downloaded browser ZIP');
+    await page.locator('#batch-generate').click();
+    await page.waitForFunction(
+      () => document.querySelector('#batch-status').textContent.startsWith('Batch 1 ready.'),
+      {},
+      { timeout: 180000 },
+    );
+    const second = page.waitForEvent('download');
+    await page.locator('#batch-download a').click();
+    await (await second).saveAs('batch-update/browser-split-part-2.zip');
+    console.log('Downloaded second ZIP part');
+    await page.screenshot({ path: 'randomizer-work/browser-preview.png', fullPage: true });
+  } finally {
+    clearInterval(timer);
+    await browser.close();
+    server.close();
+  }
+})().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

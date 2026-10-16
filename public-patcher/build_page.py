@@ -1,24 +1,108 @@
-from pathlib import Path
-import json,html,base64
-R=Path(__file__).parent;D=R.parent/'public-output';D.mkdir(exist_ok=True,parents=True)
-m=json.loads((R/'manifest.json').read_text());payload=(R/'payload.txt').read_text()
-shared=(R/'shared.js').read_text();script='const CONFIG='+json.dumps(m,separators=(',',':'))+';\nconst PAYLOAD='+json.dumps(payload)+';\n'+shared+'\n'+(R/'patcher.js').read_text()
-script+='\nconst BATCH_PRESETS='+json.dumps(json.loads((R/'randomizer/presets.json').read_text()))+';\nconst ENGINE_JAR='+json.dumps(base64.b64encode((R/'randomizer/PokeRandoZX.jar').read_bytes()).decode())+';\nconst BRIDGE_JAR='+json.dumps(base64.b64encode((R/'randomizer/BaconBridge.jar').read_bytes()).decode())+';\n'+(R/'randomizer.js').read_text()
-style=''' :root{color-scheme:dark}body{font:16px system-ui,sans-serif;max-width:780px;margin:36px auto;padding:0 20px;background:#121417;color:#eee}h1{font-size:30px;margin-bottom:8px}p{line-height:1.55;color:#bbb}fieldset{border:1px solid #495057;border-radius:8px;margin:24px 0;padding:16px}label{display:block;margin:14px 0}small{display:block;color:#abb4bf;margin:4px 0 0 24px;line-height:1.4}button,input::file-selector-button{background:#d84e42;color:white;border:0;border-radius:6px;padding:12px 18px;font:inherit;cursor:pointer}button:disabled{opacity:.4;cursor:default}#downloads{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}#downloads a{background:#292e35;color:#fff;padding:12px;border-radius:6px;text-decoration:none}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#1d2228;padding:18px;border-radius:8px;font:14px/1.5 ui-monospace,monospace}.small{font-size:14px}#status{color:#eee}input[type=checkbox]{accent-color:#d84e42}footer{font-size:13px;color:#929ba7;border-top:1px solid #343b44;margin-top:30px;padding-top:16px}a{color:#ddd}details.help{border:1px solid #495057;border-radius:8px;padding:14px;margin:12px 0}details details{margin:14px 0 14px 12px;padding-left:12px;border-left:2px solid #495057}summary{cursor:pointer;font-weight:600}li{line-height:1.5;margin:10px 0}input[type=number]{width:80px;font:inherit;padding:6px}input:disabled{opacity:.45}.features{padding-left:22px}.features li{margin:18px 0}.features p{margin:4px 0;font-size:14px}'''
-from help_content import help_html
-help_sections=help_html()
-licence_notices='<details><summary>Code licence notices</summary>'+''.join('<details><summary>'+html.escape(title)+'</summary><pre>'+html.escape(path.read_text())+'</pre></details>' for title,path in [('Ironmon VS — MIT',R/'notices/Ironmon_VS_MIT.txt'),('Ironmon Tracker — MIT',R/'notices/Ironmon_Tracker_MIT.txt'),('Rom Patcher JS — MIT',R/'notices/Rom_Patcher_JS_MIT.txt'),('Randomiser code — GPLv3',R/'randomizer/LICENSE-GPL-3.0.txt')])+'</details>'
-labels={g['id']:(g['name'],g['detail']) for g in m['groups'] if g['id'] not in ['core','support']}
-labels['faster']=('Faster FireRed extras','Optional speed and field tweaks from Faster FireRed. Separate from the lab-start switch and the forest nurse.')
-labels['rival']=('Adjust lab rival level','Change all three lab starter parties to the level below, keeping species and moves.')
-choices='<label><input id="package" type="checkbox" checked> <strong>Core Baconmon Package</strong><small>Select all features, or untick anything you do not want.</small></label><p class="small">Extras are independent switches. Shared support code is installed when needed, without activating unticked features. Use a fresh run when changing feature combinations.</p>'
-for id,title,detail in [(k,*v) for k,v in labels.items()]+[(f['id'],f['name'],f['detail']) for f in m['core_features']]:
- node='tutor' if id=='relearner' else 'feature-'+id
- choices+='<label><input class="feature" type="checkbox" id="'+node+'" value="'+id+'" checked> <strong>'+html.escape(title)+'</strong><small>'+html.escape(detail)+'</small></label>'
-choices+='<label>Lab rival level <input id="rivalLevel" type="number" min="1" max="100" step="1" value="8"><small>Whole numbers from 1–100. Default: 8. Applied when Adjust lab rival level is ticked. Apply custom levels after randomization.</small></label>'
+"""Build the self-contained patcher from its source files and templates."""
 
-batch='''<details class="help"><summary>Batch randomiser · beta</summary><p>Use an unrandomized US FireRed 1.1 ROM in the file picker above. The selected features are applied before randomisation. Choose 1–100 ROMs per batch. Large batches download in ZIP parts of up to 10 ROMs to keep memory use down. Download each part before continuing. Each part includes seeds, settings and patch notes, with spoiler logs kept separate for after the run.</p><p class="small">Runs in your browser using UPR-ZX 4.6.0. Internet is needed to load the Java runtime on first use. Generate and download one batch at a time. This is a beta. Seed generation on an actual Android device still needs testing.</p><label>Preset <select id="batch-preset"><option>Kaizo</option><option>Standard</option><option>Ultimate</option><option>Encounters only</option><option>Custom</option></select></label><small>Ironmon presets use UTDZac’s published FireRed settings. Encounters only is a simple Nuzlocke option: wild species change; trainer teams, learnsets and stats stay as supplied. Patch features above are independent of the preset.</small><label>Batch seed <input id="batch-seed" inputmode="numeric" style="width:220px"></label><button id="batch-new-seed" type="button">New seed</button><label>ROMs per batch <input id="batch-size" type="number" value="10" min="1" max="100" list="batch-sizes"></label><datalist id="batch-sizes"><option value="10"><option value="20"><option value="50"><option value="100"></datalist><label>Number of batches <input id="batch-count" type="number" value="1" min="1" max="100"></label><details><summary>Settings string</summary><textarea id="batch-settings" rows="4" style="width:100%;box-sizing:border-box"></textarea><p class="small">Use Custom to paste a compatible 321-format FireRed settings string. Keep the same engine, settings, base ROM and seed to reproduce a batch.</p></details><button id="batch-generate" type="button">Generate first batch</button><p id="batch-status" role="status"></p><div id="batch-download"></div><p class="small">Randomizer: <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases/tag/v4.6.0">UPR-ZX by Ajarmar, based on Dabomstew’s randomizer</a> (GPLv3). Presets: <a href="https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621">UTDZac and contributors</a>. Browser Java runtime: <a href="https://cheerpj.com">CheerpJ by Leaning Technologies</a>.</p></details>'''
-page='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kaizo Baconmon patcher</title><style>'''+style+'''</style></head><body><h1>Kaizo Baconmon</h1><p class="small">FireRed patch · Developed by xbaconator9000x</p><p>Ironmon, but tastier. Based on Kaizo Ironmon, with changes inspired by Ironmon VS and a few extra conveniences.</p><p class="small">Designed for maximum compatibility between ROMs. Changes that cannot be applied are skipped and listed in the output log. I can’t guarantee compatibility with any particular ROM. Designed for clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2; other modified ROMs may also work.</p><label>ROM file <input id="file" type="file" accept=".gba,.agb,.bin,.rom,application/octet-stream"></label><fieldset><legend>Changes to apply</legend>'''+choices+'''</fieldset>'''+help_sections+'''<button id="run">Check and apply</button><p id="status" role="status" aria-live="polite"></p><div id="downloads"></div><pre id="report" hidden></pre>'''+batch+'''<p class="small">Patching works offline. Your ROM stays on your device. The patcher makes a separate copy and does not edit saves.</p><p class="small">Save normally and keep a backup before switching ROMs. Continue from the in-game save, not an old save state.</p><details><summary>Credits</summary><p class="small">Faster FireRed: DrMaple. Ironmon: iateyourpie. Ironmon VS: WaffleSmacker and the VS community. Ironmon Tracker: UTDZac, besteon and contributors. Engine reference: pret/pokefirered.</p></details><footer>Kaizo Baconmon · xbaconator9000x · <a href="Kaizo_Baconmon_Patcher_Source.zip" download>Source and licences</a><p><a href="https://github.com/xbaconator9000x/Kaizo-Baconmon#disclosure">Development disclosure</a></p></footer><script>'''+script+'''</script></body></html>'''
-page=page.replace('Engine reference: pret/pokefirered.</p></details>', 'Engine reference: pret/pokefirered.</p>'+licence_notices+'</details>')
-(D/'Kaizo_Baconmon_Patcher.html').write_text(page)
-print('ROM patcher',len(page))
+import base64
+from html import escape
+import json
+from pathlib import Path
+from string import Template
+
+from help_content import help_html
+
+SOURCE_DIRECTORY = Path(__file__).resolve().parent
+OUTPUT_DIRECTORY = SOURCE_DIRECTORY.parent / "public-output"
+
+
+def embedded_script(manifest):
+    randomiser_directory = SOURCE_DIRECTORY / "randomizer"
+    presets = json.loads((randomiser_directory / "presets.json").read_text())
+    engine = base64.b64encode((randomiser_directory / "PokeRandoZX.jar").read_bytes()).decode()
+    bridge = base64.b64encode((randomiser_directory / "BaconBridge.jar").read_bytes()).decode()
+    return "\n".join(
+        [
+            "const CONFIG=" + json.dumps(manifest, separators=(",", ":")) + ";",
+            "const PAYLOAD=" + json.dumps((SOURCE_DIRECTORY / "payload.txt").read_text()) + ";",
+            (SOURCE_DIRECTORY / "shared.js").read_text(),
+            (SOURCE_DIRECTORY / "patcher.js").read_text(),
+            "const BATCH_PRESETS=" + json.dumps(presets) + ";",
+            "const ENGINE_JAR=" + json.dumps(engine) + ";",
+            "const BRIDGE_JAR=" + json.dumps(bridge) + ";",
+            (SOURCE_DIRECTORY / "randomizer.js").read_text(),
+        ]
+    )
+
+
+def feature_choices(manifest):
+    labels = {
+        group["id"]: (group["name"], group["detail"])
+        for group in manifest["groups"]
+        if group["id"] not in ["core", "support"]
+    }
+    labels["faster"] = (
+        "Faster FireRed extras",
+        "Optional speed and field tweaks from Faster FireRed. Separate from the lab-start switch and the forest nurse.",
+    )
+    labels["rival"] = (
+        "Adjust lab rival level",
+        "Set the three lab starter parties to the level below, keeping their species and moves.",
+    )
+    sections = [
+        '<label><input id="package" type="checkbox" checked> '
+        "<strong>Core Baconmon Package</strong>"
+        "<small>Use the full setup, or untick the bits you don’t want.</small></label>",
+        '<p class="small">Start a fresh run when changing the setup.</p>',
+    ]
+    features = [(key, *value) for key, value in labels.items()]
+    features += [
+        (feature["id"], feature["name"], feature["detail"]) for feature in manifest["core_features"]
+    ]
+    for feature_id, title, description in features:
+        element_id = "tutor" if feature_id == "relearner" else "feature-" + feature_id
+        sections.append(
+            f'<label><input class="feature" type="checkbox" id="{element_id}" '
+            f'value="{feature_id}" checked> <strong>{escape(title)}</strong>'
+            f"<small>{escape(description)}</small></label>"
+        )
+    sections.append(
+        '<label>Lab rival level <input id="rivalLevel" type="number" min="1" max="100" '
+        'step="1" value="8"><small>Whole numbers from 1–100. Default: 8. '
+        "Used when Adjust lab rival level is ticked. Apply custom levels after randomisation."
+        "</small></label>"
+    )
+    return "\n".join(sections)
+
+
+def licence_notices():
+    notices = [
+        ("Ironmon VS — MIT", "notices/Ironmon_VS_MIT.txt"),
+        ("Ironmon Tracker — MIT", "notices/Ironmon_Tracker_MIT.txt"),
+        ("Rom Patcher JS — MIT", "notices/Rom_Patcher_JS_MIT.txt"),
+        ("Randomiser code — GPLv3", "randomizer/LICENSE-GPL-3.0.txt"),
+    ]
+    sections = ["<details><summary>Code licence notices</summary>"]
+    for title, path in notices:
+        text = escape((SOURCE_DIRECTORY / path).read_text())
+        sections.append(f"<details><summary>{escape(title)}</summary><pre>{text}</pre></details>")
+    sections.append("</details>")
+    return "\n".join(sections)
+
+
+def build_page():
+    manifest = json.loads((SOURCE_DIRECTORY / "manifest.json").read_text())
+    template = Template((SOURCE_DIRECTORY / "page_template.html").read_text())
+    stylesheet = (SOURCE_DIRECTORY / "patcher.css").read_text()
+    page = template.substitute(
+        style_tag="<style>" + stylesheet + "</style>",
+        licence_notices=licence_notices(),
+        choices=feature_choices(manifest),
+        help_sections=help_html(),
+        batch=(SOURCE_DIRECTORY / "batch_template.html").read_text(),
+        script_tag="<script>" + embedded_script(manifest) + "</script>",
+    )
+    OUTPUT_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    output = OUTPUT_DIRECTORY / "Kaizo_Baconmon_Patcher.html"
+    output.write_text(page)
+    print(f"Built {output.name} ({len(page.encode())} bytes).")
+
+
+if __name__ == "__main__":
+    build_page()

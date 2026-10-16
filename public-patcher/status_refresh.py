@@ -5,20 +5,26 @@ followed by the Oak controller completion routine.
 No status, party, battle rules, randomizer tables or save data are changed.
 Build dependency: keystone-engine (Thumb assembler).
 """
+
 from pathlib import Path
-import json,struct,hashlib
-R=Path(__file__).resolve().parent;ROOT=R.parent
-BASE=0x087f0000;HOOK=0x32be8
+import json, struct, hashlib
+
+R = Path(__file__).resolve().parent
+ROOT = R.parent
+BASE = 0x087F0000
+HOOK = 0x32BE8
+
 
 def legacy_build(clean):
- from keystone import Ks,KS_ARCH_ARM,KS_MODE_THUMB
- S=json.loads((ROOT/'source/source/work-v09/native/original-symbols.json').read_text())
- # First twelve original bytes include two PC-relative loads. Relocate those
- # loads explicitly, then return to the untouched function at +12.
- assert clean[HOOK:HOOK+12].hex()=='10b514491448007880004018'
- r1=struct.unpack_from('<I',clean,HOOK+0x54)[0]
- r0=struct.unpack_from('<I',clean,HOOK+0x58)[0]
- asm=f'''
+    from keystone import Ks, KS_ARCH_ARM, KS_MODE_THUMB
+
+    S = json.loads((ROOT / "source/source/work-v09/native/original-symbols.json").read_text())
+    # First twelve original bytes include two PC-relative loads. Relocate those
+    # loads explicitly, then return to the untouched function at +12.
+    assert clean[HOOK : HOOK + 12].hex() == "10b514491448007880004018"
+    r1 = struct.unpack_from("<I", clean, HOOK + 0x54)[0]
+    r0 = struct.unpack_from("<I", clean, HOOK + 0x58)[0]
+    asm = f"""
  push {{r4,r5,r6,lr}}
  ldr r0, ={S['gBattlersCount']:#x}
  ldrb r5, [r0]
@@ -61,16 +67,18 @@ def legacy_build(clean):
  ldr r3, ={0x08000000+HOOK+12+1:#x}
  bx r3
  .ltorg
- '''
- code=bytes(Ks(KS_ARCH_ARM,KS_MODE_THUMB).asm(asm,addr=BASE)[0])
- assert len(code)<=256
- hook=bytes.fromhex('014b1847c046c046')+struct.pack('<I',BASE|1)
- return code,hook,asm
+ """
+    code = bytes(Ks(KS_ARCH_ARM, KS_MODE_THUMB).asm(asm, addr=BASE)[0])
+    assert len(code) <= 256
+    hook = bytes.fromhex("014b1847c046c046") + struct.pack("<I", BASE | 1)
+    return code, hook, asm
+
 
 def build(clean):
- from keystone import Ks,KS_ARCH_ARM,KS_MODE_THUMB
- S=json.loads((ROOT/'source/source/work-v09/native/original-symbols.json').read_text())
- asm=f"""
+    from keystone import Ks, KS_ARCH_ARM, KS_MODE_THUMB
+
+    S = json.loads((ROOT / "source/source/work-v09/native/original-symbols.json").read_text())
+    asm = f"""
  push {{r4,lr}}
  ldr r4, ={S['gActiveBattler']:#x}
  ldrb r0, [r4]
@@ -94,32 +102,61 @@ def build(clean):
  bx r3
  .ltorg
  """
- code=bytes(Ks(KS_ARCH_ARM,KS_MODE_THUMB).asm(asm,addr=BASE)[0])
- hook=bytes.fromhex('014b1847c046c046')+struct.pack('<I',BASE|1)
- assert len(code)<=256
- return code,hook,asm
+    code = bytes(Ks(KS_ARCH_ARM, KS_MODE_THUMB).asm(asm, addr=BASE)[0])
+    hook = bytes.fromhex("014b1847c046c046") + struct.pack("<I", BASE | 1)
+    assert len(code) <= 256
+    return code, hook, asm
 
-OAK_HOOK=0xeab68
 
-def configure(groups,blob,C,F,T):
- code,hook,asm=build(C);oldcode,oldhook,_=legacy_build(C)
- (R/'status_refresh.s').write_text(asm.strip()+'\n')
- g=dict(id='status',name='Battle status display',detail='Fix missing status icons in the lab rival battle, including paralysis, poison, burn, sleep and freeze.',records=[],guards=[])
- def record(a,after,n=None,legacy=None):
-  n=n or len(after);after=after.ljust(n,b'\xff');before=C[a:a+n]
-  assert F[a:a+n]==before and T[a:a+n]==before
-  accepted=[before,after]+([legacy.ljust(n,b'\xff')] if legacy is not None else [])
-  g['records'].append(dict(offset=a,length=n,data=blob(after),guard_offset=a,guard_length=n,accepted=sorted(set(hashlib.sha256(x).hexdigest() for x in accepted)),mask=[],preserve=[]))
- # Remove the earlier ordinary-controller safeguard when upgrading that build.
- record(HOOK,C[HOOK:HOOK+12],legacy=oldhook)
- record(OAK_HOOK,hook)
- record(BASE-0x08000000,code,256,legacy=oldcode)
- for a,b in [(HOOK+12,HOOK+0x64),(0x49948,0x49bf8)]:
-  assert C[a:b]==F[a:b]==T[a:b]
-  g['guards'].append(dict(offset=a,length=b-a,accepted=[hashlib.sha256(C[a:b]).hexdigest()]))
- groups['status']=g
- return [(HOOK,HOOK+12),(OAK_HOOK,OAK_HOOK+12)]
+OAK_HOOK = 0xEAB68
 
-if __name__=='__main__':
- c=(ROOT/'patch-inputs/Pokemon - Fire Red Version (U) (V1.1).gba').read_bytes()
- code,hook,asm=build(c);print(len(code),hook.hex());(R/'status_refresh.s').write_text(asm.strip()+'\n')
+
+def configure(groups, blob, C, F, T):
+    code, hook, asm = build(C)
+    oldcode, oldhook, _ = legacy_build(C)
+    (R / "status_refresh.s").write_text(asm.strip() + "\n")
+    g = dict(
+        id="status",
+        name="Battle status display",
+        detail="Fix missing status icons in the lab rival battle, including paralysis, poison, burn, sleep and freeze.",
+        records=[],
+        guards=[],
+    )
+
+    def record(a, after, n=None, legacy=None):
+        n = n or len(after)
+        after = after.ljust(n, b"\xff")
+        before = C[a : a + n]
+        assert F[a : a + n] == before and T[a : a + n] == before
+        accepted = [before, after] + ([legacy.ljust(n, b"\xff")] if legacy is not None else [])
+        g["records"].append(
+            dict(
+                offset=a,
+                length=n,
+                data=blob(after),
+                guard_offset=a,
+                guard_length=n,
+                accepted=sorted(set(hashlib.sha256(x).hexdigest() for x in accepted)),
+                mask=[],
+                preserve=[],
+            )
+        )
+
+    # Remove the earlier ordinary-controller safeguard when upgrading that build.
+    record(HOOK, C[HOOK : HOOK + 12], legacy=oldhook)
+    record(OAK_HOOK, hook)
+    record(BASE - 0x08000000, code, 256, legacy=oldcode)
+    for a, b in [(HOOK + 12, HOOK + 0x64), (0x49948, 0x49BF8)]:
+        assert C[a:b] == F[a:b] == T[a:b]
+        g["guards"].append(
+            dict(offset=a, length=b - a, accepted=[hashlib.sha256(C[a:b]).hexdigest()])
+        )
+    groups["status"] = g
+    return [(HOOK, HOOK + 12), (OAK_HOOK, OAK_HOOK + 12)]
+
+
+if __name__ == "__main__":
+    c = (ROOT / "patch-inputs/Pokemon - Fire Red Version (U) (V1.1).gba").read_bytes()
+    code, hook, asm = build(c)
+    print(len(code), hook.hex())
+    (R / "status_refresh.s").write_text(asm.strip() + "\n")

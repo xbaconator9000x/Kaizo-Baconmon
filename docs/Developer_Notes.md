@@ -1,74 +1,100 @@
-# Developer notes
+# Working on the patcher
 
-This repository contains the browser patcher, patch manifests, randomiser integration and verification reports. It is not a full FireRed decompilation. No playable ROM, APK or save is included.
+This repo has the browser patcher, its patch data, the randomiser integration and the test reports. You can rebuild the HTML page from these files. Rebuilding the ROM patches needs the original development inputs as well.
 
-## Repository layout
+## Where things live
 
-| Path | Contents |
-| --- | --- |
-| index.html | Self-contained patcher served by GitHub Pages. |
-| public-patcher/ | Page builder, patch application code, embedded manifests and verification scripts. |
-| public-patcher/randomizer/ | UPR-ZX 4.6.0, its corresponding source, presets and the Java adapter. |
-| patch-work/ | Byte, hash and BPS utilities used for independent patch checks. |
-| reports/ | Recorded compatibility, browser and desktop emulator results. |
-| notices/ and public-patcher/notices/ | Third-party licence notices. |
-| Kaizo_Baconmon_Patcher_Source.zip | A packaged copy of the public files, excluding the ZIP itself. |
+| Path                                 | What's in it                                                                 |
+| ------------------------------------ | ---------------------------------------------------------------------------- |
+| index.html                           | The complete patcher used by GitHub Pages.                                   |
+| public-patcher/                      | The patching code, page builder, HTML templates, CSS and tests.              |
+| public-patcher/randomizer/           | UPR-ZX 4.6.0, its source, presets and the Java adapter.                      |
+| patch-work/                          | The byte, hash and BPS tools used to check patch exports.                    |
+| reports/                             | Results from the recorded browser, compatibility and desktop emulator tests. |
+| notices/ and public-patcher/notices/ | The original licence notices.                                                |
+| scripts/package_source.py            | Rebuilds the public source ZIP.                                              |
 
-## Build the HTML page
+The source ZIP is a copy of the public files. It contains no playable ROM, APK or save.
 
-Python 3 and the checked-in files are sufficient to rebuild the page:
+## Build the page
+
+From the repo folder, run:
 
 ```sh
 python3 public-patcher/build_page.py
 ```
 
-The output is public-output/Kaizo_Baconmon_Patcher.html. Copy it to index.html to update the hosted page. The builder embeds the current manifest, payload, JavaScript, presets, JARs, help text and licence notices; it does not need a ROM.
+This only needs Python 3 and the files already in the repo. It writes public-output/Kaizo_Baconmon_Patcher.html. Copy that to index.html when updating the website.
 
-To rebuild the Java adapter with a Java 17+ JDK:
+The builder puts the scripts, patch data, presets, Java files, help and licence notices into one HTML file. The layout and wording are in page_template.html, help_template.html and batch_template.html. The stylesheet is patcher.css.
+
+The in-game rule articles come from guide_content.json. The patch signatures and payload are generated data, so they keep their existing compact format.
+
+## Keep the formatting consistent
+
+The first-party JavaScript, HTML and CSS use Prettier. Python uses Black. Install the pinned development tools with:
+
+```sh
+npm ci
+python3 -m pip install -r requirements-dev.txt
+```
+
+Use npm run format to apply the formatting, or npm run format:check to check it. The original third-party source and licence files keep their upstream formatting.
+
+## Java adapter
+
+To rebuild BaconBridge with a Java 17+ JDK:
 
 ```sh
 python3 public-patcher/randomizer/build_bridge.py
 python3 public-patcher/build_page.py
 ```
 
-The adapter targets Java 8 bytecode. The UPR-ZX engine is retained unmodified, with its exact corresponding v4.6.0 source archive.
+The adapter targets Java 8. The UPR-ZX 4.6.0 engine is unmodified, and its matching source archive is included.
 
-## Patch manifests and ROM inputs
+## ROM patch data
 
-The checked-in manifest.json and payload.txt are the inputs for the page build. Regenerating compatibility signatures with build_manifest.py requires the original development inputs and helpers, which are not all included in this public package: clean US FireRed 1.1, the Faster FireRed patch, the audited Baconmon reference builds, symbol metadata, native build helpers and earlier fixtures.
+The page build uses the existing manifest.json and payload.txt. Regenerating those with build_manifest.py needs the original ROMs, Faster FireRed patch, audited Baconmon builds, symbol files, native helpers and earlier test fixtures. Those inputs aren't all in this public package.
 
-The ROM-dependent scripts retain their expected project-relative paths. They are supplied for inspection and development with those inputs; a clean checkout alone cannot run the complete native test suite or recreate all ROM signatures.
+The patcher checks each feature's hooks, scripts and required space. Matching features can be applied; conflicting ones are skipped and listed in the notes. Unrelated seed data, expanded ROM bytes and detected copier headers are preserved. Matching checks still can't guarantee that every part of another hack will work in-game.
 
-Feature application uses local hook, script and allocation guards. Matching features apply independently where possible; conflicts are reported as skipped. The patcher preserves unrelated seed data, expanded ROM bytes and detected copier headers. A matching byte layout does not guarantee that every feature of another hack will work at runtime.
+The shared support only enables the features selected. Change the setup for a fresh run; the patcher doesn't migrate or remove old save data.
 
-Shared support installs code and scripts without enabling unticked gameplay entry points. Changing the feature combination is intended for fresh runs. The patcher does not migrate or remove old save data.
+## Randomiser
 
-## Browser randomiser
+The beta uses UPR-ZX 4.6.0 through BaconBridge and CheerpJ 4.3. CheerpJ loads from its vendor the first time, so randomisation needs internet. Patching works offline.
 
-The beta randomiser uses unmodified UPR-ZX 4.6.0 through BaconBridge and CheerpJ 4.3. CheerpJ loads from the vendor on first use; patching itself remains offline.
+Every new ROM starts from the same patched base. The same base, options, engine, settings and root seed should produce the same outputs. The manifest records those details, hashes and each ROM's seed. Selected rival levels are checked again after randomisation.
 
-Each generated ROM starts from the same patched base. The root seed, per-ROM seeds, selected options, engine, settings and hashes identify reproducible output. Selected rival levels are checked again after randomisation.
+Choose 1–100 ROMs per batch and 1–100 batches. The default is 10 ROMs. ZIP parts hold up to 10 ROMs, with numbering and seed order kept across parts. Only the latest download link is kept in memory. Spoiler logs stay in their own folder.
 
-Batches accept 1–100 ROMs, defaulting to 10, and 1–100 batches. ZIP parts contain up to 10 ROMs. Part boundaries preserve numbering and seed order, and only the latest ZIP link is retained in memory. Spoiler logs are packaged separately.
+## Tests
 
-## Verification
+[The reports folder](../reports/README.md) explains what was checked. Each report records a particular test run; an older report doesn't mean that test was rerun for every later edit.
 
-[Recorded reports](../reports/README.md) describe the scope of each check. Historical reports are not a claim that every test was rerun for the current documentation update.
+The desktop checks cover patch selection, preserved data, BPS and undo exports, selected game features, guide navigation and normal Save/Continue. Browser generation covered two 10-ROM batches and an 11-ROM batch split into 10+1. Matching seeds gave matching ROMs across those boundaries.
 
-- Compatibility and export checks cover independent feature selection, guards, preserved seed data, BPS output and undo round trips.
-- Desktop mGBA checks cover selected game behavior, guide navigation, normal Save/Continue, field helpers and the lab status repair in both modes.
-- Real desktop browser generation covered two 10-ROM batches and an 11-ROM batch split into 10+1. Equal seeds matched across batch and part boundaries.
-- The 100-ROM scheduling, numbering and retry checks used a stub engine. An actual 100-ROM batch and a complete campaign playthrough are outside those results.
-- Automated desktop reports do not establish physical Android installation, layout, touch or controller coverage. Manual device results are separate from those checks.
+The 100-ROM scheduling and retry tests use a stub engine. They don't measure a real 100-ROM batch. A full playthrough and physical Android layout, touch and controller checks are outside those desktop reports.
 
-Verification scripts are in public-patcher/. JavaScript checks use Node.js; browser checks also require Playwright. Native and field checks need the earlier ROM fixtures and emulator/native harness. Generated output is written to public-output/ and randomizer-work/.
+Tests are in public-patcher/. JavaScript tests use Node.js, and browser tests also need Playwright. The native tests need the earlier ROM fixtures and emulator harness. Test output goes to public-output/ and randomizer-work/.
 
-The lab status repair is implemented in status_refresh.py and status_refresh.s. It replaces the Oak/tutorial controller's empty status-icon handler, redraws on the normal status-update command and completes the command through the Oak controller. It also removes the earlier action-menu workaround. It does not change Pokémon data or the save format.
+Run the batch scheduling checks with:
 
-## Downloads and saves
+```sh
+npm run build
+npm run test:batch
+```
 
-The patcher can export a separate ROM, patch notes, an exact-input BPS patch, an undo patch and a detailed report. Undo restores the ROM, not save progress. Preserve normal battery saves and their matching ROM filenames when changing versions; old emulator states are not a save-migration mechanism.
+The lab status fix is in status_refresh.py and status_refresh.s. It redraws status icons through the Oak/tutorial controller and removes the earlier action-menu workaround. It doesn't change Pokémon data or the save format.
 
-The source ZIP contains the same public files as the repository, excluding generated working directories and the ZIP itself. Rebuild the page before repackaging it.
+## Package an update
+
+Rebuild the page, copy it to index.html, then run:
+
+```sh
+python3 scripts/package_source.py
+```
+
+This packs the public files into Kaizo_Baconmon_Patcher_Source.zip, leaving out generated working folders and the ZIP itself.
 
 [User guide](Patcher_Guide.md) · [Credits and permissions](../Credits_and_Permissions.md) · [Development disclosure](../README.md#disclosure)

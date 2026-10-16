@@ -1,19 +1,175 @@
-const fs=require('fs'),vm=require('vm'),crypto=require('crypto'),assert=require('assert'),path=require('path');const root=path.resolve(__dirname,'..');
-const html=fs.readFileSync(path.join(root,'public-output/Kaizo_Baconmon_Patcher.html'),'utf8'),ctx=vm.createContext({crypto:crypto.webcrypto,DecompressionStream,Response,Blob,atob,Uint8Array,Uint32Array,DataView,Array,TextEncoder,Error,Math});vm.runInContext(html.match(/<script>([\s\S]*)<\/script>/)[1]+';globalThis.M=CONFIG;globalThis.pool=()=>LegacyCore.inflate(PAYLOAD);',ctx);
-const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),stat=(r,id)=>r.report.features.find(f=>f.id===id)?.status;
-(async()=>{const p=await ctx.pool(),M=ctx.M,api=ctx.BaconPublic,C=new Uint8Array(fs.readFileSync(path.join(root,'patch-inputs/Pokemon - Fire Red Version (U) (V1.1).gba'))),checks=[];const all=M.groups.map(g=>g.id);
-async function run(name,b,selection=all){const before=hash(b),r=await api.patchROM(b,selection,p);assert.equal(hash(b),before);assert.equal(r.rom.length,b.length);checks.push({name,input_unchanged:true,file_size_preserved:true,input:r.report.input,applied:r.report.features.filter(f=>f.status==='applied').map(f=>f.id),skipped:r.report.features.filter(f=>f.status==='skipped').map(f=>f.id),warnings:r.report.warnings});return r;}
-// Unrelated changes no longer make a ROM fail the whole-engine fingerprint gate.
-const edited=C.slice();edited[0x180000]^=1;edited[0x2dfc]^=1;const e=await run('Unrelated custom engine and text edits',edited);assert(!e.report.input.known_engine);assert.equal(stat(e,'core'),'applied');assert.equal(stat(e,'modern'),'applied');assert.equal(e.rom[0x2dfc],edited[0x2dfc]);assert.equal(e.rom[0x180000],edited[0x180000]);
-const named=C.slice();named.set(Buffer.from('CUSTOMHACK   '),0xa0);named.set(Buffer.from('HACK'),0xac);named[0xbc]=9;const n=await run('Custom title, game code and revision',named);assert(n.report.input.layout_verified);assert.equal(stat(n,'core'),'applied');assert.deepEqual(Array.from(n.rom.slice(0xa0,0xbd)),Array.from(named.slice(0xa0,0xbd)));assert(n.report.warnings.some(w=>/differs/.test(w)));
-const wrapped=new Uint8Array(named.length+512);wrapped.fill(0xa5);wrapped.set(named,512);const w=await run('Custom header with a 512-byte copier prefix',wrapped);assert.deepEqual(Array.from(w.rom.slice(0,512)),Array.from(wrapped.slice(0,512)));assert(w.report.input.copier_header_bytes===512);assert.equal(hash(w.rom.slice(512)),hash(n.rom));
-const lab=C.slice();lab[0x54968]^=1;const l=await run('Conflicting lab hook only',lab);assert.equal(stat(l,'lab'),'skipped');assert.equal(stat(l,'modern'),'applied');assert.equal(stat(l,'guide'),'applied');assert.equal(stat(l,'hms'),'applied');assert.deepEqual(Array.from(l.rom.slice(0x54968,0x54980)),Array.from(lab.slice(0x54968,0x54980)));
-const modern=C.slice();modern.set([0,32,112,71,192,70,192,70,192,70,192,70],0x19f2c);const m=await run('Conflicting ability hook only',modern);assert.equal(stat(m,'modern'),'skipped');assert.equal(stat(m,'lab'),'applied');assert.equal(stat(m,'battleinfo'),'applied');assert.equal(stat(m,'guide'),'applied');assert.deepEqual(Array.from(m.rom.slice(0x19f2c,0x19f38)),Array.from(modern.slice(0x19f2c,0x19f38)));const helper=M.switches.find(t=>t.feature==='modern'&&t.shared_required&&t.length===4);assert.deepEqual(Array.from(m.rom.slice(helper.offset,helper.offset+4)),[0,32,112,71]);fs.writeFileSync(path.join(root,'compatibility-work/modern-skipped.gba'),m.rom);
-const trainer=C.slice();trainer[M.rival_normalizer.offset]^=1;const t=await run('Foreign trainer-creation hook',trainer);assert.equal(stat(t,'rival'),'skipped');assert.equal(stat(t,'core'),'applied');assert.equal(stat(t,'guide'),'applied');assert.deepEqual(Array.from(t.rom.slice(M.rival_normalizer.offset,M.rival_normalizer.offset+8)),Array.from(trainer.slice(M.rival_normalizer.offset,M.rival_normalizer.offset+8)));
-const unselected=await run('Conflicting lab hook with lab switch off',lab,['modern','hms']);assert.equal(stat(unselected,'modern'),'applied');assert.equal(stat(unselected,'lab'),'not_selected');assert.equal(unselected.rom[0x54968],lab[0x54968]);
-const unknown=new Uint8Array(0x1000000);unknown.set(Buffer.from('OTHER GAME  '),0xa0);unknown.set(Buffer.from('BPEE'),0xac);const u=await run('Different game layout',unknown);assert(!u.report.input.layout_verified);assert.equal(hash(u.rom),hash(unknown));assert(u.report.features.some(f=>f.status==='skipped'));assert(api.patchNotes(u.report,'Other.gba').includes('SKIPPED'));
-const short=await run('Short unrecognized ROM',unknown.slice(0,512));assert(!short.report.changed);assert(short.report.warnings.length);
-const small=await run('Smaller file with matching local features',C.slice(0,0x800000),['status','hidden']);assert.equal(stat(small,'status'),'applied');assert.equal(stat(small,'hidden'),'applied');
-const noFast=await api.patchROM(C,all.filter(x=>x!=='faster'),p),custom=noFast.rom.slice();for(const a of [0x402290,0x754b38,0x754b44,0x754c48])custom[a]=99;const kept=await run('Existing Baconmon without Faster, custom starter and PC data',custom);if(stat(kept,'core')==='skipped')console.log(kept.report.features.filter(f=>['core','support','faster'].includes(f.id)));assert.notEqual(stat(kept,'core'),'skipped');for(const a of [0x402290,0x754b38,0x754b44,0x754c48])assert.equal(kept.rom[a],99);
-const seedPath=path.join(root,'upload/Baconmon_3474603762342677_0003.gba');if(fs.existsSync(seedPath)){const seed=new Uint8Array(fs.readFileSync(seedPath)),r=await run('Supplied randomized seed with UPR engine edits',seed);assert.equal(stat(r,'core'),'applied');assert(['applied','existing'].includes(stat(r,'modern')));for(const a of [0x402290,0x754b38,0x754b44,0x754c48])assert.equal(r.rom[a],seed[a]);fs.writeFileSync(path.join(root,'compatibility-work/actual-seed.gba'),r.rom);}
-fs.writeFileSync(path.join(root,'public-output/Best_Effort_Compatibility_Tests.json'),JSON.stringify({checks,scope:'Actual HTML patch engine under Node. Different headers and unfamiliar layouts are reported, not rejected. Local conflicts and allocations remain guarded. Runtime checks reported separately; these tests do not prove compatibility with every ROM hack.'},null,2));console.log('PASS',checks.length,'best-effort compatibility cases.');})().catch(e=>{console.error(e);process.exit(1)});
+const fs = require('fs'),
+  vm = require('vm'),
+  crypto = require('crypto'),
+  assert = require('assert'),
+  path = require('path');
+const root = path.resolve(__dirname, '..');
+const html = fs.readFileSync(path.join(root, 'public-output/Kaizo_Baconmon_Patcher.html'), 'utf8'),
+  ctx = vm.createContext({
+    crypto: crypto.webcrypto,
+    DecompressionStream,
+    Response,
+    Blob,
+    atob,
+    Uint8Array,
+    Uint32Array,
+    DataView,
+    Array,
+    TextEncoder,
+    Error,
+    Math,
+  });
+vm.runInContext(
+  html.match(/<script>([\s\S]*)<\/script>/)[1] +
+    ';globalThis.M=CONFIG;globalThis.pool=()=>LegacyCore.inflate(PAYLOAD);',
+  ctx,
+);
+const hash = (b) => crypto.createHash('sha256').update(b).digest('hex'),
+  stat = (r, id) => r.report.features.find((f) => f.id === id)?.status;
+(async () => {
+  const p = await ctx.pool(),
+    M = ctx.M,
+    api = ctx.BaconPublic,
+    C = new Uint8Array(
+      fs.readFileSync(path.join(root, 'patch-inputs/Pokemon - Fire Red Version (U) (V1.1).gba')),
+    ),
+    checks = [];
+  const all = M.groups.map((g) => g.id);
+  async function run(name, b, selection = all) {
+    const before = hash(b),
+      r = await api.patchROM(b, selection, p);
+    assert.equal(hash(b), before);
+    assert.equal(r.rom.length, b.length);
+    checks.push({
+      name,
+      input_unchanged: true,
+      file_size_preserved: true,
+      input: r.report.input,
+      applied: r.report.features.filter((f) => f.status === 'applied').map((f) => f.id),
+      skipped: r.report.features.filter((f) => f.status === 'skipped').map((f) => f.id),
+      warnings: r.report.warnings,
+    });
+    return r;
+  }
+  // Unrelated changes no longer make a ROM fail the whole-engine fingerprint gate.
+  const edited = C.slice();
+  edited[0x180000] ^= 1;
+  edited[0x2dfc] ^= 1;
+  const e = await run('Unrelated custom engine and text edits', edited);
+  assert(!e.report.input.known_engine);
+  assert.equal(stat(e, 'core'), 'applied');
+  assert.equal(stat(e, 'modern'), 'applied');
+  assert.equal(e.rom[0x2dfc], edited[0x2dfc]);
+  assert.equal(e.rom[0x180000], edited[0x180000]);
+  const named = C.slice();
+  named.set(Buffer.from('CUSTOMHACK   '), 0xa0);
+  named.set(Buffer.from('HACK'), 0xac);
+  named[0xbc] = 9;
+  const n = await run('Custom title, game code and revision', named);
+  assert(n.report.input.layout_verified);
+  assert.equal(stat(n, 'core'), 'applied');
+  assert.deepEqual(Array.from(n.rom.slice(0xa0, 0xbd)), Array.from(named.slice(0xa0, 0xbd)));
+  assert(n.report.warnings.some((w) => /differs/.test(w)));
+  const wrapped = new Uint8Array(named.length + 512);
+  wrapped.fill(0xa5);
+  wrapped.set(named, 512);
+  const w = await run('Custom header with a 512-byte copier prefix', wrapped);
+  assert.deepEqual(Array.from(w.rom.slice(0, 512)), Array.from(wrapped.slice(0, 512)));
+  assert(w.report.input.copier_header_bytes === 512);
+  assert.equal(hash(w.rom.slice(512)), hash(n.rom));
+  const lab = C.slice();
+  lab[0x54968] ^= 1;
+  const l = await run('Conflicting lab hook only', lab);
+  assert.equal(stat(l, 'lab'), 'skipped');
+  assert.equal(stat(l, 'modern'), 'applied');
+  assert.equal(stat(l, 'guide'), 'applied');
+  assert.equal(stat(l, 'hms'), 'applied');
+  assert.deepEqual(
+    Array.from(l.rom.slice(0x54968, 0x54980)),
+    Array.from(lab.slice(0x54968, 0x54980)),
+  );
+  const modern = C.slice();
+  modern.set([0, 32, 112, 71, 192, 70, 192, 70, 192, 70, 192, 70], 0x19f2c);
+  const m = await run('Conflicting ability hook only', modern);
+  assert.equal(stat(m, 'modern'), 'skipped');
+  assert.equal(stat(m, 'lab'), 'applied');
+  assert.equal(stat(m, 'battleinfo'), 'applied');
+  assert.equal(stat(m, 'guide'), 'applied');
+  assert.deepEqual(
+    Array.from(m.rom.slice(0x19f2c, 0x19f38)),
+    Array.from(modern.slice(0x19f2c, 0x19f38)),
+  );
+  const helper = M.switches.find(
+    (t) => t.feature === 'modern' && t.shared_required && t.length === 4,
+  );
+  assert.deepEqual(Array.from(m.rom.slice(helper.offset, helper.offset + 4)), [0, 32, 112, 71]);
+  fs.writeFileSync(path.join(root, 'compatibility-work/modern-skipped.gba'), m.rom);
+  const trainer = C.slice();
+  trainer[M.rival_normalizer.offset] ^= 1;
+  const t = await run('Foreign trainer-creation hook', trainer);
+  assert.equal(stat(t, 'rival'), 'skipped');
+  assert.equal(stat(t, 'core'), 'applied');
+  assert.equal(stat(t, 'guide'), 'applied');
+  assert.deepEqual(
+    Array.from(t.rom.slice(M.rival_normalizer.offset, M.rival_normalizer.offset + 8)),
+    Array.from(trainer.slice(M.rival_normalizer.offset, M.rival_normalizer.offset + 8)),
+  );
+  const unselected = await run('Conflicting lab hook with lab switch off', lab, ['modern', 'hms']);
+  assert.equal(stat(unselected, 'modern'), 'applied');
+  assert.equal(stat(unselected, 'lab'), 'not_selected');
+  assert.equal(unselected.rom[0x54968], lab[0x54968]);
+  const unknown = new Uint8Array(0x1000000);
+  unknown.set(Buffer.from('OTHER GAME  '), 0xa0);
+  unknown.set(Buffer.from('BPEE'), 0xac);
+  const u = await run('Different game layout', unknown);
+  assert(!u.report.input.layout_verified);
+  assert.equal(hash(u.rom), hash(unknown));
+  assert(u.report.features.some((f) => f.status === 'skipped'));
+  assert(api.patchNotes(u.report, 'Other.gba').includes('SKIPPED'));
+  const short = await run('Short unrecognized ROM', unknown.slice(0, 512));
+  assert(!short.report.changed);
+  assert(short.report.warnings.length);
+  const small = await run('Smaller file with matching local features', C.slice(0, 0x800000), [
+    'status',
+    'hidden',
+  ]);
+  assert.equal(stat(small, 'status'), 'applied');
+  assert.equal(stat(small, 'hidden'), 'applied');
+  const noFast = await api.patchROM(
+      C,
+      all.filter((x) => x !== 'faster'),
+      p,
+    ),
+    custom = noFast.rom.slice();
+  for (const a of [0x402290, 0x754b38, 0x754b44, 0x754c48]) custom[a] = 99;
+  const kept = await run('Existing Baconmon without Faster, custom starter and PC data', custom);
+  if (stat(kept, 'core') === 'skipped')
+    console.log(kept.report.features.filter((f) => ['core', 'support', 'faster'].includes(f.id)));
+  assert.notEqual(stat(kept, 'core'), 'skipped');
+  for (const a of [0x402290, 0x754b38, 0x754b44, 0x754c48]) assert.equal(kept.rom[a], 99);
+  const seedPath = path.join(root, 'upload/Baconmon_3474603762342677_0003.gba');
+  if (fs.existsSync(seedPath)) {
+    const seed = new Uint8Array(fs.readFileSync(seedPath)),
+      r = await run('Supplied randomized seed with UPR engine edits', seed);
+    assert.equal(stat(r, 'core'), 'applied');
+    assert(['applied', 'existing'].includes(stat(r, 'modern')));
+    for (const a of [0x402290, 0x754b38, 0x754b44, 0x754c48]) assert.equal(r.rom[a], seed[a]);
+    fs.writeFileSync(path.join(root, 'compatibility-work/actual-seed.gba'), r.rom);
+  }
+  fs.writeFileSync(
+    path.join(root, 'public-output/Best_Effort_Compatibility_Tests.json'),
+    JSON.stringify(
+      {
+        checks,
+        scope:
+          'Actual HTML patch engine under Node. Different headers and unfamiliar layouts are reported, not rejected. Local conflicts and allocations remain guarded. Runtime checks reported separately; these tests do not prove compatibility with every ROM hack.',
+      },
+      null,
+      2,
+    ),
+  );
+  console.log('PASS', checks.length, 'best-effort compatibility cases.');
+})().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
