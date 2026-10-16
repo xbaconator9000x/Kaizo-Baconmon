@@ -51,6 +51,6 @@ If nothing matches, you'll still get the notes and report. Your original stays a
 
 ## Reusing Baconmon changes
 
-You're welcome to use my original ROM changes in your own project under the [reuse licence](../LICENSE.txt): no sale or monetisation, credit xbaconator9000x, notify me before sharing it, and don't use the work to degrade, discriminate against or intentionally harm anyone. Just playing privately doesn't require a credit or message. This only covers my contributions; the patcher software and other creators' work keep their own terms.
+You're welcome to use my original ROM changes in your own non-commercial project with credit under the [reuse licence](../LICENSE.txt). No notification or separate approval is required. I'd love to see what you make; [the reuse note](../Reuse_Statement.md) explains my optional requests. Just playing privately doesn't require a credit or message. This only covers my contributions; the patcher software and other creators' work keep their own terms.
 
 [Credits and permissions](../Credits_and_Permissions.md) · [Developer notes](Developer_Notes.md)

@@ -36,7 +36,7 @@ The Nuz-guide explains these challenges in my own wording and credits the origin
 
 ## Included licences
 
-My original Baconmon ROM changes are covered by the [Kaizo Baconmon Reuse Licence](LICENSE.txt). You can use those contributions in your own project if you don't sell or monetise it, credit me, notify me before sharing it, and don't use the work to degrade, discriminate against or intentionally harm anyone. The full licence defines the scope and conditions. Private play doesn't require a credit or notification.
+My original Baconmon ROM changes are covered by the [Kaizo Baconmon Reuse Licence](LICENSE.txt): non-commercial reuse with credit and the licence kept with the material. No notification or separate approval is required. [A note on reuse](Reuse_Statement.md) contains my optional requests about sharing your work and using it respectfully. Private play doesn't require a credit or message.
 
 The patcher components already released under MIT keep that licence. The UPR-ZX engine, Java adapter and randomiser integration are GPLv3; the combined program code is distributed under GPLv3 with component notices retained. The custom reuse conditions do not restrict that software or take back rights granted for earlier releases.
 

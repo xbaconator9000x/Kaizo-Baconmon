@@ -89,7 +89,7 @@ The lab status fix is in status_refresh.py and status_refresh.s. It redraws stat
 
 ## Reusing the ROM changes
 
-The [reuse licence](../LICENSE.txt) covers my original ROM changes. The patcher and randomiser software keep their existing MIT/GPLv3 terms. Don't apply the custom non-commercial conditions to that software or third-party material. See [credits and permissions](../Credits_and_Permissions.md) before reusing anything in another project.
+The [reuse licence](../LICENSE.txt) covers my original ROM changes: non-commercial reuse with credit. Notification is optional, and the [personal reuse requests](../Reuse_Statement.md) are not licence conditions. The patcher and randomiser software keep their existing MIT/GPLv3 terms. Don't apply the custom non-commercial conditions to that software or third-party material. See [credits and permissions](../Credits_and_Permissions.md) before reusing anything in another project.
 
 ## Package an update
 

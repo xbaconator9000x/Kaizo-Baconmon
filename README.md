@@ -72,7 +72,9 @@ The patcher software keeps its existing MIT/GPLv3 terms. The original projects k
 
 ## Reusing my changes
 
-You're welcome to use my original Baconmon ROM changes in your own project, so long as you don't sell or monetise that project in any way, credit me as **xbaconator9000x**, and let me know before sharing it. Don't use them to degrade, discriminate against or intentionally harm anyone. [The full reuse licence](LICENSE.txt) explains the conditions, including what counts as monetisation and how to notify me. Just playing the hack privately doesn't require a credit or message.
+You're welcome to use my original Baconmon ROM changes in your own non-commercial project. Credit **Kaizo Baconmon by xbaconator9000x** and keep the [reuse licence](LICENSE.txt) with the material. No notification or separate approval is required. Just playing privately doesn't require a credit or message.
+
+I'd love to see what you make, and I ask that you use the work respectfully. [A note on reuse](Reuse_Statement.md) explains those personal requests; they aren't extra licence conditions.
 
 That permission only covers rights I hold in my own contributions. Pokémon and the original game content belong to their respective rights holders. Other creators' work needs its own permission; DrMaple's permission for Baconmon doesn't automatically extend to another project. This isn't permission to distribute complete game ROMs, and it doesn't withdraw permissions already granted under other licences.
 
