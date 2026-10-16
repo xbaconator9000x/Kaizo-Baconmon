@@ -1,0 +1,804 @@
+{
+  "tests": [
+    {
+      "name": "Clean US FireRed 1.1",
+      "features": [
+        {
+          "id": "support",
+          "status": "applied"
+        },
+        {
+          "id": "faster",
+          "status": "applied"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "b938c6a84fa608bbade74f53b403dcccabaf8fc08ec4d5b518fea47021b911d3"
+    },
+    {
+      "name": "Faster FireRed",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "b938c6a84fa608bbade74f53b403dcccabaf8fc08ec4d5b518fea47021b911d3"
+    },
+    {
+      "name": "Randomized seed with unrelated dialogue edit",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "f3628ef9612aa12be26fafe35db14fb315e54ee69ece8c249cb46ac20de29a56"
+    },
+    {
+      "name": "Conflicting title script",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "skipped"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "b85d5ee69c1f7bc0084d0099802c8dd9eaec13a7248ca01bb2ce447e6c7d5002"
+    },
+    {
+      "name": "Occupied Baconmon bank",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "skipped"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "skipped"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "skipped"
+        },
+        {
+          "id": "lab",
+          "status": "skipped"
+        },
+        {
+          "id": "rotation",
+          "status": "skipped"
+        },
+        {
+          "id": "hms",
+          "status": "skipped"
+        },
+        {
+          "id": "friendship",
+          "status": "skipped"
+        },
+        {
+          "id": "guide",
+          "status": "skipped"
+        },
+        {
+          "id": "battleinfo",
+          "status": "skipped"
+        },
+        {
+          "id": "relearner",
+          "status": "skipped"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "dfc4b2504ca36d9430aaa5b90084cb55ddff7d8b62b68bb8cdaeed634c9fb21c"
+    },
+    {
+      "name": "Conflicting hidden-item function",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "skipped"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "d80890eb690d2223b1692b0dadf84db187126f4f5c0f1a37eac945d8034dcf24"
+    },
+    {
+      "name": "Title not selected",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "not_selected"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "ce14666592b0a6106a8f3b0f14c3a2e28db98f5fd96d544781ba45c5628e982a"
+    },
+    {
+      "name": "Existing Baconmon seed",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "existing"
+        },
+        {
+          "id": "hidden",
+          "status": "existing"
+        },
+        {
+          "id": "nurse",
+          "status": "existing"
+        },
+        {
+          "id": "text",
+          "status": "existing"
+        },
+        {
+          "id": "rival",
+          "status": "existing"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "existing"
+        },
+        {
+          "id": "lab",
+          "status": "existing"
+        },
+        {
+          "id": "rotation",
+          "status": "existing"
+        },
+        {
+          "id": "hms",
+          "status": "existing"
+        },
+        {
+          "id": "friendship",
+          "status": "existing"
+        },
+        {
+          "id": "guide",
+          "status": "existing"
+        },
+        {
+          "id": "battleinfo",
+          "status": "existing"
+        },
+        {
+          "id": "relearner",
+          "status": "existing"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "581f6031c727b41b987ccb6d64224208af3f2cf1cda10ae73907f132b40772a0"
+    },
+    {
+      "name": "Reapply same selection",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "skipped"
+        },
+        {
+          "id": "title",
+          "status": "existing"
+        },
+        {
+          "id": "tunnel",
+          "status": "existing"
+        },
+        {
+          "id": "hidden",
+          "status": "existing"
+        },
+        {
+          "id": "nurse",
+          "status": "existing"
+        },
+        {
+          "id": "text",
+          "status": "skipped"
+        },
+        {
+          "id": "rival",
+          "status": "existing"
+        },
+        {
+          "id": "status",
+          "status": "existing"
+        },
+        {
+          "id": "modern",
+          "status": "skipped"
+        },
+        {
+          "id": "lab",
+          "status": "skipped"
+        },
+        {
+          "id": "rotation",
+          "status": "skipped"
+        },
+        {
+          "id": "hms",
+          "status": "skipped"
+        },
+        {
+          "id": "friendship",
+          "status": "skipped"
+        },
+        {
+          "id": "guide",
+          "status": "skipped"
+        },
+        {
+          "id": "battleinfo",
+          "status": "skipped"
+        },
+        {
+          "id": "relearner",
+          "status": "skipped"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "581f6031c727b41b987ccb6d64224208af3f2cf1cda10ae73907f132b40772a0"
+    },
+    {
+      "name": "32 MiB expanded ROM",
+      "features": [
+        {
+          "id": "support",
+          "status": "existing"
+        },
+        {
+          "id": "faster",
+          "status": "existing"
+        },
+        {
+          "id": "core",
+          "status": "applied"
+        },
+        {
+          "id": "title",
+          "status": "applied"
+        },
+        {
+          "id": "tunnel",
+          "status": "applied"
+        },
+        {
+          "id": "hidden",
+          "status": "applied"
+        },
+        {
+          "id": "nurse",
+          "status": "applied"
+        },
+        {
+          "id": "text",
+          "status": "applied"
+        },
+        {
+          "id": "rival",
+          "status": "applied"
+        },
+        {
+          "id": "status",
+          "status": "applied"
+        },
+        {
+          "id": "modern",
+          "status": "applied"
+        },
+        {
+          "id": "lab",
+          "status": "applied"
+        },
+        {
+          "id": "rotation",
+          "status": "applied"
+        },
+        {
+          "id": "hms",
+          "status": "applied"
+        },
+        {
+          "id": "friendship",
+          "status": "applied"
+        },
+        {
+          "id": "guide",
+          "status": "applied"
+        },
+        {
+          "id": "battleinfo",
+          "status": "applied"
+        },
+        {
+          "id": "relearner",
+          "status": "applied"
+        }
+      ],
+      "source_unchanged": true,
+      "output_sha256": "3955e6e4c645be3264d64efa32c9f0d2f9fb935281f3b13805f285fa31323b0d"
+    }
+  ],
+  "tutor_toggle_and_reenable_verified": true,
+  "rival_levels_1_8_100_verified": true,
+  "invalid_levels_rejected": true,
+  "package_includes_all_features": true,
+  "copier_header_preserved": true,
+  "header_revision_is_advisory": true,
+  "damaged_payload_rejected": true,
+  "bps_and_undo_independently_verified": true,
+  "randomized_tables_preserved": true,
+  "scope": "JavaScript from actual HTML, Node WebCrypto/DecompressionStream, independent Rom Patcher JS BPS implementation. Emulator tests reported separately. Browser rendering and Android hardware not tested."
+}

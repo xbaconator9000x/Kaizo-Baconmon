@@ -1,0 +1,28 @@
+{
+  "browser": "Desktop Chromium 155",
+  "engine": "UPR-ZX 4.6.0 via CheerpJ 4.3",
+  "checks": [
+    {
+      "batch": 1,
+      "roms": 1,
+      "seed_plan_verified": true,
+      "zip_crc_verified": true,
+      "rom_hashes_verified": true
+    },
+    {
+      "batch": 2,
+      "roms": 1,
+      "seed_plan_verified": true,
+      "zip_crc_verified": true,
+      "rom_hashes_verified": true
+    }
+  ],
+  "generated_seed_on_page_load": true,
+  "real_java_engine_ran_in_browser": true,
+  "native_same_seed_identical": true,
+  "native_different_seed_changes_rom": true,
+  "originals_unchanged": true,
+  "android_hardware_tested": false,
+  "downloaded_html_file_mode_verified": true,
+  "generated_rom_classic_modern_damage_verified": true
+}

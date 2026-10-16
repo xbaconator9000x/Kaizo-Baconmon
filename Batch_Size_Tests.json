@@ -1,0 +1,226 @@
+{
+  "checks": [
+    {
+      "size": 1,
+      "batches": 1,
+      "roms": 1,
+      "zip_parts": 1,
+      "parts": [
+        {
+          "batch": 1,
+          "part": 1,
+          "first": 1,
+          "last": 1
+        }
+      ],
+      "seeds_and_numbering": "passed",
+      "max_live_downloads": 1
+    },
+    {
+      "size": 10,
+      "batches": 1,
+      "roms": 10,
+      "zip_parts": 1,
+      "parts": [
+        {
+          "batch": 1,
+          "part": 1,
+          "first": 1,
+          "last": 10
+        }
+      ],
+      "seeds_and_numbering": "passed",
+      "max_live_downloads": 1
+    },
+    {
+      "size": 11,
+      "batches": 1,
+      "roms": 11,
+      "zip_parts": 2,
+      "parts": [
+        {
+          "batch": 1,
+          "part": 1,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "batch": 1,
+          "part": 2,
+          "first": 11,
+          "last": 11
+        }
+      ],
+      "seeds_and_numbering": "passed",
+      "max_live_downloads": 1
+    },
+    {
+      "size": 20,
+      "batches": 2,
+      "roms": 40,
+      "zip_parts": 4,
+      "parts": [
+        {
+          "batch": 1,
+          "part": 1,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "batch": 1,
+          "part": 2,
+          "first": 11,
+          "last": 20
+        },
+        {
+          "batch": 2,
+          "part": 1,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "batch": 2,
+          "part": 2,
+          "first": 11,
+          "last": 20
+        }
+      ],
+      "seeds_and_numbering": "passed",
+      "max_live_downloads": 1
+    },
+    {
+      "size": 100,
+      "batches": 2,
+      "roms": 200,
+      "zip_parts": 20,
+      "parts": [
+        {
+          "batch": 1,
+          "part": 1,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "batch": 1,
+          "part": 2,
+          "first": 11,
+          "last": 20
+        },
+        {
+          "batch": 1,
+          "part": 3,
+          "first": 21,
+          "last": 30
+        },
+        {
+          "batch": 1,
+          "part": 4,
+          "first": 31,
+          "last": 40
+        },
+        {
+          "batch": 1,
+          "part": 5,
+          "first": 41,
+          "last": 50
+        },
+        {
+          "batch": 1,
+          "part": 6,
+          "first": 51,
+          "last": 60
+        },
+        {
+          "batch": 1,
+          "part": 7,
+          "first": 61,
+          "last": 70
+        },
+        {
+          "batch": 1,
+          "part": 8,
+          "first": 71,
+          "last": 80
+        },
+        {
+          "batch": 1,
+          "part": 9,
+          "first": 81,
+          "last": 90
+        },
+        {
+          "batch": 1,
+          "part": 10,
+          "first": 91,
+          "last": 100
+        },
+        {
+          "batch": 2,
+          "part": 1,
+          "first": 1,
+          "last": 10
+        },
+        {
+          "batch": 2,
+          "part": 2,
+          "first": 11,
+          "last": 20
+        },
+        {
+          "batch": 2,
+          "part": 3,
+          "first": 21,
+          "last": 30
+        },
+        {
+          "batch": 2,
+          "part": 4,
+          "first": 31,
+          "last": 40
+        },
+        {
+          "batch": 2,
+          "part": 5,
+          "first": 41,
+          "last": 50
+        },
+        {
+          "batch": 2,
+          "part": 6,
+          "first": 51,
+          "last": 60
+        },
+        {
+          "batch": 2,
+          "part": 7,
+          "first": 61,
+          "last": 70
+        },
+        {
+          "batch": 2,
+          "part": 8,
+          "first": 71,
+          "last": 80
+        },
+        {
+          "batch": 2,
+          "part": 9,
+          "first": 81,
+          "last": 90
+        },
+        {
+          "batch": 2,
+          "part": 10,
+          "first": 91,
+          "last": 100
+        }
+      ],
+      "seeds_and_numbering": "passed",
+      "max_live_downloads": 1
+    }
+  ],
+  "invalid_sizes_and_counts_rejected": true,
+  "failed_part_retry_keeps_seed_sequence": true,
+  "beta_label_present": true,
+  "scope": "Actual HTML handlers, ZIP writer, seed derivation and part manifests. Java engine stubbed with synthetic bytes for 1/10/11/20/100-ROM scheduling tests; real browser generation checked separately."
+}

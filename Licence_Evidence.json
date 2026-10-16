@@ -1,0 +1,251 @@
+{
+  "checked": "2026-10-16",
+  "method": "Unauthenticated read-only GitHub repository, root contents and licence API calls; licence files retained unchanged in source notices. Rules and runtime terms linked in the accompanying report.",
+  "repositories": [
+    {
+      "repository": "https://github.com/Ajarmar/universal-pokemon-randomizer-zx",
+      "repository_license": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "license_file": "https://github.com/Ajarmar/universal-pokemon-randomizer-zx/blob/master/LICENSE.txt",
+      "license_blob_sha": "94a9ed024d3859793618152ea559a168bbcbb5e2",
+      "license_lookup": "found",
+      "root_names": [
+        ".github",
+        ".gitignore",
+        "LICENSE.txt",
+        "README.md",
+        "asm",
+        "changelog-template.md",
+        "changelogs",
+        "launcher",
+        "src",
+        "util"
+      ],
+      "contact_issues": "https://github.com/Ajarmar/universal-pokemon-randomizer-zx/issues"
+    },
+    {
+      "repository": "https://github.com/Corvimae/kaizo-ironmon-plus",
+      "repository_license": null,
+      "license_file": null,
+      "license_blob_sha": null,
+      "license_lookup": "HTTP Error 404: Not Found",
+      "root_names": [
+        "README.md",
+        "getting-started.md",
+        "minus.md",
+        "randomizer-settings",
+        "rules.md",
+        "simplified.md",
+        "touring.md"
+      ],
+      "contact_issues": "https://github.com/Corvimae/kaizo-ironmon-plus/issues"
+    },
+    {
+      "repository": "https://github.com/DrMaple/Faster-FireRed",
+      "repository_license": null,
+      "license_file": null,
+      "license_blob_sha": null,
+      "license_lookup": "HTTP Error 404: Not Found",
+      "root_names": [
+        "Faster.FireRed.1.2.No.Hidden.Item.Marks.ips",
+        "Faster.FireRed.1.2.ips",
+        "Old Versions",
+        "README.md"
+      ],
+      "contact_issues": "https://github.com/DrMaple/Faster-FireRed/issues"
+    },
+    {
+      "repository": "https://github.com/DrMaple/IronMONPatchEditor",
+      "repository_license": {
+        "key": "gpl-3.0",
+        "name": "GNU General Public License v3.0",
+        "spdx_id": "GPL-3.0",
+        "url": "https://api.github.com/licenses/gpl-3.0",
+        "node_id": "MDc6TGljZW5zZTk="
+      },
+      "license_file": "https://github.com/DrMaple/IronMONPatchEditor/blob/main/LICENSE.md",
+      "license_blob_sha": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
+      "license_lookup": "found",
+      "root_names": [
+        ".gitignore",
+        "IronMON Patch Editor.sln",
+        "IronMONPatchEditor",
+        "LICENSE.md",
+        "README.md"
+      ],
+      "contact_issues": "https://github.com/DrMaple/IronMONPatchEditor/issues"
+    },
+    {
+      "repository": "https://github.com/PyroMikeGit/SuperKaizoIronMON",
+      "repository_license": null,
+      "license_file": null,
+      "license_blob_sha": null,
+      "license_lookup": "HTTP Error 404: Not Found",
+      "root_names": [
+        "README.md"
+      ],
+      "contact_issues": "https://github.com/PyroMikeGit/SuperKaizoIronMON/issues"
+    },
+    {
+      "repository": "https://github.com/WaffleSmacker/IronmonVS-IronmonExtension",
+      "repository_license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "license_file": "https://github.com/WaffleSmacker/IronmonVS-IronmonExtension/blob/main/LICENSE",
+      "license_blob_sha": "add204704e0e59e0a4dd22837afeea6940456ea5",
+      "license_lookup": "found",
+      "root_names": [
+        "IronmonVS.lua",
+        "IronmonVS.zip",
+        "IronmonVS",
+        "LICENSE",
+        "README.md"
+      ],
+      "contact_issues": "https://github.com/WaffleSmacker/IronmonVS-IronmonExtension/issues"
+    },
+    {
+      "repository": "https://github.com/besteon/Ironmon-Tracker",
+      "repository_license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      },
+      "license_file": "https://github.com/besteon/Ironmon-Tracker/blob/main/LICENSE.txt",
+      "license_blob_sha": "00349f371479879119eccac0010c4fa87568e004",
+      "license_lookup": "found",
+      "root_names": [
+        ".editorconfig",
+        ".gitattributes",
+        ".github",
+        ".gitignore",
+        ".vscode",
+        "Ironmon-Tracker.lua",
+        "LICENSE.txt",
+        "README.md",
+        "README.txt",
+        "UpdateOrInstall.lua",
+        "extensions",
+        "ironmon_tracker",
+        "quickload"
+      ],
+      "contact_issues": "https://github.com/besteon/Ironmon-Tracker/issues"
+    },
+    {
+      "repository": "https://github.com/marcrobledo/RomPatcher.js",
+      "repository_license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      },
+      "license_file": "https://github.com/marcrobledo/RomPatcher.js/blob/master/LICENSE",
+      "license_blob_sha": "be20a15f0c146e3a7b1a2c768dccea99ba760eef",
+      "license_lookup": "found",
+      "root_names": [
+        ".gitignore",
+        ".nojekyll",
+        "LICENSE",
+        "README.md",
+        "_cache_service_worker.js",
+        "docker",
+        "index.html",
+        "index.js",
+        "index_template.html",
+        "manifest.json",
+        "package.json",
+        "rom-patcher-js",
+        "test.js",
+        "webapp"
+      ],
+      "contact_issues": "https://github.com/marcrobledo/RomPatcher.js/issues"
+    },
+    {
+      "repository": "https://github.com/pret/pokefirered",
+      "repository_license": null,
+      "license_file": null,
+      "license_blob_sha": null,
+      "license_lookup": "HTTP Error 404: Not Found",
+      "root_names": [
+        ".gitattributes",
+        ".github",
+        ".gitignore",
+        "INSTALL.md",
+        "Makefile",
+        "README.md",
+        "asm",
+        "asmdiff.sh",
+        "audio_rules.mk",
+        "build_tools.sh",
+        "charmap.txt",
+        "compare.sh",
+        "config.mk",
+        "constants",
+        "data",
+        "docs",
+        "firered.sha1",
+        "firered_rev1.sha1",
+        "firered_switch.sha1",
+        "graphics",
+        "graphics_file_rules.mk",
+        "include",
+        "json_data_rules.mk",
+        "ld_script.ld",
+        "ld_script_modern.ld",
+        "ld_script_rev10.ld",
+        "leafgreen.sha1",
+        "leafgreen_rev1.sha1",
+        "leafgreen_switch.sha1",
+        "make_tools.mk",
+        "map_data_rules.mk",
+        "replace.sh",
+        "sound",
+        "spritesheet_rules.mk",
+        "src",
+        "sym_bss.txt",
+        "sym_bss_rev10.txt",
+        "sym_common.txt",
+        "sym_common_rev10.txt",
+        "sym_ewram.txt",
+        "sym_ewram_rev10.txt",
+        "tileset_rules.mk",
+        "tools"
+      ],
+      "contact_issues": "https://github.com/pret/pokefirered/issues"
+    },
+    {
+      "repository": "https://github.com/something-smart/Roguemon-IronmonExtension",
+      "repository_license": null,
+      "license_file": null,
+      "license_blob_sha": null,
+      "license_lookup": "HTTP Error 404: Not Found",
+      "root_names": [
+        ".gitignore",
+        "README.md",
+        "RoguemonTracker.lua",
+        "roguemon"
+      ],
+      "contact_issues": "https://github.com/something-smart/Roguemon-IronmonExtension/issues"
+    }
+  ],
+  "project_specific_permission": {
+    "source": "Faster FireRed 1.3.2",
+    "author": "DrMaple",
+    "received": "2026-10-16",
+    "channel": "Discord",
+    "scope": "Utilise and modify aspects of Faster FireRed for the described Kaizo Baconmon build.",
+    "follow_up": "Send GitHub link when ready for review.",
+    "record": "Screenshot supplied by the project developer; retained privately."
+  }
+}

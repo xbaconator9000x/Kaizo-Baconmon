@@ -1,0 +1,17 @@
+{
+  "note": "Note: Fairy typing is intentionally omitted.",
+  "modern_confirmation": {
+    "pages": 2,
+    "max_width": 190,
+    "rendered": "MODERN uses the move split and\nupdated abilities. Seed unchanged.\n[NEW BOX]\nNote: Fairy typing is intentionally\nomitted."
+  },
+  "only_three_text_allocations_changed": true,
+  "saves_changed": false,
+  "modern_confirmation_rendered_in_mgba": true,
+  "yes_no_prompt_preserved": true,
+  "guide_articles": [
+    "modern_split",
+    "modern_limits"
+  ],
+  "sha256": "a0a8d44fb1d7e48d43f44f14f40b13988e7bca2ab0767e529461f583147c8a9c"
+}

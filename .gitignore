@@ -1,0 +1,10 @@
+*.gba
+*.agb
+*.sav
+*.ss0
+*.ss1
+*.ss2
+*.apk
+__pycache__/
+*.pyc
+.DS_Store

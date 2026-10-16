@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "kind": "rom",
+      "download_sha256": "b938c6a84fa608bbade74f53b403dcccabaf8fc08ec4d5b518fea47021b911d3",
+      "notes_have_real_line_breaks": true,
+      "downloads_created": true
+    },
+    {
+      "kind": "unknown",
+      "download_sha256": "3a7fd55a182ffd990c0e7cab4805a8cddec6414a6523e23a630e74dde134d571",
+      "notes_have_real_line_breaks": true,
+      "downloads_created": true
+    }
+  ],
+  "scope": "Actual HTML event handlers and Blob downloads with DOM stubs. No rendered browser or Android installation test."
+}

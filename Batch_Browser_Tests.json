@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "test": "ten_rom_batches",
+      "real_roms_generated": 20,
+      "parts": [
+        {
+          "batch": 1,
+          "roms_per_batch": 10,
+          "part": 1,
+          "parts": 1,
+          "first_rom": 1,
+          "last_rom": 10
+        },
+        {
+          "batch": 2,
+          "roms_per_batch": 10,
+          "part": 1,
+          "parts": 1,
+          "first_rom": 1,
+          "last_rom": 10
+        }
+      ],
+      "zip_integrity": "passed",
+      "rom_hashes_and_seeds": "passed",
+      "lab_rival_level_8": "passed"
+    },
+    {
+      "test": "split_eleven_rom_batch",
+      "real_roms_generated": 11,
+      "parts": [
+        {
+          "batch": 1,
+          "roms_per_batch": 11,
+          "part": 1,
+          "parts": 2,
+          "first_rom": 1,
+          "last_rom": 10
+        },
+        {
+          "batch": 1,
+          "roms_per_batch": 11,
+          "part": 2,
+          "parts": 2,
+          "first_rom": 11,
+          "last_rom": 11
+        }
+      ],
+      "zip_integrity": "passed",
+      "rom_hashes_and_seeds": "passed",
+      "lab_rival_level_8": "passed"
+    }
+  ],
+  "same_seed_outputs_match_across_batch_and_part_boundaries": true,
+  "scope": "Actual desktop Chromium, CheerpJ and unmodified UPR-ZX 4.6.0. Two 10-ROM batches and one 11-ROM batch downloaded in 10+1 parts. 100-ROM scheduling tested separately with a stubbed engine. Android hardware and 100-ROM end-to-end generation not tested."
+}

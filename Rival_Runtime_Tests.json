@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "level": 1,
+      "modern": false,
+      "trainer": 326
+    },
+    {
+      "level": 1,
+      "modern": false,
+      "trainer": 327
+    },
+    {
+      "level": 1,
+      "modern": false,
+      "trainer": 328
+    },
+    {
+      "level": 1,
+      "modern": true,
+      "trainer": 326
+    },
+    {
+      "level": 1,
+      "modern": true,
+      "trainer": 327
+    },
+    {
+      "level": 1,
+      "modern": true,
+      "trainer": 328
+    },
+    {
+      "level": 8,
+      "modern": false,
+      "trainer": 326
+    },
+    {
+      "level": 8,
+      "modern": false,
+      "trainer": 327
+    },
+    {
+      "level": 8,
+      "modern": false,
+      "trainer": 328
+    },
+    {
+      "level": 8,
+      "modern": true,
+      "trainer": 326
+    },
+    {
+      "level": 8,
+      "modern": true,
+      "trainer": 327
+    },
+    {
+      "level": 8,
+      "modern": true,
+      "trainer": 328
+    },
+    {
+      "level": 100,
+      "modern": false,
+      "trainer": 326
+    },
+    {
+      "level": 100,
+      "modern": false,
+      "trainer": 327
+    },
+    {
+      "level": 100,
+      "modern": false,
+      "trainer": 328
+    },
+    {
+      "level": 100,
+      "modern": true,
+      "trainer": 326
+    },
+    {
+      "level": 100,
+      "modern": true,
+      "trainer": 327
+    },
+    {
+      "level": 100,
+      "modern": true,
+      "trainer": 328
+    }
+  ],
+  "scope": "Unicorn ARM executes the ROM trainer-party creation and Pok\u00e9mon data functions. Default 8 also tested with stored level raised to 12. No Android hardware test."
+}

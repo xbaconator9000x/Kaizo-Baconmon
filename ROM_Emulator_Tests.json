@@ -1,0 +1,420 @@
+{
+  "navigation": {
+    "menus": 18,
+    "articles": 77,
+    "all_parent_B_routes": true,
+    "article_returns": true
+  },
+  "explicit_back_close_and_controls_released": true,
+  "bag_and_registered_item_open_close": true,
+  "normal_save_boot_continue_retains_score_visit_log_and_item": true,
+  "town_map_fly_regression_both_modes": true,
+  "text_layout": {
+    "articles": 68,
+    "all_injected_texts": 210,
+    "max_line_pixels": 204,
+    "maximum_allowed": 204
+  },
+  "articles": [
+    {
+      "menu": "bacon",
+      "article": "bacon_intro",
+      "advance_inputs": 46
+    },
+    {
+      "menu": "bacon",
+      "article": "bacon_changes",
+      "advance_inputs": 41
+    },
+    {
+      "menu": "bacon",
+      "article": "bacon_helpers",
+      "advance_inputs": 18
+    },
+    {
+      "menu": "nuz",
+      "article": "nuz_basic",
+      "advance_inputs": 17
+    },
+    {
+      "menu": "nuz",
+      "article": "nuz_areas",
+      "advance_inputs": 16
+    },
+    {
+      "menu": "nuz",
+      "article": "nuz_death",
+      "advance_inputs": 17
+    },
+    {
+      "menu": "nuz",
+      "article": "hardcore",
+      "advance_inputs": 16
+    },
+    {
+      "menu": "iron",
+      "article": "iron_standard",
+      "advance_inputs": 30
+    },
+    {
+      "menu": "iron",
+      "article": "iron_ultimate",
+      "advance_inputs": 22
+    },
+    {
+      "menu": "iron",
+      "article": "iron_vs",
+      "advance_inputs": 16
+    },
+    {
+      "menu": "iron",
+      "article": "rom_randomizer",
+      "advance_inputs": 12
+    },
+    {
+      "menu": "scores",
+      "article": "@score",
+      "advance_inputs": 6
+    },
+    {
+      "menu": "scores",
+      "article": "score_rules",
+      "advance_inputs": 15
+    },
+    {
+      "menu": "scores",
+      "article": "score_clean",
+      "advance_inputs": 18
+    },
+    {
+      "menu": "scores",
+      "article": "score_limits",
+      "advance_inputs": 14
+    },
+    {
+      "menu": "scores",
+      "article": "score_gym",
+      "advance_inputs": 9
+    },
+    {
+      "menu": "about",
+      "article": "rom_features",
+      "advance_inputs": 21
+    },
+    {
+      "menu": "about",
+      "article": "rom_foundation",
+      "advance_inputs": 9
+    },
+    {
+      "menu": "about",
+      "article": "rom_changes",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "about",
+      "article": "rom_randomizer",
+      "advance_inputs": 12
+    },
+    {
+      "menu": "about",
+      "article": "rom_limits",
+      "advance_inputs": 10
+    },
+    {
+      "menu": "about",
+      "article": "bacon_faq",
+      "advance_inputs": 13
+    },
+    {
+      "menu": "credits",
+      "article": "credits_challenges",
+      "advance_inputs": 9
+    },
+    {
+      "menu": "credits",
+      "article": "credits_rom",
+      "advance_inputs": 9
+    },
+    {
+      "menu": "credits",
+      "article": "credits_tracker",
+      "advance_inputs": 11
+    },
+    {
+      "menu": "credits",
+      "article": "credits_links",
+      "advance_inputs": 14
+    },
+    {
+      "menu": "credits",
+      "article": "credits_project",
+      "advance_inputs": 10
+    },
+    {
+      "menu": "bacon_rules",
+      "article": "bacon_goal",
+      "advance_inputs": 11
+    },
+    {
+      "menu": "bacon_rules",
+      "article": "bacon_setup",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "bacon_rules",
+      "article": "bacon_selection",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "bacon_rules",
+      "article": "bacon_catches",
+      "advance_inputs": 23
+    },
+    {
+      "menu": "bacon_rules",
+      "article": "bacon_clauses",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "modes",
+      "article": "classic",
+      "advance_inputs": 19
+    },
+    {
+      "menu": "modes",
+      "article": "modern_split",
+      "advance_inputs": 19
+    },
+    {
+      "menu": "modes",
+      "article": "modern_a",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "modes",
+      "article": "modern_b",
+      "advance_inputs": 17
+    },
+    {
+      "menu": "modes",
+      "article": "modern_c",
+      "advance_inputs": 22
+    },
+    {
+      "menu": "modes",
+      "article": "modern_limits",
+      "advance_inputs": 10
+    },
+    {
+      "menu": "bacon_points",
+      "article": "score_rules",
+      "advance_inputs": 15
+    },
+    {
+      "menu": "bacon_points",
+      "article": "score_clean",
+      "advance_inputs": 18
+    },
+    {
+      "menu": "bacon_points",
+      "article": "@score",
+      "advance_inputs": 6
+    },
+    {
+      "menu": "bacon_points",
+      "article": "score_limits",
+      "advance_inputs": 14
+    },
+    {
+      "menu": "clauses",
+      "article": "clauses_dupes",
+      "advance_inputs": 10
+    },
+    {
+      "menu": "clauses",
+      "article": "clauses_shiny",
+      "advance_inputs": 12
+    },
+    {
+      "menu": "clauses",
+      "article": "clauses_gifts",
+      "advance_inputs": 14
+    },
+    {
+      "menu": "clauses",
+      "article": "clauses_hm",
+      "advance_inputs": 12
+    },
+    {
+      "menu": "clauses",
+      "article": "planning",
+      "advance_inputs": 15
+    },
+    {
+      "menu": "variations",
+      "article": "monotype",
+      "advance_inputs": 13
+    },
+    {
+      "menu": "variations",
+      "article": "wedlocke",
+      "advance_inputs": 15
+    },
+    {
+      "menu": "variations",
+      "article": "soullink",
+      "advance_inputs": 15
+    },
+    {
+      "menu": "variations",
+      "article": "draft",
+      "advance_inputs": 12
+    },
+    {
+      "menu": "kaizo",
+      "article": "kaizo_core",
+      "advance_inputs": 18
+    },
+    {
+      "menu": "kaizo",
+      "article": "kaizo_moves",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "kaizo",
+      "article": "kaizo_items",
+      "advance_inputs": 18
+    },
+    {
+      "menu": "kaizo",
+      "article": "kaizo_route",
+      "advance_inputs": 23
+    },
+    {
+      "menu": "kaizo",
+      "article": "kaizo_clauses",
+      "advance_inputs": 20
+    },
+    {
+      "menu": "kaizo",
+      "article": "bacon_intro",
+      "advance_inputs": 46
+    },
+    {
+      "menu": "iron_more",
+      "article": "iron_survival",
+      "advance_inputs": 14
+    },
+    {
+      "menu": "iron_more",
+      "article": "iron_super",
+      "advance_inputs": 10
+    },
+    {
+      "menu": "iron_more",
+      "article": "iron_plus",
+      "advance_inputs": 5
+    },
+    {
+      "menu": "iron_more",
+      "article": "iron_doubles",
+      "advance_inputs": 7
+    },
+    {
+      "menu": "iron_more",
+      "article": "iron_rogue",
+      "advance_inputs": 8
+    },
+    {
+      "menu": "dungeons",
+      "article": "@dungeon0",
+      "advance_inputs": 5
+    },
+    {
+      "menu": "dungeons",
+      "article": "@dungeon1",
+      "advance_inputs": 5
+    },
+    {
+      "menu": "dungeons",
+      "article": "@dungeon2",
+      "advance_inputs": 5
+    },
+    {
+      "menu": "dungeons",
+      "article": "@dungeon3",
+      "advance_inputs": 5
+    },
+    {
+      "menu": "dungeons",
+      "article": "@dungeon4",
+      "advance_inputs": 5
+    },
+    {
+      "menu": "bacon_rules2",
+      "article": "bacon_moves",
+      "advance_inputs": 28
+    },
+    {
+      "menu": "bacon_rules2",
+      "article": "bacon_items",
+      "advance_inputs": 21
+    },
+    {
+      "menu": "bacon_rules2",
+      "article": "bacon_healing",
+      "advance_inputs": 25
+    },
+    {
+      "menu": "bacon_rules2",
+      "article": "bacon_progress",
+      "advance_inputs": 25
+    },
+    {
+      "menu": "teams",
+      "article": "smallteams",
+      "advance_inputs": 15
+    },
+    {
+      "menu": "teams",
+      "article": "solo",
+      "advance_inputs": 13
+    },
+    {
+      "menu": "replacement",
+      "article": "randomizer",
+      "advance_inputs": 13
+    },
+    {
+      "menu": "replacement",
+      "article": "egglocke",
+      "advance_inputs": 10
+    },
+    {
+      "menu": "replacement",
+      "article": "wonderlocke",
+      "advance_inputs": 12
+    },
+    {
+      "menu": "replacement",
+      "article": "genlocke",
+      "advance_inputs": 9
+    }
+  ],
+  "screenshots": {
+    "Nuz-guide_Menu": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Nuz-guide_Menu.png",
+    "Baconmon_Menu": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Baconmon_Menu.png",
+    "Baconmon_Intro": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Baconmon_Intro.png",
+    "Core_Changes": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Core_Changes.png",
+    "Score": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Score.png",
+    "About": "/workspace/scratch/40598f2ab57d/public-patcher/screens/About.png",
+    "Classic_Guide": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Classic_Guide.png",
+    "Modern_Guide": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Modern_Guide.png",
+    "Dungeon_Log": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Dungeon_Log.png",
+    "Bag": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Bag.png",
+    "Bag_Use": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Bag_Use.png",
+    "Bag_Guide": "/workspace/scratch/40598f2ab57d/public-patcher/screens/Bag_Guide.png"
+  },
+  "limitations": "Desktop mGBA and controlled fixtures. No Android hardware test or complete challenge playthrough."
+}

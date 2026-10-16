@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "modern_disabled": "Classic damage with either old mode value; all five sample moves agree.",
+    "modern_without_other_extras": "Physical/special split works when Modern is the only core feature.",
+    "lab_without_faster.gba_warp": [
+      4,
+      3,
+      255,
+      0,
+      8,
+      0,
+      5,
+      0
+    ],
+    "guide_without_faster.gba_warp": [
+      4,
+      1,
+      255,
+      0,
+      6,
+      0,
+      6,
+      0
+    ],
+    "hm_toggle": "Surf accepted from HM/badge without teaching when on; original party-move requirement restored when off."
+  },
+  "scope": "Actual ARM ROM functions in Unicorn. Field UI checks and Android hardware are separate."
+}

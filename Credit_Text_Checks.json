@@ -1,0 +1,38 @@
+{
+  "previous_public_build_upgrade": "passed",
+  "repeat_is_unchanged": true,
+  "previous_input_unchanged": true,
+  "only_credit_allocations_changed": true,
+  "features_skipped": [],
+  "output_sha256": "b938c6a84fa608bbade74f53b403dcccabaf8fc08ec4d5b518fea47021b911d3",
+  "native_renderer": "mGBA",
+  "articles": {
+    "credits_tracker": {
+      "pages": 5,
+      "max_width": 204,
+      "bytes": 245,
+      "capacity": 556
+    },
+    "credits_challenges": {
+      "pages": 8,
+      "max_width": 202,
+      "bytes": 350,
+      "capacity": 398
+    }
+  },
+  "scope": "Text and notice update. Existing compatibility, exported-file and best-effort checks rerun. No new Android or complete campaign test.",
+  "public_reference_scan": "passed",
+  "encoded_rom_reference_scan": "passed",
+  "changed_bytes": 612,
+  "changed_regions": [
+    [
+      7790832,
+      7791388
+    ],
+    [
+      7790072,
+      7790470
+    ]
+  ],
+  "original_roms_and_saves": "not modified"
+}

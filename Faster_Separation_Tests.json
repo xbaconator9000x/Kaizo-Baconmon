@@ -1,0 +1,17 @@
+{
+  "independent_features": [
+    "modern",
+    "lab",
+    "rotation",
+    "hms",
+    "friendship",
+    "guide",
+    "battleinfo",
+    "relearner"
+  ],
+  "original_speed_hooks_preserved": true,
+  "existing_faster_build_can_be_disabled": true,
+  "incompatible_dialogue_script_skipped": true,
+  "forest_nurse_independent": true,
+  "scope": "ROM guards and speed-hook bytes. Runtime and emulator checks are reported separately."
+}

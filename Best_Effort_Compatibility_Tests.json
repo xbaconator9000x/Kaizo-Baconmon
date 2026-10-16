@@ -1,0 +1,421 @@
+{
+  "checks": [
+    {
+      "name": "Unrelated custom engine and text edits",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": false
+      },
+      "applied": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "rival",
+        "status",
+        "modern",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "skipped": [],
+      "warnings": [
+        "This ROM differs from the usual FireRed 1.1 layout or engine. Some changes may not work. Each selected feature was checked separately; check the patch notes/changelog below to confirm what was applied or skipped.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Custom title, game code and revision",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "HACK",
+        "revision": 9,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "rival",
+        "status",
+        "modern",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "skipped": [],
+      "warnings": [
+        "This ROM differs from the usual FireRed 1.1 layout or engine. Some changes may not work. Each selected feature was checked separately; check the patch notes/changelog below to confirm what was applied or skipped.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Custom header with a 512-byte copier prefix",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "HACK",
+        "revision": 9,
+        "size": 16777728,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true,
+        "copier_header_bytes": 512
+      },
+      "applied": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "rival",
+        "status",
+        "modern",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "skipped": [],
+      "warnings": [
+        "This ROM differs from the usual FireRed 1.1 layout or engine. Some changes may not work. Each selected feature was checked separately; check the patch notes/changelog below to confirm what was applied or skipped.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state.",
+        "The 512-byte copier header was preserved. Report offsets include it."
+      ]
+    },
+    {
+      "name": "Conflicting lab hook only",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "support",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "rival",
+        "status",
+        "modern",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "skipped": [
+        "faster",
+        "text",
+        "lab"
+      ],
+      "warnings": [
+        "This is a partial patch. Only the features marked Applied or Already present are included. The Nuz-guide describes the full Baconmon rules and features.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Conflicting ability hook only",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "rival",
+        "status",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "skipped": [
+        "modern"
+      ],
+      "warnings": [
+        "This is a partial patch. Only the features marked Applied or Already present are included. The Nuz-guide describes the full Baconmon rules and features.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Foreign trainer-creation hook",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "status",
+        "modern",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "skipped": [
+        "rival"
+      ],
+      "warnings": [
+        "The rival runtime hook differs; a custom rival level cannot be guaranteed.",
+        "This is a partial patch. Only the features marked Applied or Already present are included. The Nuz-guide describes the full Baconmon rules and features.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Conflicting lab hook with lab switch off",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "support",
+        "core",
+        "modern",
+        "hms",
+        "friendship"
+      ],
+      "skipped": [],
+      "warnings": [
+        "Custom feature selection: the Nuz-guide describes the standard full package. Feature changes are tested for new runs; keep an existing run on its matching ROM.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Different game layout",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPEE",
+        "revision": 0,
+        "size": 16777216,
+        "layout_verified": false,
+        "layout_matches": 0,
+        "layout_checks": 6,
+        "known_engine": false
+      },
+      "applied": [],
+      "skipped": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "rival",
+        "status",
+        "modern",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "warnings": [
+        "This ROM differs from the usual FireRed 1.1 layout or engine. Some changes may not work. Each selected feature was checked separately; check the patch notes/changelog below to confirm what was applied or skipped.",
+        "This is a partial patch. Only the features marked Applied or Already present are included. The Nuz-guide describes the full Baconmon rules and features.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Short unrecognized ROM",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPEE",
+        "revision": 0,
+        "size": 512,
+        "layout_verified": false,
+        "layout_matches": 0,
+        "layout_checks": 6,
+        "known_engine": false
+      },
+      "applied": [],
+      "skipped": [
+        "support",
+        "faster",
+        "core",
+        "title",
+        "tunnel",
+        "hidden",
+        "nurse",
+        "text",
+        "rival",
+        "status",
+        "modern",
+        "lab",
+        "rotation",
+        "hms",
+        "friendship",
+        "guide",
+        "battleinfo",
+        "relearner"
+      ],
+      "warnings": [
+        "This ROM differs from the usual FireRed 1.1 layout or engine. Some changes may not work. Each selected feature was checked separately; check the patch notes/changelog below to confirm what was applied or skipped.",
+        "This ROM has an unusual size. Only complete, matching patch locations can be changed; the file size is preserved.",
+        "This is a partial patch. Only the features marked Applied or Already present are included. The Nuz-guide describes the full Baconmon rules and features.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Smaller file with matching local features",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 8388608,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "hidden",
+        "status"
+      ],
+      "skipped": [],
+      "warnings": [
+        "This ROM has an unusual size. Only complete, matching patch locations can be changed; the file size is preserved.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Existing Baconmon without Faster, custom starter and PC data",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": true
+      },
+      "applied": [
+        "faster",
+        "core",
+        "text"
+      ],
+      "skipped": [],
+      "warnings": [
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    },
+    {
+      "name": "Supplied randomized seed with UPR engine edits",
+      "input_unchanged": true,
+      "file_size_preserved": true,
+      "input": {
+        "game_code": "BPRE",
+        "revision": 1,
+        "size": 16777216,
+        "layout_verified": true,
+        "layout_matches": 6,
+        "layout_checks": 6,
+        "known_engine": false
+      },
+      "applied": [
+        "core",
+        "status"
+      ],
+      "skipped": [],
+      "warnings": [
+        "This ROM differs from the usual FireRed 1.1 layout or engine. Some changes may not work. Each selected feature was checked separately; check the patch notes/changelog below to confirm what was applied or skipped.",
+        "Keep your original ROM and save. Continue from a normal in-game save, not an old save state."
+      ]
+    }
+  ],
+  "scope": "Actual HTML patch engine under Node. Different headers and unfamiliar layouts are reported, not rejected. Local conflicts and allocations remain guarded. Runtime checks reported separately; these tests do not prove compatibility with every ROM hack."
+}

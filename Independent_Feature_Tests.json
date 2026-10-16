@@ -1,0 +1,119 @@
+{
+  "checks": [
+    {
+      "feature": "modern",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "modern",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "lab",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "lab",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "rotation",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "rotation",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "hms",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "hms",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "friendship",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "friendship",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "guide",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "guide",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "battleinfo",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "battleinfo",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "relearner",
+      "configuration": "all except this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    },
+    {
+      "feature": "relearner",
+      "configuration": "only this core feature",
+      "activation_bytes_checked": true,
+      "reapplication_unchanged": true,
+      "reenabling_restores_full_build": true
+    }
+  ],
+  "all_off_checked": true,
+  "entry_points_do_not_overlap": true,
+  "scope": "ROM patching, complete entry-point bytes, reapplication and re-enabling. Runtime and emulator checks are separate."
+}

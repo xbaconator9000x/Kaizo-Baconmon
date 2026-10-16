@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "guide_only": {
+      "guide_granted_after_field_ticks": true
+    },
+    "guide_off": {
+      "guide_granted_after_field_ticks": false
+    },
+    "friendship_only": {
+      "machine_menu_opened": true
+    },
+    "friendship_off": {
+      "machine_menu_opened": false
+    }
+  },
+  "scope": "Desktop mGBA using a controlled field fixture. No Android hardware test."
+}

@@ -1,0 +1,7 @@
+{
+  "checks": {
+    "guide": "Passed without Faster speed/start hooks, using a fresh matching save-state fixture.",
+    "friendship": "Passed without Faster speed/start hooks, using a fresh matching save-state fixture."
+  },
+  "scope": "Desktop mGBA with fresh vanilla-speed fixture. Earlier Faster save-state fixture cannot be reused across main-loop implementations. No Android hardware test."
+}

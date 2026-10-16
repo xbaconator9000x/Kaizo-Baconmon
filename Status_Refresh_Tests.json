@@ -1,0 +1,253 @@
+{
+  "cause_confirmed": true,
+  "cause": "OakOldManHandleStatusIconUpdate is a no-op. The real lab rival battle uses this Oak/tutorial controller (BATTLE_TYPE_FIRST_BATTLE).",
+  "why_previous_tests_missed_it": "They created ordinary trainer battles, which use the normal player controller.",
+  "fix": "Draw the existing status icon on the actual status command and complete using OakOldManBufferExecCompleted; remove earlier menu workaround.",
+  "runtime_checks": [
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "paralysis",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "poison",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "toxic",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "sleep",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "burn",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "freeze",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Classic",
+      "status": "cured",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "paralysis",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "poison",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "toxic",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "sleep",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "burn",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "freeze",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": false,
+      "mode": "Modern",
+      "status": "cured",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "paralysis",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "poison",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "toxic",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "sleep",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "burn",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "freeze",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Classic",
+      "status": "cured",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "paralysis",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "poison",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "toxic",
+      "icon_updated": false,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "sleep",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "burn",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "freeze",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    },
+    {
+      "patched": true,
+      "mode": "Modern",
+      "status": "cured",
+      "icon_updated": true,
+      "command_completed": true,
+      "status_unchanged": true
+    }
+  ],
+  "controlled_battle": {
+    "sequence": [
+      "Sandstorm",
+      "Steel Wing contact/Rough Skin",
+      "Glare"
+    ],
+    "first_battle_flags": "0x1c",
+    "original": "Paralysis is applied, icon stays blank at action selection.",
+    "fixed": "PAR visible after the same status application.",
+    "note": "Moves controlled in test RAM, not changed in the distributed ROM."
+  },
+  "patch_checks": {
+    "source_sha256": "051bc5d1d3d1b8f6b7978b1affa9218d3faa6decd329193da2becf1e2b33726f",
+    "output_sha256": "58c33eaf8266adfd96bdeddb27acce940cbd373f73d85361263057f1b0ace704",
+    "changed_bytes": 76,
+    "only_tutorial_hook_and_free_space_changed": true,
+    "legacy_workaround_upgrade_matches_fresh_fix": true,
+    "reapply_and_conflict_checks_passed": true
+  },
+  "original_save_sha256": "a1054e2d7a94912646c529262ada6c9537d279fb1833ca253ca5bde61b3971b0",
+  "scope": "Desktop mGBA. Android hardware confirmation pending."
+}

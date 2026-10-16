@@ -1,0 +1,13 @@
+{
+  "modern_skipped_with_foreign_ability_hook": true,
+  "new_helpers_use_classic_even_with_old_modern_save_variable": true,
+  "classic_damage": {
+    "44": 10,
+    "247": 72,
+    "63": 134,
+    "7": 13,
+    "127": 13
+  },
+  "guide_item_granted_by_running_overworld_code": true,
+  "scope": "ARM functions in Unicorn and a field fixture in desktop mGBA. The foreign ability test hook is a valid Thumb routine returning zero. These checks test isolation of the remaining tools, not every behavior of an arbitrary hack."
+}

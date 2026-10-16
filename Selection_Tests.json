@@ -1,0 +1,10 @@
+{
+  "select_all_and_partial_selection": true,
+  "faster_extras_independent": true,
+  "rival_only_without_core": true,
+  "custom_level_disables_level_8_runtime_override": true,
+  "tutor_off_with_custom_level": true,
+  "invalid_level_blocks_downloads": true,
+  "help_sections_present": true,
+  "scope": "Actual HTML JavaScript with DOM stubs; no rendered browser or Android hardware test."
+}
