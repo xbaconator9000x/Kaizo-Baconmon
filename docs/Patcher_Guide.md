@@ -23,7 +23,7 @@ The Kaizo, Standard and Ultimate presets use UTDZac's published FireRed settings
 
 Each batch includes numbered ROMs, seeds, settings and patch notes. Spoiler logs are in a separate folder for after the run. Keep the same base, options, engine, settings and seed if you want to reproduce the output.
 
-The browser randomiser loads CheerpJ from its vendor on first use, so it needs an internet connection. Generation then runs in your browser. It has been tested on desktop Chromium; performance on an actual Android device still needs testing.
+The browser randomiser loads CheerpJ from its vendor on first use, so it needs an internet connection. Generation then runs in your browser. It has been tested on desktop Chrome and Android Chrome; performance on an Android is slower but has worked in testing.
 
 You can also use [UPR-ZX on PC](https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases) or [UPR-Android](https://github.com/champred/UPR-Android/releases). Use the matching [official FireRed Ironmon settings](https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621) and follow the linked projects' instructions. The patcher has more setup help in its dropdowns.
 
