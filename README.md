@@ -40,7 +40,7 @@ The patcher makes a separate copy and leaves your original ROM and saves alone. 
 
 [Full instructions](docs/Patcher_Guide.md)
 
-Once GitHub Pages is switched on, the patcher will be here:
+The current version of the patcher is here:
 
 https://xbaconator9000x.github.io/Kaizo-Baconmon/
 
