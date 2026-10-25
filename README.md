@@ -4,7 +4,7 @@
 
 [Open the browser patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/)
 
-**Current patcher: Release build 1.0.** Testing and feedback are ongoing; the browser randomiser is still a beta.
+**Current patcher: [Release build 1.0](https://github.com/xbaconator9000x/Kaizo-Baconmon/releases/latest).** Testing and feedback are ongoing; the browser randomiser is still a beta.
 
 Kaizo Baconmon is a modular FireRed patcher and challenge toolkit, with my own take on Kaizo Ironmon as an optional full setup. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
 
