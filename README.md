@@ -2,11 +2,25 @@
 
 **Ironmon, but tastier.**
 
-Kaizo Baconmon is my own little take on Kaizo Ironmon, inspired mainly by Ironmon VS, with a few extra QoL changes I wanted for my runs.
+[Open the browser patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/)
+
+**Current patcher: Release build 1.0.** Testing and feedback are ongoing; the browser randomiser is still a beta.
+
+Kaizo Baconmon is a modular FireRed patcher and challenge toolkit, with my own take on Kaizo Ironmon as an optional full setup. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
 
 I drew heavily from DrMaple's fantastic Faster FireRed 1.3.2 build. He has kindly given me permission to utilise and modify aspects of it for Baconmon.
 
-The patcher lets you use the full **Core Baconmon Package**, or untick the bits you don't want. You can use the extras for ordinary Nuzlockes, Ironmon or your own rules.
+## What's it for?
+
+It's designed with **Baconmon, Kaizo/Ironmon-style runs, VS-style challenges, ordinary Nuzlockes, and custom or casual randomised runs** in mind. You don't have to use my ruleset to use the patcher.
+
+Use the full **Core Baconmon Package**, or pick the bits you actually want. Maybe you want Classic mechanics with a few QoL changes, Modern mechanics for a different challenge, or a score log to give you something to chase when the seed inevitably goes sideways lol.
+
+That's why it's modular: different runs need different things. You shouldn't have to take a whole new ruleset just because you want one feature.
+
+**This isn't standard Ironmon, and the options aren't automatically legal under another challenge's rules.** Changes like field HMs without an HM friend or Modern battle mechanics can change the challenge. Check your chosen rules before enabling anything, and keep modified runs separate from standard Ironmon results. The VS-style features are inspired by Ironmon VS, not an official VS setup.
+
+The built-in **score log** tracks run milestones; it isn't a replacement for the external Ironmon Tracker.
 
 ## Classic vs Modern
 
@@ -57,15 +71,11 @@ The in-game log tracks your current run. Keep a note of your PB to compare attem
 
 ## How to use it
 
-You'll need your own FireRed 1.1 ROM. Open index.html in a current browser, choose your ROM and the features you want, then click **Check and apply**. Read the patch notes to see what worked and what was skipped.
+You'll need your own clean US FireRed 1.1 (Rev 1) ROM or Faster FireRed 1.3.2. Open the browser patcher linked above, choose your ROM and the features you want, then click **Check and apply**. Read the patch notes to see what worked and what was skipped.
 
 The patcher makes a separate copy and leaves your original ROM and saves alone. The batch randomiser is a beta. Choose up to 100 ROMs per batch; large batches download in ZIP parts of up to 10 ROMs. Download each part before continuing. The randomiser needs an internet connection to load its Java runtime on first use.
 
 [Full instructions](docs/Patcher_Guide.md)
-
-The current patcher is **Release build 1.0**:
-
-https://xbaconator9000x.github.io/Kaizo-Baconmon/
 
 ## Beta testing
 
@@ -89,7 +99,7 @@ The browser randomiser uses UPR-ZX by Ajarmar and contributors, based on Dabomst
 
 ## Source
 
-The patcher code, randomiser integration, tests and ROM patch data are included here and in the [source ZIP](Kaizo_Baconmon_Patcher_Source.zip). This isn't a full decompilation of the game. [Developer notes](docs/Developer_Notes.md) cover rebuilding and the test reports.
+The patcher code, randomiser integration, tests and ROM patch data are included in this repository. This isn't a full decompilation of the game. [Developer notes](docs/Developer_Notes.md) cover rebuilding and the test reports.
 
 The patcher software keeps its existing MIT/GPLv3 terms. The original projects keep their own terms too; their notices are included.
 
