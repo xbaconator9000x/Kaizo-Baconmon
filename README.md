@@ -22,6 +22,18 @@ That's why it's modular: different runs need different things. You shouldn't hav
 
 The built-in **score log** tracks run milestones; it isn't a replacement for the external Ironmon Tracker.
 
+## Quick start
+
+1. Bring your own **clean US FireRed 1.1 (Rev 1)** or **Faster FireRed 1.3.2** ROM. No ROM is included here.
+2. Open the browser patcher linked above in a current browser.
+3. Choose your ROM, then use the **Core Baconmon Package** or select the features you want. Check your run's rules first.
+4. Click **Check and apply**. Read the output log: conflicting changes may be skipped, so don't assume everything was applied.
+5. Download the patched copy and start a fresh run in your emulator. Keep your original ROM and saves as backups.
+
+Want randomised seeds? Use the optional batch randomiser after patching. It's still a beta and needs internet to load its Java runtime. For a downloadable copy of the patcher, open the release linked above and choose **Kaizo_Baconmon_Patcher_v1.0.html**; the source ZIP is for people who want the code.
+
+[Full patching and randomiser instructions](docs/Patcher_Guide.md)
+
 ## Classic vs Modern
 
 Same Pokemon, levels, stats and moves in each comparison. Only the mode changes. These are controlled emulator battles; the end frames pause so you can read the result.
@@ -63,6 +75,26 @@ Same hit, different outcome. Modern Sturdy saves a full-health Geodude from a kn
 
 The guide explains the full Baconmon setup. If you change the options, agree on your rules before comparing runs with someone else.
 
+## What changes your run?
+
+Not every convenience is just cosmetic. This is a heads-up about the differences, not a claim that a particular challenge allows them.
+
+| Feature | What it affects |
+| --- | --- |
+| Modern mode | Battle mechanics: physical/special categories and effects of existing abilities. Classic keeps the original Gen 3 mechanics, but doesn't cancel other selected modifications. |
+| Rival level | Opening battle difficulty and the experience available from it. |
+| Lab start and early balls | Opening progression and starting resources. |
+| Field HMs and Town Map Fly | Party management and field access: no HM friend needed, while HM, badge and story checks still apply. |
+| Lit Rock Tunnel | Visibility and the need to use Flash for navigation. |
+| TM-paid move relearner | Move access and resources: exchange a TM to relearn a move. |
+| Happiness machine | Friendship, including the power of Return and Frustration. |
+| Poison-friendly forest nurse | Healing access while poisoned. |
+| Encounter rotation and hidden-item changes | Encounter opportunities and item availability. Your rules still determine what you may catch or collect. |
+| L-button move details and category symbols | Battle information shown to the player. Check any restrictions on information aids. |
+| Nuz-guide and score log | Rules reference and milestone recording; not automatic enforcement of every rule. |
+| Title screen | Presentation. Grumpig isn't giving you a combat advantage lol. |
+| Randomiser settings | Whatever the selected preset or settings change. Use matching settings when comparing runs. |
+
 ## Why points?
 
 I included the VS-style points because I find tracking progress and chasing a PB more fun than only counting a Champion win. Kaizo Ironmon can take dozens, hundreds or even thousands of attempts. Points give you smaller milestones to aim for, a way to see yourself improving, and something to compete over with friends—even when nobody wins the seed.
@@ -77,15 +109,36 @@ The patcher makes a separate copy and leaves your original ROM and saves alone. 
 
 [Full instructions](docs/Patcher_Guide.md)
 
-## Beta testing
+## Known issues and testing limits
 
 I'm new to romhack development and the Nuz-like scene generally, so feedback and guidance are very welcome! I'd especially like thoughts on the run rules and reports of anything that doesn't work properly.
 
 Designed for maximum compatibility between ROMs. Changes that cannot be applied are skipped and listed in the output log. I can’t guarantee compatibility with any particular ROM. Designed for clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2; other modified ROMs may also work.
 
-Desktop patching, upgrades, selected game features and browser seed generation have been tested. A full playthrough and seed generation on an actual Android device still need testing.
+Desktop patching, upgrades, selected game features and browser seed generation have been tested. See the [test reports](reports/README.md) for what those checks actually covered.
+
+- **Still to test:** a full playthrough and seed generation on an actual Android device.
+- **Batch randomiser:** still a beta. Passing scheduling checks isn't the same as testing every large batch on real hardware.
+- **Other ROM hacks:** successful patching doesn't prove the combined game is stable. Skipping a conflict also means you might not get every feature you selected.
+- **External Ironmon Tracker:** compatibility hasn't been established by this documentation. Don't assume it works just because the ROM boots or because tracker reference data appears in the credits.
+- **Challenge loopholes:** no dedicated exploit audit has been completed. The score log doesn't certify a legal run.
+- **Existing saves:** use a fresh run when changing the setup. The patcher doesn't migrate old save data.
+
+These are known limits of the testing, not a list of confirmed exploits. Please report anything reproducible rather than assuming it's already on the radar.
 
 If something breaks, tell me what happened, how to reproduce it and include the patcher's detailed report. Please keep ROMs, saves and save states out of public issues.
+
+## Changelog
+
+### Release build 1.0
+
+First packaged GitHub release of the modular browser patcher, with a downloadable HTML patcher and source ZIP. Includes Classic/Modern mechanics, selectable QoL features, the Nuz-guide and score log, and the beta batch randomiser.
+
+### Documentation updates after 1.0
+
+Clarified the supported run types, optional Baconmon setup and rules compatibility. Added a quick-start, feature-impact table and testing limits. These are documentation changes, not new gameplay features or fixes.
+
+[Release notes and downloads](https://github.com/xbaconator9000x/Kaizo-Baconmon/releases)
 
 ## Credits
 
