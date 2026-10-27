@@ -147,7 +147,8 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           throw Error('Choose 1–100 ROMs per batch and 1–100 batches.');
         if (!settings.startsWith('321') || settings.length < 40)
           throw Error('Choose a preset or paste a compatible 321 settings string.');
-        const selected = Array.from(
+        const profile = el('run-profile')?.value || 'custom',
+          selected = Array.from(
             document.querySelectorAll('input.feature:checked'),
             (x) => x.value,
           ),
@@ -186,6 +187,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           base,
           pool,
           report,
+          profile,
           index: 0,
           offset: 0,
           base_sha256: await hash(base),
@@ -240,6 +242,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
       }
       const manifest = {
         format: 'Baconmon batch v1',
+        ruleset: s.profile,
         patcher: CONFIG.version,
         engine: 'UPR-ZX 4.6.0',
         root_seed: s.root,
