@@ -179,9 +179,41 @@ You can legally choose:
 
 Write down the settings and win conditions before starting if you want the run to be reproducible.
 
-## My optional Baconmon ruleset
+## Ironmon VS+
 
-The full Baconmon rules are my own take, inspired by Kaizo Ironmon and Ironmon VS. They are optional; you do not need to use them to use the patcher.
+The main Baconmon ruleset is being aligned with Ironmon VS+. It keeps the VS-style scoring framework and conveniences, but the current rules are still the authority for what is legal.
+
+The patcher should use this as the base for Baconmon runs:
+
+- Classic or Modern chosen at the start of the run.
+- Automatic 33-point VS-style score log.
+- VS+ field-HM conveniences.
+- Poison-friendly Viridian Forest nurse.
+- Friendship controls.
+- Restricted Gym Leader TM rules.
+- Fuchsia Move Reminder using eligible unused Gym Leader TMs.
+- No unapproved Baconmon features when comparing against other VS+ runs.
+
+## Kaizo Babymon
+
+Kaizo Babymon is a separate original preset built on Ironmon VS+:
+
+- Choose left, middle or right before revealing the starter.
+- The starter comes only from the Babymon Tier 1 pool.
+- The starter remains the only legal runner.
+- No pivoting, no starter rerolls and no viability guarantees.
+- Evolutions follow the current species' normal Generation III trigger.
+- Destinations are randomized by seed: Tier 1 → Tier 2 → Tier 3.
+- Tier 3 Pokémon cannot evolve again.
+- BST may increase or decrease.
+- Babymon permits the specific healing, draining-move and Huge Power/Pure Power overrides listed in its rules.
+- Babymon scores are tracked separately from other rulesets.
+
+See the [Kaizo Babymon specification](Kaizo_Babymon_Spec.md) for the complete rules and implementation requirements.
+
+## My optional ruleset feedback
+
+The full Baconmon rules are my own take, inspired by Kaizo Ironmon and Ironmon VS+. They are optional; you do not need to use them to use the patcher.
 
 I am especially interested in feedback on the rules themselves, including unclear wording, edge cases and loopholes. Please report anything reproducible with the settings and steps needed to see it.
 
