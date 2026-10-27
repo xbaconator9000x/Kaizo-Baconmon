@@ -1,0 +1,13 @@
+const assert = require('node:assert/strict');
+const {plan}=require('./babymon_planner.js');
+const manifest=Array.from({length:386},(_,i)=>({dex:i+1,tier:i<10?1:i<20?2:i<30?3:0,methods:i<20?[{kind:'level',value:7}]:[]}));
+const a=plan(manifest,'123');
+assert.deepEqual(a,plan([...manifest].reverse(),'123'));
+assert(a.starters.every(x=>x>=1&&x<=10));
+assert(a.evolutions.every(x=>x.from<=10?x.to>=11&&x.to<=20:x.to>=21&&x.to<=30));
+assert.equal(a.evolutions.length,20);
+assert.throws(()=>plan(manifest.slice(1),'123'));
+const bad=manifest.map(x=>({...x})); bad[0].legendary=true;
+assert.throws(()=>plan(bad,'123'));
+assert.notDeepEqual(a,plan(manifest,'124'));
+console.log('Babymon planner checks passed (synthetic fixture; not species or ROM validation).');
