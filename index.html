@@ -156,7 +156,8 @@ input:disabled {
       <legend>Run profile</legend>
 <label>Choose a run type
   <select id="run-profile">
-    <option value="baconmon">Baconmon (full setup)</option>
+    <option value="baconmon">Baconmon / Ironmon VS+</option>
+    <option value="babymon">Kaizo Babymon</option>
     <option value="kaizo">Standard Kaizo Ironmon</option>
     <option value="standard">Standard Ironmon</option>
     <option value="ultimate">Ultimate Ironmon</option>
@@ -2034,7 +2035,13 @@ if (typeof document !== 'undefined') {
       preset: 'Kaizo',
       features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,rotation,hms,friendship,guide,battleinfo,relearner',
       level: 8,
-      note: 'Full Baconmon setup: Kaizo randomiser settings, Classic/Modern choice at run start, lab start, VS encounter rotation, automatic VS-style score log and Baconmon quality-of-life changes.',
+      note: 'Full Baconmon / Ironmon VS+ setup: Kaizo randomiser settings, Classic/Modern choice at run start, lab start, VS encounter rotation, automatic VS-style score log and Baconmon quality-of-life changes.',
+    },
+    babymon: {
+      preset: 'Kaizo',
+      features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,hms,friendship,guide,battleinfo,relearner',
+      level: 8,
+      note: 'Kaizo Babymon profile: Kaizo randomiser starting point, VS+ conveniences and Classic/Modern choice. The Babymon starter pool and tiered evolution mapping are being added to the randomiser separately.',
     },
     kaizo: {
       preset: 'Kaizo',
