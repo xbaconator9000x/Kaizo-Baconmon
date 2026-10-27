@@ -34,6 +34,8 @@ Want randomised seeds? Use the optional batch randomiser after patching. It's st
 
 [Full patching and randomiser instructions](docs/Patcher_Guide.md)
 
+[Run settings guide](docs/Run_Settings_Guide.md)
+
 ## Classic vs Modern
 
 Same Pokemon, levels, stats and moves in each comparison. Only the mode changes. These are controlled emulator battles; the end frames pause so you can read the result.
@@ -108,6 +110,12 @@ You'll need your own clean US FireRed 1.1 (Rev 1) ROM or Faster FireRed 1.3.2. O
 The patcher makes a separate copy and leaves your original ROM and saves alone. The batch randomiser is a beta. Choose up to 100 ROMs per batch; large batches download in ZIP parts of up to 10 ROMs. Download each part before continuing. The randomiser needs an internet connection to load its Java runtime on first use.
 
 [Full instructions](docs/Patcher_Guide.md)
+
+## My optional ruleset
+
+The full Baconmon rules are my own take, inspired by Kaizo Ironmon and Ironmon VS. They are optional; you do not need to use them to use the patcher.
+
+I am especially interested in feedback on the rules themselves, including unclear wording, edge cases and loopholes. Please report anything reproducible with the settings and steps needed to see it.
 
 ## Known issues and testing limits
 
