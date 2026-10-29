@@ -6,7 +6,7 @@ const fs = require('fs'),
 const root = path.resolve(__dirname, '..'),
   html = fs.readFileSync(path.join(root, 'public-output/Kaizo_Baconmon_Patcher.html'), 'utf8');
 const script = html.match(/<script>([\s\S]*)<\/script>/)[1];
-function setup(size, count = 1, failAt = 0) {
+function setup(size, count = 1, failAt = 0, profile = 'baconmon') {
   const nodes = {},
     files = new Map(),
     blobs = new Map(),
@@ -31,9 +31,21 @@ function setup(size, count = 1, failAt = 0) {
     };
   Object.assign(nodes['batch-size'], { value: String(size) });
   nodes['batch-count'].value = String(count);
+  nodes['run-profile'].value = profile;
   nodes['batch-preset'].value = 'Kaizo';
   nodes.rivalLevel.value = '8';
   nodes.file.files = [{ name: 'Test.gba', arrayBuffer: async () => new Uint8Array(32).buffer }];
+  if(profile==='babymon') {
+    const manifest=require('./babymon_manifest.json'),{EVOLUTIONS,STARTERS,starterSlots}=require('./babymon_rom.js');
+    const b=new Uint8Array(0x1000000),v=new DataView(b.buffer);
+    b.set(Buffer.from('BPRE'),0xac);b[0xbc]=1;
+    for(const p of manifest) for(const [i,m] of p.source_methods.entries()) {
+      const off=EVOLUTIONS+p.internal_id*40+i*8;
+      v.setUint16(off,m.code,true);v.setUint16(off+2,m.parameter,true);v.setUint16(off+4,m.destination,true);
+    }
+    for(const [off,index] of starterSlots)v.setUint16(STARTERS+off,[1,4,7][index],true);
+    nodes.file.files=[{name:'Layout-fixture.gba',arrayBuffer:async()=>b.buffer}];
+  }
   const bridge = {
     async generateSafe(input, out, settings, seed) {
       calls.push(seed);
@@ -41,9 +53,14 @@ function setup(size, count = 1, failAt = 0) {
         failed = true;
         return 'ERROR:Test retry';
       }
-      files.set(out, new TextEncoder().encode('Synthetic test output ' + seed));
+      files.set(out, profile==='babymon' ? files.get(input).slice() : new TextEncoder().encode('Synthetic test output ' + seed));
       files.set(out + '.log', new TextEncoder().encode('Test log ' + seed));
       return 'OK:test';
+    },
+    async generateBabymonSafe(input,out,settings,seed,...starters) {
+      assert.equal(starters.length,3);
+      for(const dex of starters) assert.equal(require('./babymon_manifest.json')[dex-1].tier,1);
+      return this.generateSafe(input,out,settings,seed);
     },
     async remove(p) {
       files.delete(p);
@@ -167,6 +184,14 @@ async function readPart(t) {
     assert.equal(t.calls.length, 0);
     assert.equal(t.nodes['batch-generate'].disabled, false);
   }
+  const baby=setup(1,1,0,'babymon');
+  await baby.nodes['batch-generate'].onclick();
+  const bm=await readPart(baby);
+  assert.equal(bm.ruleset,'babymon-experimental');
+  assert.equal(bm.runs[0].score_eligible,false);
+  assert.equal(bm.runs[0].evolution_configuration,'Babymon evolution plan v1');
+  assert.equal(bm.runs[0].ruleset,'babymon-experimental');
+  assert.equal(bm.runs[0].seed,await baby.ctx.BaconBatch.batchSeed('42',1));
   const retry = setup(10, 1, 3);
   await retry.nodes['batch-generate'].onclick();
   assert.match(retry.nodes['batch-status'].textContent, /Test retry/);

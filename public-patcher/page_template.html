@@ -23,7 +23,23 @@
       >ROM file <input id="file" type="file" accept=".gba,.agb,.bin,.rom,application/octet-stream"
     /></label>
     <fieldset>
-      <legend>Changes to apply</legend>
+      <legend>Run profile</legend>
+<label>Choose a run type
+  <select id="run-profile">
+    <option value="baconmon">Baconmon / Ironmon VS+</option>
+    <option value="babymon">Kaizo Babymon</option>
+    <option value="kaizo">Standard Kaizo Ironmon</option>
+    <option value="standard">Standard Ironmon</option>
+    <option value="ultimate">Ultimate Ironmon</option>
+    <option value="survival">Survival Ironmon</option>
+    <option value="vs">Ironmon VS-style</option>
+    <option value="nuzlocke">Nuzlocke / encounters only</option>
+    <option value="custom">Custom / casual</option>
+  </select>
+  <small>Profiles set the patch features and randomiser preset together. You can still change individual settings afterward.</small>
+</label>
+<p id="profile-note" class="small"></p>
+<legend>Changes to apply</legend>
       ${choices}
     </fieldset>
     ${help_sections}<button id="run">Check and apply</button>

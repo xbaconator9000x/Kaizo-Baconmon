@@ -27,6 +27,9 @@ def embedded_script(manifest):
             "const BATCH_PRESETS=" + json.dumps(presets) + ";",
             "const ENGINE_JAR=" + json.dumps(engine) + ";",
             "const BRIDGE_JAR=" + json.dumps(bridge) + ";",
+            "const BABYMON_MANIFEST=" + (SOURCE_DIRECTORY / "babymon_manifest.json").read_text() + ";",
+            (SOURCE_DIRECTORY / "babymon_planner.js").read_text(),
+            (SOURCE_DIRECTORY / "babymon_rom.js").read_text(),
             (SOURCE_DIRECTORY / "randomizer.js").read_text(),
         ]
     )

@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/pret/pokefirered",
+  "commit": "ce6406d8c2eaf46d543c8a2606de0c3cb1951982",
+  "sha256": {
+    "include/constants/pokedex.h": "aac527819623140d7f44ad99b72654bab59ca5679a80cca33361828cc7e7d0c6",
+    "include/constants/species.h": "ec3f9f9c2717dcd453aa7a27506c32e1e6ca067864534dee494695d74344c51a",
+    "include/constants/pokemon.h": "9cabd203100ae7246bc595b7295e7e04145f6292abfab83c3bd0597a2cfbcfb5",
+    "include/constants/items.h": "af17276346eaecc5a10ac60f14b22c33332ec8c6fb0ec82895bdc3649b678138",
+    "src/data/pokemon/species_info.h": "9c2da1284f7859700b315abda0499334c422f2c6776d576c788fcd1e4050f71e",
+    "src/data/pokemon/evolution.h": "a7d05352fb5b7039b8851049bc9575dc8eaa4450bf9964d03b7857db98c32d3c"
+  }
+}

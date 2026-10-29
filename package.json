@@ -6,7 +6,8 @@
     "format": "prettier --plugin=prettier-plugin-java --write \"public-patcher/**/*.{js,cjs,html,css,java}\" \"docs/**/*.md\" Credits_and_Permissions.md reports/README.md && python3 -m black public-patcher scripts",
     "format:check": "prettier --plugin=prettier-plugin-java --check \"public-patcher/**/*.{js,cjs,html,css,java}\" \"docs/**/*.md\" Credits_and_Permissions.md reports/README.md && python3 -m black --check public-patcher scripts",
     "test:batch": "node public-patcher/test_large_batches.cjs",
-    "package:source": "python3 scripts/package_source.py"
+    "package:source": "python3 scripts/package_source.py",
+    "test:babymon": "node public-patcher/test_babymon_planner.cjs && node public-patcher/test_babymon_rom.cjs"
   },
   "devDependencies": {
     "prettier": "3.6.2",

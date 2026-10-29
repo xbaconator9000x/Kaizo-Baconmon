@@ -546,26 +546,103 @@ if (typeof document !== 'undefined') {
     downloads.appendChild(a);
   }
   const packageBox = document.getElementById('package'),
-    levelBox = document.getElementById('rivalLevel');
+    levelBox = document.getElementById('rivalLevel'),
+    profileBox = document.getElementById('run-profile'),
+    profileNote = document.getElementById('profile-note');
   const optionIds = CONFIG.groups
     .filter((g) => !['core', 'support'].includes(g.id))
     .map((g) => g.id)
     .concat(CONFIG.core_features.map((f) => f.id));
   const featureBoxes = () =>
     optionIds.map((id) => document.getElementById(id === 'relearner' ? 'tutor' : 'feature-' + id));
-  if (packageBox) {
-    function sync(changed) {
-      const box = (id) => document.getElementById(id === 'relearner' ? 'tutor' : 'feature-' + id);
-      levelBox.disabled = !box('rival').checked;
-      const states = featureBoxes().map((e) => e.checked);
-      packageBox.checked = states.every(Boolean);
-      packageBox.indeterminate = states.some(Boolean) && !packageBox.checked;
+  const RUN_PROFILES = {
+    baconmon: {
+      preset: 'Kaizo',
+      features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,rotation,hms,friendship,guide,battleinfo,relearner',
+      level: 8,
+      note: 'Full Baconmon / Ironmon VS+ setup: Kaizo randomiser settings, Classic/Modern choice at run start, lab start, VS encounter rotation, automatic VS-style score log and Baconmon quality-of-life changes.',
+    },
+    babymon: {
+      preset: 'Kaizo',
+      features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,hms,friendship,guide,battleinfo,relearner',
+      level: 8,
+      note: 'Kaizo Babymon profile: Kaizo randomiser starting point, VS+ conveniences and Classic/Modern choice. Experimental: batch randomisation writes Tier 1 starters and tiered evolutions. Gameplay restrictions and evolution accessibility are unfinished; these are test ROMs, not validated Babymon runs.',
+    },
+    kaizo: {
+      preset: 'Kaizo',
+      features: '',
+      level: 8,
+      note: 'Conservative official Kaizo profile: Kaizo randomiser settings and no Baconmon gameplay changes. Use the rules you are following to decide whether any convenience can be enabled.',
+    },
+    standard: {
+      preset: 'Standard',
+      features: '',
+      level: 8,
+      note: 'Conservative Standard Ironmon profile: Standard randomiser settings and no Baconmon gameplay changes.',
+    },
+    ultimate: {
+      preset: 'Ultimate',
+      features: '',
+      level: 8,
+      note: 'Conservative Ultimate profile: Ultimate randomiser settings and no Baconmon gameplay changes.',
+    },
+    survival: {
+      preset: 'Custom',
+      features: '',
+      level: 8,
+      note: 'Survival uses its own current settings. Select this profile for a conservative patch, then paste the official Survival settings string into the randomiser settings box.',
+    },
+    vs: {
+      preset: 'Custom',
+      features: '',
+      level: 6,
+      note: 'VS-style runs use the current event or community settings. The score log is compatible with VS-style scoring, but gameplay options must match the specific rules.',
+    },
+    nuzlocke: {
+      preset: 'Encounters only',
+      features: 'tunnel,hidden,battleinfo',
+      level: 8,
+      note: 'Simple Nuzlocke starting point: randomise encounters only and add convenience/information features. Change anything to match your own clauses.',
+    },
+    custom: {
+      preset: 'Custom',
+      features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,rotation,hms,friendship,guide,battleinfo,relearner',
+      level: 8,
+      note: 'Custom profile: starts from the full feature set and lets you choose what you actually want.',
+    },
+  };
+  function sync(changed) {
+    const box = (id) => document.getElementById(id === 'relearner' ? 'tutor' : 'feature-' + id);
+    levelBox.disabled = !box('rival').checked;
+    const states = featureBoxes().map((e) => e.checked);
+    packageBox.checked = states.every(Boolean);
+    packageBox.indeterminate = states.some(Boolean) && !packageBox.checked;
+  }
+  function applyProfile(name) {
+    const profile = RUN_PROFILES[name] || RUN_PROFILES.custom;
+    const wanted = new Set(profile.features.split(',').filter(Boolean));
+    for (const id of optionIds) {
+      const box = document.getElementById(id === 'relearner' ? 'tutor' : 'feature-' + id);
+      if (box) box.checked = wanted.has(id);
     }
-    packageBox.onchange = () => {
-      for (const box of featureBoxes()) box.checked = packageBox.checked;
-      sync();
-    };
-    for (const box of featureBoxes()) box.onchange = () => sync(box.value);
+    levelBox.value = profile.level;
+    const preset = document.getElementById('batch-preset');
+    if (preset) {
+      preset.value = profile.preset;
+      preset.onchange?.();
+    }
+    profileNote.textContent = profile.note;
+    sync();
+  }
+  packageBox.onchange = () => {
+    for (const box of featureBoxes()) box.checked = packageBox.checked;
+    sync();
+  };
+  for (const box of featureBoxes()) box.onchange = () => sync(box.value);
+  if (profileBox) {
+    profileBox.onchange = () => applyProfile(profileBox.value);
+    applyProfile(profileBox.value);
+  } else {
     sync();
   }
   button.onclick = async () => {
@@ -576,8 +653,7 @@ if (typeof document !== 'undefined') {
     }
     const selected = Array.from(document.querySelectorAll('input.feature:checked'), (e) => e.value);
     if (!selected.length) {
-      status.textContent = 'Choose at least one feature.';
-      return;
+      status.textContent = 'No patch features selected. The original ROM will be used with the chosen randomiser settings.';
     }
     button.disabled = true;
     downloads.replaceChildren();

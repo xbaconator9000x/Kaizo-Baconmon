@@ -21,6 +21,11 @@ public final class BaconBridge {
 
     public static String generate(String input, String output, String setting, String seedText)
         throws Exception {
+        return generateConfigured(input, output, setting, seedText, null);
+    }
+
+    private static String generateConfigured(String input, String output, String setting, String seedText, int[] starters)
+        throws Exception {
         long seed = Long.parseLong(seedText);
         if (seed < 0 || seed > 9007199254740991L) throw new IllegalArgumentException(
             "Seed must be between 0 and 9007199254740991."
@@ -43,6 +48,7 @@ public final class BaconBridge {
         );
         settings.setCustomNames(FileFunctions.getCustomNames());
         settings.tweakForRom(handler);
+        if (starters != null) configureBabymonStarters(settings, handler.getPokemonInclFormes(), starters);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         PrintStream log = new PrintStream(bytes, false, "UTF-8");
         int check = new Randomizer(
@@ -59,6 +65,40 @@ public final class BaconBridge {
     public static String generateSafe(String input, String output, String settings, String seed) {
         try {
             return "OK:" + generate(input, output, settings, seed);
+        } catch (Exception e) {
+            return "ERROR:" + e.getClass().getSimpleName() + ": " + e.getMessage();
+        }
+    }
+
+
+    // Configure picks before UPR processes rival teams and starter descriptions.
+    static void configureBabymonStarters(Settings settings,
+            java.util.List<com.dabomstew.pkrandom.pokemon.Pokemon> pokemon, int[] dex) throws Exception {
+        Set<Integer> allowed = new HashSet<Integer>();
+        InputStream stream = BaconBridge.class.getResourceAsStream("/babymon_tier1.txt");
+        if (stream == null) throw new IllegalStateException("Missing Babymon Tier 1 data.");
+        try (Scanner scanner = new Scanner(stream, "UTF-8")) {
+            while (scanner.hasNextInt()) allowed.add(scanner.nextInt());
+        }
+        if (allowed.size() != 126 || dex.length != 3) throw new IllegalArgumentException("Invalid Babymon starter data.");
+        java.util.List<com.dabomstew.pkrandom.pokemon.Pokemon> selectable = new ArrayList<>();
+        for (com.dabomstew.pkrandom.pokemon.Pokemon p : pokemon)
+            if (p == null || !p.actuallyCosmetic) selectable.add(p);
+        int[] indexes = new int[3];
+        for (int i=0; i<3; i++) {
+            if (!allowed.contains(dex[i])) throw new IllegalArgumentException("Starter outside Babymon Tier 1.");
+            for (int j=0; j<selectable.size(); j++)
+                if (selectable.get(j)!=null && selectable.get(j).number==dex[i]) { indexes[i]=j+1; break; }
+            if (indexes[i]==0) throw new IllegalArgumentException("Starter not available in ROM.");
+        }
+        settings.setStartersMod(false,true,false,false);
+        settings.setCustomStarters(indexes);
+    }
+
+    public static String generateBabymonSafe(String input, String output, String settings, String seed,
+            int left, int middle, int right) {
+        try {
+            return "OK:" + generateConfigured(input,output,settings,seed,new int[]{left,middle,right});
         } catch (Exception e) {
             return "ERROR:" + e.getClass().getSimpleName() + ": " + e.getMessage();
         }

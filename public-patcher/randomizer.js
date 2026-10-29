@@ -84,6 +84,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
     'batch-count',
     'batch-preset',
     'batch-settings',
+    'run-profile',
     'rivalLevel',
   ])
     el(id).addEventListener('change', reset);
@@ -160,6 +161,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           };
         const source = new Uint8Array(await file.arrayBuffer()),
           pool = await LegacyCore.inflate(PAYLOAD);
+        if (profile === 'babymon') BabymonROM.validateSource(source, BABYMON_MANIFEST);
         status.textContent = 'Checking the selected patches…';
         let base = source,
           report = null;
@@ -216,9 +218,18 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           path = '/files/bacon-output.gba';
         status.textContent =
           'Batch ' + batch + '/' + s.count + ' · generating ROM ' + (i + 1) + '/' + s.size + '…';
-        const result = await bridge.generateSafe('/str/bacon-input.gba', path, s.settings, seed);
+        const picks = s.profile === 'babymon' ? BabymonPlanner.plan(BABYMON_MANIFEST, seed).starters : null;
+        const result = picks
+          ? await bridge.generateBabymonSafe('/str/bacon-input.gba',path,s.settings,seed,...picks)
+          : await bridge.generateSafe('/str/bacon-input.gba', path, s.settings, seed);
         if (!result.startsWith('OK:')) throw Error(result.replace(/^ERROR:/, ''));
         let rom = new Uint8Array(await (await cjFileBlob(path)).arrayBuffer());
+        let babymon = null;
+        if (s.profile === 'babymon') {
+          babymon = BabymonROM.apply(rom, BABYMON_MANIFEST, seed);
+          rom = babymon.rom;
+          entries.push({name:'Spoilers_after_run/' + name + '_evolutions.json',data:JSON.stringify(babymon.plan,null,2)});
+        }
         if (s.selected.includes('rival')) {
           const r = await patchROM(rom, ['rival'], s.pool, { rivalLevel: s.options.rivalLevel });
           if (r.report.features.find((f) => f.id === 'rival').status === 'skipped')
@@ -231,6 +242,14 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           seed,
           sha256: await hash(rom),
           randomizer_check: result.slice(3),
+          ...(babymon ? {
+            ruleset:'babymon-experimental',
+            validation_status:babymon.validation_status,
+            evolution_configuration:babymon.plan.format,
+            battle_mode:s.selected.includes('modern')?'player choice at run start':'classic',
+            custom_overrides:{features:s.selected,settings:s.settings,rival_level:s.options.rivalLevel},
+            score_eligible:false,
+          } : {}),
         });
         // Spoiler logs are kept in a clearly named folder, never shown during generation.
         entries.push({
@@ -242,7 +261,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
       }
       const manifest = {
         format: 'Baconmon batch v1',
-        ruleset: s.profile,
+        ruleset: s.profile === 'babymon' ? 'babymon-experimental' : s.profile,
         patcher: CONFIG.version,
         engine: 'UPR-ZX 4.6.0',
         root_seed: s.root,
