@@ -1,5 +1,15 @@
 #include "bacon_evolution_core.h"
 
+static unsigned int PersonalityBranch(unsigned int personality)
+{
+    unsigned int value = personality >> 16, remainder = 0, bit = 16;
+    while (bit--) {
+        remainder = remainder * 2 + ((value >> bit) & 1);
+        if (remainder >= 10) remainder -= 10;
+    }
+    return remainder;
+}
+
 unsigned short BaconEvoResolve(const struct BaconEvoBranch *branches,
     const struct BaconEvoState *s, const unsigned char *tiers)
 {
@@ -24,8 +34,8 @@ unsigned short BaconEvoResolve(const struct BaconEvoBranch *branches,
         case 8: eligible = s->level >= b->parameter && s->attack > s->defense; break;
         case 9: eligible = s->level >= b->parameter && s->attack == s->defense; break;
         case 10: eligible = s->level >= b->parameter && s->attack < s->defense; break;
-        case 11: eligible = s->level >= b->parameter && ((s->personality >> 16) % 10) <= 4; break;
-        case 12: eligible = s->level >= b->parameter && ((s->personality >> 16) % 10) > 4; break;
+        case 11: eligible = s->level >= b->parameter && PersonalityBranch(s->personality) <= 4; break;
+        case 12: eligible = s->level >= b->parameter && PersonalityBranch(s->personality) > 4; break;
         case 13: eligible = s->level >= b->parameter; break; /* no extra-party branch */
         case 15: eligible = s->beauty >= b->parameter; break;
         }

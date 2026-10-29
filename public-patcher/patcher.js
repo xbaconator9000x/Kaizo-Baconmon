@@ -19,6 +19,7 @@ function hasSupport(b) {
 async function engineOK(b) {
   const e = CONFIG.engine,
     d = Uint8Array.from(b.subarray(e.start, e.end));
+  globalThis.EvolutionSupport?.normalize(d,e.start,b);
   for (const [a, z] of e.mask)
     if (z > e.start) d.fill(0, Math.max(a, e.start) - e.start, z - e.start);
   return e.accepted.includes(await hash(d));
@@ -42,6 +43,7 @@ async function guardOK(b, g, checkStates = true) {
     n = g.guard_length ?? g.length;
   if (!inside(b, base, n)) return false;
   const d = Uint8Array.from(b.subarray(base, base + n));
+  globalThis.EvolutionSupport?.normalize(d,base,b);
   for (const id of g.toggle_states || []) {
     const t = CONFIG.switches[id];
     if (
@@ -552,7 +554,7 @@ if (typeof document !== 'undefined') {
   const optionIds = CONFIG.groups
     .filter((g) => !['core', 'support'].includes(g.id))
     .map((g) => g.id)
-    .concat(CONFIG.core_features.map((f) => f.id));
+    .concat(CONFIG.core_features.map((f) => f.id), ['evolution']);
   const featureBoxes = () =>
     optionIds.map((id) => document.getElementById(id === 'relearner' ? 'tutor' : 'feature-' + id));
   const RUN_PROFILES = {
@@ -564,7 +566,7 @@ if (typeof document !== 'undefined') {
     },
     babymon: {
       preset: 'Kaizo',
-      features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,hms,friendship,guide,battleinfo,relearner',
+      features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,hms,friendship,guide,battleinfo,relearner,evolution',
       level: 8,
       note: 'Kaizo Babymon profile: Kaizo randomiser starting point, VS+ conveniences and Classic/Modern choice. Experimental: batch randomisation writes Tier 1 starters and tiered evolutions. Gameplay restrictions and evolution accessibility are unfinished; these are test ROMs, not validated Babymon runs.',
     },

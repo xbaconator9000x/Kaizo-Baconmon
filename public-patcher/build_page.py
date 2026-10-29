@@ -30,6 +30,8 @@ def embedded_script(manifest):
             "const BABYMON_MANIFEST=" + (SOURCE_DIRECTORY / "babymon_manifest.json").read_text() + ";",
             (SOURCE_DIRECTORY / "babymon_planner.js").read_text(),
             (SOURCE_DIRECTORY / "babymon_rom.js").read_text(),
+            "const EVOLUTION_NATIVE=" + (SOURCE_DIRECTORY / "evolution/binary_payload.json").read_text() + ";",
+            (SOURCE_DIRECTORY / "evolution_support.js").read_text(),
             (SOURCE_DIRECTORY / "randomizer.js").read_text(),
         ]
     )
@@ -49,6 +51,7 @@ def feature_choices(manifest):
         "Adjust lab rival level",
         "Set the three lab starter parties to the level below, keeping their species and moves.",
     )
+    labels["evolution"] = ("Evolution support (beta)", "Celadon trade evolution help, use trade-evolution items like stones, and set Day/Night at the left computer in Oak’s lab. Also applies to batch randomisation.")
     sections = [
         '<label><input id="package" type="checkbox" checked> '
         "<strong>Core Baconmon Package</strong>"
@@ -63,7 +66,7 @@ def feature_choices(manifest):
         element_id = "tutor" if feature_id == "relearner" else "feature-" + feature_id
         sections.append(
             f'<label><input class="feature" type="checkbox" id="{element_id}" '
-            f'value="{feature_id}" checked> <strong>{escape(title)}</strong>'
+            f'value="{feature_id}" {"" if feature_id == "evolution" else "checked"}> <strong>{escape(title)}</strong>'
             f"<small>{escape(description)}</small></label>"
         )
     sections.append(
@@ -96,7 +99,7 @@ def build_page():
     template = Template((SOURCE_DIRECTORY / "page_template.html").read_text())
     stylesheet = (SOURCE_DIRECTORY / "patcher.css").read_text()
     page = template.substitute(
-        release_label=escape(f"Release build {manifest['version']}"),
+        release_label=escape(f"Evolution beta — base release {manifest['version']}"),
         style_tag="<style>" + stylesheet + "</style>",
         licence_notices=licence_notices(),
         reuse_licence=escape((PROJECT_DIRECTORY / "LICENSE.txt").read_text()),

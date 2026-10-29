@@ -158,6 +158,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
               CONFIG.core_features.map((f) => [f.id, selected.includes(f.id)]),
             ),
             rivalLevel: Number(el('rivalLevel').value),
+            ruleset: profile,
           };
         const source = new Uint8Array(await file.arrayBuffer()),
           pool = await LegacyCore.inflate(PAYLOAD);
@@ -221,7 +222,9 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
         const picks = s.profile === 'babymon' ? BabymonPlanner.plan(BABYMON_MANIFEST, seed).starters : null;
         const result = picks
           ? await bridge.generateBabymonSafe('/str/bacon-input.gba',path,s.settings,seed,...picks)
-          : await bridge.generateSafe('/str/bacon-input.gba', path, s.settings, seed);
+          : s.selected.includes('evolution')
+            ? await bridge.generateEvolutionSafe('/str/bacon-input.gba',path,s.settings,seed)
+            : await bridge.generateSafe('/str/bacon-input.gba', path, s.settings, seed);
         if (!result.startsWith('OK:')) throw Error(result.replace(/^ERROR:/, ''));
         let rom = new Uint8Array(await (await cjFileBlob(path)).arrayBuffer());
         let babymon = null;
@@ -231,7 +234,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           entries.push({name:'Spoilers_after_run/' + name + '_evolutions.json',data:JSON.stringify(babymon.plan,null,2)});
         }
         if (s.selected.includes('rival')) {
-          const r = await patchROM(rom, ['rival'], s.pool, { rivalLevel: s.options.rivalLevel });
+          const r = await patchROM(rom, ['rival'], s.pool, { ...s.options, rivalLevel: s.options.rivalLevel });
           if (r.report.features.find((f) => f.id === 'rival').status === 'skipped')
             throw Error('The generated rival party could not be checked. No batch was released.');
           rom = r.rom;
@@ -262,6 +265,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
       const manifest = {
         format: 'Baconmon batch v1',
         ruleset: s.profile === 'babymon' ? 'babymon-experimental' : s.profile,
+        evolution_support: s.selected.includes('evolution') ? {native:'v1',time_variable:0x40d0,methods:'species-specific; trade items used directly',validation:'beta'} : null,
         patcher: CONFIG.version,
         engine: 'UPR-ZX 4.6.0',
         root_seed: s.root,

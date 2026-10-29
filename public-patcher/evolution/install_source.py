@@ -68,10 +68,10 @@ def install(root, tiered):
     updates[path]=text.replace('if (!IsNationalPokedexEnabled()', 'if (FALSE /* opt-in cross-generation evolution support */')
     # Avoid silently taking an allocated story variable.
     var_text=read('include/constants/vars.h')
-    if '#define VAR_0x40F2                 0x40F2' not in var_text:
+    if '#define VAR_0x40D0                 0x40D0' not in var_text:
         raise ValueError('Day/night save variable is not reserved as expected')
     for path in list((root/'src').rglob('*.c')) + list((root/'data').rglob('*.inc')):
-        if 'VAR_0x40F2' in path.read_text():
+        if 'VAR_0x40D0' in path.read_text():
             raise ValueError('Day/night variable is already in use')
     manifest=json.loads((HERE.parent/'babymon_manifest.json').read_text())
     tiers=[0]*412

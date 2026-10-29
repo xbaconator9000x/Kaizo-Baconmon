@@ -48,3 +48,9 @@ The implementation source is authoritative; the unchanged root index remains the
 `public-patcher/evolution/` now contains executable native C evolution logic and a guarded source installer for the Celadon trade attendant, direct-use trade items, a persistent lab Day/Night terminal, evolution-item shop stock and cross-generation animation checks. Its host-native test suite passes all 183 eligible species-method branches and source installation checks. See that directory's README for exact behavior and test commands.
 
 This completes the source-level implementation of those services, not their binary deployment. A clean FireRed Rev 1 test ROM, verified original/native symbols, target ARM build and emulator validation remain missing here. The previously generated batch ROMs do not yet contain these services. Beauty access and the separate gameplay restrictions remain outstanding.
+
+## Optional binary evolution beta
+
+The patcher now includes an Evolution support (beta) checkbox and compiled Thumb payload. Ordinary patching and randomiser bases both install it. The native payload passes 183 branch executions in Unicorn; full patcher installation and idempotence pass on the supplied Rev 1 Baconmon image. A real Kaizo Java randomisation preserves the native reservation and species-specific evolution methods. The reserved clock variable is now 0x40D0; 0x40F2 conflicted with the existing engine.
+
+Full gameplay validation, Feebas Beauty access, removal of starter viability safeguards and remaining Babymon restrictions/scoring are still unfinished. Earlier statements about absent binary payloads are superseded by this update.

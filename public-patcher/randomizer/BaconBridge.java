@@ -21,10 +21,10 @@ public final class BaconBridge {
 
     public static String generate(String input, String output, String setting, String seedText)
         throws Exception {
-        return generateConfigured(input, output, setting, seedText, null);
+        return generateConfigured(input, output, setting, seedText, null, false);
     }
 
-    private static String generateConfigured(String input, String output, String setting, String seedText, int[] starters)
+    private static String generateConfigured(String input, String output, String setting, String seedText, int[] starters, boolean preserveEvolutionMethods)
         throws Exception {
         long seed = Long.parseLong(seedText);
         if (seed < 0 || seed > 9007199254740991L) throw new IllegalArgumentException(
@@ -48,6 +48,11 @@ public final class BaconBridge {
         );
         settings.setCustomNames(FileFunctions.getCustomNames());
         settings.tweakForRom(handler);
+        if (preserveEvolutionMethods) {
+            settings.setChangeImpossibleEvolutions(false);
+            settings.setMakeEvolutionsEasier(false);
+            settings.setRemoveTimeBasedEvolutions(false);
+        }
         if (starters != null) configureBabymonStarters(settings, handler.getPokemonInclFormes(), starters);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         PrintStream log = new PrintStream(bytes, false, "UTF-8");
@@ -98,7 +103,15 @@ public final class BaconBridge {
     public static String generateBabymonSafe(String input, String output, String settings, String seed,
             int left, int middle, int right) {
         try {
-            return "OK:" + generateConfigured(input,output,settings,seed,new int[]{left,middle,right});
+            return "OK:" + generateConfigured(input,output,settings,seed,new int[]{left,middle,right},true);
+        } catch (Exception e) {
+            return "ERROR:" + e.getClass().getSimpleName() + ": " + e.getMessage();
+        }
+    }
+
+    public static String generateEvolutionSafe(String input, String output, String settings, String seed) {
+        try {
+            return "OK:" + generateConfigured(input,output,settings,seed,null,true);
         } catch (Exception e) {
             return "ERROR:" + e.getClass().getSimpleName() + ": " + e.getMessage();
         }
