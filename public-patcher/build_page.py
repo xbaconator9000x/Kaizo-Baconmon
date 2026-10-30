@@ -31,6 +31,8 @@ def embedded_script(manifest):
             (SOURCE_DIRECTORY / "babymon_planner.js").read_text(),
             (SOURCE_DIRECTORY / "babymon_rom.js").read_text(),
             "const EVOLUTION_NATIVE=" + (SOURCE_DIRECTORY / "evolution/binary_payload.json").read_text() + ";",
+            "const CHALLENGE_NATIVE=" + (SOURCE_DIRECTORY / "challenge/binary_payload.json").read_text() + ";",
+            (SOURCE_DIRECTORY / "challenge_support.js").read_text(),
             (SOURCE_DIRECTORY / "evolution_support.js").read_text(),
             (SOURCE_DIRECTORY / "randomizer.js").read_text(),
         ]

@@ -63,6 +63,7 @@
     write(P.shop_pointer_offset,word(0x08000000+P.base+0xa000));
     for(const [a,d] of itemChanges)write(a,d);
     write(P.base+0xfff0,word(tiered?1:0));
+    if(tiered){const challenge=root.ChallengeSupport.apply(rom);rom.set(challenge.rom);writes.push(...challenge.writes);}
     return {rom,writes,time_variable:P.time_variable,tiered};
   }
   const api={apply,normalize};root.EvolutionSupport=api;

@@ -54,3 +54,9 @@ This completes the source-level implementation of those services, not their bina
 The patcher now includes an Evolution support (beta) checkbox and compiled Thumb payload. Ordinary patching and randomiser bases both install it. The native payload passes 183 branch executions in Unicorn; full patcher installation and idempotence pass on the supplied Rev 1 Baconmon image. A real Kaizo Java randomisation preserves the native reservation and species-specific evolution methods. The reserved clock variable is now 0x40D0; 0x40F2 conflicted with the existing engine.
 
 Full gameplay validation, Feebas Beauty access, removal of starter viability safeguards and remaining Babymon restrictions/scoring are still unfinished. Earlier statements about absent binary payloads are superseded by this update.
+
+## Attempt guard follow-up
+
+The development patcher now installs a Babymon-only permanent-runner, single-party and permadeath guard, including saved terminal status and a result screen. The Babymon batch path requires evolution configuration and checks the native guard after Java output. Targeted mGBA tests and actual evolution-under-guard checks passed; normal-mode patch output remains byte-identical. This supersedes the absent-guard portions of the earlier backlog, but not the TM/relearner, blind starter, viability safeguard, scoring or release gates. See [Babymon attempt guard](Babymon_Attempt_Guard.md) for exact behavior, validation and remaining work.
+
+The earlier evolution-only beta also passed targeted mGBA checks for Day/Night Eevee, cartridge-save clock persistence, Celadon trade consent, every trade-item type, ordinary Fire Stone, wrong-item rejection and the actual randomised starter trio. These targeted tests supersede the statement that all in-game evolution validation is outstanding; they do not establish a completed playthrough.

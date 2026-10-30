@@ -162,7 +162,10 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
           };
         const source = new Uint8Array(await file.arrayBuffer()),
           pool = await LegacyCore.inflate(PAYLOAD);
-        if (profile === 'babymon') BabymonROM.validateSource(source, BABYMON_MANIFEST);
+        if (profile === 'babymon') {
+          BabymonROM.validateSource(source, BABYMON_MANIFEST);
+          if(!selected.includes('evolution')) selected.push('evolution');
+        }
         status.textContent = 'Checking the selected patches…';
         let base = source,
           report = null;
@@ -230,7 +233,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
         let babymon = null;
         if (s.profile === 'babymon') {
           babymon = BabymonROM.apply(rom, BABYMON_MANIFEST, seed);
-          rom = babymon.rom;
+          rom = ChallengeSupport.apply(babymon.rom).rom;
           entries.push({name:'Spoilers_after_run/' + name + '_evolutions.json',data:JSON.stringify(babymon.plan,null,2)});
         }
         if (s.selected.includes('rival')) {
@@ -252,6 +255,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
             battle_mode:s.selected.includes('modern')?'player choice at run start':'classic',
             custom_overrides:{features:s.selected,settings:s.settings,rival_level:s.options.rivalLevel},
             score_eligible:false,
+            attempt_guard:{version:1,permanent_runner:true,permadeath:true,party_limit:1,violation:'attempt ends',tm_rules:'pending'},
           } : {}),
         });
         // Spoiler logs are kept in a clearly named folder, never shown during generation.

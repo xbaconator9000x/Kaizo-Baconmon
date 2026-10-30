@@ -39,6 +39,12 @@ function setup(size, count = 1, failAt = 0, profile = 'baconmon') {
     const manifest=require('./babymon_manifest.json'),{EVOLUTIONS,STARTERS,starterSlots}=require('./babymon_rom.js');
     const b=new Uint8Array(0x1000000),v=new DataView(b.buffer);
     b.set(Buffer.from('BPRE'),0xac);b[0xbc]=1;
+    // Synthetic pipeline fixture: native gameplay is covered separately in mGBA.
+    const guard=require('./challenge/binary_payload.json');
+    b.fill(255,guard.base,guard.base+65536);
+    for(const g of guard.guards)b.set(Buffer.from(g.before,'hex'),g.offset);
+    for(const r of guard.records)b.set(Buffer.from(r.before,'hex'),r.offset);
+    v.setUint32(0xB0FFF0,1,true);
     for(const p of manifest) for(const [i,m] of p.source_methods.entries()) {
       const off=EVOLUTIONS+p.internal_id*40+i*8;
       v.setUint16(off,m.code,true);v.setUint16(off+2,m.parameter,true);v.setUint16(off+4,m.destination,true);
@@ -107,6 +113,7 @@ function setup(size, count = 1, failAt = 0, profile = 'baconmon') {
     },
   });
   vm.runInContext(script, ctx);
+  if(profile==='babymon') vm.runInContext(`patchROM=async function(source){return {rom:ChallengeSupport.apply(source).rom,report:{features:[],writes:[]}}}`,ctx);
   nodes['batch-seed'].value = '42';
   return { ctx, nodes, blobs, calls, maxLive: () => maxLive };
 }

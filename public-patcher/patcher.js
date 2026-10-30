@@ -568,7 +568,7 @@ if (typeof document !== 'undefined') {
       preset: 'Kaizo',
       features: 'faster,title,tunnel,hidden,nurse,text,rival,status,modern,lab,hms,friendship,guide,battleinfo,relearner,evolution',
       level: 8,
-      note: 'Kaizo Babymon profile: Kaizo randomiser starting point, VS+ conveniences and Classic/Modern choice. Experimental: batch randomisation writes Tier 1 starters and tiered evolutions. Gameplay restrictions and evolution accessibility are unfinished; these are test ROMs, not validated Babymon runs.',
+      note: 'Kaizo Babymon profile: Kaizo randomiser starting point, VS+ conveniences and Classic/Modern choice. Experimental: Tier 1 starters, tiered evolutions and a saved runner guard. A faint, replacement or extra party member ends the attempt. TM rules and other challenge work remain unfinished; these are test ROMs, not validated Babymon runs.',
     },
     kaizo: {
       preset: 'Kaizo',
