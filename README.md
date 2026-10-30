@@ -10,6 +10,14 @@ Kaizo Baconmon is a modular FireRed patcher and challenge toolkit, with my own t
 
 I drew heavily from DrMaple's fantastic Faster FireRed 1.3.2 build. He has kindly given me permission to utilise and modify aspects of it for Baconmon.
 
+## Babymon / evolution beta
+
+[Open the Babymon / evolution development beta](https://xbaconator9000x.github.io/Kaizo-Baconmon/babymon-beta.html) · [Download HTML](babymon-beta.html) · [Status and checks](docs/Babymon_Beta.md)
+
+Includes Tier 1 starters, seed-consistent Tier 1 → Tier 2 → Tier 3 randomisation, Celadon trade evolution help, direct-use evolution items and a manual Day/Night clock at the left lab computer. The clock controls evolution conditions; it is not a claim of automatic real-time lighting.
+
+Blind starter selection, no pivoting and permadeath are player-managed rules. The game does not force blind selection or automatically end attempts. This is an experimental build; restricted TM handling, ability/move policy and separate Babymon scoring remain unfinished. Beta outputs are not certified challenge runs.
+
 ## What's it for?
 
 It's designed with **Baconmon, Kaizo/Ironmon-style runs, VS-style challenges, ordinary Nuzlockes, and custom or casual randomised runs** in mind. You don't have to use my ruleset to use the patcher.

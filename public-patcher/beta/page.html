@@ -1,0 +1,1359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Babymon / Evolution Beta — Kaizo Baconmon patcher · Evolution beta — base release 1.0</title>
+    <style>:root {
+  color-scheme: dark;
+}
+body {
+  font:
+    16px system-ui,
+    sans-serif;
+  max-width: 780px;
+  margin: 36px auto;
+  padding: 0 20px;
+  background: #121417;
+  color: #eee;
+}
+h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+p {
+  line-height: 1.55;
+  color: #bbb;
+}
+fieldset {
+  border: 1px solid #495057;
+  border-radius: 8px;
+  margin: 24px 0;
+  padding: 16px;
+}
+label {
+  display: block;
+  margin: 14px 0;
+}
+small {
+  display: block;
+  color: #abb4bf;
+  margin: 4px 0 0 24px;
+  line-height: 1.4;
+}
+button,
+input::file-selector-button {
+  background: #d84e42;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+#downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+#downloads a {
+  background: #292e35;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #1d2228;
+  padding: 18px;
+  border-radius: 8px;
+  font:
+    14px/1.5 ui-monospace,
+    monospace;
+}
+.small {
+  font-size: 14px;
+}
+#status {
+  color: #eee;
+}
+input[type='checkbox'] {
+  accent-color: #d84e42;
+}
+footer {
+  font-size: 13px;
+  color: #929ba7;
+  border-top: 1px solid #343b44;
+  margin-top: 30px;
+  padding-top: 16px;
+}
+a {
+  color: #ddd;
+}
+details.help {
+  border: 1px solid #495057;
+  border-radius: 8px;
+  padding: 14px;
+  margin: 12px 0;
+}
+details details {
+  margin: 14px 0 14px 12px;
+  padding-left: 12px;
+  border-left: 2px solid #495057;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+li {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+input[type='number'] {
+  width: 80px;
+  font: inherit;
+  padding: 6px;
+}
+input:disabled {
+  opacity: 0.45;
+}
+.features {
+  padding-left: 22px;
+}
+.features li {
+  margin: 18px 0;
+}
+.features p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+</style>
+  </head>
+  <body><aside style="padding:16px;background:#35271a;color:#fff">Baconmon / Babymon development beta. Includes optional evolution services and tiered randomisation. Challenge rules are player-managed; no automatic attempt ending. Remaining TM, ability/move policy and separate scoring work is pending. Use a fresh run.</aside>
+    <h1>Kaizo Baconmon</h1>
+    <p class="small">Evolution beta — base release 1.0 · FireRed patch · Developed by xbaconator9000x</p>
+    <p>
+      Ironmon, but tastier. Based on Kaizo Ironmon, with changes inspired by Ironmon VS and a few
+      extra conveniences.
+    </p>
+    <p class="small">
+      Designed for maximum compatibility between ROMs. Changes that cannot be applied are skipped
+      and listed in the output log. I can’t guarantee compatibility with any particular ROM.
+      Designed for clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2; other modified ROMs may
+      also work.
+    </p>
+    <label
+      >ROM file <input id="file" type="file" accept=".gba,.agb,.bin,.rom,application/octet-stream"
+    /></label>
+    <fieldset>
+      <legend>Run profile</legend>
+<label>Choose a run type
+  <select id="run-profile">
+    <option value="baconmon">Baconmon / Ironmon VS+</option>
+    <option value="babymon">Kaizo Babymon</option>
+    <option value="kaizo">Standard Kaizo Ironmon</option>
+    <option value="standard">Standard Ironmon</option>
+    <option value="ultimate">Ultimate Ironmon</option>
+    <option value="survival">Survival Ironmon</option>
+    <option value="vs">Ironmon VS-style</option>
+    <option value="nuzlocke">Nuzlocke / encounters only</option>
+    <option value="custom">Custom / casual</option>
+  </select>
+  <small>Profiles set the patch features and randomiser preset together. You can still change individual settings afterward.</small>
+</label>
+<p id="profile-note" class="small"></p>
+<legend>Changes to apply</legend>
+      <label><input id="package" type="checkbox" checked> <strong>Core Baconmon Package</strong><small>Use the full setup, or untick the bits you don’t want.</small></label>
+<p class="small">Start a fresh run when changing the setup.</p>
+<label><input class="feature" type="checkbox" id="feature-faster" value="faster" checked> <strong>Faster FireRed extras</strong><small>Optional speed and field tweaks from Faster FireRed. Separate from the lab-start switch and the forest nurse.</small></label>
+<label><input class="feature" type="checkbox" id="feature-title" value="title" checked> <strong>Baconmon title screen</strong><small>Grumpig, Kaizo Baconmon and the FireRed title graphics.</small></label>
+<label><input class="feature" type="checkbox" id="feature-tunnel" value="tunnel" checked> <strong>Lit Rock Tunnel</strong><small>Light both Rock Tunnel floors.</small></label>
+<label><input class="feature" type="checkbox" id="feature-hidden" value="hidden" checked> <strong>Guaranteed hidden items</strong><small>Remove the chance check from renewable hidden-item spawns.</small></label>
+<label><input class="feature" type="checkbox" id="feature-nurse" value="nurse" checked> <strong>Poison-friendly forest nurse</strong><small>Allow the Viridian Forest nurse to heal a poisoned party.</small></label>
+<label><input class="feature" type="checkbox" id="feature-text" value="text" checked> <strong>Baconmon dialogue</strong><small>The lab e-mail and the other custom dialogue.</small></label>
+<label><input class="feature" type="checkbox" id="feature-rival" value="rival" checked> <strong>Adjust lab rival level</strong><small>Set the three lab starter parties to the level below, keeping their species and moves.</small></label>
+<label><input class="feature" type="checkbox" id="feature-status" value="status" checked> <strong>Battle status display</strong><small>Fix missing status icons in the lab rival battle, including paralysis, poison, burn, sleep and freeze.</small></label>
+<label><input class="feature" type="checkbox" id="feature-evolution" value="evolution" > <strong>Evolution support (beta)</strong><small>Celadon trade evolution help, use trade-evolution items like stones, and set Day/Night at the left computer in Oak’s lab. Also applies to batch randomisation.</small></label>
+<label><input class="feature" type="checkbox" id="feature-modern" value="modern" checked> <strong>Classic / Modern</strong><small>Choose Classic or Modern in Oak’s lab. Off keeps Gen 3 battle mechanics and removes the mode prompt. Note: Fairy typing is intentionally omitted.</small></label>
+<label><input class="feature" type="checkbox" id="feature-lab" value="lab" checked> <strong>Lab start and early balls</strong><small>Choose player details, start ready in Oak’s lab, and receive the early Master Ball and five Poké Balls. Off uses the original opening and bedroom start.</small></label>
+<label><input class="feature" type="checkbox" id="feature-rotation" value="rotation" checked> <strong>Early encounter rotation</strong><small>Use the Ironmon VS early encounter rotation.</small></label>
+<label><input class="feature" type="checkbox" id="feature-hms" value="hms" checked> <strong>Field HMs and Town Map Fly</strong><small>Use HMs without teaching them, with the usual HM, badge and story prerequisites. Fly from the Town Map.</small></label>
+<label><input class="feature" type="checkbox" id="feature-friendship" value="friendship" checked> <strong>Friendship machine and helpers</strong><small>Use the lab machine to raise or lower friendship. Helpers point to the machine. Off disables the added friendship services.</small></label>
+<label><input class="feature" type="checkbox" id="feature-guide" value="guide" checked> <strong>Nuz-guide and score log</strong><small>Give the guide key item and record progress, dungeon visits and full heals. Off installs neither the item nor its monitoring hooks.</small></label>
+<label><input class="feature" type="checkbox" id="feature-battleinfo" value="battleinfo" checked> <strong>Battle move descriptions and category icons</strong><small>Press L at move selection for descriptions, and show move categories on the summary screen.</small></label>
+<label><input class="feature" type="checkbox" id="tutor" value="relearner" checked> <strong>Fuchsia move relearner</strong><small>Add the TM-paid relearner opposite the move deleter. Off leaves the original house and Two Island tutor arrangement.</small></label>
+<label>Lab rival level <input id="rivalLevel" type="number" min="1" max="100" step="1" value="8"><small>Whole numbers from 1–100. Default: 8. Used when Adjust lab rival level is ticked. Apply custom levels after randomisation.</small></label>
+    </fieldset>
+    <details class="help">
+  <summary>About this patcher</summary>
+  <p>
+    I made Kaizo Baconmon for my own runs, with a few extras you can use for Nuzlockes, Ironmon or
+    your own rules. It takes plenty of inspiration from
+    <a href="https://ironmonvs.com/about">Ironmon VS</a>. Ironmon, but tastier.
+  </p>
+  <p>
+    Leave Core Baconmon Package ticked for my full setup, or untick the bits you don’t want. If
+    you’re playing a different challenge, check its rules first.
+  </p>
+  <p>
+    Designed for maximum compatibility between ROMs. Changes that cannot be applied are skipped and
+    listed in the output log. I can’t guarantee compatibility with any particular ROM. Designed for
+    clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2; other modified ROMs may also work.
+  </p>
+</details>
+<details class="help">
+  <summary>What is Kaizo Baconmon?</summary>
+  <p>
+    Baconmon is my take on Kaizo Ironmon, with changes inspired by Ironmon VS and a few conveniences
+    I wanted for my own runs. The full setup uses every package feature, a level 8 lab rival and
+    your choice of Classic or Modern.
+  </p>
+  <p>
+    Ironmon was created by iateyourpie. The underlying rules are documented in the
+    <a href="https://gist.github.com/valiant-code/adb18d248fa0fae7da6b639e2ee8f9c1"
+      >Ironmon rules reference</a
+    >. Credit to WaffleSmacker and the VS community for
+    <a href="https://ironmonvs.com/about">Ironmon VS</a>, including early encounter rotation, the
+    early balls and the scoring system. Baconmon is a separate variant: VS normally uses a level 6
+    lab rival; Baconmon defaults to 8.
+  </p>
+  <details>
+    <summary>Rules summary and key differences from Kaizo</summary>
+    <p>
+      Reach the Hall of Fame with one runner. Fainting ends the attempt. Use a fresh randomized seed
+      after a loss; no reloading to undo outcomes. Use Set battles, follow the catch and pivot
+      limits, and obey the item, move, ability and dungeon restrictions in the full rules below.
+    </p>
+    <p>
+      Pick a starter-ball position before seeing the choices and keep that position between runs.
+      Baconmon allows that starter regardless of BST, and keeps the evolution exception. It does not
+      allow over-limit wild pivots. Wild pivots still require committing before checking the caught
+      Pokémon’s stats.
+    </p>
+    <p>
+      The added TM-paid relearner is allowed under Baconmon’s rules. Field HMs need no taught move,
+      but still need their HM, badge and normal prerequisites. The lab machine can raise or lower
+      friendship, Rock Tunnel is lit, and the forest nurse accepts poisoned parties. Optional
+      dungeon healers remain banned. Guaranteed hidden-item refreshes do not permit farming.
+    </p>
+    <p>
+      Classic keeps Gen 3 battle mechanics. Modern adds the move-based physical/special split and
+      updates existing abilities without adding abilities, learnsets or base stats. Choose the mode
+      before the attempt. These are Baconmon exceptions, not changes to the official Kaizo rules.
+    </p>
+    <p><strong>Note:</strong> Fairy typing is intentionally omitted.</p>
+  </details>
+  <details>
+    <summary>Modified ROM features and mode details</summary>
+    <details><summary>Core changes</summary><p>I implemented the following changes from core Kaizo Ironmon:</p><p>- Start in Oak&#x27;s lab after choosing your gender, name and rival&#x27;s name. The opening rival battle still happens at level 8.</p><p>- Choose Classic or Modern at the start. Classic keeps Gen III battles. Modern adds the physical/special move split and updates existing abilities. It does not add abilities, learnsets or BST changes.</p><p>- Pick a starter ball before seeing the choices and keep that same position across runs. Your chosen starter is legal regardless of BST. This replaces normal starter selection. It does not allow over-limit wild pivots.</p><p>- Start with a Master Ball and five Poke Balls for legal catches.</p><p>- Early encounters rotate as they do in Ironmon VS.</p><p>- Use field HMs without teaching them or carrying an HM friend. You still need the HM, badge and normal story prerequisites. Fly from the Town Map.</p><p>- Rock Tunnel is already lit, so you do not need Flash to see there.</p><p>- Use the Move Reminder in the Move Deleter&#x27;s Fuchsia house. Each successful relearn costs one TM of your choice. The usual Sketch restriction still applies.</p><p>- Use Oak&#x27;s lab machine to maximise or plummet your runner&#x27;s friendship. The former friendship helpers point you there.</p><p>- Use the Viridian Forest nurse even when poisoned. Dungeon beds and other optional dungeon healers remain banned.</p><p>- Chance-based hidden items are guaranteed to appear at their normal refresh. Collect each renewable location once; farming is still banned.</p><p>- Track progress with the 33-point VS-style score and dungeon-clear log. A dungeon bonus requires all its trainers in one visit without optional Center-equivalent healing.</p><p>- Press L while choosing an attack to read its description. Move summaries show physical, special and status symbols.</p><p>- A Baconmon title screen starring Grumpig.</p><p>- Start with Nuz-guide: the complete Baconmon rules, other challenge formats, mode details, scoring, credits and ROM information.</p><p>Everything else follows the full Kaizo Baconmon rules in this guide. Built-in conveniences do not waive the remaining restrictions.</p></details><details><summary>Classic mode</summary><p>Classic keeps FireRed&#x27;s Gen III battle rules. Damaging moves use Attack or Special Attack according to their type, not according to the individual move.</p><p>Physical types are Normal, Fighting, Flying, Poison, Ground, Rock, Bug, Ghost and Steel. Fire, Water, Grass, Electric, Psychic, Ice, Dragon and Dark are special.</p><p>A Dark move such as Bite is special in Classic. Ghost attacks such as Shadow Ball are physical. Status moves still use their own effects rather than a damage category.</p><p>Classic keeps the original ability effects. Sturdy blocks one-hit knockout moves; it does not protect a full-health Pokemon from an ordinary lethal hit.</p><p>You still get Baconmon&#x27;s lab start, helpers, field HM access, light Rock Tunnel, TM-paid reminder, guide and other changes that are not battle-mode changes.</p><p>The seed&#x27;s species, stat totals, randomized stat spread, types, abilities and learnsets remain that seed&#x27;s data. Choosing Classic does not reroll them.</p></details><details><summary>Modern: move split</summary><p>In Modern, each damaging move has its own physical or special category. Bite is physical, Shadow Ball is special, and Hyper Beam is special. Status moves have a separate symbol.</p><p>The move&#x27;s category chooses Attack and Defense, or Special Attack and Special Defense. A randomized move type does not change that move&#x27;s modern category.</p><p>Reflect and Light Screen follow the move category. Counter, Mirror Coat, Hustle&#x27;s physical accuracy check and the relevant damage handling use the split too.</p><p>Fire and Ice attacks can be physical. Weather, Flash Fire and Thick Fat follow the applicable move category.</p><p>Hidden Power and Weather Ball still work out their changing type through their normal effects, but remain special attacks in Modern. Their type change is not a switch to physical damage.</p><p>Move-category symbols are shown in the summary screen and the battle move-information panel. Press L while choosing a move to read the description. Use the D-pad to browse; L or B closes the panel.</p><p>Note: Fairy typing is intentionally omitted.</p></details><details><summary>Modern abilities: A-F</summary><p>Color Change waits until the final hit of a multi-hit move before changing the target&#x27;s type.</p><p>Compound Eyes keeps its accuracy boost and improves wild held-item rolls. The common and rare slots use the modern 60% and 20% thresholds when the lead ability applies, instead of the usual 50% and 5% slots.</p><p>Drizzle starts five turns of rain. This does not shorten weather coming from a map or another permanent field effect.</p><p>Drought starts five turns of sunlight. Sand Stream uses the same five-turn rule for its sandstorm.</p><p>Effect Spore has a 30% total chance on eligible contact and does not affect a Grass-type attacker. The result can be sleep, poison or paralysis.</p><p>Static, Poison Point and Cute Charm use 30% contact chances instead of the original one-in-three checks. Their normal eligibility and immunity checks still apply.</p><p>Flash Fire responds to Fire moves, including status Fire moves, without the old frozen-user restriction. Its Fire damage bonus is applied to the appropriate move category.</p></details><details><summary>Modern abilities: I-O</summary><p>Illuminate has Keen Eye&#x27;s battle protection here: it prevents accuracy drops and ignores a target&#x27;s positive evasion stages. This does not make Rock Tunnel dark again.</p><p>Inner Focus prevents flinching and blocks Intimidate&#x27;s Attack drop.</p><p>Keen Eye prevents accuracy drops and ignores positive evasion stages. Other accuracy modifiers still matter.</p><p>Lightning Rod redirects eligible Electric moves, including an ally&#x27;s move in doubles. It absorbs Electric moves and raises Special Attack by one stage, up to the usual limit.</p><p>Oblivious blocks attraction, Taunt and Intimidate. Gaining the ability also clears an active Taunt here.</p><p>Own Tempo blocks confusion and Intimidate. It does not prevent unrelated Attack drops from other sources.</p><p>These are updates to abilities already present in Gen III. They do not add later abilities or change which ability a species has in the seed.</p></details><details><summary>Modern abilities: P-Z</summary><p>Pickup can recover an eligible berry or herb consumed earlier in the turn. The Pokemon needs an empty held-item slot.</p><p>Plus and Minus work with a living doubles partner that has either Plus or Minus. The partner does not have to have the opposite ability.</p><p>Rough Skin removes one eighth of the contact attacker&#x27;s maximum HP, rather than the old one sixteenth.</p><p>Shadow Tag does not trap another Shadow Tag user. Ghost types also get the modern escape protection against trapping abilities.</p><p>Stench gives eligible damaging attacks a 10% flinch chance. It does not stack with the flinch-granting held-item effect handled by that routine.</p><p>Sturdy lets a full-health Pokemon survive an otherwise lethal direct hit with 1 HP. Later hits and residual damage can still finish it. It also works against confusion self-damage.</p><p>Synchronize reflects bad poison as bad poison instead of downgrading it to ordinary poison.</p><p>Trace avoids copying no ability, Trace or Forecast. It otherwise uses the native eligible-target logic.</p><p>Volt Absorb and Water Absorb can activate on the matching type&#x27;s status moves as well as damaging moves. Thick Fat&#x27;s Fire and Ice reduction follows the split.</p></details><details><summary>What Modern does not change</summary><p>Modern changes move categories and the ability effects listed here. Seed data stays unchanged: Pokemon, types, abilities, items, BSTs and learnsets.</p><p>Move power, accuracy, PP and secondary effects still come from the seed. Other mechanics keep Gen III rules.</p><p>The Huge Power and Pure Power restriction still applies. Check the move&#x27;s category symbol.</p><p>Use the same mode when comparing runs.</p><p>Note: Fairy typing is intentionally omitted.</p></details>
+  </details>
+  <details>
+    <summary>Full Kaizo Baconmon rule list</summary>
+    <p>
+      These are the full Baconmon rules, including the usual Kaizo restrictions and my changes. They
+      assume the full package. If you change the options or rival level, agree on that before
+      comparing runs.
+    </p>
+    <details><summary>Goal and run rules</summary><p>Reach the Hall of Fame with one surviving runner. A fainted runner ends the run. Start the next attempt on a newly randomized seed. Do not reload to undo a loss, bad catch, move choice or other result.</p><p>The Full rules pages include the inherited Standard, Ultimate and Kaizo restrictions with the Baconmon changes applied. Read both rules menus, the battle mode pages and the point rules. You do not need to combine rules from the other challenge directories.</p><p>Agree on the same mode, starter-ball assignments and rules before a VS run. All restrictions still apply when the game or tracker allows an illegal action.</p></details><details><summary>Seed and battle setup</summary><p>Randomize Pokemon species, abilities, stat spreads, learnsets, trainer teams, wild encounters and items with the FireRed Kaizo preset. Use a new seed after each loss. Keep the same declared starter ball between runs.</p><p>Boost ordinary trainer and wild levels by 50%. Do not boost static encounter levels. Force trainer Pokemon to be fully evolved from level 30. Add three Pokemon to boss teams. Use Fluctuating growth for ordinary Pokemon and Slow growth for legendaries. Leave easier evolutions disabled. Randomize Pickup items with bad items excluded. Use the complete FireRed preset for the other randomizer options.</p><p>Choose Classic or Modern before the run and keep it for the whole attempt. Use Set battle style. Speed controls are allowed; undoing outcomes with save states is not.</p><p>You begin in Oak&#x27;s lab after choosing your gender, name and rival name. You do not need to leave the lab to talk to Mom. The opening rival is level 8 in either mode. Fight the opening battle even if you dislike your starter.</p><p>You receive one Master Ball and five Poke Balls early. They are legal to use for catches that obey the catch rules. A Master Ball does not make an otherwise illegal pivot legal.</p></details><details><summary>Starter and species limits</summary><p>Choose left, middle or right before seeing any starter options. Keep that position across attempts. Do not inspect the choices and switch balls. In a VS event, agree on ball positions before anyone reveals the starters.</p><p>The Pokemon in your fixed ball is legal regardless of BST. This is only a BST exception: the move, ability and held-item restrictions still apply after the lab battle.</p><p>For wild pivots, 599 BST or higher is banned. Legendary and mythical Pokemon are banned except for at most one predeclared favourite, which must be below 600 BST. Declare up to three favourite species before starting; this list never overrides Baconmon&#x27;s fixed starter ball. It does not remove the level, route or catch restrictions.</p><p>An evolution is allowed to take your legal runner above the BST limit or into a legendary species. You must let every evolution happen. Do not cancel it or use an Everstone. Catching an already over-limit wild Pokemon is not the same as evolving into it.</p><p>There is no starter reroll for a bad ability or moveset. Use the lab exceptions, then avoid prohibited actions or pivot. If your runner has no legal way to continue, the run is over.</p></details><details><summary>Runner, catches and pivots</summary><p>Use one Pokemon in battle. No backups, switching between runners, sacrifice Pokemon or extra party abilities. This ROM does not need HM friends. Do not keep extra Pokemon for Pickup, weather, item bonuses or any other advantage.</p><p>Obtain no more than six Pokemon during the run, counting your starter and accepted pivots. You may accept at most one Pokemon from each named route or area. It need not be the first encounter. Gifts and static encounters also use that area&#x27;s allowance. Separate floors of one named dungeon do not create extra catches.</p><p>A catch may be at most four levels above your current runner. Commit to a pivot when you catch it, before examining its stats, moves or ability. Permanently retire the old runner; you cannot return to it later. Do not catch several candidates and compare them.</p><p>You may immediately box an unwanted catch without viewing any stats or moves and continue as if it had not been accepted. This is not permission to scout caught Pokemon or use a second battler. Throwing a ball to escape a dangerous wild encounter is allowed.</p><p>Do not deliberately knock out wild Pokemon for experience. Scout or run instead. A wild Pokemon destroying itself is not deliberate training. If you accidentally knock one out while scouting, you must pivot to a legal catch from that area before leaving or healing. If that cannot be done legally, the run cannot continue.</p></details><details><summary>Shinies, nemesis and losses</summary><p>You may defeat a wild shiny as a bonus knockout. Do not raise the shiny rate. This is not an extra catch allowance or permission to replace your fixed starter ball.</p><p>You may declare one nemesis species before playing. Once per run, you may deliberately defeat it in the wild. You may never catch it as a pivot. Evolving into it is allowed. Baconmon&#x27;s fixed ball takes priority over ordinary Kaizo&#x27;s nemesis-based starter selection.</p><p>Your runner fainting ends the attempt, including poison damage outside battle. Do not revive it, continue with a backup or recover its held item for another runner. Begin again on a newly randomized seed.</p><p>Save normally to stop playing and continue later. Save states may be used as a suspension tool only if they do not undo outcomes or reveal information you then act on in an earlier state. No resets for better damage rolls, encounters, catches or rewards.</p><p>Each trainer can be defeated once. No VS Seeker grinding. Collect each renewable item location once; do not farm respawning hidden items. Guaranteed hidden-item appearances change availability, not that restriction.</p></details><details><summary>Moves, TMs and abilities</summary><p>Use moves learned naturally by level or evolution, and compatible TMs handed to you directly for beating Gym Leaders. Ordinary found, bought or held TMs cannot be taught. General move tutors are banned.</p><p>Baconmon allows the Fuchsia Move Reminder in the Move Deleter&#x27;s house. Pay one TM of your choice for each successfully remembered move. The payment TM&#x27;s move is irrelevant. Cancelling or having no eligible move costs nothing. HMs cannot be payment. Do not relearn Sketch after that Pokemon has already used it to copy a move.</p><p>The following Gen III moves are banned in battle: Cut, Fly, Surf, Strength, Flash, Rock Smash, Waterfall and Dive; Spore and Assist; Absorb, Mega Drain, Giga Drain, Leech Life, Dream Eater, Leech Seed, Recover, Soft-Boiled, Rest, Milk Drink, Morning Sun, Synthesis, Moonlight, Wish, Slack Off, Ingrain, Swallow, Pain Split, Heal Bell, Aromatherapy and Refresh.</p><p>Do not use any other HP-restoring, draining or status-curing move if a modified seed includes one. Banned moves are still banned at full HP. Metronome may call one, and Mimic may temporarily copy and use one for that battle. Those exceptions do not let you permanently learn a banned move.</p><p>Huge Power and Pure Power prohibit physical attacks unless the Pokemon has 399 BST or less, or 400 to 410 BST inclusive and can still evolve. Special attacks remain legal. In Classic, category follows type; in Modern, use the move&#x27;s physical or special icon.</p><p>The initial lab battle allows otherwise banned moves, abilities and held items. Once it ends, remove banned held items and stop using banned moves or prohibited physical attacks. Pivot if you cannot continue legally.</p></details><details><summary>Items, shops and stealing</summary><p>Only buy Poke Balls and Repels, including their different varieties. You may sell items. Do not buy healing items, vitamins, TMs, held items or other supplies. Do not ask an NPC to shop for you, or buy legal items to trade for prohibited supplies.</p><p>Use found or NPC-given items subject to the bans below. Lucky Egg and Sacred Ash are banned. Leftovers, Soul Dew and Everstone are banned. Focus Sash is banned if present. Do not use coloured flutes to cure status.</p><p>Allowed held items are items consumed when they activate, such as berries, Berry Juice and White Herb; items held solely for a required evolution; and Smoke Ball. Other permanent held items, including damage boosters and healing items, are banned. The initial lab battle is the held-item exception.</p><p>Do not intentionally steal wild held items with Thief, Covet or similar effects. If you accidentally take an item from a wild Pokemon you do not catch, discard it. Stealing from trainers is allowed, but you must remove a prohibited held item after the battle.</p><p>Using a found item does not waive the healing rules. The TM-paid Move Reminder is an express trade exception: you may spend an otherwise unusable TM there, but not buy TMs to supply him.</p></details><details><summary>Healing and dungeon entries</summary><p>Use HP, status and PP recovery items only during battle. Do not use them from the Bag outside battle. PP Up and PP Max are allowed outside battle. Found vitamins and evolution stones are not recovery items.</p><p>Pokemon Centers and equivalent healers are allowed outside dungeons. Baconmon also allows the Viridian Forest nurse, including when poisoned. Forests are not dungeons. The lab machine changes friendship only and does not restore HP, status or PP.</p><p>Enter a gym or dojo ready to defeat every trainer. You may not leave until all of them are beaten. No optional Center-equivalent healing inside.</p><p>Enter each other dungeon once unless the story requires another visit. Dungeons include caves, hideouts and buildings containing trainers. You may skip optional trainers in an ordinary dungeon, but skipped trainers mean no full-clear bonus. Leaving before completion does not grant permission to return for them.</p><p>Do not use dungeon healing stations, including the S.S. Anne bed, Silph bed or an NPC doing the same job as a Center. A forced story heal is allowed; returning voluntarily for another is not.</p><p>For a scored full clear, defeat all required trainer groups in one continuous visit without optional Center-equivalent healing. Floors, internal lifts and Silph warp tiles stay within that visit. Leaving, healing and returning forfeits the bonus and breaks the one-entry rule unless that return is story-required. Legal in-battle recovery items do not spoil a clean clear.</p></details><details><summary>FireRed route and helper rules</summary><p>On the S.S. Anne, fight the rival before any other ship trainer. On your first visit to Lavender Town, fight the Pokemon Tower rival before leaving town; return later with the Silph Scope for story progression. Do not travel to the Sevii Islands with Bill before beating the Elite Four.</p><p>The lab machine may set your runner&#x27;s friendship to 255 or 0. Using it is allowed in Baconmon. The former friendship NPCs now point you to that machine and do not change friendship themselves.</p><p>Field HMs need their normal HM, badge and location or story prerequisites. Your runner need not learn the move, and no HM friend is required. Use the Town Map outdoors to Fly to an unlocked destination with HM02 and the Thunder Badge.</p><p>Cut needs Cascade; Fly needs Thunder; Surf needs Soul; Strength needs Rainbow; Flash needs Boulder; Rock Smash needs Marsh; Waterfall needs Volcano. Rock Tunnel is already lit. HMs are still banned as battle moves.</p><p>The tracker may record observed moves, abilities, notes, encounters, ratings, cards and progress. These are aids, not extra catches or battle permissions. Review unrevealed seed details only after your run ends; do not consult the randomizer&#x27;s spoiler log during an active attempt.</p><p>The challenge ends when you beat the Champion and enter the Hall of Fame. A score record does not excuse a rule breach. All the rules above still apply if the game or tracker lets you perform an illegal action.</p></details><details><summary>Baconmon helpers</summary><p>The lab machine changes only your lead Pokemon&#x27;s friendship. Maximise sets it to 255. Plummet sets it to 0. Cancel changes nothing. It is not a healing machine.</p><p>The lab aide and both Viridian friendship helpers now direct you to the lab machine. Talking to them does not change friendship.</p><p>The Viridian Forest nurse restores the party and clears poison. You can use her outside a dungeon attempt. Leaving Mt. Moon to visit her and then returning does not count as a clean Mt. Moon clear.</p><p>The Move Reminder sits opposite the Move Deleter in Fuchsia. Pick a forgotten move from the list. Your payment TM is his fee; the move on it doesn&#x27;t matter.</p><p>Choose the TM you are willing to lose. It is removed only after a move is successfully remembered. Cancelling, choosing an Egg or having no eligible moves costs nothing. HMs are not payment.</p><p>Paying with an otherwise unusable TM is allowed in Baconmon. Teaching an ordinary found or bought TM is still restricted by Kaizo rules. Do not use the reminder to repeat Sketch after it has copied a move.</p></details><details><summary>HMs and travel</summary><p>Keep the required HM in your Bag and earn the badge that unlocks it. Interact with the obstacle as normal. Your runner does not need to know the move.</p><p>Cut needs the Cascade Badge. Fly needs the Thunder Badge. Surf needs the Soul Badge. Strength needs the Rainbow Badge. Flash needs the Boulder Badge. Rock Smash needs the Marsh Badge. Waterfall needs the Volcano Badge.</p><p>Other normal checks still matter: have a Pokemon, use the move in a suitable place and meet story or location requirements. This is not permission to skip progression.</p><p>Use the Town Map outdoors to choose an unlocked Fly destination. It works from the Bag or as a registered item. You still need HM02 and the Thunder Badge.</p><p>Rock Tunnel&#x27;s two floors are lit. You do not need Flash to see there. That does not turn every other HM or badge check off.</p><p>HMs remain banned as battle moves under the inherited Ultimate rules. Removing the need to teach one does not make Surf, Strength or Fly a legal attack for Kaizo.</p></details>
+    <p>
+      Sources:
+      <a href="https://gist.github.com/valiant-code/adb18d248fa0fae7da6b639e2ee8f9c1"
+        >Standard, Ultimate and Kaizo Ironmon</a
+      >; <a href="https://ironmonvs.com/about">Ironmon VS</a>. These describe their own formats; the
+      Baconmon exceptions above belong to this project.
+    </p>
+  </details>
+  <details>
+    <summary>Nuz-guide key item and point tracking</summary>
+    <p>
+      I included the VS-style points because I find tracking progress and chasing a PB more fun than
+      only counting a Champion win. Kaizo Ironmon can take dozens, hundreds or even thousands of
+      attempts. Points give you smaller milestones to aim for, a way to see yourself improving, and
+      something to compete over with friends—even when nobody wins the seed.
+    </p>
+    <p>
+      The Nuz-guide option adds a key item given at the start. It contains challenge directories,
+      the full Baconmon rules, mode details, credits and a score log. A selects and turns pages; B
+      goes back. It explains the full setup and tracks progress. You still need to follow the rules,
+      including any changes you’ve made to the options.
+    </p>
+    <p>
+      The VS-style total is 33: Brock 2; each other Gym Leader 1; each Elite Four member 2; Champion
+      5. Clean dungeon bonuses are Mt. Moon 1, S.S. Anne 1, Rock Tunnel 1, Silph Co. 3 and Victory
+      Road 5.
+    </p>
+    <p>
+      A dungeon bonus needs every required trainer in one uninterrupted visit, without a Pokémon
+      Center or equivalent heal. Leaving unfinished, healing and returning does not count. Silph’s
+      bed and the S.S. Anne healer are not permitted. The ROM monitors visits, trainer flags and
+      full heals, but it cannot prove every rule was followed.
+    </p>
+    <p>
+      The ROM keeps the current run’s score and clean-clear log. Keep your PB separately so you can
+      compare future runs. It does not connect to the official VS competition service.
+    </p>
+  </details>
+</details>
+<details class="help">
+  <summary>How to randomise: Android or PC</summary>
+  <p>
+    For a new run, patch a fresh, unrandomised US FireRed 1.1 copy first. Keep that as your base for
+    new seeds. Don’t randomise a run you’re already playing. You can make new seeds with the batch
+    randomiser beta below, or use the PC and Android tools linked here.
+  </p>
+  <details>
+    <summary>Pick settings for your challenge</summary>
+    <p>
+      A normal Nuzlocke does not require randomization. If you want one, choose your own encounter
+      and trainer settings and agree on clauses first. For Standard, Ultimate or Kaizo Ironmon, use
+      the matching
+      <a href="https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621"
+        >official FireRed settings</a
+      >, with a compatible randomizer version. Do not use a NatDex or another game’s preset for this
+      ROM.
+    </p>
+    <p>
+      For Baconmon, start with the FireRed Kaizo settings and follow the Seed and battle setup page
+      in the full rules above. Keep the prescribed trainer teams, level boosts, growth rates and
+      forced evolutions; Modern mode does not set them for you. With the default rival adjustment
+      selected, the opening rival stays at level 8 during play. If you choose a different rival
+      level, patch the finished randomized seed with your chosen value before playing, and verify
+      the battle level. Later randomization can change a custom trainer level.
+    </p>
+    <p>
+      Keep the same settings and Classic/Modern choice when comparing seeds. Keep the spoiler log
+      for after the run; do not read it during a blind attempt. Patch notes list deliberate changes
+      and anything skipped.
+    </p>
+  </details>
+  <details>
+    <summary>On PC</summary>
+    <ol>
+      <li>
+        Get
+        <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases"
+          >Universal Pokémon Randomizer ZX</a
+        >. Extract the download and use its launcher. Follow its
+        <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/wiki/About-Java"
+          >Java instructions</a
+        >
+        if needed.
+      </li>
+      <li>
+        Open your patched, unrandomized FireRed copy. Import the matching settings string or .rnqs
+        preset from the official settings reference.
+      </li>
+      <li>
+        Check the game and challenge, then randomize to a new filename. Batch generation can produce
+        a set of fresh seeds. The
+        <a href="https://github.com/besteon/Ironmon-Tracker/wiki/New-Runs-Setup"
+          >Ironmon Tracker setup guide</a
+        >
+        explains its PC automation.
+      </li>
+      <li>
+        If using a custom rival level, apply that option to the generated seed before playing. Read
+        its notes. Test the opening on a separate save.
+      </li>
+      <li>
+        For Android play, transfer the generated .gba files to your phone and select their folder in
+        the emulator. Keep the original files and your battery saves.
+      </li>
+    </ol>
+  </details>
+  <details>
+    <summary>On Android, without a PC</summary>
+    <ol>
+      <li>
+        Get <a href="https://github.com/champred/UPR-Android/releases">UPR-Android</a> from
+        champred’s releases. Its
+        <a href="https://github.com/champred/UPR-Android">usage instructions</a> cover opening ROMs
+        and importing settings.
+      </li>
+      <li>
+        Open your patched, unrandomized FireRed copy. Paste a compatible FireRed settings string or
+        choose the appropriate preset, then check it against your chosen rules. Use the ordinary
+        FireRed format, not NatDex/MAX support.
+      </li>
+      <li>
+        Generate a new ROM, or a batch of numbered ROMs. Save them in a folder you can open in your
+        chosen GBA emulator. Start from a fresh save for each seed.
+      </li>
+      <li>
+        Batch mode is the simpler fallback. IronMon Emu also supports UPR mode through compatible
+        UPR-Android builds: load the base and settings in the randomizer, then long-press the ROM
+        family in the emulator to select UPR mode. See the
+        <a href="https://github.com/billgreenwald/ironmon_emu#how-to-set-up-roms"
+          >upstream setup guide</a
+        >. Follow the emulator’s own instructions for automatic rerolling.
+      </li>
+    </ol>
+    <p>
+      If a settings string is rejected, check the randomizer version instead of silently choosing
+      different settings. Custom rival levels need checking after randomization; use batch mode and
+      patch the completed seeds when required.
+    </p>
+  </details>
+  <p class="small">
+    These instructions follow the linked projects, checked on 16 October 2026. The desktop test
+    reports don’t cover Android hardware or automatic rerolling.
+  </p>
+</details>
+<button id="run">Check and apply</button>
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="downloads"></div>
+    <pre id="report" hidden></pre>
+    <details class="help">
+  <summary>Batch randomiser · beta</summary>
+  <p>
+    Choose a fresh, unrandomised US FireRed 1.1 ROM above. The randomiser applies your selected
+    patches first, then makes new seeds. Choose 1–100 ROMs per batch. Larger batches download in ZIP
+    parts of up to 10 ROMs. Download each part before continuing. Seeds, settings and patch notes
+    are included; spoiler logs are kept separate for after the run.
+  </p>
+  <p class="small">
+    Runs in your browser with UPR-ZX 4.6.0. You’ll need internet to load its Java runtime the first
+    time. This is a beta; the desktop reports don’t cover Android performance or actual 100-ROM
+    batches.
+  </p>
+  <label
+    >Preset
+    <select id="batch-preset">
+      <option>Kaizo</option>
+      <option>Standard</option>
+      <option>Ultimate</option>
+      <option>Encounters only</option>
+      <option>Custom</option>
+    </select></label
+  ><small
+    >Ironmon presets use UTDZac’s published FireRed settings. Encounters only is a simple Nuzlocke
+    option: wild species change; trainer teams, learnsets and stats stay as supplied. Patch features
+    above are independent of the preset.</small
+  ><label>Batch seed <input id="batch-seed" inputmode="numeric" style="width: 220px" /></label
+  ><button id="batch-new-seed" type="button">New seed</button
+  ><label
+    >ROMs per batch
+    <input id="batch-size" type="number" value="10" min="1" max="100" list="batch-sizes" /></label
+  ><datalist id="batch-sizes">
+    <option value="10"></option>
+    <option value="20"></option>
+    <option value="50"></option>
+    <option value="100"></option></datalist
+  ><label
+    >Number of batches <input id="batch-count" type="number" value="1" min="1" max="100"
+  /></label>
+  <details>
+    <summary>Settings string</summary>
+    <textarea id="batch-settings" rows="4" style="width: 100%; box-sizing: border-box"></textarea>
+    <p class="small">
+      Use Custom to paste a compatible 321-format FireRed settings string. Keep the same engine,
+      settings, base ROM and seed to reproduce a batch.
+    </p>
+  </details>
+  <button id="batch-generate" type="button">Generate first batch</button>
+  <p id="batch-status" role="status"></p>
+  <div id="batch-download"></div>
+  <p class="small">
+    Randomizer:
+    <a href="https://github.com/Ajarmar/universal-pokemon-randomizer-zx/releases/tag/v4.6.0"
+      >UPR-ZX by Ajarmar, based on Dabomstew’s randomizer</a
+    >
+    (GPLv3). Presets:
+    <a href="https://gist.github.com/UTDZac/a147c497424dfbd537d8c4b0c22b5621"
+      >UTDZac and contributors</a
+    >. Browser Java runtime: <a href="https://cheerpj.com">CheerpJ by Leaning Technologies</a>.
+  </p>
+</details>
+
+    <p class="small">
+      Patching works offline. Your ROM stays on your device. The patcher makes a separate copy and
+      does not edit saves.
+    </p>
+    <p class="small">
+      Save normally and keep a backup before switching ROMs. Continue from the in-game save, not an
+      old save state.
+    </p>
+    <details>
+      <summary>Credits</summary>
+      <p class="small">
+        Faster FireRed: DrMaple. Ironmon: iateyourpie. Ironmon VS: WaffleSmacker and the VS
+        community. Ironmon Tracker: UTDZac, besteon and contributors. Engine reference:
+        pret/pokefirered.
+      </p>
+      <details><summary>Code licence notices</summary>
+<details><summary>Patcher components — MIT</summary><pre>MIT License
+
+Copyright (c) 2026 xbaconator9000x
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre></details>
+<details><summary>Ironmon VS — MIT</summary><pre>MIT License
+
+Copyright (c) 2026 WaffleSmacker
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre></details>
+<details><summary>Ironmon Tracker — MIT</summary><pre>Copyright 2022-2023 Besteon
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre></details>
+<details><summary>Rom Patcher JS — MIT</summary><pre>MIT License
+
+Copyright (c) 2017-2024 Marc Robledo
+
+This project incorporates components from Octicons
+(https://github.com/primer/octicons/) Copyright (c) 2024 GitHub Inc.,
+also released under MIT license.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre></details>
+<details><summary>Randomiser code — GPLv3</summary><pre>                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. &lt;http://fsf.org/&gt;
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+the GNU General Public License is intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.  We, the Free Software Foundation, use the
+GNU General Public License for most of our software; it applies also to
+any other work released this way by its authors.  You can apply it to
+your programs, too.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  To protect your rights, we need to prevent others from denying you
+these rights or asking you to surrender the rights.  Therefore, you have
+certain responsibilities if you distribute copies of the software, or if
+you modify it: responsibilities to respect the freedom of others.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must pass on to the recipients the same
+freedoms that you received.  You must make sure that they, too, receive
+or can get the source code.  And you must show them these terms so they
+know their rights.
+
+  Developers that use the GNU GPL protect your rights with two steps:
+(1) assert copyright on the software, and (2) offer you this License
+giving you legal permission to copy, distribute and/or modify it.
+
+  For the developers&#x27; and authors&#x27; protection, the GPL clearly explains
+that there is no warranty for this free software.  For both users&#x27; and
+authors&#x27; sake, the GPL requires that modified versions be marked as
+changed, so that their problems will not be attributed erroneously to
+authors of previous versions.
+
+  Some devices are designed to deny users access to install or run
+modified versions of the software inside them, although the manufacturer
+can do so.  This is fundamentally incompatible with the aim of
+protecting users&#x27; freedom to change the software.  The systematic
+pattern of such abuse occurs in the area of products for individuals to
+use, which is precisely where it is most unacceptable.  Therefore, we
+have designed this version of the GPL to prohibit the practice for those
+products.  If such problems arise substantially in other domains, we
+stand ready to extend this provision to those domains in future versions
+of the GPL, as needed to protect the freedom of users.
+
+  Finally, every program is threatened constantly by software patents.
+States should not allow patents to restrict development and use of
+software on general-purpose computers, but in those that do, we wish to
+avoid the special danger that patents applied to a free program could
+make it effectively proprietary.  To prevent this, the GPL assures that
+patents cannot be used to render the program non-free.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                       TERMS AND CONDITIONS
+
+  0. Definitions.
+
+  &quot;This License&quot; refers to version 3 of the GNU General Public License.
+
+  &quot;Copyright&quot; also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+
+  &quot;The Program&quot; refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as &quot;you&quot;.  &quot;Licensees&quot; and
+&quot;recipients&quot; may be individuals or organizations.
+
+  To &quot;modify&quot; a work means to copy from or adapt all or part of the work
+in a fashion requiring copyright permission, other than the making of an
+exact copy.  The resulting work is called a &quot;modified version&quot; of the
+earlier work or a work &quot;based on&quot; the earlier work.
+
+  A &quot;covered work&quot; means either the unmodified Program or a work based
+on the Program.
+
+  To &quot;propagate&quot; a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy.  Propagation includes copying,
+distribution (with or without modification), making available to the
+public, and in some countries other activities as well.
+
+  To &quot;convey&quot; a work means any kind of propagation that enables other
+parties to make or receive copies.  Mere interaction with a user through
+a computer network, with no transfer of a copy, is not conveying.
+
+  An interactive user interface displays &quot;Appropriate Legal Notices&quot;
+to the extent that it includes a convenient and prominently visible
+feature that (1) displays an appropriate copyright notice, and (2)
+tells the user that there is no warranty for the work (except to the
+extent that warranties are provided), that licensees may convey the
+work under this License, and how to view a copy of this License.  If
+the interface presents a list of user commands or options, such as a
+menu, a prominent item in the list meets this criterion.
+
+  1. Source Code.
+
+  The &quot;source code&quot; for a work means the preferred form of the work
+for making modifications to it.  &quot;Object code&quot; means any non-source
+form of a work.
+
+  A &quot;Standard Interface&quot; means an interface that either is an official
+standard defined by a recognized standards body, or, in the case of
+interfaces specified for a particular programming language, one that
+is widely used among developers working in that language.
+
+  The &quot;System Libraries&quot; of an executable work include anything, other
+than the work as a whole, that (a) is included in the normal form of
+packaging a Major Component, but which is not part of that Major
+Component, and (b) serves only to enable use of the work with that
+Major Component, or to implement a Standard Interface for which an
+implementation is available to the public in source code form.  A
+&quot;Major Component&quot;, in this context, means a major essential component
+(kernel, window system, and so on) of the specific operating system
+(if any) on which the executable work runs, or a compiler used to
+produce the work, or an object code interpreter used to run it.
+
+  The &quot;Corresponding Source&quot; for a work in object code form means all
+the source code needed to generate, install, and (for an executable
+work) run the object code and to modify the work, including scripts to
+control those activities.  However, it does not include the work&#x27;s
+System Libraries, or general-purpose tools or generally available free
+programs which are used unmodified in performing those activities but
+which are not part of the work.  For example, Corresponding Source
+includes interface definition files associated with source files for
+the work, and the source code for shared libraries and dynamically
+linked subprograms that the work is specifically designed to require,
+such as by intimate data communication or control flow between those
+subprograms and other parts of the work.
+
+  The Corresponding Source need not include anything that users
+can regenerate automatically from other parts of the Corresponding
+Source.
+
+  The Corresponding Source for a work in source code form is that
+same work.
+
+  2. Basic Permissions.
+
+  All rights granted under this License are granted for the term of
+copyright on the Program, and are irrevocable provided the stated
+conditions are met.  This License explicitly affirms your unlimited
+permission to run the unmodified Program.  The output from running a
+covered work is covered by this License only if the output, given its
+content, constitutes a covered work.  This License acknowledges your
+rights of fair use or other equivalent, as provided by copyright law.
+
+  You may make, run and propagate covered works that you do not
+convey, without conditions so long as your license otherwise remains
+in force.  You may convey covered works to others for the sole purpose
+of having them make modifications exclusively for you, or provide you
+with facilities for running those works, provided that you comply with
+the terms of this License in conveying all material for which you do
+not control copyright.  Those thus making or running the covered works
+for you must do so exclusively on your behalf, under your direction
+and control, on terms that prohibit them from making any copies of
+your copyrighted material outside their relationship with you.
+
+  Conveying under any other circumstances is permitted solely under
+the conditions stated below.  Sublicensing is not allowed; section 10
+makes it unnecessary.
+
+  3. Protecting Users&#x27; Legal Rights From Anti-Circumvention Law.
+
+  No covered work shall be deemed part of an effective technological
+measure under any applicable law fulfilling obligations under article
+11 of the WIPO copyright treaty adopted on 20 December 1996, or
+similar laws prohibiting or restricting circumvention of such
+measures.
+
+  When you convey a covered work, you waive any legal power to forbid
+circumvention of technological measures to the extent such circumvention
+is effected by exercising rights under this License with respect to
+the covered work, and you disclaim any intention to limit operation or
+modification of the work as a means of enforcing, against the work&#x27;s
+users, your or third parties&#x27; legal rights to forbid circumvention of
+technological measures.
+
+  4. Conveying Verbatim Copies.
+
+  You may convey verbatim copies of the Program&#x27;s source code as you
+receive it, in any medium, provided that you conspicuously and
+appropriately publish on each copy an appropriate copyright notice;
+keep intact all notices stating that this License and any
+non-permissive terms added in accord with section 7 apply to the code;
+keep intact all notices of the absence of any warranty; and give all
+recipients a copy of this License along with the Program.
+
+  You may charge any price or no price for each copy that you convey,
+and you may offer support or warranty protection for a fee.
+
+  5. Conveying Modified Source Versions.
+
+  You may convey a work based on the Program, or the modifications to
+produce it from the Program, in the form of source code under the
+terms of section 4, provided that you also meet all of these conditions:
+
+    a) The work must carry prominent notices stating that you modified
+    it, and giving a relevant date.
+
+    b) The work must carry prominent notices stating that it is
+    released under this License and any conditions added under section
+    7.  This requirement modifies the requirement in section 4 to
+    &quot;keep intact all notices&quot;.
+
+    c) You must license the entire work, as a whole, under this
+    License to anyone who comes into possession of a copy.  This
+    License will therefore apply, along with any applicable section 7
+    additional terms, to the whole of the work, and all its parts,
+    regardless of how they are packaged.  This License gives no
+    permission to license the work in any other way, but it does not
+    invalidate such permission if you have separately received it.
+
+    d) If the work has interactive user interfaces, each must display
+    Appropriate Legal Notices; however, if the Program has interactive
+    interfaces that do not display Appropriate Legal Notices, your
+    work need not make them do so.
+
+  A compilation of a covered work with other separate and independent
+works, which are not by their nature extensions of the covered work,
+and which are not combined with it such as to form a larger program,
+in or on a volume of a storage or distribution medium, is called an
+&quot;aggregate&quot; if the compilation and its resulting copyright are not
+used to limit the access or legal rights of the compilation&#x27;s users
+beyond what the individual works permit.  Inclusion of a covered work
+in an aggregate does not cause this License to apply to the other
+parts of the aggregate.
+
+  6. Conveying Non-Source Forms.
+
+  You may convey a covered work in object code form under the terms
+of sections 4 and 5, provided that you also convey the
+machine-readable Corresponding Source under the terms of this License,
+in one of these ways:
+
+    a) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by the
+    Corresponding Source fixed on a durable physical medium
+    customarily used for software interchange.
+
+    b) Convey the object code in, or embodied in, a physical product
+    (including a physical distribution medium), accompanied by a
+    written offer, valid for at least three years and valid for as
+    long as you offer spare parts or customer support for that product
+    model, to give anyone who possesses the object code either (1) a
+    copy of the Corresponding Source for all the software in the
+    product that is covered by this License, on a durable physical
+    medium customarily used for software interchange, for a price no
+    more than your reasonable cost of physically performing this
+    conveying of source, or (2) access to copy the
+    Corresponding Source from a network server at no charge.
+
+    c) Convey individual copies of the object code with a copy of the
+    written offer to provide the Corresponding Source.  This
+    alternative is allowed only occasionally and noncommercially, and
+    only if you received the object code with such an offer, in accord
+    with subsection 6b.
+
+    d) Convey the object code by offering access from a designated
+    place (gratis or for a charge), and offer equivalent access to the
+    Corresponding Source in the same way through the same place at no
+    further charge.  You need not require recipients to copy the
+    Corresponding Source along with the object code.  If the place to
+    copy the object code is a network server, the Corresponding Source
+    may be on a different server (operated by you or a third party)
+    that supports equivalent copying facilities, provided you maintain
+    clear directions next to the object code saying where to find the
+    Corresponding Source.  Regardless of what server hosts the
+    Corresponding Source, you remain obligated to ensure that it is
+    available for as long as needed to satisfy these requirements.
+
+    e) Convey the object code using peer-to-peer transmission, provided
+    you inform other peers where the object code and Corresponding
+    Source of the work are being offered to the general public at no
+    charge under subsection 6d.
+
+  A separable portion of the object code, whose source code is excluded
+from the Corresponding Source as a System Library, need not be
+included in conveying the object code work.
+
+  A &quot;User Product&quot; is either (1) a &quot;consumer product&quot;, which means any
+tangible personal property which is normally used for personal, family,
+or household purposes, or (2) anything designed or sold for incorporation
+into a dwelling.  In determining whether a product is a consumer product,
+doubtful cases shall be resolved in favor of coverage.  For a particular
+product received by a particular user, &quot;normally used&quot; refers to a
+typical or common use of that class of product, regardless of the status
+of the particular user or of the way in which the particular user
+actually uses, or expects or is expected to use, the product.  A product
+is a consumer product regardless of whether the product has substantial
+commercial, industrial or non-consumer uses, unless such uses represent
+the only significant mode of use of the product.
+
+  &quot;Installation Information&quot; for a User Product means any methods,
+procedures, authorization keys, or other information required to install
+and execute modified versions of a covered work in that User Product from
+a modified version of its Corresponding Source.  The information must
+suffice to ensure that the continued functioning of the modified object
+code is in no case prevented or interfered with solely because
+modification has been made.
+
+  If you convey an object code work under this section in, or with, or
+specifically for use in, a User Product, and the conveying occurs as
+part of a transaction in which the right of possession and use of the
+User Product is transferred to the recipient in perpetuity or for a
+fixed term (regardless of how the transaction is characterized), the
+Corresponding Source conveyed under this section must be accompanied
+by the Installation Information.  But this requirement does not apply
+if neither you nor any third party retains the ability to install
+modified object code on the User Product (for example, the work has
+been installed in ROM).
+
+  The requirement to provide Installation Information does not include a
+requirement to continue to provide support service, warranty, or updates
+for a work that has been modified or installed by the recipient, or for
+the User Product in which it has been modified or installed.  Access to a
+network may be denied when the modification itself materially and
+adversely affects the operation of the network or violates the rules and
+protocols for communication across the network.
+
+  Corresponding Source conveyed, and Installation Information provided,
+in accord with this section must be in a format that is publicly
+documented (and with an implementation available to the public in
+source code form), and must require no special password or key for
+unpacking, reading or copying.
+
+  7. Additional Terms.
+
+  &quot;Additional permissions&quot; are terms that supplement the terms of this
+License by making exceptions from one or more of its conditions.
+Additional permissions that are applicable to the entire Program shall
+be treated as though they were included in this License, to the extent
+that they are valid under applicable law.  If additional permissions
+apply only to part of the Program, that part may be used separately
+under those permissions, but the entire Program remains governed by
+this License without regard to the additional permissions.
+
+  When you convey a copy of a covered work, you may at your option
+remove any additional permissions from that copy, or from any part of
+it.  (Additional permissions may be written to require their own
+removal in certain cases when you modify the work.)  You may place
+additional permissions on material, added by you to a covered work,
+for which you have or can give appropriate copyright permission.
+
+  Notwithstanding any other provision of this License, for material you
+add to a covered work, you may (if authorized by the copyright holders of
+that material) supplement the terms of this License with terms:
+
+    a) Disclaiming warranty or limiting liability differently from the
+    terms of sections 15 and 16 of this License; or
+
+    b) Requiring preservation of specified reasonable legal notices or
+    author attributions in that material or in the Appropriate Legal
+    Notices displayed by works containing it; or
+
+    c) Prohibiting misrepresentation of the origin of that material, or
+    requiring that modified versions of such material be marked in
+    reasonable ways as different from the original version; or
+
+    d) Limiting the use for publicity purposes of names of licensors or
+    authors of the material; or
+
+    e) Declining to grant rights under trademark law for use of some
+    trade names, trademarks, or service marks; or
+
+    f) Requiring indemnification of licensors and authors of that
+    material by anyone who conveys the material (or modified versions of
+    it) with contractual assumptions of liability to the recipient, for
+    any liability that these contractual assumptions directly impose on
+    those licensors and authors.
+
+  All other non-permissive additional terms are considered &quot;further
+restrictions&quot; within the meaning of section 10.  If the Program as you
+received it, or any part of it, contains a notice stating that it is
+governed by this License along with a term that is a further
+restriction, you may remove that term.  If a license document contains
+a further restriction but permits relicensing or conveying under this
+License, you may add to a covered work material governed by the terms
+of that license document, provided that the further restriction does
+not survive such relicensing or conveying.
+
+  If you add terms to a covered work in accord with this section, you
+must place, in the relevant source files, a statement of the
+additional terms that apply to those files, or a notice indicating
+where to find the applicable terms.
+
+  Additional terms, permissive or non-permissive, may be stated in the
+form of a separately written license, or stated as exceptions;
+the above requirements apply either way.
+
+  8. Termination.
+
+  You may not propagate or modify a covered work except as expressly
+provided under this License.  Any attempt otherwise to propagate or
+modify it is void, and will automatically terminate your rights under
+this License (including any patent licenses granted under the third
+paragraph of section 11).
+
+  However, if you cease all violation of this License, then your
+license from a particular copyright holder is reinstated (a)
+provisionally, unless and until the copyright holder explicitly and
+finally terminates your license, and (b) permanently, if the copyright
+holder fails to notify you of the violation by some reasonable means
+prior to 60 days after the cessation.
+
+  Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+  Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, you do not qualify to receive new licenses for the same
+material under section 10.
+
+  9. Acceptance Not Required for Having Copies.
+
+  You are not required to accept this License in order to receive or
+run a copy of the Program.  Ancillary propagation of a covered work
+occurring solely as a consequence of using peer-to-peer transmission
+to receive a copy likewise does not require acceptance.  However,
+nothing other than this License grants you permission to propagate or
+modify any covered work.  These actions infringe copyright if you do
+not accept this License.  Therefore, by modifying or propagating a
+covered work, you indicate your acceptance of this License to do so.
+
+  10. Automatic Licensing of Downstream Recipients.
+
+  Each time you convey a covered work, the recipient automatically
+receives a license from the original licensors, to run, modify and
+propagate that work, subject to this License.  You are not responsible
+for enforcing compliance by third parties with this License.
+
+  An &quot;entity transaction&quot; is a transaction transferring control of an
+organization, or substantially all assets of one, or subdividing an
+organization, or merging organizations.  If propagation of a covered
+work results from an entity transaction, each party to that
+transaction who receives a copy of the work also receives whatever
+licenses to the work the party&#x27;s predecessor in interest had or could
+give under the previous paragraph, plus a right to possession of the
+Corresponding Source of the work from the predecessor in interest, if
+the predecessor has it or can get it with reasonable efforts.
+
+  You may not impose any further restrictions on the exercise of the
+rights granted or affirmed under this License.  For example, you may
+not impose a license fee, royalty, or other charge for exercise of
+rights granted under this License, and you may not initiate litigation
+(including a cross-claim or counterclaim in a lawsuit) alleging that
+any patent claim is infringed by making, using, selling, offering for
+sale, or importing the Program or any portion of it.
+
+  11. Patents.
+
+  A &quot;contributor&quot; is a copyright holder who authorizes use under this
+License of the Program or a work on which the Program is based.  The
+work thus licensed is called the contributor&#x27;s &quot;contributor version&quot;.
+
+  A contributor&#x27;s &quot;essential patent claims&quot; are all patent claims
+owned or controlled by the contributor, whether already acquired or
+hereafter acquired, that would be infringed by some manner, permitted
+by this License, of making, using, or selling its contributor version,
+but do not include claims that would be infringed only as a
+consequence of further modification of the contributor version.  For
+purposes of this definition, &quot;control&quot; includes the right to grant
+patent sublicenses in a manner consistent with the requirements of
+this License.
+
+  Each contributor grants you a non-exclusive, worldwide, royalty-free
+patent license under the contributor&#x27;s essential patent claims, to
+make, use, sell, offer for sale, import and otherwise run, modify and
+propagate the contents of its contributor version.
+
+  In the following three paragraphs, a &quot;patent license&quot; is any express
+agreement or commitment, however denominated, not to enforce a patent
+(such as an express permission to practice a patent or covenant not to
+sue for patent infringement).  To &quot;grant&quot; such a patent license to a
+party means to make such an agreement or commitment not to enforce a
+patent against the party.
+
+  If you convey a covered work, knowingly relying on a patent license,
+and the Corresponding Source of the work is not available for anyone
+to copy, free of charge and under the terms of this License, through a
+publicly available network server or other readily accessible means,
+then you must either (1) cause the Corresponding Source to be so
+available, or (2) arrange to deprive yourself of the benefit of the
+patent license for this particular work, or (3) arrange, in a manner
+consistent with the requirements of this License, to extend the patent
+license to downstream recipients.  &quot;Knowingly relying&quot; means you have
+actual knowledge that, but for the patent license, your conveying the
+covered work in a country, or your recipient&#x27;s use of the covered work
+in a country, would infringe one or more identifiable patents in that
+country that you have reason to believe are valid.
+
+  If, pursuant to or in connection with a single transaction or
+arrangement, you convey, or propagate by procuring conveyance of, a
+covered work, and grant a patent license to some of the parties
+receiving the covered work authorizing them to use, propagate, modify
+or convey a specific copy of the covered work, then the patent license
+you grant is automatically extended to all recipients of the covered
+work and works based on it.
+
+  A patent license is &quot;discriminatory&quot; if it does not include within
+the scope of its coverage, prohibits the exercise of, or is
+conditioned on the non-exercise of one or more of the rights that are
+specifically granted under this License.  You may not convey a covered
+work if you are a party to an arrangement with a third party that is
+in the business of distributing software, under which you make payment
+to the third party based on the extent of your activity of conveying
+the work, and under which the third party grants, to any of the
+parties who would receive the covered work from you, a discriminatory
+patent license (a) in connection with copies of the covered work
+conveyed by you (or copies made from those copies), or (b) primarily
+for and in connection with specific products or compilations that
+contain the covered work, unless you entered into that arrangement,
+or that patent license was granted, prior to 28 March 2007.
+
+  Nothing in this License shall be construed as excluding or limiting
+any implied license or other defenses to infringement that may
+otherwise be available to you under applicable patent law.
+
+  12. No Surrender of Others&#x27; Freedom.
+
+  If conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot convey a
+covered work so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you may
+not convey it at all.  For example, if you agree to terms that obligate you
+to collect a royalty for further conveying from those to whom you convey
+the Program, the only way you could satisfy both those terms and this
+License would be to refrain entirely from conveying the Program.
+
+  13. Use with the GNU Affero General Public License.
+
+  Notwithstanding any other provision of this License, you have
+permission to link or combine any covered work with a work licensed
+under version 3 of the GNU Affero General Public License into a single
+combined work, and to convey the resulting work.  The terms of this
+License will continue to apply to the part which is the covered work,
+but the special requirements of the GNU Affero General Public License,
+section 13, concerning interaction through a network will apply to the
+combination as such.
+
+  14. Revised Versions of this License.
+
+  The Free Software Foundation may publish revised and/or new versions of
+the GNU General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+  Each version is given a distinguishing version number.  If the
+Program specifies that a certain numbered version of the GNU General
+Public License &quot;or any later version&quot; applies to it, you have the
+option of following the terms and conditions either of that numbered
+version or of any later version published by the Free Software
+Foundation.  If the Program does not specify a version number of the
+GNU General Public License, you may choose any version ever published
+by the Free Software Foundation.
+
+  If the Program specifies that a proxy can decide which future
+versions of the GNU General Public License can be used, that proxy&#x27;s
+public statement of acceptance of a version permanently authorizes you
+to choose that version for the Program.
+
+  Later license versions may give you additional or different
+permissions.  However, no additional obligations are imposed on any
+author or copyright holder as a result of your choosing to follow a
+later version.
+
+  15. Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+  16. Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+  17. Interpretation of Sections 15 and 16.
+
+  If the disclaimer of warranty and limitation of liability provided
+above cannot be given local legal effect according to their terms,
+reviewing courts shall apply local law that most closely approximates
+an absolute waiver of all civil liability in connection with the
+Program, unless a warranty or assumption of liability accompanies a
+copy of the Program in return for a fee.
+
+                     END OF TERMS AND CONDITIONS
+
+            How to Apply These Terms to Your New Programs
+
+  If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+state the exclusion of warranty; and each file should have at least
+the &quot;copyright&quot; line and a pointer to where the full notice is found.
+
+    &lt;one line to give the program&#x27;s name and a brief idea of what it does.&gt;
+    Copyright (C) &lt;year&gt;  &lt;name of author&gt;
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+
+Also add information on how to contact you by electronic and paper mail.
+
+  If the program does terminal interaction, make it output a short
+notice like this when it starts in an interactive mode:
+
+    &lt;program&gt;  Copyright (C) &lt;year&gt;  &lt;name of author&gt;
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w&#x27;.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c&#x27; for details.
+
+The hypothetical commands `show w&#x27; and `show c&#x27; should show the appropriate
+parts of the General Public License.  Of course, your program&#x27;s commands
+might be different; for a GUI interface, you would use an &quot;about box&quot;.
+
+  You should also get your employer (if you work as a programmer) or school,
+if any, to sign a &quot;copyright disclaimer&quot; for the program, if necessary.
+For more information on this, and how to apply and follow the GNU GPL, see
+&lt;http://www.gnu.org/licenses/&gt;.
+
+  The GNU General Public License does not permit incorporating your program
+into proprietary programs.  If your program is a subroutine library, you
+may consider it more useful to permit linking proprietary applications with
+the library.  If this is what you want to do, use the GNU Lesser General
+Public License instead of this License.  But first, please read
+&lt;http://www.gnu.org/philosophy/why-not-lgpl.html&gt;.
+</pre></details>
+</details>
+    </details>
+    <details>
+      <summary>Reusing Baconmon changes</summary>
+      <p class="small">
+        You're welcome to use my original Baconmon ROM changes in your own non-commercial project.
+        Credit Kaizo Baconmon by xbaconator9000x and keep the reuse licence with the material. No
+        notification or separate approval is required. Just playing privately doesn't require a
+        credit or message.
+      </p>
+      <p class="small">
+        A personal request: I'd love to see what you make! Please use the work respectfully, without
+        degrading, discriminating against or intentionally harming anyone. These are optional
+        requests, not licence conditions.
+        <a href="https://github.com/xbaconator9000x/Kaizo-Baconmon/blob/main/Reuse_Statement.md"
+          >A note on reuse</a
+        >
+      </p>
+      <p class="small">
+        This only covers rights I hold in my own contributions. Pokémon and other creators' work
+        belong to their respective rights holders. The patcher software keeps its MIT/GPLv3 terms,
+        and earlier licence grants still apply. This isn't permission to distribute complete game
+        ROMs.
+      </p>
+      <details>
+        <summary>Full reuse licence</summary>
+        <pre>Kaizo Baconmon Reuse Licence
+Version 1.1 - 17 October 2026
+
+Licensor: xbaconator9000x
+Project: https://github.com/xbaconator9000x/Kaizo-Baconmon
+
+1. Scope
+
+This licence covers the original, separately identifiable Kaizo Baconmon
+ROM changes contributed by xbaconator9000x, including original game-side
+code, scripts, dialogue and patch data (the &quot;Covered Material&quot;). It grants
+only rights that xbaconator9000x holds in that material.
+
+The web patcher, build tools, randomiser and randomiser integration keep
+their existing MIT/GPLv3 licences and are not Covered Material. This
+licence does not restrict their use or withdraw earlier licence grants.
+
+2. Reuse with credit for non-commercial projects
+
+You may use, copy, modify and share the Covered Material, including in
+your own patch or ROM hack, without a fee, subject to these conditions:
+
+- Keep your use non-commercial. Do not sell the Covered Material or a
+  project containing it, charge for access, or include it in a paid
+  product or bundle. Non-commercial use means use that is not primarily
+  intended for commercial advantage or monetary compensation.
+- When sharing it, credit &quot;Kaizo Baconmon by xbaconator9000x&quot; in your
+  credits or README, link to the project above, and identify your changes.
+  Keep this licence and the relevant attribution notices with the material.
+
+Each recipient may reuse the Covered Material under these same terms.
+Your own additions may have separate terms. Do not imply that
+xbaconator9000x made or endorsed your project or changes.
+
+No notification or separate approval is required. The requests in
+Reuse_Statement.md are optional, not additional licence conditions.
+Simply playing the hack privately does not require a credit or message.
+
+3. Other rights
+
+Pokémon, the original games, assets and trademarks belong to their
+respective rights holders. Other creators&#x27; work, including Faster
+FireRed, keeps its own terms. Permission granted to Baconmon does not
+automatically extend to another project. This licence grants no rights
+in third-party material or permission to distribute complete game ROMs.
+Kaizo Baconmon is an unofficial fan project, without their endorsement.
+
+This licence does not claim ownership of ideas, methods, public-domain
+material or anything outside the licensor&#x27;s rights. It does not limit
+rights or exceptions provided by law. Because it restricts commercial
+use, it is a custom non-commercial licence, not an open-source software
+licence.
+
+4. Warranty and compliance
+
+The Covered Material is supplied as is. To the extent permitted by law,
+the licensor gives no warranties and accepts no liability for loss or
+damage arising from its use. Nothing here excludes rights, guarantees
+or liabilities that cannot lawfully be excluded. Use outside the terms
+of this licence is not permitted by this licence; separate licences
+and rights provided by law still apply.
+</pre>
+      </details>
+    </details>
+    <footer>
+      Kaizo Baconmon · Evolution beta — base release 1.0 · xbaconator9000x ·
+      <a href="https://github.com/xbaconator9000x/Kaizo-Baconmon/blob/main/LICENSE.txt"
+        >Reuse licence</a
+      >·
+      <a href="Kaizo_Baconmon_Patcher_Source.zip" download>Source and licences</a>
+      <p>
+        <a href="https://github.com/xbaconator9000x/Kaizo-Baconmon#disclosure"
+          >Development disclosure</a
+        >
+      </p>
+    </footer>
+    <script>__BETA_RUNTIME__</script>
+  </body>
+</html>

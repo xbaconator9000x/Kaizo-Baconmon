@@ -4,7 +4,7 @@ const fs = require('fs'),
   crypto = require('crypto'),
   assert = require('assert');
 const root = path.resolve(__dirname, '..'),
-  html = fs.readFileSync(path.join(root, 'public-output/Kaizo_Baconmon_Patcher.html'), 'utf8');
+  html = fs.readFileSync(process.env.BACON_PATCHER_HTML || path.join(root, 'public-output/Kaizo_Baconmon_Patcher.html'), 'utf8');
 const script = html.match(/<script>([\s\S]*)<\/script>/)[1];
 function setup(size, count = 1, failAt = 0) {
   const nodes = {},
@@ -90,6 +90,7 @@ function setup(size, count = 1, failAt = 0) {
     },
   });
   vm.runInContext(script, ctx);
+  nodes['batch-settings'].value = vm.runInContext('BATCH_PRESETS.Kaizo', ctx);
   nodes['batch-seed'].value = '42';
   return { ctx, nodes, blobs, calls, maxLive: () => maxLive };
 }
