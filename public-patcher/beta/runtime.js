@@ -367,10 +367,22 @@ async function patchROM(source, enabled, pool, options = {}) {
         : 'Lab rival parties are already level ' + rivalLevel + '.';
       continue;
     }
+    const titleState = group.id === 'title'
+      ? await BabymonTitle.preflight(out, options.profile)
+      : null;
+    if (titleState?.conflicts) {
+      row.status = 'skipped';
+      row.reason = 'The title callback or Babymon image space differs. The whole title feature was left alone.';
+      row.conflicts = titleState.conflicts;
+      continue;
+    }
+    const guardSource = titleState?.installed ? out.slice() : out;
+    if (titleState?.installed)
+      new DataView(guardSource.buffer).setUint32(BABYMON_TITLE.hook, BABYMON_TITLE.original_hook, true);
     const failed = [];
     // Preflight the entire feature before making any of its writes.
     for (const g of group.guards)
-      if (!(await guardOK(out, g, group.id !== 'core'))) failed.push(g.offset);
+      if (!(await guardOK(guardSource, g, group.id !== 'core'))) failed.push(g.offset);
     for (const r of group.records) {
       if (r.text_pointer_site !== undefined) {
         const pointer = u32(out, r.text_pointer_site);
@@ -379,7 +391,7 @@ async function patchROM(source, enabled, pool, options = {}) {
       }
       if (
         !(group.id === 'core' && r.activation_owner) &&
-        !(await guardOK(out, r, group.id !== 'core'))
+        !(await guardOK(guardSource, r, group.id !== 'core'))
       )
         failed.push(r.offset);
     }
@@ -417,6 +429,15 @@ async function patchROM(source, enabled, pool, options = {}) {
       out.set(replacement, r.offset);
       count++;
       report.writes.push({ feature: group.id, offset: r.offset, length: r.length });
+    }
+    if (titleState) {
+      const beforeWrites = report.writes.length;
+      report.title_variant = BabymonTitle.apply(out, titleState, report);
+      count += report.writes.length - beforeWrites;
+      row.name = titleState.wanted ? 'Babymon title screen' : 'Baconmon title screen';
+      row.detail = titleState.wanted
+        ? 'Magby, Elekid and Cleffa in a Kanto countryside scene. Native title controls and menu transition retained.'
+        : group.detail;
     }
     row.status = count ? 'applied' : 'existing';
     row.reason = count ? 'Applied.' : 'Already present.';
@@ -792,6 +813,7 @@ if (typeof document !== 'undefined') {
             CONFIG.core_features.map((f) => [f.id, selected.includes(f.id)]),
           ),
           rivalLevel: Number(document.getElementById('rivalLevel').value),
+          profile: document.getElementById('run-profile')?.value || 'custom',
         });
       const stem = file.name.replace(/\.(gba|agb|bin|rom)$/i, '') + '_Baconmon',
         notes = patchNotes(report, file.name);
@@ -7623,6 +7645,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
               CONFIG.core_features.map((f) => [f.id, selected.includes(f.id)]),
             ),
             rivalLevel: Number(el('rivalLevel').value),
+            profile,
             ruleset: profile,
           };
         const source = new Uint8Array(await file.arrayBuffer()),

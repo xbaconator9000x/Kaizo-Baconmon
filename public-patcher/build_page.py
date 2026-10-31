@@ -23,6 +23,8 @@ def embedded_script(manifest):
             "const CONFIG=" + json.dumps(manifest, separators=(",", ":")) + ";",
             "const PAYLOAD=" + json.dumps((SOURCE_DIRECTORY / "payload.txt").read_text()) + ";",
             (SOURCE_DIRECTORY / "shared.js").read_text(),
+            "const BABYMON_TITLE=" + (SOURCE_DIRECTORY / "title/babymon.json").read_text() + ";",
+            (SOURCE_DIRECTORY / "title.js").read_text(),
             (SOURCE_DIRECTORY / "patcher.js").read_text(),
             "const BATCH_PRESETS=" + json.dumps(presets) + ";",
             "const ENGINE_JAR=" + json.dumps(engine) + ";",
@@ -38,6 +40,7 @@ def feature_choices(manifest):
         for group in manifest["groups"]
         if group["id"] not in ["core", "support"]
     }
+    labels["title"] = ("Preset title screen", "Babymon uses Magby, Elekid and Cleffa; other presets use the Baconmon title.")
     labels["faster"] = (
         "Faster FireRed extras",
         "Optional speed and field tweaks from Faster FireRed. Separate from the lab-start switch and the forest nurse.",

@@ -157,6 +157,7 @@ if (typeof document !== 'undefined' && document.getElementById('batch-generate')
               CONFIG.core_features.map((f) => [f.id, selected.includes(f.id)]),
             ),
             rivalLevel: Number(el('rivalLevel').value),
+            profile,
           };
         const source = new Uint8Array(await file.arrayBuffer()),
           pool = await LegacyCore.inflate(PAYLOAD);

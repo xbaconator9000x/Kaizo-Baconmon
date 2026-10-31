@@ -1,0 +1,14 @@
+[
+  {
+    "page": "index.html",
+    "checks": 13,
+    "title_variant": "babymon",
+    "output_sha256": "13a6f56eb870a8a695cf7e9421bb216d12d29ad004bb1218aa6a2c0e55f1cd9c"
+  },
+  {
+    "page": "babymon-beta.html",
+    "checks": 13,
+    "title_variant": "babymon",
+    "output_sha256": "13a6f56eb870a8a695cf7e9421bb216d12d29ad004bb1218aa6a2c0e55f1cd9c"
+  }
+]

@@ -185,3 +185,7 @@ That permission only covers rights I hold in my own contributions. Pokémon and 
 ## Disclosure
 
 I am not the best coder, and so I accessed external tools and advice to help with development. In some cases this included AI-assisted tools that helped with general guidance, coding, scripting, debugging, testing, and some text/title-screen graphics. The patcher itself was entirely created using ChatGPT with my directed input. AI useage was otherwise minimal and was not used when reasonably avoidable. I am hesitant to support the use of AI tools in any creative project. Without such tools in this case, I am not sure I would have ever figured out how to implement this project. All creative input was contributed by myself and the aforementioned sources.
+
+### Preset title artwork
+
+The optional title-screen patch now follows the selected profile: Kaizo Babymon shows Magby, Elekid and Cleffa in a Kanto countryside scene; other profiles retain Baconmon. Both the public patcher and development beta use the same guarded image importer. [Native-resolution assets and import details](public-patcher/title/README.md). [Emulator and patcher evidence](reports/title/README.md).
