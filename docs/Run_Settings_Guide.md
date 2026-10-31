@@ -181,7 +181,7 @@ Write down the settings and win conditions before starting if you want the run t
 
 ## Ironmon VS+
 
-The main Baconmon ruleset is being aligned with Ironmon VS+. It keeps the VS-style scoring framework and conveniences, but the current rules are still the authority for what is legal.
+The main Baconmon ruleset uses Ironmon VS+ as its foundation. It keeps the VS-style scoring framework and conveniences, but the current rules are still the authority for what is legal.
 
 The patcher should use this as the base for Baconmon runs:
 
@@ -193,6 +193,8 @@ The patcher should use this as the base for Baconmon runs:
 - Restricted Gym Leader TM rules.
 - Fuchsia Move Reminder using eligible unused Gym Leader TMs.
 - No unapproved Baconmon features when comparing against other VS+ runs.
+
+These are play rules, not a claim that all checks are implemented. The current Move Reminder accepts a broader choice of TM; players must limit payment to eligible unused compatible Gym Leader TMs. Automatic eligibility/payment validation remains pending.
 
 ## Kaizo Babymon
 
@@ -207,7 +209,9 @@ Kaizo Babymon is a separate original preset built on Ironmon VS+:
 - Tier 3 Pokémon cannot evolve again.
 - BST may increase or decrease.
 - Babymon permits the specific healing, draining-move and Huge Power/Pure Power overrides listed in its rules.
-- Babymon scores are tracked separately from other rulesets.
+- Keep Babymon results separate from other rulesets and record Classic/Modern, seed and settings. Automatic separate in-game scoring remains pending.
+
+Blind starter selection, no pivoting and permadeath are player-managed rules. The beta does not force blind selection, block party changes or automatically end an attempt. Restricted TM checks, ability/move policy checks and separate scoring remain unfinished; successful patching does not certify compliance.
 
 See the [Kaizo Babymon specification](Kaizo_Babymon_Spec.md) for the complete rules and implementation requirements.
 
