@@ -29,6 +29,14 @@ You can also use [UPR-ZX on PC](https://github.com/Ajarmar/universal-pokemon-ran
 
 If you choose a custom rival level, check it after randomisation. Later randomisation can change it; patch the finished seed with your chosen level if needed. The default level-8 option has its own correction during play.
 
+## Babymon and evolution beta
+
+Use the separate [Babymon / evolution beta](https://xbaconator9000x.github.io/Kaizo-Baconmon/babymon-beta.html) for the new evolution services and Babymon batch profile. Start from an unrandomised supported US FireRed 1.1 layout and use a fresh run. Read the output log for any skipped changes.
+
+Evolution support adds the Celadon trade-room attendant, direct-use trade evolution items, Celadon evolution-item access and a manual Day/Night clock at the left lab computer. The Babymon profile supplies Tier 1 starters and seed-consistent Tier 1 → Tier 2 → Tier 3 destinations.
+
+Read the [Babymon rules](Kaizo_Babymon_Spec.md) before a challenge run. Blind selection, no pivoting and permadeath are player-managed; there is no automatic run-ending guard. Restricted TM checks, ability/move policy and separate in-game scoring remain pending. See [beta status](Babymon_Beta.md) for testing limits.
+
 ## Rules and points
 
 I included the VS-style points because I find tracking progress and chasing a PB more fun than only counting a Champion win. Kaizo Ironmon can take dozens, hundreds or even thousands of attempts. Points give you smaller milestones to aim for, a way to see yourself improving, and something to compete over with friends—even when nobody wins the seed.
