@@ -6,7 +6,7 @@
 
 **Current patcher: [Release build 1.0](https://github.com/xbaconator9000x/Kaizo-Baconmon/releases/latest).** Testing and feedback are ongoing; the browser randomiser is still a beta.
 
-Kaizo Baconmon is a modular FireRed patcher and challenge toolkit, with my own take on Kaizo Ironmon as an optional full setup. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
+Kaizo Baconmon is a modular FireRed patcher and challenge toolkit, with the optional VS+-based Baconmon ruleset and the original Kaizo Babymon challenge. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
 
 I drew heavily from DrMaple's fantastic Faster FireRed 1.3.2 build. He has kindly given me permission to utilise and modify aspects of it for Baconmon.
 
@@ -74,7 +74,7 @@ Same hit, different outcome. Modern Sturdy saves a full-health Geodude from a kn
 - **Rival level:** defaults to level 8 in the lab. You can choose anything from 1 to 100 in the patcher.
 - **No HM friend needed:** use field HMs without teaching them. You still need the HM, badge and normal story requirements. Fly from the Town Map too.
 - **Lit Rock Tunnel:** no Flash needed to see where you're going.
-- **Move relearner:** sits opposite the Move Deleter in Fuchsia. Each remembered move costs one TM of your choice.
+- **Move relearner:** sits opposite the Move Deleter in Fuchsia. The current implementation takes one TM of your choice. Under Baconmon/VS+ and Babymon rules, use only an eligible unused Gym Leader TM compatible with the runner; automatic eligibility and payment checks remain unfinished.
 - **Friendship controls:** use Oak's lab machine to make your lead Pokemon like or hate you more.
 - **Poison-friendly forest nurse:** she heals you even if you're poisoned.
 - **Early encounter rotation:** early wild encounters rotate, inspired by Ironmon VS.
@@ -121,7 +121,9 @@ The patcher makes a separate copy and leaves your original ROM and saves alone. 
 
 ## My optional ruleset
 
-The full Baconmon rules are my own take, inspired by Kaizo Ironmon and Ironmon VS. They are optional; you do not need to use them to use the patcher.
+Baconmon uses Ironmon VS+ as its rules foundation, with Classic and Modern kept as separate battle modes. Kaizo Babymon is my separate original challenge: one starter, two seed-consistent randomised evolutions, no pivots and no guarantees. Both rulesets are optional; you do not need to use either to use the patcher.
+
+Read the [Baconmon / VS+ settings](docs/Run_Settings_Guide.md#ironmon-vs) and [Kaizo Babymon rules](docs/Kaizo_Babymon_Spec.md). The rules describe how to play; the beta status describes what the software currently implements. Blind starter selection, no pivoting and permadeath are player-managed. Restricted TM handling, ability/move policy checks and separate Babymon scoring remain unfinished.
 
 I am especially interested in feedback on the rules themselves, including unclear wording, edge cases and loopholes. Please report anything reproducible with the settings and steps needed to see it.
 
