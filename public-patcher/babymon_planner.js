@@ -18,7 +18,6 @@
       if (!pools[tier].length) throw Error('Empty tier.');
     }
     if (typeof seed !== 'string' || !seed.length) throw Error('Seed must be a nonempty string.');
-    // Domain-separated per-branch hashing: independent of manifest traversal order.
     function pick(key, pool) {
       let h = 2166136261;
       for (const c of seed + '\nBabymon-v1\n' + key) h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0;
@@ -32,7 +31,15 @@
         evolutions.push({from:p.dex, branch:index, method:{...method}, to:pick(p.dex+':'+index,pools[p.tier+1])});
       });
     }
-    return {format:'Babymon evolution plan v1', seed, starters:[0,1,2].map(i=>pick('starter:'+i,pools[1])), evolutions};
+    const byDex = new Map(manifest.map(p=>[p.dex,p]));
+    const reverse = new Map(manifest.map(p=>[p.dex,[]]));
+    for (const e of evolutions) {
+      const from = byDex.get(e.from), to = byDex.get(e.to);
+      if (!from || !to || to.tier !== from.tier + 1)
+        throw Error('Planner produced an invalid Babymon tier transition.');
+      reverse.get(e.to).push({from:e.from,branch:e.branch,method:{...e.method}});
+    }
+    return {format:'Babymon evolution plan v1', seed, starters:[0,1,2].map(i=>pick('starter:'+i,pools[1])), evolutions, reverse:[...reverse].filter(([,v])=>v.length).map(([to,from])=>({to,from}))};
   }
   const api = {plan};
   if (typeof module !== 'undefined') module.exports=api;
