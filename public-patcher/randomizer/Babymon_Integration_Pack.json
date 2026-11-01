@@ -1,0 +1,39 @@
+{
+  "name": "Kaizo Babymon",
+  "version": "1.1",
+  "base_engine": "Universal Pokemon Randomizer ZX",
+  "base_engine_version": "4.6.0",
+  "integration_type": "existing-randomiser-adapter",
+  "purpose": "Add the Kaizo Babymon preset to an existing FireRed randomiser.",
+  "apply_order": [
+    "Load Babymon_UPR_ZX_4.6.0_settings.txt.",
+    "Select one Tier 1 starter from babymon-manifest.json using the deterministic planner.",
+    "Run the normal randomiser with the selected settings.",
+    "Apply the planned Tier 1-to-Tier 2 and Tier 2-to-Tier 3 destinations with babymon_rom.js or an equivalent writer.",
+    "Install native evolution services when targeting unmodified FireRed Rev 1.",
+    "Record seed, settings hash, planner version and destination table."
+  ],
+  "files": {
+    "settings": "Babymon_UPR_ZX_4.6.0_settings.txt",
+    "species_and_tiers": "../babymon-manifest.json",
+    "portable_planner": "../babymon_planner.js",
+    "firered_writer": "../babymon_rom.js",
+    "integration_notes": "../../docs/Randomiser_Integration.md"
+  },
+  "rules": {
+    "starter_pool": "Tier 1 only",
+    "evolution_flow": "Tier 1 -> Tier 2 -> Tier 3",
+    "tier_3_evolves": false,
+    "seed_consistent": true,
+    "family_lock": false,
+    "normal_gen_iii_triggers": true,
+    "nincada_shedinja": false,
+    "legendaries_and_mythicals": false
+  },
+  "compatibility": {
+    "rom_layout": "US FireRed Rev 1 / 1.1",
+    "expanded_or_relocated_roms": "Validate table addresses before applying the writer",
+    "other_randomisers": "Use planner and manifest as portable interface; map National Dex IDs to engine species IDs."
+  },
+  "note": "A settings string alone cannot express the three forced randomized evolution tiers. The adapter/post-processing step is required."
+}
