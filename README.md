@@ -123,7 +123,7 @@ The patcher makes a separate copy and leaves your original ROM and saves alone. 
 
 Baconmon uses Ironmon VS+ as its rules foundation, with Classic and Modern kept as separate battle modes. Kaizo Babymon is my separate original challenge: one starter, two seed-consistent randomised evolutions, no pivots and no guarantees. Both rulesets are optional; you do not need to use either to use the patcher.
 
-Read the [Baconmon / VS+ settings](docs/Run_Settings_Guide.md#ironmon-vs) and [Kaizo Babymon rules](docs/Kaizo_Babymon_Spec.md). The rules describe how to play; the beta status describes what the software currently implements. Blind starter selection, no pivoting and permadeath are player-managed. Restricted TM handling, ability/move policy checks and separate Babymon scoring remain unfinished.
+Read the [Baconmon / VS+ settings](docs/Run_Settings_Guide.md#ironmon-vs) and [Kaizo Babymon rules](docs/Kaizo_Babymon_Spec.md). The rules describe how to play; the implementation notes describe what the software currently supplies. Blind starter selection, no pivoting and permadeath are player-managed. Restricted TM handling, ability/move policy checks and separate Babymon scoring remain unfinished.
 
 I am especially interested in feedback on the rules themselves, including unclear wording, edge cases and loopholes. Please report anything reproducible with the settings and steps needed to see it.
 
@@ -190,4 +190,4 @@ I am not the best coder, and so I accessed external tools and advice to help wit
 
 The optional title-screen patch now follows the selected profile: Kaizo Babymon shows Magby, Elekid and Cleffa in a Kanto countryside scene; other profiles retain Baconmon. Both the public patcher and development beta use the same guarded image importer. [Native-resolution assets and import details](public-patcher/title/README.md). [Emulator and patcher evidence](reports/title/README.md).
 
-Babymon batch randomisation is available on the main patcher as well as the beta page. Select **Babymon** in the run profile or randomiser preset. It uses the dedicated Babymon starter bridge and writes independently seeded tiered evolution tables for every ROM. The challenge remains beta. [Batch output validation](reports/babymon-batches/README.md).
+Babymon batch randomisation is available on the main patcher as well as the beta page. Select **Babymon** in the run profile or randomiser preset. It uses the dedicated Babymon starter bridge and writes independently seeded tiered evolution tables for every ROM. Babymon is included in the core patcher. [Batch output validation](reports/babymon-batches/README.md).
