@@ -136,7 +136,7 @@ Designed for maximum compatibility between ROMs. Changes that cannot be applied 
 Desktop patching, upgrades, selected game features and browser seed generation have been tested. See the [test reports](reports/README.md) for what those checks actually covered.
 
 - **Still to test:** a full playthrough and seed generation on an actual Android device.
-- **Batch randomiser:** still a beta. Passing scheduling checks isn't the same as testing every large batch on real hardware.
+- **Batch randomiser:** large batches still need sensible browser and device resources; passing scheduling checks isn't the same as testing every hardware configuration.
 - **Other ROM hacks:** successful patching doesn't prove the combined game is stable. Skipping a conflict also means you might not get every feature you selected.
 - **External Ironmon Tracker:** compatibility hasn't been established by this documentation. Don't assume it works just because the ROM boots or because tracker reference data appears in the credits.
 - **Challenge loopholes:** no dedicated exploit audit has been completed. The score log doesn't certify a legal run.
@@ -150,7 +150,7 @@ If something breaks, tell me what happened, how to reproduce it and include the 
 
 ### Release build 1.0
 
-First packaged GitHub release of the modular browser patcher, with a downloadable HTML patcher and source ZIP. Includes Classic/Modern mechanics, selectable QoL features, the Nuz-guide and score log, and the beta batch randomiser.
+First packaged GitHub release of the modular browser patcher, with a downloadable HTML patcher and source ZIP. Includes Classic/Modern mechanics, selectable QoL features, the Nuz-guide and score log, and the core batch randomiser.
 
 ### Documentation updates after 1.0
 
@@ -188,6 +188,6 @@ I am not the best coder, and so I accessed external tools and advice to help wit
 
 ### Preset title artwork
 
-The optional title-screen patch now follows the selected profile: Kaizo Babymon shows Magby, Elekid and Cleffa in a Kanto countryside scene; other profiles retain Baconmon. Both the public patcher and development beta use the same guarded image importer. [Native-resolution assets and import details](public-patcher/title/README.md). [Emulator and patcher evidence](reports/title/README.md).
+The optional title-screen patch now follows the selected profile: Kaizo Babymon shows Magby, Elekid and Cleffa in a Kanto countryside scene; other profiles retain Baconmon. Both the public patcher and development build use the same guarded image importer. [Native-resolution assets and import details](public-patcher/title/README.md). [Emulator and patcher evidence](reports/title/README.md).
 
 Babymon batch randomisation is available on the main patcher as well as the beta page. Select **Babymon** in the run profile or randomiser preset. It uses the dedicated Babymon starter bridge and writes independently seeded tiered evolution tables for every ROM. Babymon is included in the core patcher. [Batch output validation](reports/babymon-batches/README.md).
