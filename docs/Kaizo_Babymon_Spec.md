@@ -70,7 +70,7 @@ Retained:
 
 Under the challenge rules, teach only eligible Gym Leader-awarded TMs. The Fuchsia Move Reminder must use an unused Gym Leader-awarded TM compatible with the current runner to pay for a legal forgotten move; consume the TM only after a successful relearn. Sketch-related exploits are prohibited.
 
-Automatic TM provenance, compatibility, legal-choice and successful-payment checks, plus the Sketch audit, remain unfinished in the beta. Players must observe these restrictions themselves; the existing relearner accepting a TM does not prove it was eligible.
+Automatic TM provenance, compatibility, legal-choice and successful-payment checks, plus the Sketch audit, remain unfinished in the current implementation. Players must observe these restrictions themselves; the existing relearner accepting a TM does not prove it was eligible.
 
 ## VS+ conveniences
 
@@ -80,7 +80,7 @@ Babymon inherits the poison-friendly Viridian Forest nurse, friendship controls,
 
 The published beta includes Tier 1 starters, seed-consistent tier destinations and native evolution services. The mandatory attempt guard from the earlier restriction beta has been removed. Full playthrough and Android verification remain pending.
 
-The healing/draining and Huge Power/Pure Power allowances above are the agreed rules. The randomiser policy audit, starting-move safeguard removal, restricted TM handling and separate in-game scoring remain implementation work. See [beta status](Babymon_Beta.md) for the scope of completed tests.
+The healing/draining and Huge Power/Pure Power allowances above are the agreed rules. The randomiser policy audit, starting-move safeguard removal, restricted TM handling and separate in-game scoring remain implementation work. See [implementation notes](Babymon_Beta.md) for the scope of completed tests.
 
 ## Randomiser requirements
 
