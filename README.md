@@ -8,7 +8,12 @@ Kaizo Baconmon is a modular FireRed patcher for building the kind of run you act
 
 I wanted the pressure and replayability of Ironmon, the progress tracking and competition of Ironmon VS, and a few quality-of-life features that make the game more practical—especially on a phone. The result is a patcher that lets you use the complete package, or choose only the changes that fit your own rules.
 
-The two special rulesets are **Ironmon VS+** and **Kaizo Babymon**. Kaizo Babymon is also available as a selectable core randomiser preset—not a beta.
+Alongside the modular patcher, Kaizo Baconmon includes two custom rulesets:
+
+- **Ironmon VS+** — my personal variation on Ironmon VS, built around progress tracking, milestones and practical Baconmon conveniences.
+- **Kaizo Babymon** — an original, higher-difficulty challenge built around one permanent starter, no pivoting and two randomised tiered evolutions.
+
+Kaizo Babymon is also available as a selectable core randomiser preset—not a beta.
 
 ## What the patcher does
 
