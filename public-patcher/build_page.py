@@ -92,23 +92,12 @@ def licence_notices():
 
 
 def build_page():
-    manifest = json.loads((SOURCE_DIRECTORY / "manifest.json").read_text())
-    template = Template((SOURCE_DIRECTORY / "page_template.html").read_text())
-    stylesheet = (SOURCE_DIRECTORY / "patcher.css").read_text()
-    page = template.substitute(
-        release_label=escape(f"Release build {manifest['version']}"),
-        style_tag="<style>" + stylesheet + "</style>",
-        licence_notices=licence_notices(),
-        reuse_licence=escape((PROJECT_DIRECTORY / "LICENSE.txt").read_text()),
-        choices=feature_choices(manifest),
-        help_sections=help_html(),
-        batch=(SOURCE_DIRECTORY / "batch_template.html").read_text(),
-        script_tag="<script>" + embedded_script(manifest) + "</script>",
-    )
+    import runpy
+    runpy.run_path(str(PROJECT_DIRECTORY / "scripts/build_release.py"), run_name="__main__")
     OUTPUT_DIRECTORY.mkdir(parents=True, exist_ok=True)
     output = OUTPUT_DIRECTORY / "Kaizo_Baconmon_Patcher.html"
-    output.write_text(page)
-    print(f"Built {output.name} ({len(page.encode())} bytes).")
+    output.write_bytes((PROJECT_DIRECTORY / "index.html").read_bytes())
+    print(f"Built {output.name} ({output.stat().st_size} bytes).")
 
 
 if __name__ == "__main__":

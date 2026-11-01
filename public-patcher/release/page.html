@@ -180,6 +180,7 @@ input:disabled {
 <label><input class="feature" type="checkbox" id="feature-text" value="text" checked> <strong>Baconmon dialogue</strong><small>The lab e-mail and the other custom dialogue.</small></label>
 <label><input class="feature" type="checkbox" id="feature-rival" value="rival" checked> <strong>Adjust lab rival level</strong><small>Set the three lab starter parties to the level below, keeping their species and moves.</small></label>
 <label><input class="feature" type="checkbox" id="feature-status" value="status" checked> <strong>Battle status display</strong><small>Fix missing status icons in the lab rival battle, including paralysis, poison, burn, sleep and freeze.</small></label>
+<label><input class="feature" type="checkbox" id="feature-evolution" value="evolution" > <strong>Evolution support (beta)</strong><small>Celadon trade evolution help, use trade-evolution items like stones, and set Day/Night at the left computer in Oak’s lab. Also applies to batch randomisation.</small></label>
 <label><input class="feature" type="checkbox" id="feature-modern" value="modern" checked> <strong>Classic / Modern</strong><small>Choose Classic or Modern in Oak’s lab. Off keeps Gen 3 battle mechanics and removes the mode prompt. Note: Fairy typing is intentionally omitted.</small></label>
 <label><input class="feature" type="checkbox" id="feature-lab" value="lab" checked> <strong>Lab start and early balls</strong><small>Choose player details, start ready in Oak’s lab, and receive the early Master Ball and five Poké Balls. Off uses the original opening and bedroom start.</small></label>
 <label><input class="feature" type="checkbox" id="feature-rotation" value="rotation" checked> <strong>Early encounter rotation</strong><small>Use the Ironmon VS early encounter rotation.</small></label>
@@ -423,9 +424,10 @@ input:disabled {
     batches.
   </p>
   <label
-    >Preset
+    >Randomiser preset
     <select id="batch-preset">
       <option>Kaizo</option>
+      <option>Babymon</option>
       <option>Standard</option>
       <option>Ultimate</option>
       <option>Encounters only</option>

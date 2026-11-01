@@ -1,0 +1,22 @@
+[
+  {
+    "page": "index.html",
+    "batches": 2,
+    "roms": 4,
+    "real_java_calls": 4,
+    "all_starters_tier1": true,
+    "all_evolutions_follow_next_tier": true,
+    "tier3_has_no_evolution": true,
+    "download_manifests_match": true
+  },
+  {
+    "page": "babymon-beta.html",
+    "batches": 2,
+    "roms": 4,
+    "real_java_calls": 4,
+    "all_starters_tier1": true,
+    "all_evolutions_follow_next_tier": true,
+    "tier3_has_no_evolution": true,
+    "download_manifests_match": true
+  }
+]

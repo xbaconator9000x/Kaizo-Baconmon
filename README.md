@@ -189,3 +189,5 @@ I am not the best coder, and so I accessed external tools and advice to help wit
 ### Preset title artwork
 
 The optional title-screen patch now follows the selected profile: Kaizo Babymon shows Magby, Elekid and Cleffa in a Kanto countryside scene; other profiles retain Baconmon. Both the public patcher and development beta use the same guarded image importer. [Native-resolution assets and import details](public-patcher/title/README.md). [Emulator and patcher evidence](reports/title/README.md).
+
+Babymon batch randomisation is available on the main patcher as well as the beta page. Select **Babymon** in the run profile or randomiser preset. It uses the dedicated Babymon starter bridge and writes independently seeded tiered evolution tables for every ROM. The challenge remains beta. [Batch output validation](reports/babymon-batches/README.md).

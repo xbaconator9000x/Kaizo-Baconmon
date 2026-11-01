@@ -1,0 +1,7 @@
+{
+  "runtime": "mGBA wasm",
+  "rom_sha256": "180d2f5a56f05a5cce0041cabcc428e0ef52bf5ce7659c19f4f3fc801f368fc5",
+  "title_pixel_mismatches": 0,
+  "stable_title": true,
+  "start_transition": true
+}
