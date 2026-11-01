@@ -74,9 +74,9 @@ Automatic TM provenance, compatibility, legal-choice and successful-payment chec
 
 ## VS+ conveniences
 
-Babymon inherits the poison-friendly Viridian Forest nurse, friendship controls, eligible field-HM conveniences, battle information and the automatic 33-point Ironmon VS scoring framework. Babymon results must be kept separate from other rulesets, with Classic/Modern and seed/settings recorded. Automatic separate in-game Babymon scoring is still pending; beta batch metadata marks outputs as experimental and score-ineligible.
+Babymon inherits the poison-friendly Viridian Forest nurse, friendship controls, eligible field-HM conveniences, battle information and the automatic 33-point Ironmon VS scoring framework. Babymon results must be kept separate from other rulesets, with Classic/Modern and seed/settings recorded. Automatic separate in-game Babymon scoring is still pending; Babymon batch metadata records outputs separately from other challenge results.
 
-## Current beta status
+## Current implementation notes
 
 The published beta includes Tier 1 starters, seed-consistent tier destinations and native evolution services. The mandatory attempt guard from the earlier restriction beta has been removed. Full playthrough and Android verification remain pending.
 
