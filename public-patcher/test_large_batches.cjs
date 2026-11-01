@@ -116,7 +116,7 @@ async function readPart(t) {
 }
 (async () => {
   const checks = [];
-  assert(html.includes('Batch randomiser · beta'));
+  assert(html.includes('Batch randomiser'));
   assert(/id="batch-size"[^>]*max="100"/.test(html));
   for (const [size, count] of [
     [1, 1],
