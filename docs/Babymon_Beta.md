@@ -1,6 +1,6 @@
-# Babymon is included in the core patcher
+# Kaizo Babymon core patcher notes
 
-[Open Kaizo Babymon](https://xbaconator9000x.github.io/Kaizo-Baconmon/). The former beta URL now delivers this same core patcher.
+[Open Kaizo Babymon](https://xbaconator9000x.github.io/Kaizo-Baconmon/). The former beta URL is retained only as a compatibility link and delivers this same core patcher. There is no separate beta workflow.
 
 Select Babymon in either menu to select the full feature package and dedicated batch randomisation. The original Baconmon challenge is named **Ironmon VS+**; the ROM remains Kaizo Baconmon.
 
