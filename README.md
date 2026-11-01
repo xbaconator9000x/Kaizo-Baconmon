@@ -115,7 +115,7 @@ The in-game log tracks your current run. Keep a note of your PB to compare attem
 
 You'll need your own clean US FireRed 1.1 (Rev 1) ROM or Faster FireRed 1.3.2. Open the browser patcher linked above, choose your ROM and the features you want, then click **Check and apply**. Read the patch notes to see what worked and what was skipped.
 
-The patcher makes a separate copy and leaves your original ROM and saves alone. The batch randomiser is a beta. Choose up to 100 ROMs per batch; large batches download in ZIP parts of up to 10 ROMs. Download each part before continuing. The randomiser needs an internet connection to load its Java runtime on first use.
+The patcher makes a separate copy and leaves your original ROM and saves alone. The batch randomiser is part of the core patcher. Large batches still need sensible browser and device resources. Choose up to 100 ROMs per batch; large batches download in ZIP parts of up to 10 ROMs. Download each part before continuing. The randomiser needs an internet connection to load its Java runtime on first use.
 
 [Full instructions](docs/Patcher_Guide.md)
 
