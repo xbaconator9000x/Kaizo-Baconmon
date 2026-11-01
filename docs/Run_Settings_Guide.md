@@ -211,7 +211,7 @@ Kaizo Babymon is a separate original preset built on Ironmon VS+:
 - Babymon permits the specific healing, draining-move and Huge Power/Pure Power overrides listed in its rules.
 - Keep Babymon results separate from other rulesets and record Classic/Modern, seed and settings. Automatic separate in-game scoring remains pending.
 
-Blind starter selection, no pivoting and permadeath are player-managed rules. The beta does not force blind selection, block party changes or automatically end an attempt. Restricted TM checks, ability/move policy checks and separate scoring remain unfinished; successful patching does not certify compliance.
+Blind starter selection, no pivoting and permadeath are player-managed rules. The patcher does not force blind selection, block party changes or automatically end an attempt. Restricted TM checks, ability/move policy checks and separate scoring remain unfinished; successful patching does not certify compliance.
 
 See the [Kaizo Babymon specification](Kaizo_Babymon_Spec.md) for the complete rules and implementation requirements.
 
