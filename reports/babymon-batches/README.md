@@ -1,8 +1,8 @@
 # Babymon batch randomisation repair
 
-The main public page previously offered a Babymon run profile but still used the ordinary Java randomiser entry point. The dedicated Tier 1 starter bridge and per-seed tiered evolution writer existed only in `babymon-beta.html`. Title-art validation alone did not establish Babymon ruleset generation.
+Earlier builds offered a Babymon run profile but still used the ordinary Java randomiser entry point. The dedicated Tier 1 starter bridge and per-seed tiered evolution writer existed only in `babymon-beta.html`. Title-art validation alone did not establish Babymon ruleset generation.
 
-The main page, standalone download and beta now use one canonical profile-aware runtime. A named Babymon randomiser preset selects the Babymon run profile; the Kaizo battle settings string remains the basis, while the dedicated bridge supplies valid starters and the postprocessor writes the tiered evolution tables. Evolution services required for those tables are installed before generation. Changing the profile invalidates the current batch session.
+The main page and compatibility download use one canonical profile-aware runtime. A named Babymon randomiser preset selects the Babymon run profile; the Kaizo battle settings string remains the basis, while the dedicated bridge supplies valid starters and the postprocessor writes the tiered evolution tables. Evolution services required for those tables are installed before generation. Changing the profile invalidates the current batch session.
 
 `test_babymon_batch.cjs` executes the real generated HTML batch button handler using a small DOM adapter. It replaces browser-Java transport with local Java execution of the exact embedded engine and bridge JARs; randomisation, patching, evolution planning, ROM writes and ZIP generation are real. This is not an Android/CheerpJ performance test.
 
