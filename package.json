@@ -9,7 +9,8 @@
     "package:source": "python3 scripts/package_source.py",
     "build:title": "python3 public-patcher/title/build.py",
     "test:title": "node public-patcher/test_title.cjs",
-    "test:babymon-batch": "node public-patcher/test_babymon_batch.cjs"
+    "test:babymon-batch": "node public-patcher/test_babymon_batch.cjs",
+    "test:babymon-integrity": "node public-patcher/test_babymon_integrity.cjs"
   },
   "devDependencies": {
     "prettier": "3.6.2",
