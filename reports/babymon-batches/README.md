@@ -16,3 +16,7 @@ node public-patcher/test_babymon_batch.cjs INPUT.gba TEMP_OUTPUT
 ```
 
 Requires local Java 17 with source-file launching support. ROMs, seeds' spoiler logs and JAR test copies remain in the temporary output directory and are not distributed here. This validates batch configuration and generated tables, not every evolution's in-game trigger or the entire challenge ruleset.
+
+## Core preset overhaul (1 November 2026)
+
+Babymon is the default core preset; the original Baconmon run is labelled Ironmon VS+. Both URLs deliver the same build. The real-Java batch check was rerun for eight ROMs, including full-package selection, reselecting Babymon after customising features, and leaving Babymon for another randomiser. All tier, manifest and title-selection checks passed. Portable tier data and planner are documented in `docs/Randomiser_Integration.md`. This does not claim a new Android or full playthrough test.

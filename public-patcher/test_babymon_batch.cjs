@@ -28,6 +28,9 @@ fs.writeFileSync(path.join(outDir,'InvokeBabymon.java'),javaSource);
  nodes.file.files=[{name:'Input.gba',arrayBuffer:async()=>Uint8Array.from(fs.readFileSync(input)).buffer}];
  // Selecting the named randomiser preset must also select the Babymon profile.
  nodes['batch-preset'].value='Babymon';nodes['batch-preset'].onchange();assert.equal(nodes['run-profile'].value,'babymon');
+ assert(features.every(f=>f.checked),'Babymon selects every feature in the full package');
+ nodes['batch-preset'].value='Kaizo';nodes['batch-preset'].onchange();assert.equal(nodes['run-profile'].value,'custom');
+ features[0].checked=false;nodes['batch-preset'].value='Babymon';nodes['batch-preset'].onchange();assert(features.every(f=>f.checked),'reselecting Babymon restores the full package');
  nodes['batch-seed'].value='12345';nodes['batch-size'].value='2';nodes['batch-count'].value='2';
  const outputs=[];
  for(let batch=1;batch<=2;batch++){
@@ -37,7 +40,7 @@ fs.writeFileSync(path.join(outDir,'InvokeBabymon.java'),javaSource);
   let at=0,manifest=null;while(zip.readUInt32LE(at)===0x04034b50){const size=zip.readUInt32LE(at+18),nl=zip.readUInt16LE(at+26),el=zip.readUInt16LE(at+28),name=zip.subarray(at+30,at+30+nl).toString(),data=zip.subarray(at+30+nl+el,at+30+nl+el+size);
    if(name.endsWith('.gba')){outputs.push(Buffer.from(data));fs.writeFileSync(path.join(work,name),data);}
    if(name==='Seeds_and_settings.json')manifest=JSON.parse(data);at+=30+nl+el+size;}
-  assert.equal(manifest.ruleset,'babymon-experimental');assert.equal(manifest.runs.length,2);
+  assert.equal(manifest.ruleset,'babymon');assert.equal(manifest.runs.length,2);
   for(const run of manifest.runs){const bytes=outputs.find(b=>require('crypto').createHash('sha256').update(b).digest('hex')===run.sha256);assert(bytes);const plan=ctx.BabymonPlanner.plan(ctx.MANIFEST,run.seed),byDex=new Map(ctx.MANIFEST.map(p=>[p.dex,p])),byId=new Map(ctx.MANIFEST.map(p=>[p.internal_id,p]));
    for(const [off,index]of ctx.ROMAPI.starterSlots){const id=bytes.readUInt16LE(ctx.ROMAPI.STARTERS+off);assert.equal(id,byDex.get(plan.starters[index]).internal_id);assert.equal(byId.get(id).tier,1);}
    for(const mon of ctx.MANIFEST)for(let branch=0;branch<5;branch++){const a=ctx.ROMAPI.EVOLUTIONS+mon.internal_id*40+branch*8,method=bytes.readUInt16LE(a),dest=bytes.readUInt16LE(a+4),expected=plan.evolutions.find(e=>e.from===mon.dex&&e.branch===branch);if(expected){assert.equal(method,expected.method.code);assert.equal(bytes.readUInt16LE(a+2),expected.method.parameter);assert.equal(dest,byDex.get(expected.to).internal_id);assert.equal(byId.get(dest).tier,mon.tier+1);}else assert.equal(method,0);}

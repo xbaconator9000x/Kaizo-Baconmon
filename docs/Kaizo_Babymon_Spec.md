@@ -4,9 +4,9 @@ Kaizo Babymon is a separate challenge preset built on Ironmon VS+. It uses one p
 
 **One starter. Two randomized evolutions. No pivots. No guarantees.**
 
-[Play the development beta](https://xbaconator9000x.github.io/Kaizo-Baconmon/babymon-beta.html) · [Current implementation and checks](Babymon_Beta.md)
+[Open the core patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/) · [Randomiser integration](Randomiser_Integration.md)
 
-This document defines the challenge rules. The beta supplies tools to play them and does not certify a legal run. Blind starter selection, no pivoting and permadeath are player-managed: the game does not force a blind choice, prevent party changes or automatically end an attempt. You may use the tools for custom or casual play too; record any departures when comparing challenge results.
+This document defines the challenge rules. The core patcher supplies tools to play them and does not certify a legal run. Blind starter selection, no pivoting and permadeath are player-managed: the game does not force a blind choice, prevent party changes or automatically end an attempt. You may use the tools for custom or casual play too; record any departures when comparing challenge results.
 
 ## Core rules
 

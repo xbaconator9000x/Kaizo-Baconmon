@@ -1,28 +1,28 @@
-# Kaizo Baconmon
+# Kaizo Babymon
 
-**Ironmon, but tastier.**
+**One starter. Two randomized evolutions. No pivots. No guarantees.**
 
 [Open the browser patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/)
 
-**Current patcher: [Release build 1.0](https://github.com/xbaconator9000x/Kaizo-Baconmon/releases/latest).** Testing and feedback are ongoing; the browser randomiser is still a beta.
+**Current patcher: [Core build 1.1](https://xbaconator9000x.github.io/Kaizo-Baconmon/).** Babymon randomisation and evolution support are included in the core patcher.
 
-Kaizo Baconmon is a modular FireRed patcher and challenge toolkit, with the optional VS+-based Baconmon ruleset and the original Kaizo Babymon challenge. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
+Kaizo Babymon is the original challenge and default core preset in the modular Kaizo Baconmon FireRed toolkit, with the Ironmon VS+ ruleset and the original Kaizo Babymon challenge. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
 
 I drew heavily from DrMaple's fantastic Faster FireRed 1.3.2 build. He has kindly given me permission to utilise and modify aspects of it for Baconmon.
 
-## Babymon / evolution beta
+## Kaizo Babymon — core preset
 
-[Open the Babymon / evolution development beta](https://xbaconator9000x.github.io/Kaizo-Baconmon/babymon-beta.html) · [Download HTML](babymon-beta.html) · [Status and checks](docs/Babymon_Beta.md)
+Select **Kaizo Babymon** in the run profile or randomiser menu. It selects the full feature package, evolution support, Babymon artwork and dedicated batch randomisation together. Use **Generate first batch** to create randomized runs. The **Ironmon VS+** profile is the original Baconmon challenge; the ROM may still be called Kaizo Baconmon.
 
-Includes Tier 1 starters, seed-consistent Tier 1 → Tier 2 → Tier 3 randomisation, Celadon trade evolution help, direct-use evolution items and a manual Day/Night clock at the left lab computer. The clock controls evolution conditions; it is not a claim of automatic real-time lighting.
+Batch generation uses the existing **Universal Pokémon Randomizer ZX 4.6.0** engine with Kaizo battle settings, an adapter for Tier 1 starters, and our deterministic Tier 1 → Tier 2 → Tier 3 evolution pass. It is not a separate randomiser engine. A standard settings string alone cannot encode the tier rules. [Reusable settings, tier data and integration instructions](docs/Randomiser_Integration.md).
 
-Blind starter selection, no pivoting and permadeath are player-managed rules. The game does not force blind selection or automatically end attempts. This is an experimental build; restricted TM handling, ability/move policy and separate Babymon scoring remain unfinished. Beta outputs are not certified challenge runs.
+Blind selection, no pivoting, TM legality and permadeath are player-managed rules. The optional score log remains VS-style; separate Babymon scoring and automatic TM eligibility checks are not supplied. The Day/Night control affects evolution conditions, rather than automatic real-time lighting.
 
 ## What's it for?
 
-It's designed with **Baconmon, Kaizo/Ironmon-style runs, VS-style challenges, ordinary Nuzlockes, and custom or casual randomised runs** in mind. You don't have to use my ruleset to use the patcher.
+It's designed with **Kaizo Babymon, Ironmon VS+, Kaizo/Ironmon-style runs, VS-style challenges, ordinary Nuzlockes, and custom or casual randomised runs** in mind. You don't have to use my ruleset to use the patcher.
 
-Use the full **Core Baconmon Package**, or pick the bits you actually want. Maybe you want Classic mechanics with a few QoL changes, Modern mechanics for a different challenge, or a score log to give you something to chase when the seed inevitably goes sideways lol.
+Use the full **Full preset package**, or pick the bits you actually want. Maybe you want Classic mechanics with a few QoL changes, Modern mechanics for a different challenge, or a score log to give you something to chase when the seed inevitably goes sideways lol.
 
 That's why it's modular: different runs need different things. You shouldn't have to take a whole new ruleset just because you want one feature.
 
@@ -34,11 +34,11 @@ The built-in **score log** tracks run milestones; it isn't a replacement for the
 
 1. Bring your own **clean US FireRed 1.1 (Rev 1)** or **Faster FireRed 1.3.2** ROM. No ROM is included here.
 2. Open the browser patcher linked above in a current browser.
-3. Choose your ROM, then use the **Core Baconmon Package** or select the features you want. Check your run's rules first.
+3. Choose your ROM, then use the **Full preset package** or select the features you want. Check your run's rules first.
 4. Click **Check and apply**. Read the output log: conflicting changes may be skipped, so don't assume everything was applied.
 5. Download the patched copy and start a fresh run in your emulator. Keep your original ROM and saves as backups.
 
-Want randomised seeds? Use the optional batch randomiser after patching. It's still a beta and needs internet to load its Java runtime. For a downloadable copy of the patcher, open the release linked above and choose **Kaizo_Baconmon_Patcher_v1.0.html**; the source ZIP is for people who want the code.
+Want randomised seeds? Use the optional batch randomiser after patching. It needs internet to load its Java runtime. The browser patcher is self-contained once downloaded; the source ZIP contains the reusable code and configuration.
 
 [Full patching and randomiser instructions](docs/Patcher_Guide.md)
 
@@ -74,7 +74,7 @@ Same hit, different outcome. Modern Sturdy saves a full-health Geodude from a kn
 - **Rival level:** defaults to level 8 in the lab. You can choose anything from 1 to 100 in the patcher.
 - **No HM friend needed:** use field HMs without teaching them. You still need the HM, badge and normal story requirements. Fly from the Town Map too.
 - **Lit Rock Tunnel:** no Flash needed to see where you're going.
-- **Move relearner:** sits opposite the Move Deleter in Fuchsia. The current implementation takes one TM of your choice. Under Baconmon/VS+ and Babymon rules, use only an eligible unused Gym Leader TM compatible with the runner; automatic eligibility and payment checks remain unfinished.
+- **Move relearner:** sits opposite the Move Deleter in Fuchsia. The current implementation takes one TM of your choice. Under Ironmon VS+ and Babymon rules, use only an eligible unused Gym Leader TM compatible with the runner; automatic eligibility and payment checks remain unfinished.
 - **Friendship controls:** use Oak's lab machine to make your lead Pokemon like or hate you more.
 - **Poison-friendly forest nurse:** she heals you even if you're poisoned.
 - **Early encounter rotation:** early wild encounters rotate, inspired by Ironmon VS.

@@ -1,0 +1,6424 @@
+[
+  {
+    "dex": 1,
+    "name": "BULBASAUR",
+    "bst": 318,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "IVYSAUR",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 2
+      }
+    ],
+    "internal_id": 1
+  },
+  {
+    "dex": 2,
+    "name": "IVYSAUR",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "VENUSAUR",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 3
+      }
+    ],
+    "internal_id": 2
+  },
+  {
+    "dex": 3,
+    "name": "VENUSAUR",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 3
+  },
+  {
+    "dex": 4,
+    "name": "CHARMANDER",
+    "bst": 309,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "CHARMELEON",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 5
+      }
+    ],
+    "internal_id": 4
+  },
+  {
+    "dex": 5,
+    "name": "CHARMELEON",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "CHARIZARD",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 6
+      }
+    ],
+    "internal_id": 5
+  },
+  {
+    "dex": 6,
+    "name": "CHARIZARD",
+    "bst": 534,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 6
+  },
+  {
+    "dex": 7,
+    "name": "SQUIRTLE",
+    "bst": 314,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "WARTORTLE",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 8
+      }
+    ],
+    "internal_id": 7
+  },
+  {
+    "dex": 8,
+    "name": "WARTORTLE",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "BLASTOISE",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 9
+      }
+    ],
+    "internal_id": 8
+  },
+  {
+    "dex": 9,
+    "name": "BLASTOISE",
+    "bst": 530,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 9
+  },
+  {
+    "dex": 10,
+    "name": "CATERPIE",
+    "bst": 195,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "7",
+        "original_destination": "METAPOD",
+        "code": 4,
+        "parameter": 7
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 7,
+        "destination": 11
+      }
+    ],
+    "internal_id": 10
+  },
+  {
+    "dex": 11,
+    "name": "METAPOD",
+    "bst": 205,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "10",
+        "original_destination": "BUTTERFREE",
+        "code": 4,
+        "parameter": 10
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 10,
+        "destination": 12
+      }
+    ],
+    "internal_id": 11
+  },
+  {
+    "dex": 12,
+    "name": "BUTTERFREE",
+    "bst": 385,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 12
+  },
+  {
+    "dex": 13,
+    "name": "WEEDLE",
+    "bst": 195,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "7",
+        "original_destination": "KAKUNA",
+        "code": 4,
+        "parameter": 7
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 7,
+        "destination": 14
+      }
+    ],
+    "internal_id": 13
+  },
+  {
+    "dex": 14,
+    "name": "KAKUNA",
+    "bst": 205,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "10",
+        "original_destination": "BEEDRILL",
+        "code": 4,
+        "parameter": 10
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 10,
+        "destination": 15
+      }
+    ],
+    "internal_id": 14
+  },
+  {
+    "dex": 15,
+    "name": "BEEDRILL",
+    "bst": 385,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 15
+  },
+  {
+    "dex": 16,
+    "name": "PIDGEY",
+    "bst": 251,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "PIDGEOTTO",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 17
+      }
+    ],
+    "internal_id": 16
+  },
+  {
+    "dex": 17,
+    "name": "PIDGEOTTO",
+    "bst": 349,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "PIDGEOT",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 18
+      }
+    ],
+    "internal_id": 17
+  },
+  {
+    "dex": 18,
+    "name": "PIDGEOT",
+    "bst": 469,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 18
+  },
+  {
+    "dex": 19,
+    "name": "RATTATA",
+    "bst": 253,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "RATICATE",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 20
+      }
+    ],
+    "internal_id": 19
+  },
+  {
+    "dex": 20,
+    "name": "RATICATE",
+    "bst": 413,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 20
+  },
+  {
+    "dex": 21,
+    "name": "SPEAROW",
+    "bst": 262,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "FEAROW",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 22
+      }
+    ],
+    "internal_id": 21
+  },
+  {
+    "dex": 22,
+    "name": "FEAROW",
+    "bst": 442,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 22
+  },
+  {
+    "dex": 23,
+    "name": "EKANS",
+    "bst": 288,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "22",
+        "original_destination": "ARBOK",
+        "code": 4,
+        "parameter": 22
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 22,
+        "destination": 24
+      }
+    ],
+    "internal_id": 23
+  },
+  {
+    "dex": 24,
+    "name": "ARBOK",
+    "bst": 438,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 24
+  },
+  {
+    "dex": 25,
+    "name": "PIKACHU",
+    "bst": 300,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_THUNDER_STONE",
+        "original_destination": "RAICHU",
+        "code": 7,
+        "parameter": 96
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 96,
+        "destination": 26
+      }
+    ],
+    "internal_id": 25
+  },
+  {
+    "dex": 26,
+    "name": "RAICHU",
+    "bst": 475,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 26
+  },
+  {
+    "dex": 27,
+    "name": "SANDSHREW",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "22",
+        "original_destination": "SANDSLASH",
+        "code": 4,
+        "parameter": 22
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 22,
+        "destination": 28
+      }
+    ],
+    "internal_id": 27
+  },
+  {
+    "dex": 28,
+    "name": "SANDSLASH",
+    "bst": 450,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 28
+  },
+  {
+    "dex": 29,
+    "name": "NIDORAN_F",
+    "bst": 275,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "NIDORINA",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 30
+      }
+    ],
+    "internal_id": 29
+  },
+  {
+    "dex": 30,
+    "name": "NIDORINA",
+    "bst": 365,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_MOON_STONE",
+        "original_destination": "NIDOQUEEN",
+        "code": 7,
+        "parameter": 94
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 94,
+        "destination": 31
+      }
+    ],
+    "internal_id": 30
+  },
+  {
+    "dex": 31,
+    "name": "NIDOQUEEN",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 31
+  },
+  {
+    "dex": 32,
+    "name": "NIDORAN_M",
+    "bst": 273,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "NIDORINO",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 33
+      }
+    ],
+    "internal_id": 32
+  },
+  {
+    "dex": 33,
+    "name": "NIDORINO",
+    "bst": 365,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_MOON_STONE",
+        "original_destination": "NIDOKING",
+        "code": 7,
+        "parameter": 94
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 94,
+        "destination": 34
+      }
+    ],
+    "internal_id": 33
+  },
+  {
+    "dex": 34,
+    "name": "NIDOKING",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 34
+  },
+  {
+    "dex": 35,
+    "name": "CLEFAIRY",
+    "bst": 323,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_MOON_STONE",
+        "original_destination": "CLEFABLE",
+        "code": 7,
+        "parameter": 94
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 94,
+        "destination": 36
+      }
+    ],
+    "internal_id": 35
+  },
+  {
+    "dex": 36,
+    "name": "CLEFABLE",
+    "bst": 473,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 36
+  },
+  {
+    "dex": 37,
+    "name": "VULPIX",
+    "bst": 299,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_FIRE_STONE",
+        "original_destination": "NINETALES",
+        "code": 7,
+        "parameter": 95
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 95,
+        "destination": 38
+      }
+    ],
+    "internal_id": 37
+  },
+  {
+    "dex": 38,
+    "name": "NINETALES",
+    "bst": 505,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 38
+  },
+  {
+    "dex": 39,
+    "name": "JIGGLYPUFF",
+    "bst": 270,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_MOON_STONE",
+        "original_destination": "WIGGLYTUFF",
+        "code": 7,
+        "parameter": 94
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 94,
+        "destination": 40
+      }
+    ],
+    "internal_id": 39
+  },
+  {
+    "dex": 40,
+    "name": "WIGGLYTUFF",
+    "bst": 425,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 40
+  },
+  {
+    "dex": 41,
+    "name": "ZUBAT",
+    "bst": 245,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "22",
+        "original_destination": "GOLBAT",
+        "code": 4,
+        "parameter": 22
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 22,
+        "destination": 42
+      }
+    ],
+    "internal_id": 41
+  },
+  {
+    "dex": 42,
+    "name": "GOLBAT",
+    "bst": 455,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "CROBAT",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 169
+      }
+    ],
+    "internal_id": 42
+  },
+  {
+    "dex": 43,
+    "name": "ODDISH",
+    "bst": 320,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "21",
+        "original_destination": "GLOOM",
+        "code": 4,
+        "parameter": 21
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 21,
+        "destination": 44
+      }
+    ],
+    "internal_id": 43
+  },
+  {
+    "dex": 44,
+    "name": "GLOOM",
+    "bst": 395,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_LEAF_STONE",
+        "original_destination": "VILEPLUME",
+        "code": 7,
+        "parameter": 98
+      },
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_SUN_STONE",
+        "original_destination": "BELLOSSOM",
+        "code": 7,
+        "parameter": 93
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 98,
+        "destination": 45
+      },
+      {
+        "code": 7,
+        "parameter": 93,
+        "destination": 182
+      }
+    ],
+    "internal_id": 44
+  },
+  {
+    "dex": 45,
+    "name": "VILEPLUME",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 45
+  },
+  {
+    "dex": 46,
+    "name": "PARAS",
+    "bst": 285,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "24",
+        "original_destination": "PARASECT",
+        "code": 4,
+        "parameter": 24
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 24,
+        "destination": 47
+      }
+    ],
+    "internal_id": 46
+  },
+  {
+    "dex": 47,
+    "name": "PARASECT",
+    "bst": 405,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 47
+  },
+  {
+    "dex": 48,
+    "name": "VENONAT",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "31",
+        "original_destination": "VENOMOTH",
+        "code": 4,
+        "parameter": 31
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 31,
+        "destination": 49
+      }
+    ],
+    "internal_id": 48
+  },
+  {
+    "dex": 49,
+    "name": "VENOMOTH",
+    "bst": 450,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 49
+  },
+  {
+    "dex": 50,
+    "name": "DIGLETT",
+    "bst": 265,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "26",
+        "original_destination": "DUGTRIO",
+        "code": 4,
+        "parameter": 26
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 26,
+        "destination": 51
+      }
+    ],
+    "internal_id": 50
+  },
+  {
+    "dex": 51,
+    "name": "DUGTRIO",
+    "bst": 405,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 51
+  },
+  {
+    "dex": 52,
+    "name": "MEOWTH",
+    "bst": 290,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "28",
+        "original_destination": "PERSIAN",
+        "code": 4,
+        "parameter": 28
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 28,
+        "destination": 53
+      }
+    ],
+    "internal_id": 52
+  },
+  {
+    "dex": 53,
+    "name": "PERSIAN",
+    "bst": 440,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 53
+  },
+  {
+    "dex": 54,
+    "name": "PSYDUCK",
+    "bst": 320,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "33",
+        "original_destination": "GOLDUCK",
+        "code": 4,
+        "parameter": 33
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 33,
+        "destination": 55
+      }
+    ],
+    "internal_id": 54
+  },
+  {
+    "dex": 55,
+    "name": "GOLDUCK",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 55
+  },
+  {
+    "dex": 56,
+    "name": "MANKEY",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "28",
+        "original_destination": "PRIMEAPE",
+        "code": 4,
+        "parameter": 28
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 28,
+        "destination": 57
+      }
+    ],
+    "internal_id": 56
+  },
+  {
+    "dex": 57,
+    "name": "PRIMEAPE",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 57
+  },
+  {
+    "dex": 58,
+    "name": "GROWLITHE",
+    "bst": 350,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_FIRE_STONE",
+        "original_destination": "ARCANINE",
+        "code": 7,
+        "parameter": 95
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 95,
+        "destination": 59
+      }
+    ],
+    "internal_id": 58
+  },
+  {
+    "dex": 59,
+    "name": "ARCANINE",
+    "bst": 555,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 59
+  },
+  {
+    "dex": 60,
+    "name": "POLIWAG",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "POLIWHIRL",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 61
+      }
+    ],
+    "internal_id": 60
+  },
+  {
+    "dex": 61,
+    "name": "POLIWHIRL",
+    "bst": 385,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_WATER_STONE",
+        "original_destination": "POLIWRATH",
+        "code": 7,
+        "parameter": 97
+      },
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_KINGS_ROCK",
+        "original_destination": "POLITOED",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 187
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 97,
+        "destination": 62
+      },
+      {
+        "code": 6,
+        "parameter": 187,
+        "destination": 186
+      }
+    ],
+    "internal_id": 61
+  },
+  {
+    "dex": 62,
+    "name": "POLIWRATH",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 62
+  },
+  {
+    "dex": 63,
+    "name": "ABRA",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "KADABRA",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 64
+      }
+    ],
+    "internal_id": 63
+  },
+  {
+    "dex": 64,
+    "name": "KADABRA",
+    "bst": 400,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_TRADE",
+        "value": "0",
+        "original_destination": "ALAKAZAM",
+        "code": 5,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 5,
+        "parameter": 0,
+        "destination": 65
+      }
+    ],
+    "internal_id": 64
+  },
+  {
+    "dex": 65,
+    "name": "ALAKAZAM",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 65
+  },
+  {
+    "dex": 66,
+    "name": "MACHOP",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "28",
+        "original_destination": "MACHOKE",
+        "code": 4,
+        "parameter": 28
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 28,
+        "destination": 67
+      }
+    ],
+    "internal_id": 66
+  },
+  {
+    "dex": 67,
+    "name": "MACHOKE",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_TRADE",
+        "value": "0",
+        "original_destination": "MACHAMP",
+        "code": 5,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 5,
+        "parameter": 0,
+        "destination": 68
+      }
+    ],
+    "internal_id": 67
+  },
+  {
+    "dex": 68,
+    "name": "MACHAMP",
+    "bst": 505,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 68
+  },
+  {
+    "dex": 69,
+    "name": "BELLSPROUT",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "21",
+        "original_destination": "WEEPINBELL",
+        "code": 4,
+        "parameter": 21
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 21,
+        "destination": 70
+      }
+    ],
+    "internal_id": 69
+  },
+  {
+    "dex": 70,
+    "name": "WEEPINBELL",
+    "bst": 390,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_LEAF_STONE",
+        "original_destination": "VICTREEBEL",
+        "code": 7,
+        "parameter": 98
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 98,
+        "destination": 71
+      }
+    ],
+    "internal_id": 70
+  },
+  {
+    "dex": 71,
+    "name": "VICTREEBEL",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 71
+  },
+  {
+    "dex": 72,
+    "name": "TENTACOOL",
+    "bst": 335,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "TENTACRUEL",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 73
+      }
+    ],
+    "internal_id": 72
+  },
+  {
+    "dex": 73,
+    "name": "TENTACRUEL",
+    "bst": 515,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 73
+  },
+  {
+    "dex": 74,
+    "name": "GEODUDE",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "GRAVELER",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 75
+      }
+    ],
+    "internal_id": 74
+  },
+  {
+    "dex": 75,
+    "name": "GRAVELER",
+    "bst": 390,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_TRADE",
+        "value": "0",
+        "original_destination": "GOLEM",
+        "code": 5,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 5,
+        "parameter": 0,
+        "destination": 76
+      }
+    ],
+    "internal_id": 75
+  },
+  {
+    "dex": 76,
+    "name": "GOLEM",
+    "bst": 485,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 76
+  },
+  {
+    "dex": 77,
+    "name": "PONYTA",
+    "bst": 410,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "RAPIDASH",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 78
+      }
+    ],
+    "internal_id": 77
+  },
+  {
+    "dex": 78,
+    "name": "RAPIDASH",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 78
+  },
+  {
+    "dex": 79,
+    "name": "SLOWPOKE",
+    "bst": 315,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "37",
+        "original_destination": "SLOWBRO",
+        "code": 4,
+        "parameter": 37
+      },
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_KINGS_ROCK",
+        "original_destination": "SLOWKING",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 187
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 37,
+        "destination": 80
+      },
+      {
+        "code": 6,
+        "parameter": 187,
+        "destination": 199
+      }
+    ],
+    "internal_id": 79
+  },
+  {
+    "dex": 80,
+    "name": "SLOWBRO",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 80
+  },
+  {
+    "dex": 81,
+    "name": "MAGNEMITE",
+    "bst": 325,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "MAGNETON",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 82
+      }
+    ],
+    "internal_id": 81
+  },
+  {
+    "dex": 82,
+    "name": "MAGNETON",
+    "bst": 465,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 82
+  },
+  {
+    "dex": 83,
+    "name": "FARFETCHD",
+    "bst": 352,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 83
+  },
+  {
+    "dex": 84,
+    "name": "DODUO",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "31",
+        "original_destination": "DODRIO",
+        "code": 4,
+        "parameter": 31
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 31,
+        "destination": 85
+      }
+    ],
+    "internal_id": 84
+  },
+  {
+    "dex": 85,
+    "name": "DODRIO",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 85
+  },
+  {
+    "dex": 86,
+    "name": "SEEL",
+    "bst": 325,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "34",
+        "original_destination": "DEWGONG",
+        "code": 4,
+        "parameter": 34
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 34,
+        "destination": 87
+      }
+    ],
+    "internal_id": 86
+  },
+  {
+    "dex": 87,
+    "name": "DEWGONG",
+    "bst": 475,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 87
+  },
+  {
+    "dex": 88,
+    "name": "GRIMER",
+    "bst": 325,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "38",
+        "original_destination": "MUK",
+        "code": 4,
+        "parameter": 38
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 38,
+        "destination": 89
+      }
+    ],
+    "internal_id": 88
+  },
+  {
+    "dex": 89,
+    "name": "MUK",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 89
+  },
+  {
+    "dex": 90,
+    "name": "SHELLDER",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_WATER_STONE",
+        "original_destination": "CLOYSTER",
+        "code": 7,
+        "parameter": 97
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 97,
+        "destination": 91
+      }
+    ],
+    "internal_id": 90
+  },
+  {
+    "dex": 91,
+    "name": "CLOYSTER",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 91
+  },
+  {
+    "dex": 92,
+    "name": "GASTLY",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "HAUNTER",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 93
+      }
+    ],
+    "internal_id": 92
+  },
+  {
+    "dex": 93,
+    "name": "HAUNTER",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_TRADE",
+        "value": "0",
+        "original_destination": "GENGAR",
+        "code": 5,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 5,
+        "parameter": 0,
+        "destination": 94
+      }
+    ],
+    "internal_id": 93
+  },
+  {
+    "dex": 94,
+    "name": "GENGAR",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 94
+  },
+  {
+    "dex": 95,
+    "name": "ONIX",
+    "bst": 385,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_METAL_COAT",
+        "original_destination": "STEELIX",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 199
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 6,
+        "parameter": 199,
+        "destination": 208
+      }
+    ],
+    "internal_id": 95
+  },
+  {
+    "dex": 96,
+    "name": "DROWZEE",
+    "bst": 328,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "26",
+        "original_destination": "HYPNO",
+        "code": 4,
+        "parameter": 26
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 26,
+        "destination": 97
+      }
+    ],
+    "internal_id": 96
+  },
+  {
+    "dex": 97,
+    "name": "HYPNO",
+    "bst": 483,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 97
+  },
+  {
+    "dex": 98,
+    "name": "KRABBY",
+    "bst": 325,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "28",
+        "original_destination": "KINGLER",
+        "code": 4,
+        "parameter": 28
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 28,
+        "destination": 99
+      }
+    ],
+    "internal_id": 98
+  },
+  {
+    "dex": 99,
+    "name": "KINGLER",
+    "bst": 475,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 99
+  },
+  {
+    "dex": 100,
+    "name": "VOLTORB",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "ELECTRODE",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 101
+      }
+    ],
+    "internal_id": 100
+  },
+  {
+    "dex": 101,
+    "name": "ELECTRODE",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 101
+  },
+  {
+    "dex": 102,
+    "name": "EXEGGCUTE",
+    "bst": 325,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_LEAF_STONE",
+        "original_destination": "EXEGGUTOR",
+        "code": 7,
+        "parameter": 98
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 98,
+        "destination": 103
+      }
+    ],
+    "internal_id": 102
+  },
+  {
+    "dex": 103,
+    "name": "EXEGGUTOR",
+    "bst": 520,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 103
+  },
+  {
+    "dex": 104,
+    "name": "CUBONE",
+    "bst": 320,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "28",
+        "original_destination": "MAROWAK",
+        "code": 4,
+        "parameter": 28
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 28,
+        "destination": 105
+      }
+    ],
+    "internal_id": 104
+  },
+  {
+    "dex": 105,
+    "name": "MAROWAK",
+    "bst": 425,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 105
+  },
+  {
+    "dex": 106,
+    "name": "HITMONLEE",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 106
+  },
+  {
+    "dex": 107,
+    "name": "HITMONCHAN",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 107
+  },
+  {
+    "dex": 108,
+    "name": "LICKITUNG",
+    "bst": 385,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 108
+  },
+  {
+    "dex": 109,
+    "name": "KOFFING",
+    "bst": 340,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "35",
+        "original_destination": "WEEZING",
+        "code": 4,
+        "parameter": 35
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 35,
+        "destination": 110
+      }
+    ],
+    "internal_id": 109
+  },
+  {
+    "dex": 110,
+    "name": "WEEZING",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 110
+  },
+  {
+    "dex": 111,
+    "name": "RHYHORN",
+    "bst": 345,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "42",
+        "original_destination": "RHYDON",
+        "code": 4,
+        "parameter": 42
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 42,
+        "destination": 112
+      }
+    ],
+    "internal_id": 111
+  },
+  {
+    "dex": 112,
+    "name": "RHYDON",
+    "bst": 485,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 112
+  },
+  {
+    "dex": 113,
+    "name": "CHANSEY",
+    "bst": 450,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "BLISSEY",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 242
+      }
+    ],
+    "internal_id": 113
+  },
+  {
+    "dex": 114,
+    "name": "TANGELA",
+    "bst": 435,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 114
+  },
+  {
+    "dex": 115,
+    "name": "KANGASKHAN",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 115
+  },
+  {
+    "dex": 116,
+    "name": "HORSEA",
+    "bst": 295,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "SEADRA",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 117
+      }
+    ],
+    "internal_id": 116
+  },
+  {
+    "dex": 117,
+    "name": "SEADRA",
+    "bst": 440,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_DRAGON_SCALE",
+        "original_destination": "KINGDRA",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 201
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 6,
+        "parameter": 201,
+        "destination": 230
+      }
+    ],
+    "internal_id": 117
+  },
+  {
+    "dex": 118,
+    "name": "GOLDEEN",
+    "bst": 320,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "33",
+        "original_destination": "SEAKING",
+        "code": 4,
+        "parameter": 33
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 33,
+        "destination": 119
+      }
+    ],
+    "internal_id": 118
+  },
+  {
+    "dex": 119,
+    "name": "SEAKING",
+    "bst": 450,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 119
+  },
+  {
+    "dex": 120,
+    "name": "STARYU",
+    "bst": 340,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_WATER_STONE",
+        "original_destination": "STARMIE",
+        "code": 7,
+        "parameter": 97
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 97,
+        "destination": 121
+      }
+    ],
+    "internal_id": 120
+  },
+  {
+    "dex": 121,
+    "name": "STARMIE",
+    "bst": 520,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 121
+  },
+  {
+    "dex": 122,
+    "name": "MR_MIME",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 122
+  },
+  {
+    "dex": 123,
+    "name": "SCYTHER",
+    "bst": 500,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_METAL_COAT",
+        "original_destination": "SCIZOR",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 199
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 6,
+        "parameter": 199,
+        "destination": 212
+      }
+    ],
+    "internal_id": 123
+  },
+  {
+    "dex": 124,
+    "name": "JYNX",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 124
+  },
+  {
+    "dex": 125,
+    "name": "ELECTABUZZ",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 125
+  },
+  {
+    "dex": 126,
+    "name": "MAGMAR",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 126
+  },
+  {
+    "dex": 127,
+    "name": "PINSIR",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 127
+  },
+  {
+    "dex": 128,
+    "name": "TAUROS",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 128
+  },
+  {
+    "dex": 129,
+    "name": "MAGIKARP",
+    "bst": 200,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "GYARADOS",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 130
+      }
+    ],
+    "internal_id": 129
+  },
+  {
+    "dex": 130,
+    "name": "GYARADOS",
+    "bst": 540,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 130
+  },
+  {
+    "dex": 131,
+    "name": "LAPRAS",
+    "bst": 535,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 131
+  },
+  {
+    "dex": 132,
+    "name": "DITTO",
+    "bst": 288,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 132
+  },
+  {
+    "dex": 133,
+    "name": "EEVEE",
+    "bst": 325,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_THUNDER_STONE",
+        "original_destination": "JOLTEON",
+        "code": 7,
+        "parameter": 96
+      },
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_WATER_STONE",
+        "original_destination": "VAPOREON",
+        "code": 7,
+        "parameter": 97
+      },
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_FIRE_STONE",
+        "original_destination": "FLAREON",
+        "code": 7,
+        "parameter": 95
+      },
+      {
+        "kind": "EVO_FRIENDSHIP_DAY",
+        "value": "0",
+        "original_destination": "ESPEON",
+        "code": 2,
+        "parameter": 0
+      },
+      {
+        "kind": "EVO_FRIENDSHIP_NIGHT",
+        "value": "0",
+        "original_destination": "UMBREON",
+        "code": 3,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 96,
+        "destination": 135
+      },
+      {
+        "code": 7,
+        "parameter": 97,
+        "destination": 134
+      },
+      {
+        "code": 7,
+        "parameter": 95,
+        "destination": 136
+      },
+      {
+        "code": 2,
+        "parameter": 0,
+        "destination": 196
+      },
+      {
+        "code": 3,
+        "parameter": 0,
+        "destination": 197
+      }
+    ],
+    "internal_id": 133
+  },
+  {
+    "dex": 134,
+    "name": "VAPOREON",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 134
+  },
+  {
+    "dex": 135,
+    "name": "JOLTEON",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 135
+  },
+  {
+    "dex": 136,
+    "name": "FLAREON",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 136
+  },
+  {
+    "dex": 137,
+    "name": "PORYGON",
+    "bst": 395,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_UP_GRADE",
+        "original_destination": "PORYGON2",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 218
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 6,
+        "parameter": 218,
+        "destination": 233
+      }
+    ],
+    "internal_id": 137
+  },
+  {
+    "dex": 138,
+    "name": "OMANYTE",
+    "bst": 355,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "OMASTAR",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 139
+      }
+    ],
+    "internal_id": 138
+  },
+  {
+    "dex": 139,
+    "name": "OMASTAR",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 139
+  },
+  {
+    "dex": 140,
+    "name": "KABUTO",
+    "bst": 355,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "KABUTOPS",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 141
+      }
+    ],
+    "internal_id": 140
+  },
+  {
+    "dex": 141,
+    "name": "KABUTOPS",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 141
+  },
+  {
+    "dex": 142,
+    "name": "AERODACTYL",
+    "bst": 515,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 142
+  },
+  {
+    "dex": 143,
+    "name": "SNORLAX",
+    "bst": 540,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 143
+  },
+  {
+    "dex": 144,
+    "name": "ARTICUNO",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 144
+  },
+  {
+    "dex": 145,
+    "name": "ZAPDOS",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 145
+  },
+  {
+    "dex": 146,
+    "name": "MOLTRES",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 146
+  },
+  {
+    "dex": 147,
+    "name": "DRATINI",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "DRAGONAIR",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 148
+      }
+    ],
+    "internal_id": 147
+  },
+  {
+    "dex": 148,
+    "name": "DRAGONAIR",
+    "bst": 420,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "55",
+        "original_destination": "DRAGONITE",
+        "code": 4,
+        "parameter": 55
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 55,
+        "destination": 149
+      }
+    ],
+    "internal_id": 148
+  },
+  {
+    "dex": 149,
+    "name": "DRAGONITE",
+    "bst": 600,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 149
+  },
+  {
+    "dex": 150,
+    "name": "MEWTWO",
+    "bst": 680,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 150
+  },
+  {
+    "dex": 151,
+    "name": "MEW",
+    "bst": 600,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 151
+  },
+  {
+    "dex": 152,
+    "name": "CHIKORITA",
+    "bst": 318,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "BAYLEEF",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 153
+      }
+    ],
+    "internal_id": 152
+  },
+  {
+    "dex": 153,
+    "name": "BAYLEEF",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "MEGANIUM",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 154
+      }
+    ],
+    "internal_id": 153
+  },
+  {
+    "dex": 154,
+    "name": "MEGANIUM",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 154
+  },
+  {
+    "dex": 155,
+    "name": "CYNDAQUIL",
+    "bst": 309,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "14",
+        "original_destination": "QUILAVA",
+        "code": 4,
+        "parameter": 14
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 14,
+        "destination": 156
+      }
+    ],
+    "internal_id": 155
+  },
+  {
+    "dex": 156,
+    "name": "QUILAVA",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "TYPHLOSION",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 157
+      }
+    ],
+    "internal_id": 156
+  },
+  {
+    "dex": 157,
+    "name": "TYPHLOSION",
+    "bst": 534,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 157
+  },
+  {
+    "dex": 158,
+    "name": "TOTODILE",
+    "bst": 314,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "CROCONAW",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 159
+      }
+    ],
+    "internal_id": 158
+  },
+  {
+    "dex": 159,
+    "name": "CROCONAW",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "FERALIGATR",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 160
+      }
+    ],
+    "internal_id": 159
+  },
+  {
+    "dex": 160,
+    "name": "FERALIGATR",
+    "bst": 530,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 160
+  },
+  {
+    "dex": 161,
+    "name": "SENTRET",
+    "bst": 215,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "15",
+        "original_destination": "FURRET",
+        "code": 4,
+        "parameter": 15
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 15,
+        "destination": 162
+      }
+    ],
+    "internal_id": 161
+  },
+  {
+    "dex": 162,
+    "name": "FURRET",
+    "bst": 415,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 162
+  },
+  {
+    "dex": 163,
+    "name": "HOOTHOOT",
+    "bst": 262,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "NOCTOWL",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 164
+      }
+    ],
+    "internal_id": 163
+  },
+  {
+    "dex": 164,
+    "name": "NOCTOWL",
+    "bst": 442,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 164
+  },
+  {
+    "dex": 165,
+    "name": "LEDYBA",
+    "bst": 265,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "LEDIAN",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 166
+      }
+    ],
+    "internal_id": 165
+  },
+  {
+    "dex": 166,
+    "name": "LEDIAN",
+    "bst": 390,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 166
+  },
+  {
+    "dex": 167,
+    "name": "SPINARAK",
+    "bst": 250,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "22",
+        "original_destination": "ARIADOS",
+        "code": 4,
+        "parameter": 22
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 22,
+        "destination": 168
+      }
+    ],
+    "internal_id": 167
+  },
+  {
+    "dex": 168,
+    "name": "ARIADOS",
+    "bst": 390,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 168
+  },
+  {
+    "dex": 169,
+    "name": "CROBAT",
+    "bst": 535,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 169
+  },
+  {
+    "dex": 170,
+    "name": "CHINCHOU",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "27",
+        "original_destination": "LANTURN",
+        "code": 4,
+        "parameter": 27
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 27,
+        "destination": 171
+      }
+    ],
+    "internal_id": 170
+  },
+  {
+    "dex": 171,
+    "name": "LANTURN",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 171
+  },
+  {
+    "dex": 172,
+    "name": "PICHU",
+    "bst": 205,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "PIKACHU",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 25
+      }
+    ],
+    "internal_id": 172
+  },
+  {
+    "dex": 173,
+    "name": "CLEFFA",
+    "bst": 218,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "CLEFAIRY",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 35
+      }
+    ],
+    "internal_id": 173
+  },
+  {
+    "dex": 174,
+    "name": "IGGLYBUFF",
+    "bst": 210,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "JIGGLYPUFF",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 39
+      }
+    ],
+    "internal_id": 174
+  },
+  {
+    "dex": 175,
+    "name": "TOGEPI",
+    "bst": 245,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "TOGETIC",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 176
+      }
+    ],
+    "internal_id": 175
+  },
+  {
+    "dex": 176,
+    "name": "TOGETIC",
+    "bst": 405,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 176
+  },
+  {
+    "dex": 177,
+    "name": "NATU",
+    "bst": 320,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "XATU",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 178
+      }
+    ],
+    "internal_id": 177
+  },
+  {
+    "dex": 178,
+    "name": "XATU",
+    "bst": 470,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 178
+  },
+  {
+    "dex": 179,
+    "name": "MAREEP",
+    "bst": 280,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "15",
+        "original_destination": "FLAAFFY",
+        "code": 4,
+        "parameter": 15
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 15,
+        "destination": 180
+      }
+    ],
+    "internal_id": 179
+  },
+  {
+    "dex": 180,
+    "name": "FLAAFFY",
+    "bst": 365,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "AMPHAROS",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 181
+      }
+    ],
+    "internal_id": 180
+  },
+  {
+    "dex": 181,
+    "name": "AMPHAROS",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 181
+  },
+  {
+    "dex": 182,
+    "name": "BELLOSSOM",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 182
+  },
+  {
+    "dex": 183,
+    "name": "MARILL",
+    "bst": 250,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "AZUMARILL",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 184
+      }
+    ],
+    "internal_id": 183
+  },
+  {
+    "dex": 184,
+    "name": "AZUMARILL",
+    "bst": 410,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 184
+  },
+  {
+    "dex": 185,
+    "name": "SUDOWOODO",
+    "bst": 410,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 185
+  },
+  {
+    "dex": 186,
+    "name": "POLITOED",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 186
+  },
+  {
+    "dex": 187,
+    "name": "HOPPIP",
+    "bst": 250,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "SKIPLOOM",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 188
+      }
+    ],
+    "internal_id": 187
+  },
+  {
+    "dex": 188,
+    "name": "SKIPLOOM",
+    "bst": 340,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "27",
+        "original_destination": "JUMPLUFF",
+        "code": 4,
+        "parameter": 27
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 27,
+        "destination": 189
+      }
+    ],
+    "internal_id": 188
+  },
+  {
+    "dex": 189,
+    "name": "JUMPLUFF",
+    "bst": 450,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 189
+  },
+  {
+    "dex": 190,
+    "name": "AIPOM",
+    "bst": 360,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 190
+  },
+  {
+    "dex": 191,
+    "name": "SUNKERN",
+    "bst": 180,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_SUN_STONE",
+        "original_destination": "SUNFLORA",
+        "code": 7,
+        "parameter": 93
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 93,
+        "destination": 192
+      }
+    ],
+    "internal_id": 191
+  },
+  {
+    "dex": 192,
+    "name": "SUNFLORA",
+    "bst": 425,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 192
+  },
+  {
+    "dex": 193,
+    "name": "YANMA",
+    "bst": 390,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 193
+  },
+  {
+    "dex": 194,
+    "name": "WOOPER",
+    "bst": 210,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "QUAGSIRE",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 195
+      }
+    ],
+    "internal_id": 194
+  },
+  {
+    "dex": 195,
+    "name": "QUAGSIRE",
+    "bst": 430,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 195
+  },
+  {
+    "dex": 196,
+    "name": "ESPEON",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 196
+  },
+  {
+    "dex": 197,
+    "name": "UMBREON",
+    "bst": 525,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 197
+  },
+  {
+    "dex": 198,
+    "name": "MURKROW",
+    "bst": 405,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 198
+  },
+  {
+    "dex": 199,
+    "name": "SLOWKING",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 199
+  },
+  {
+    "dex": 200,
+    "name": "MISDREAVUS",
+    "bst": 435,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 200
+  },
+  {
+    "dex": 201,
+    "name": "UNOWN",
+    "bst": 336,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 201
+  },
+  {
+    "dex": 202,
+    "name": "WOBBUFFET",
+    "bst": 405,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 202
+  },
+  {
+    "dex": 203,
+    "name": "GIRAFARIG",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 203
+  },
+  {
+    "dex": 204,
+    "name": "PINECO",
+    "bst": 290,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "31",
+        "original_destination": "FORRETRESS",
+        "code": 4,
+        "parameter": 31
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 31,
+        "destination": 205
+      }
+    ],
+    "internal_id": 204
+  },
+  {
+    "dex": 205,
+    "name": "FORRETRESS",
+    "bst": 465,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 205
+  },
+  {
+    "dex": 206,
+    "name": "DUNSPARCE",
+    "bst": 415,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 206
+  },
+  {
+    "dex": 207,
+    "name": "GLIGAR",
+    "bst": 430,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 207
+  },
+  {
+    "dex": 208,
+    "name": "STEELIX",
+    "bst": 510,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 208
+  },
+  {
+    "dex": 209,
+    "name": "SNUBBULL",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "23",
+        "original_destination": "GRANBULL",
+        "code": 4,
+        "parameter": 23
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 23,
+        "destination": 210
+      }
+    ],
+    "internal_id": 209
+  },
+  {
+    "dex": 210,
+    "name": "GRANBULL",
+    "bst": 450,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 210
+  },
+  {
+    "dex": 211,
+    "name": "QWILFISH",
+    "bst": 430,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 211
+  },
+  {
+    "dex": 212,
+    "name": "SCIZOR",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 212
+  },
+  {
+    "dex": 213,
+    "name": "SHUCKLE",
+    "bst": 505,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 213
+  },
+  {
+    "dex": 214,
+    "name": "HERACROSS",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 214
+  },
+  {
+    "dex": 215,
+    "name": "SNEASEL",
+    "bst": 430,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 215
+  },
+  {
+    "dex": 216,
+    "name": "TEDDIURSA",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "URSARING",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 217
+      }
+    ],
+    "internal_id": 216
+  },
+  {
+    "dex": 217,
+    "name": "URSARING",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 217
+  },
+  {
+    "dex": 218,
+    "name": "SLUGMA",
+    "bst": 250,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "38",
+        "original_destination": "MAGCARGO",
+        "code": 4,
+        "parameter": 38
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 38,
+        "destination": 219
+      }
+    ],
+    "internal_id": 218
+  },
+  {
+    "dex": 219,
+    "name": "MAGCARGO",
+    "bst": 410,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 219
+  },
+  {
+    "dex": 220,
+    "name": "SWINUB",
+    "bst": 250,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "33",
+        "original_destination": "PILOSWINE",
+        "code": 4,
+        "parameter": 33
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 33,
+        "destination": 221
+      }
+    ],
+    "internal_id": 220
+  },
+  {
+    "dex": 221,
+    "name": "PILOSWINE",
+    "bst": 450,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 221
+  },
+  {
+    "dex": 222,
+    "name": "CORSOLA",
+    "bst": 380,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 222
+  },
+  {
+    "dex": 223,
+    "name": "REMORAID",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "OCTILLERY",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 224
+      }
+    ],
+    "internal_id": 223
+  },
+  {
+    "dex": 224,
+    "name": "OCTILLERY",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 224
+  },
+  {
+    "dex": 225,
+    "name": "DELIBIRD",
+    "bst": 330,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 225
+  },
+  {
+    "dex": 226,
+    "name": "MANTINE",
+    "bst": 465,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 226
+  },
+  {
+    "dex": 227,
+    "name": "SKARMORY",
+    "bst": 465,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 227
+  },
+  {
+    "dex": 228,
+    "name": "HOUNDOUR",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "24",
+        "original_destination": "HOUNDOOM",
+        "code": 4,
+        "parameter": 24
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 24,
+        "destination": 229
+      }
+    ],
+    "internal_id": 228
+  },
+  {
+    "dex": 229,
+    "name": "HOUNDOOM",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 229
+  },
+  {
+    "dex": 230,
+    "name": "KINGDRA",
+    "bst": 540,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 230
+  },
+  {
+    "dex": 231,
+    "name": "PHANPY",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "DONPHAN",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 232
+      }
+    ],
+    "internal_id": 231
+  },
+  {
+    "dex": 232,
+    "name": "DONPHAN",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 232
+  },
+  {
+    "dex": 233,
+    "name": "PORYGON2",
+    "bst": 515,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 233
+  },
+  {
+    "dex": 234,
+    "name": "STANTLER",
+    "bst": 465,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 234
+  },
+  {
+    "dex": 235,
+    "name": "SMEARGLE",
+    "bst": 250,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 235
+  },
+  {
+    "dex": 236,
+    "name": "TYROGUE",
+    "bst": 210,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL_ATK_LT_DEF",
+        "value": "20",
+        "original_destination": "HITMONCHAN",
+        "code": 10,
+        "parameter": 20
+      },
+      {
+        "kind": "EVO_LEVEL_ATK_GT_DEF",
+        "value": "20",
+        "original_destination": "HITMONLEE",
+        "code": 8,
+        "parameter": 20
+      },
+      {
+        "kind": "EVO_LEVEL_ATK_EQ_DEF",
+        "value": "20",
+        "original_destination": "HITMONTOP",
+        "code": 9,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 10,
+        "parameter": 20,
+        "destination": 107
+      },
+      {
+        "code": 8,
+        "parameter": 20,
+        "destination": 106
+      },
+      {
+        "code": 9,
+        "parameter": 20,
+        "destination": 237
+      }
+    ],
+    "internal_id": 236
+  },
+  {
+    "dex": 237,
+    "name": "HITMONTOP",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 237
+  },
+  {
+    "dex": 238,
+    "name": "SMOOCHUM",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "JYNX",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 124
+      }
+    ],
+    "internal_id": 238
+  },
+  {
+    "dex": 239,
+    "name": "ELEKID",
+    "bst": 360,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "ELECTABUZZ",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 125
+      }
+    ],
+    "internal_id": 239
+  },
+  {
+    "dex": 240,
+    "name": "MAGBY",
+    "bst": 365,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "MAGMAR",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 126
+      }
+    ],
+    "internal_id": 240
+  },
+  {
+    "dex": 241,
+    "name": "MILTANK",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 241
+  },
+  {
+    "dex": 242,
+    "name": "BLISSEY",
+    "bst": 540,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 242
+  },
+  {
+    "dex": 243,
+    "name": "RAIKOU",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 243
+  },
+  {
+    "dex": 244,
+    "name": "ENTEI",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 244
+  },
+  {
+    "dex": 245,
+    "name": "SUICUNE",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 245
+  },
+  {
+    "dex": 246,
+    "name": "LARVITAR",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "PUPITAR",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 247
+      }
+    ],
+    "internal_id": 246
+  },
+  {
+    "dex": 247,
+    "name": "PUPITAR",
+    "bst": 410,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "55",
+        "original_destination": "TYRANITAR",
+        "code": 4,
+        "parameter": 55
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 55,
+        "destination": 248
+      }
+    ],
+    "internal_id": 247
+  },
+  {
+    "dex": 248,
+    "name": "TYRANITAR",
+    "bst": 600,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 248
+  },
+  {
+    "dex": 249,
+    "name": "LUGIA",
+    "bst": 680,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 249
+  },
+  {
+    "dex": 250,
+    "name": "HO_OH",
+    "bst": 680,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 250
+  },
+  {
+    "dex": 251,
+    "name": "CELEBI",
+    "bst": 600,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 251
+  },
+  {
+    "dex": 252,
+    "name": "TREECKO",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "GROVYLE",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 278
+      }
+    ],
+    "internal_id": 277
+  },
+  {
+    "dex": 253,
+    "name": "GROVYLE",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "SCEPTILE",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 279
+      }
+    ],
+    "internal_id": 278
+  },
+  {
+    "dex": 254,
+    "name": "SCEPTILE",
+    "bst": 530,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 279
+  },
+  {
+    "dex": 255,
+    "name": "TORCHIC",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "COMBUSKEN",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 281
+      }
+    ],
+    "internal_id": 280
+  },
+  {
+    "dex": 256,
+    "name": "COMBUSKEN",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "BLAZIKEN",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 282
+      }
+    ],
+    "internal_id": 281
+  },
+  {
+    "dex": 257,
+    "name": "BLAZIKEN",
+    "bst": 530,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 282
+  },
+  {
+    "dex": 258,
+    "name": "MUDKIP",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "16",
+        "original_destination": "MARSHTOMP",
+        "code": 4,
+        "parameter": 16
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 16,
+        "destination": 284
+      }
+    ],
+    "internal_id": 283
+  },
+  {
+    "dex": 259,
+    "name": "MARSHTOMP",
+    "bst": 405,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "SWAMPERT",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 285
+      }
+    ],
+    "internal_id": 284
+  },
+  {
+    "dex": 260,
+    "name": "SWAMPERT",
+    "bst": 535,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 285
+  },
+  {
+    "dex": 261,
+    "name": "POOCHYENA",
+    "bst": 220,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "MIGHTYENA",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 287
+      }
+    ],
+    "internal_id": 286
+  },
+  {
+    "dex": 262,
+    "name": "MIGHTYENA",
+    "bst": 420,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 287
+  },
+  {
+    "dex": 263,
+    "name": "ZIGZAGOON",
+    "bst": 240,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "LINOONE",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 289
+      }
+    ],
+    "internal_id": 288
+  },
+  {
+    "dex": 264,
+    "name": "LINOONE",
+    "bst": 420,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 289
+  },
+  {
+    "dex": 265,
+    "name": "WURMPLE",
+    "bst": 195,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL_SILCOON",
+        "value": "7",
+        "original_destination": "SILCOON",
+        "code": 11,
+        "parameter": 7
+      },
+      {
+        "kind": "EVO_LEVEL_CASCOON",
+        "value": "7",
+        "original_destination": "CASCOON",
+        "code": 12,
+        "parameter": 7
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 11,
+        "parameter": 7,
+        "destination": 291
+      },
+      {
+        "code": 12,
+        "parameter": 7,
+        "destination": 293
+      }
+    ],
+    "internal_id": 290
+  },
+  {
+    "dex": 266,
+    "name": "SILCOON",
+    "bst": 205,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "10",
+        "original_destination": "BEAUTIFLY",
+        "code": 4,
+        "parameter": 10
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 10,
+        "destination": 292
+      }
+    ],
+    "internal_id": 291
+  },
+  {
+    "dex": 267,
+    "name": "BEAUTIFLY",
+    "bst": 385,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 292
+  },
+  {
+    "dex": 268,
+    "name": "CASCOON",
+    "bst": 205,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "10",
+        "original_destination": "DUSTOX",
+        "code": 4,
+        "parameter": 10
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 10,
+        "destination": 294
+      }
+    ],
+    "internal_id": 293
+  },
+  {
+    "dex": 269,
+    "name": "DUSTOX",
+    "bst": 385,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 294
+  },
+  {
+    "dex": 270,
+    "name": "LOTAD",
+    "bst": 220,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "14",
+        "original_destination": "LOMBRE",
+        "code": 4,
+        "parameter": 14
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 14,
+        "destination": 296
+      }
+    ],
+    "internal_id": 295
+  },
+  {
+    "dex": 271,
+    "name": "LOMBRE",
+    "bst": 340,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_WATER_STONE",
+        "original_destination": "LUDICOLO",
+        "code": 7,
+        "parameter": 97
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 97,
+        "destination": 297
+      }
+    ],
+    "internal_id": 296
+  },
+  {
+    "dex": 272,
+    "name": "LUDICOLO",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 297
+  },
+  {
+    "dex": 273,
+    "name": "SEEDOT",
+    "bst": 220,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "14",
+        "original_destination": "NUZLEAF",
+        "code": 4,
+        "parameter": 14
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 14,
+        "destination": 299
+      }
+    ],
+    "internal_id": 298
+  },
+  {
+    "dex": 274,
+    "name": "NUZLEAF",
+    "bst": 340,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_LEAF_STONE",
+        "original_destination": "SHIFTRY",
+        "code": 7,
+        "parameter": 98
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 98,
+        "destination": 300
+      }
+    ],
+    "internal_id": 299
+  },
+  {
+    "dex": 275,
+    "name": "SHIFTRY",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 300
+  },
+  {
+    "dex": 276,
+    "name": "TAILLOW",
+    "bst": 270,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "22",
+        "original_destination": "SWELLOW",
+        "code": 4,
+        "parameter": 22
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 22,
+        "destination": 305
+      }
+    ],
+    "internal_id": 304
+  },
+  {
+    "dex": 277,
+    "name": "SWELLOW",
+    "bst": 430,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 305
+  },
+  {
+    "dex": 278,
+    "name": "WINGULL",
+    "bst": 270,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "25",
+        "original_destination": "PELIPPER",
+        "code": 4,
+        "parameter": 25
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 25,
+        "destination": 310
+      }
+    ],
+    "internal_id": 309
+  },
+  {
+    "dex": 279,
+    "name": "PELIPPER",
+    "bst": 430,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 310
+  },
+  {
+    "dex": 280,
+    "name": "RALTS",
+    "bst": 198,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "KIRLIA",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 393
+      }
+    ],
+    "internal_id": 392
+  },
+  {
+    "dex": 281,
+    "name": "KIRLIA",
+    "bst": 278,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "GARDEVOIR",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 394
+      }
+    ],
+    "internal_id": 393
+  },
+  {
+    "dex": 282,
+    "name": "GARDEVOIR",
+    "bst": 518,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 394
+  },
+  {
+    "dex": 283,
+    "name": "SURSKIT",
+    "bst": 269,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "22",
+        "original_destination": "MASQUERAIN",
+        "code": 4,
+        "parameter": 22
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 22,
+        "destination": 312
+      }
+    ],
+    "internal_id": 311
+  },
+  {
+    "dex": 284,
+    "name": "MASQUERAIN",
+    "bst": 414,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 312
+  },
+  {
+    "dex": 285,
+    "name": "SHROOMISH",
+    "bst": 295,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "23",
+        "original_destination": "BRELOOM",
+        "code": 4,
+        "parameter": 23
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 23,
+        "destination": 307
+      }
+    ],
+    "internal_id": 306
+  },
+  {
+    "dex": 286,
+    "name": "BRELOOM",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 307
+  },
+  {
+    "dex": 287,
+    "name": "SLAKOTH",
+    "bst": 280,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "18",
+        "original_destination": "VIGOROTH",
+        "code": 4,
+        "parameter": 18
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 18,
+        "destination": 365
+      }
+    ],
+    "internal_id": 364
+  },
+  {
+    "dex": 288,
+    "name": "VIGOROTH",
+    "bst": 440,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "SLAKING",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 366
+      }
+    ],
+    "internal_id": 365
+  },
+  {
+    "dex": 289,
+    "name": "SLAKING",
+    "bst": 670,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 366
+  },
+  {
+    "dex": 290,
+    "name": "NINCADA",
+    "bst": 266,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "NINJASK",
+        "original_kind": "EVO_LEVEL_NINJASK",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 13,
+        "parameter": 20,
+        "destination": 302
+      },
+      {
+        "code": 14,
+        "parameter": 20,
+        "destination": 303
+      }
+    ],
+    "internal_id": 301
+  },
+  {
+    "dex": 291,
+    "name": "NINJASK",
+    "bst": 456,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 302
+  },
+  {
+    "dex": 292,
+    "name": "SHEDINJA",
+    "bst": 236,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 303
+  },
+  {
+    "dex": 293,
+    "name": "WHISMUR",
+    "bst": 240,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "LOUDRED",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 371
+      }
+    ],
+    "internal_id": 370
+  },
+  {
+    "dex": 294,
+    "name": "LOUDRED",
+    "bst": 360,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "EXPLOUD",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 372
+      }
+    ],
+    "internal_id": 371
+  },
+  {
+    "dex": 295,
+    "name": "EXPLOUD",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 372
+  },
+  {
+    "dex": 296,
+    "name": "MAKUHITA",
+    "bst": 237,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "24",
+        "original_destination": "HARIYAMA",
+        "code": 4,
+        "parameter": 24
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 24,
+        "destination": 336
+      }
+    ],
+    "internal_id": 335
+  },
+  {
+    "dex": 297,
+    "name": "HARIYAMA",
+    "bst": 474,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 336
+  },
+  {
+    "dex": 298,
+    "name": "AZURILL",
+    "bst": 190,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_FRIENDSHIP",
+        "value": "0",
+        "original_destination": "MARILL",
+        "code": 1,
+        "parameter": 0
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 1,
+        "parameter": 0,
+        "destination": 183
+      }
+    ],
+    "internal_id": 350
+  },
+  {
+    "dex": 299,
+    "name": "NOSEPASS",
+    "bst": 375,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 320
+  },
+  {
+    "dex": 300,
+    "name": "SKITTY",
+    "bst": 260,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_MOON_STONE",
+        "original_destination": "DELCATTY",
+        "code": 7,
+        "parameter": 94
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 7,
+        "parameter": 94,
+        "destination": 316
+      }
+    ],
+    "internal_id": 315
+  },
+  {
+    "dex": 301,
+    "name": "DELCATTY",
+    "bst": 380,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 316
+  },
+  {
+    "dex": 302,
+    "name": "SABLEYE",
+    "bst": 380,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 322
+  },
+  {
+    "dex": 303,
+    "name": "MAWILE",
+    "bst": 380,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 355
+  },
+  {
+    "dex": 304,
+    "name": "ARON",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "LAIRON",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 383
+      }
+    ],
+    "internal_id": 382
+  },
+  {
+    "dex": 305,
+    "name": "LAIRON",
+    "bst": 430,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "42",
+        "original_destination": "AGGRON",
+        "code": 4,
+        "parameter": 42
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 42,
+        "destination": 384
+      }
+    ],
+    "internal_id": 383
+  },
+  {
+    "dex": 306,
+    "name": "AGGRON",
+    "bst": 530,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 384
+  },
+  {
+    "dex": 307,
+    "name": "MEDITITE",
+    "bst": 280,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "37",
+        "original_destination": "MEDICHAM",
+        "code": 4,
+        "parameter": 37
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 37,
+        "destination": 357
+      }
+    ],
+    "internal_id": 356
+  },
+  {
+    "dex": 308,
+    "name": "MEDICHAM",
+    "bst": 410,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 357
+  },
+  {
+    "dex": 309,
+    "name": "ELECTRIKE",
+    "bst": 295,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "26",
+        "original_destination": "MANECTRIC",
+        "code": 4,
+        "parameter": 26
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 26,
+        "destination": 338
+      }
+    ],
+    "internal_id": 337
+  },
+  {
+    "dex": 310,
+    "name": "MANECTRIC",
+    "bst": 475,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 338
+  },
+  {
+    "dex": 311,
+    "name": "PLUSLE",
+    "bst": 405,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 353
+  },
+  {
+    "dex": 312,
+    "name": "MINUN",
+    "bst": 405,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 354
+  },
+  {
+    "dex": 313,
+    "name": "VOLBEAT",
+    "bst": 400,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 386
+  },
+  {
+    "dex": 314,
+    "name": "ILLUMISE",
+    "bst": 400,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 387
+  },
+  {
+    "dex": 315,
+    "name": "ROSELIA",
+    "bst": 400,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 363
+  },
+  {
+    "dex": 316,
+    "name": "GULPIN",
+    "bst": 302,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "26",
+        "original_destination": "SWALOT",
+        "code": 4,
+        "parameter": 26
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 26,
+        "destination": 368
+      }
+    ],
+    "internal_id": 367
+  },
+  {
+    "dex": 317,
+    "name": "SWALOT",
+    "bst": 467,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 368
+  },
+  {
+    "dex": 318,
+    "name": "CARVANHA",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "SHARPEDO",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 331
+      }
+    ],
+    "internal_id": 330
+  },
+  {
+    "dex": 319,
+    "name": "SHARPEDO",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 331
+  },
+  {
+    "dex": 320,
+    "name": "WAILMER",
+    "bst": 400,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "WAILORD",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 314
+      }
+    ],
+    "internal_id": 313
+  },
+  {
+    "dex": 321,
+    "name": "WAILORD",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 314
+  },
+  {
+    "dex": 322,
+    "name": "NUMEL",
+    "bst": 305,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "33",
+        "original_destination": "CAMERUPT",
+        "code": 4,
+        "parameter": 33
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 33,
+        "destination": 340
+      }
+    ],
+    "internal_id": 339
+  },
+  {
+    "dex": 323,
+    "name": "CAMERUPT",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 340
+  },
+  {
+    "dex": 324,
+    "name": "TORKOAL",
+    "bst": 470,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 321
+  },
+  {
+    "dex": 325,
+    "name": "SPOINK",
+    "bst": 330,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "GRUMPIG",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 352
+      }
+    ],
+    "internal_id": 351
+  },
+  {
+    "dex": 326,
+    "name": "GRUMPIG",
+    "bst": 470,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 352
+  },
+  {
+    "dex": 327,
+    "name": "SPINDA",
+    "bst": 360,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 308
+  },
+  {
+    "dex": 328,
+    "name": "TRAPINCH",
+    "bst": 290,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "35",
+        "original_destination": "VIBRAVA",
+        "code": 4,
+        "parameter": 35
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 35,
+        "destination": 333
+      }
+    ],
+    "internal_id": 332
+  },
+  {
+    "dex": 329,
+    "name": "VIBRAVA",
+    "bst": 340,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "45",
+        "original_destination": "FLYGON",
+        "code": 4,
+        "parameter": 45
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 45,
+        "destination": 334
+      }
+    ],
+    "internal_id": 333
+  },
+  {
+    "dex": 330,
+    "name": "FLYGON",
+    "bst": 520,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 334
+  },
+  {
+    "dex": 331,
+    "name": "CACNEA",
+    "bst": 335,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "CACTURNE",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 345
+      }
+    ],
+    "internal_id": 344
+  },
+  {
+    "dex": 332,
+    "name": "CACTURNE",
+    "bst": 475,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 345
+  },
+  {
+    "dex": 333,
+    "name": "SWABLU",
+    "bst": 310,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "35",
+        "original_destination": "ALTARIA",
+        "code": 4,
+        "parameter": 35
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 35,
+        "destination": 359
+      }
+    ],
+    "internal_id": 358
+  },
+  {
+    "dex": 334,
+    "name": "ALTARIA",
+    "bst": 490,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 359
+  },
+  {
+    "dex": 335,
+    "name": "ZANGOOSE",
+    "bst": 458,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 380
+  },
+  {
+    "dex": 336,
+    "name": "SEVIPER",
+    "bst": 458,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 379
+  },
+  {
+    "dex": 337,
+    "name": "LUNATONE",
+    "bst": 440,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 348
+  },
+  {
+    "dex": 338,
+    "name": "SOLROCK",
+    "bst": 440,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 349
+  },
+  {
+    "dex": 339,
+    "name": "BARBOACH",
+    "bst": 288,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "WHISCASH",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 324
+      }
+    ],
+    "internal_id": 323
+  },
+  {
+    "dex": 340,
+    "name": "WHISCASH",
+    "bst": 468,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 324
+  },
+  {
+    "dex": 341,
+    "name": "CORPHISH",
+    "bst": 308,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "CRAWDAUNT",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 327
+      }
+    ],
+    "internal_id": 326
+  },
+  {
+    "dex": 342,
+    "name": "CRAWDAUNT",
+    "bst": 468,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 327
+  },
+  {
+    "dex": 343,
+    "name": "BALTOY",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "36",
+        "original_destination": "CLAYDOL",
+        "code": 4,
+        "parameter": 36
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 36,
+        "destination": 319
+      }
+    ],
+    "internal_id": 318
+  },
+  {
+    "dex": 344,
+    "name": "CLAYDOL",
+    "bst": 500,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 319
+  },
+  {
+    "dex": 345,
+    "name": "LILEEP",
+    "bst": 355,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "CRADILY",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 389
+      }
+    ],
+    "internal_id": 388
+  },
+  {
+    "dex": 346,
+    "name": "CRADILY",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 389
+  },
+  {
+    "dex": 347,
+    "name": "ANORITH",
+    "bst": 355,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "40",
+        "original_destination": "ARMALDO",
+        "code": 4,
+        "parameter": 40
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 40,
+        "destination": 391
+      }
+    ],
+    "internal_id": 390
+  },
+  {
+    "dex": 348,
+    "name": "ARMALDO",
+    "bst": 495,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 391
+  },
+  {
+    "dex": 349,
+    "name": "FEEBAS",
+    "bst": 200,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_BEAUTY",
+        "value": "170",
+        "original_destination": "MILOTIC",
+        "code": 15,
+        "parameter": 170
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 15,
+        "parameter": 170,
+        "destination": 329
+      }
+    ],
+    "internal_id": 328
+  },
+  {
+    "dex": 350,
+    "name": "MILOTIC",
+    "bst": 540,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 329
+  },
+  {
+    "dex": 351,
+    "name": "CASTFORM",
+    "bst": 420,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 385
+  },
+  {
+    "dex": 352,
+    "name": "KECLEON",
+    "bst": 440,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 317
+  },
+  {
+    "dex": 353,
+    "name": "SHUPPET",
+    "bst": 295,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "37",
+        "original_destination": "BANETTE",
+        "code": 4,
+        "parameter": 37
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 37,
+        "destination": 378
+      }
+    ],
+    "internal_id": 377
+  },
+  {
+    "dex": 354,
+    "name": "BANETTE",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 378
+  },
+  {
+    "dex": 355,
+    "name": "DUSKULL",
+    "bst": 295,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "37",
+        "original_destination": "DUSCLOPS",
+        "code": 4,
+        "parameter": 37
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 37,
+        "destination": 362
+      }
+    ],
+    "internal_id": 361
+  },
+  {
+    "dex": 356,
+    "name": "DUSCLOPS",
+    "bst": 455,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 362
+  },
+  {
+    "dex": 357,
+    "name": "TROPIUS",
+    "bst": 460,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 369
+  },
+  {
+    "dex": 358,
+    "name": "CHIMECHO",
+    "bst": 425,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 411
+  },
+  {
+    "dex": 359,
+    "name": "ABSOL",
+    "bst": 465,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 376
+  },
+  {
+    "dex": 360,
+    "name": "WYNAUT",
+    "bst": 260,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "15",
+        "original_destination": "WOBBUFFET",
+        "code": 4,
+        "parameter": 15
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 15,
+        "destination": 202
+      }
+    ],
+    "internal_id": 360
+  },
+  {
+    "dex": 361,
+    "name": "SNORUNT",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "42",
+        "original_destination": "GLALIE",
+        "code": 4,
+        "parameter": 42
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 42,
+        "destination": 347
+      }
+    ],
+    "internal_id": 346
+  },
+  {
+    "dex": 362,
+    "name": "GLALIE",
+    "bst": 480,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 347
+  },
+  {
+    "dex": 363,
+    "name": "SPHEAL",
+    "bst": 290,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "32",
+        "original_destination": "SEALEO",
+        "code": 4,
+        "parameter": 32
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 32,
+        "destination": 342
+      }
+    ],
+    "internal_id": 341
+  },
+  {
+    "dex": 364,
+    "name": "SEALEO",
+    "bst": 410,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "44",
+        "original_destination": "WALREIN",
+        "code": 4,
+        "parameter": 44
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 44,
+        "destination": 343
+      }
+    ],
+    "internal_id": 342
+  },
+  {
+    "dex": 365,
+    "name": "WALREIN",
+    "bst": 530,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 343
+  },
+  {
+    "dex": 366,
+    "name": "CLAMPERL",
+    "bst": 345,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_DEEP_SEA_TOOTH",
+        "original_destination": "HUNTAIL",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 192
+      },
+      {
+        "kind": "EVO_ITEM",
+        "value": "ITEM_DEEP_SEA_SCALE",
+        "original_destination": "GOREBYSS",
+        "original_kind": "EVO_TRADE_ITEM",
+        "adaptation": "direct-use trade item; ROM item handler required",
+        "code": 7,
+        "parameter": 193
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 6,
+        "parameter": 192,
+        "destination": 374
+      },
+      {
+        "code": 6,
+        "parameter": 193,
+        "destination": 375
+      }
+    ],
+    "internal_id": 373
+  },
+  {
+    "dex": 367,
+    "name": "HUNTAIL",
+    "bst": 485,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 374
+  },
+  {
+    "dex": 368,
+    "name": "GOREBYSS",
+    "bst": 485,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 375
+  },
+  {
+    "dex": 369,
+    "name": "RELICANTH",
+    "bst": 485,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 381
+  },
+  {
+    "dex": 370,
+    "name": "LUVDISC",
+    "bst": 330,
+    "tier": 0,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 325
+  },
+  {
+    "dex": 371,
+    "name": "BAGON",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "30",
+        "original_destination": "SHELGON",
+        "code": 4,
+        "parameter": 30
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 30,
+        "destination": 396
+      }
+    ],
+    "internal_id": 395
+  },
+  {
+    "dex": 372,
+    "name": "SHELGON",
+    "bst": 420,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "50",
+        "original_destination": "SALAMENCE",
+        "code": 4,
+        "parameter": 50
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 50,
+        "destination": 397
+      }
+    ],
+    "internal_id": 396
+  },
+  {
+    "dex": 373,
+    "name": "SALAMENCE",
+    "bst": 600,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 397
+  },
+  {
+    "dex": 374,
+    "name": "BELDUM",
+    "bst": 300,
+    "tier": 1,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "20",
+        "original_destination": "METANG",
+        "code": 4,
+        "parameter": 20
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 20,
+        "destination": 399
+      }
+    ],
+    "internal_id": 398
+  },
+  {
+    "dex": 375,
+    "name": "METANG",
+    "bst": 420,
+    "tier": 2,
+    "legendary": false,
+    "methods": [
+      {
+        "kind": "EVO_LEVEL",
+        "value": "45",
+        "original_destination": "METAGROSS",
+        "code": 4,
+        "parameter": 45
+      }
+    ],
+    "source_methods": [
+      {
+        "code": 4,
+        "parameter": 45,
+        "destination": 400
+      }
+    ],
+    "internal_id": 399
+  },
+  {
+    "dex": 376,
+    "name": "METAGROSS",
+    "bst": 600,
+    "tier": 3,
+    "legendary": false,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 400
+  },
+  {
+    "dex": 377,
+    "name": "REGIROCK",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 401
+  },
+  {
+    "dex": 378,
+    "name": "REGICE",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 402
+  },
+  {
+    "dex": 379,
+    "name": "REGISTEEL",
+    "bst": 580,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 403
+  },
+  {
+    "dex": 380,
+    "name": "LATIAS",
+    "bst": 600,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 407
+  },
+  {
+    "dex": 381,
+    "name": "LATIOS",
+    "bst": 600,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 408
+  },
+  {
+    "dex": 382,
+    "name": "KYOGRE",
+    "bst": 670,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 404
+  },
+  {
+    "dex": 383,
+    "name": "GROUDON",
+    "bst": 670,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 405
+  },
+  {
+    "dex": 384,
+    "name": "RAYQUAZA",
+    "bst": 680,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 406
+  },
+  {
+    "dex": 385,
+    "name": "JIRACHI",
+    "bst": 600,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 409
+  },
+  {
+    "dex": 386,
+    "name": "DEOXYS",
+    "bst": 600,
+    "tier": 0,
+    "legendary": true,
+    "methods": [],
+    "source_methods": [],
+    "internal_id": 410
+  }
+]
