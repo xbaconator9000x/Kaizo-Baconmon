@@ -17,7 +17,7 @@ You can try other modified ROMs. Matching changes are applied and conflicts are 
 
 Patch a fresh, unrandomised FireRed 1.1 copy first. Keep that as your base for new runs. Don't randomise a run you're already playing.
 
-Open Batch randomiser (beta), choose your preset and set the batch seed if you want. You can make 1–100 ROMs per batch and 1–100 batches. Larger batches download in ZIP parts of up to 10 ROMs. Download each part before continuing so the browser doesn't have to hold the whole batch at once.
+Open Batch randomiser, choose your preset and set the batch seed if you want. You can make 1–100 ROMs per batch and 1–100 batches. Larger batches download in ZIP parts of up to 10 ROMs. Download each part before continuing so the browser doesn't have to hold the whole batch at once.
 
 Kaizo, Standard and Ultimate use UTDZac's published FireRed settings. Encounters only changes wild species. Custom lets you paste a compatible settings string. Pick the settings for the challenge you're playing.
 
@@ -29,13 +29,13 @@ You can also use [UPR-ZX on PC](https://github.com/Ajarmar/universal-pokemon-ran
 
 If you choose a custom rival level, check it after randomisation. Later randomisation can change it; patch the finished seed with your chosen level if needed. The default level-8 option has its own correction during play.
 
-## Babymon and evolution beta
+## Kaizo Babymon core preset
 
-Use the separate [Babymon / evolution beta](https://xbaconator9000x.github.io/Kaizo-Baconmon/babymon-beta.html) for the new evolution services and Babymon batch profile. Start from an unrandomised supported US FireRed 1.1 layout and use a fresh run. Read the output log for any skipped changes.
+Choose **Kaizo Babymon** in the core patcher’s run profile or randomiser menu. It selects the full feature package, Babymon artwork, evolution services and Babymon batch profile together. Start from an unrandomised supported US FireRed 1.1 layout and use a fresh run. Read the output log for any skipped changes.
 
 Evolution support adds the Celadon trade-room attendant, direct-use trade evolution items, Celadon evolution-item access and a manual Day/Night clock at the left lab computer. The Babymon profile supplies Tier 1 starters and seed-consistent Tier 1 → Tier 2 → Tier 3 destinations.
 
-Read the [Babymon rules](Kaizo_Babymon_Spec.md) before a challenge run. Blind selection, no pivoting and permadeath are player-managed; there is no automatic run-ending guard. Restricted TM checks, ability/move policy and separate in-game scoring remain pending. See [beta status](Babymon_Beta.md) for testing limits.
+Read the [Babymon rules](Kaizo_Babymon_Spec.md) before a challenge run. Blind selection, no pivoting and permadeath are player-managed; there is no automatic run-ending guard. Restricted TM checks, ability/move policy and separate in-game scoring remain pending. See the integration notes and test reports for the current testing limits.
 
 ## Rules and points
 
