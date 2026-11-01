@@ -1,193 +1,137 @@
-# Kaizo Babymon
+# Kaizo Baconmon
 
-**One starter. Two randomized evolutions. No pivots. No guarantees.**
+**Ironmon, but tastier.**
 
 [Open the browser patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/)
 
-**Current patcher: [Core build 1.1](https://xbaconator9000x.github.io/Kaizo-Baconmon/).** Babymon randomisation and evolution support are included in the core patcher.
+Kaizo Baconmon is a modular FireRed patcher for building the kind of run you actually want to play.
 
-Kaizo Babymon is the original challenge and default core preset in the modular Kaizo Baconmon FireRed toolkit, with the Ironmon VS+ ruleset and the original Kaizo Babymon challenge. I got hooked watching Ironmon VS and wanted some of those conveniences for my own runs, including playing on my phone.
+It started with my own Ironmon-style runs. I wanted the pressure and replayability of Ironmon, the progress tracking and competition of Ironmon VS, and a few quality-of-life features that make the game more practical—especially on a phone. The result is a patcher that lets you use the complete package, or choose only the changes that fit your own rules.
 
-I drew heavily from DrMaple's fantastic Faster FireRed 1.3.2 build. He has kindly given me permission to utilise and modify aspects of it for Baconmon.
+The ROM is still called **Kaizo Baconmon**. The original Baconmon challenge is now called **Ironmon VS+**. **Kaizo Babymon** is the separate, higher-difficulty custom challenge and a selectable core randomiser preset—not a beta.
 
-## Kaizo Babymon — core preset
+## What the patcher does
 
-Select **Kaizo Babymon** in the run profile or randomiser menu. It selects the full feature package, evolution support, Babymon artwork and dedicated batch randomisation together. Use **Generate first batch** to create randomized runs. The **Ironmon VS+** profile is the original Baconmon challenge; the ROM may still be called Kaizo Baconmon.
+Use the [browser patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/) with a clean US FireRed 1.1 (Rev 1) ROM or Faster FireRed 1.3.2 ROM.
 
-Batch generation uses the existing **Universal Pokémon Randomizer ZX 4.6.0** engine with Kaizo battle settings, an adapter for Tier 1 starters, and our deterministic Tier 1 → Tier 2 → Tier 3 evolution pass. It is not a separate randomiser engine. A standard settings string alone cannot encode the tier rules. [Reusable settings, tier data and integration instructions](docs/Randomiser_Integration.md). Developers can also use the standalone [Babymon integration pack](public-patcher/randomizer/README.md) and machine-readable [integration manifest](public-patcher/randomizer/Babymon_Integration_Pack.json) to add the preset to their own randomiser.
+Choose a complete preset or select individual features:
 
-Blind selection, no pivoting, TM legality and permadeath are player-managed rules. The optional score log remains VS-style; separate Babymon scoring and automatic TM eligibility checks are not supplied. The Day/Night control affects evolution conditions, rather than automatic real-time lighting.
+- Classic or Modern battle mechanics.
+- Ironmon VS-style run support and a built-in milestone/score log.
+- Configurable rival level and Oak's lab start.
+- Faster FireRed-derived conveniences.
+- Field HMs without needing an HM friend, while HM, badge and story requirements remain.
+- Town Map Fly and a lit Rock Tunnel.
+- Happiness controls in Oak's lab.
+- A poison-healing Viridian nurse.
+- Fuchsia Move Reminder support.
+- Early encounter rotation.
+- Nuz-guide with challenge information and rules.
+- Move details and physical/special/status icons.
+- Optional title-screen artwork matched to the selected preset.
+- Batch randomisation, including the dedicated Babymon setup.
 
-## What's it for?
+The patcher is designed for compatibility. Changes that cannot be applied are skipped and listed in the output report. No particular modified ROM is guaranteed to work. Keep your original ROM and saves backed up, and use a fresh save when changing the setup.
 
-It's designed with **Kaizo Babymon, Ironmon VS+, Kaizo/Ironmon-style runs, VS-style challenges, ordinary Nuzlockes, and custom or casual randomised runs** in mind. You don't have to use my ruleset to use the patcher.
+## Ironmon VS+
 
-Use the full **Full preset package**, or pick the bits you actually want. Maybe you want Classic mechanics with a few QoL changes, Modern mechanics for a different challenge, or a score log to give you something to chase when the seed inevitably goes sideways lol.
+[Read the full Ironmon VS+ settings, reset instructions and limitations](docs/Run_Settings_Guide.md#ironmon-vs).
 
-That's why it's modular: different runs need different things. You shouldn't have to take a whole new ruleset just because you want one feature.
+Ironmon VS+ is the original Baconmon run: my personal variation on Ironmon VS.
 
-**This isn't standard Ironmon, and the options aren't automatically legal under another challenge's rules.** Changes like field HMs without an HM friend or Modern battle mechanics can change the challenge. Check your chosen rules before enabling anything, and keep modified runs separate from standard Ironmon results. The VS-style features are inspired by Ironmon VS, not an official VS setup.
+I chose it because Ironmon VS adds something I enjoy beyond simply reaching the Champion—milestones, points, personal-best chasing and a way to compare progress with friends even when a seed ends early. VS+ keeps that spirit while adding practical Baconmon conveniences.
 
-The built-in **score log** tracks run milestones; it isn't a replacement for the external Ironmon Tracker.
+The intended foundation is still a serious Ironmon-style run:
+
+- One runner and a fresh attempt.
+- Permadeath and no pivoting, according to the agreed rules.
+- Kaizo trainer settings and the selected Classic or Modern battle mode.
+- VS-style milestones and scoring.
+- The player decides whether a particular optional convenience is legal for their run.
+
+The score log records progress; it does not automatically certify that a run followed every rule. Blind starter selection, no pivoting, permadeath, TM legality and similar restrictions remain player-managed. Read the full settings before comparing results with another player.
+
+## Kaizo Babymon
+
+[Read the full Kaizo Babymon ruleset](docs/Kaizo_Babymon_Spec.md).
+
+Kaizo Babymon is designed as the next tier of challenge above ordinary Kaizo Ironmon. It is built around a deliberately unstable progression:
+
+- One permanent starter.
+- No pivoting.
+- A randomised unevolved Tier 1 starter.
+- Two seed-consistent randomised evolutions.
+- Tier 1 evolves into Tier 2, then Tier 2 into Tier 3.
+- Tier 3 is the end of the run's evolution path.
+- Evolution destinations are not family-locked, so a run can move through completely different species.
+- Normal evolution triggers still matter: levels, stones, friendship, trade-style services, held items and other supported Gen III conditions.
+- The dedicated randomiser settings keep the starter pool and evolution destinations inside the correct tiers.
+
+That combination is meant to make every run a long-term problem rather than a search for one perfect early Pokémon. You have to commit to the starter, plan around an uncertain future, and deal with the possibility that an evolution changes your role completely. There are no guarantees that the next form will be stronger, safer or even convenient.
+
+Babymon restrictions are a ruleset for players to follow, not a claim that the software can police every loophole automatically. The patcher supplies the tools, randomisation and documentation.
+
+### Babymon randomisation
+
+Babymon batch generation uses the existing **Universal Pokémon Randomizer ZX 4.6.0** engine with a Baconmon adapter and a deterministic tiered evolution pass. It is not a novel replacement randomiser.
+
+The adapter supplies the parts ordinary UPR settings cannot express by themselves: the Tier 1 starter pool, Tier 1 → Tier 2 → Tier 3 destinations, normal evolution methods and a reproducible seed. Developers can reuse the [Babymon integration guide](public-patcher/randomizer/README.md), [integration manifest](public-patcher/randomizer/Babymon_Integration_Pack.json) and [randomiser integration notes](docs/Randomiser_Integration.md) in their own tools.
+
+## Examples of custom runs
+
+The patcher is modular, so you do not need to adopt either full ruleset.
+
+- Run your own self-tracked VS challenge with the score log and milestones.
+- Play Kaizo Ironmon with field-HM and Fly conveniences.
+- Make a randomised Nuzlocke with Classic or Modern mechanics.
+- Use the Faster FireRed conveniences without using the VS scoring.
+- Build a personal challenge with encounter randomisation, the Nuz-guide and selected quality-of-life features.
+- Run Ironmon VS+ or Babymon with only the features your group has agreed are legal.
+
+Optional features can change the difficulty or legality of a run. If you change the options, agree on the rules before comparing results.
 
 ## Quick start
 
-1. Bring your own **clean US FireRed 1.1 (Rev 1)** or **Faster FireRed 1.3.2** ROM. No ROM is included here.
-2. Open the browser patcher linked above in a current browser.
-3. Choose your ROM, then use the **Full preset package** or select the features you want. Check your run's rules first.
-4. Click **Check and apply**. Read the output log: conflicting changes may be skipped, so don't assume everything was applied.
-5. Download the patched copy and start a fresh run in your emulator. Keep your original ROM and saves as backups.
+1. Bring your own clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2 ROM.
+2. Open the [browser patcher](https://xbaconator9000x.github.io/Kaizo-Baconmon/).
+3. Select a preset or choose individual features.
+4. Use **Check and apply**, then read the output report for skipped or conflicting changes.
+5. Download the patched copy and start a fresh run.
 
-Want randomised seeds? Use the optional batch randomiser after patching. It needs internet to load its Java runtime. The browser patcher is self-contained once downloaded; the source ZIP contains the reusable code and configuration.
+For batch randomisation, select the matching randomiser preset. Babymon selection enables the full Babymon feature package and its dedicated randomiser settings.
 
-[Full patching and randomiser instructions](docs/Patcher_Guide.md)
+See the [full patcher guide](docs/Patcher_Guide.md) and [run settings guide](docs/Run_Settings_Guide.md) for detailed instructions and limitations.
 
-[Run settings guide](docs/Run_Settings_Guide.md)
+## Feedback
 
-## Classic vs Modern
+This is a personal project and I am still improving it. I would particularly like feedback on:
 
-Same Pokemon, levels, stats and moves in each comparison. Only the mode changes. These are controlled emulator battles; the end frames pause so you can read the result.
+- Rules that are unclear or easy to exploit.
+- Babymon evolution edge cases.
+- Classic/Modern behaviour that does not match the selected mode.
+- Randomiser results, tracker data or patcher reports that look wrong.
+- Compatibility problems on real hardware or emulators.
+- Features that make a run better or worse without being obvious.
 
-### Shadow Ball: Attack or Sp. Atk?
-
-![Gengar uses Shadow Ball against the same Banette in Classic and Modern. Banette survives in Classic and faints in Modern.](docs/media/classic-modern-shadow-ball.gif)
-
-Shadow Ball is physical in Classic and special in Modern. Gengar gets a lot more out of that Sp. Atk stat.
-
-### Sturdy gets an upgrade
-
-![A full-health Geodude takes Water Gun in both modes. It faints in Classic and hangs on with 1 HP using Sturdy in Modern.](docs/media/classic-modern-sturdy.gif)
-
-Same hit, different outcome. Modern Sturdy saves a full-health Geodude from a knockout. Classic Sturdy only blocks one-hit KO moves.
-
-## A few extras
-
-| Happiness machine | Nuz-guide | Move details: press L |
-| --- | --- | --- |
-| <img src="docs/media/happiness-machine.png" alt="Oak's lab happiness machine with Maximise, Plummet and Cancel options" width="260"> | <img src="docs/media/nuz-guide.png" alt="The open Nuz-guide with its challenge, score and information sections" width="260"> | <img src="docs/media/battle-move-details.png" alt="The in-battle Shadow Ball details panel with category, type, power, accuracy and description" width="260"> |
-| Make your lead Pokemon like or hate you more. | Rules, challenge guides and your score log. | Check a move without leaving the battle. |
-
-## What's included?
-
-- **Classic / Modern:** play with the original Gen 3 battle mechanics, or use the physical/special split and updated effects for the existing abilities. Pokemon, BSTs, learnsets and available abilities stay as they were. **Note: Fairy typing is intentionally omitted.**
-- **Lab start:** still choose your gender, name and rival's name, then start in Oak's lab ready to pick your starter. Get one Master Ball and five Poke Balls early.
-- **Rival level:** defaults to level 8 in the lab. You can choose anything from 1 to 100 in the patcher.
-- **No HM friend needed:** use field HMs without teaching them. You still need the HM, badge and normal story requirements. Fly from the Town Map too.
-- **Lit Rock Tunnel:** no Flash needed to see where you're going.
-- **Move relearner:** sits opposite the Move Deleter in Fuchsia. The current implementation takes one TM of your choice. Under Ironmon VS+ and Babymon rules, use only an eligible unused Gym Leader TM compatible with the runner; automatic eligibility and payment checks remain unfinished.
-- **Friendship controls:** use Oak's lab machine to make your lead Pokemon like or hate you more.
-- **Poison-friendly forest nurse:** she heals you even if you're poisoned.
-- **Early encounter rotation:** early wild encounters rotate, inspired by Ironmon VS.
-- **Hidden items:** chance-based hidden items appear at their normal refresh. This doesn't make farming them legal under the rules.
-- **Move information:** press L while choosing an attack for its description. Physical, special and status symbols also appear in the move screens.
-- **Nuz-guide:** an in-game key item with challenge guides, the full Baconmon rules, mode details, credits and a 33-point VS-style score log.
-- **Baconmon title screen:** starring Grumpig, of course.
-
-The guide explains the full Baconmon setup. If you change the options, agree on your rules before comparing runs with someone else.
-
-## What changes your run?
-
-Not every convenience is just cosmetic. This is a heads-up about the differences, not a claim that a particular challenge allows them.
-
-| Feature | What it affects |
-| --- | --- |
-| Modern mode | Battle mechanics: physical/special categories and effects of existing abilities. Classic keeps the original Gen 3 mechanics, but doesn't cancel other selected modifications. |
-| Rival level | Opening battle difficulty and the experience available from it. |
-| Lab start and early balls | Opening progression and starting resources. |
-| Field HMs and Town Map Fly | Party management and field access: no HM friend needed, while HM, badge and story checks still apply. |
-| Lit Rock Tunnel | Visibility and the need to use Flash for navigation. |
-| TM-paid move relearner | Move access and resources: exchange a TM to relearn a move. |
-| Happiness machine | Friendship, including the power of Return and Frustration. |
-| Poison-friendly forest nurse | Healing access while poisoned. |
-| Encounter rotation and hidden-item changes | Encounter opportunities and item availability. Your rules still determine what you may catch or collect. |
-| L-button move details and category symbols | Battle information shown to the player. Check any restrictions on information aids. |
-| Nuz-guide and score log | Rules reference and milestone recording; not automatic enforcement of every rule. |
-| Title screen | Presentation. Grumpig isn't giving you a combat advantage lol. |
-| Randomiser settings | Whatever the selected preset or settings change. Use matching settings when comparing runs. |
-
-## Why points?
-
-I included the VS-style points because I find tracking progress and chasing a PB more fun than only counting a Champion win. Kaizo Ironmon can take dozens, hundreds or even thousands of attempts. Points give you smaller milestones to aim for, a way to see yourself improving, and something to compete over with friends—even when nobody wins the seed.
-
-The in-game log tracks your current run. Keep a note of your PB to compare attempts.
-
-## How to use it
-
-You'll need your own clean US FireRed 1.1 (Rev 1) ROM or Faster FireRed 1.3.2. Open the browser patcher linked above, choose your ROM and the features you want, then click **Check and apply**. Read the patch notes to see what worked and what was skipped.
-
-The patcher makes a separate copy and leaves your original ROM and saves alone. The batch randomiser is part of the core patcher. Large batches still need sensible browser and device resources. Choose up to 100 ROMs per batch; large batches download in ZIP parts of up to 10 ROMs. Download each part before continuing. The randomiser needs an internet connection to load its Java runtime on first use.
-
-[Full instructions](docs/Patcher_Guide.md)
-
-## My optional ruleset
-
-Baconmon uses Ironmon VS+ as its rules foundation, with Classic and Modern kept as separate battle modes. Kaizo Babymon is my separate original challenge: one starter, two seed-consistent randomised evolutions, no pivots and no guarantees. Both rulesets are optional; you do not need to use either to use the patcher.
-
-Read the [Baconmon / VS+ settings](docs/Run_Settings_Guide.md#ironmon-vs) and [Kaizo Babymon rules](docs/Kaizo_Babymon_Spec.md). The rules describe how to play; the implementation notes describe what the software currently supplies. Blind starter selection, no pivoting and permadeath are player-managed. Restricted TM handling, ability/move policy checks and separate Babymon scoring remain unfinished.
-
-I am especially interested in feedback on the rules themselves, including unclear wording, edge cases and loopholes. Please report anything reproducible with the settings and steps needed to see it.
-
-## Known issues and testing limits
-
-I'm new to romhack development and the Nuz-like scene generally, so feedback and guidance are very welcome! I'd especially like thoughts on the run rules and reports of anything that doesn't work properly.
-
-Designed for maximum compatibility between ROMs. Changes that cannot be applied are skipped and listed in the output log. I can’t guarantee compatibility with any particular ROM. Designed for clean US FireRed 1.1 (Rev 1) or Faster FireRed 1.3.2; other modified ROMs may also work.
-
-Desktop patching, upgrades, selected game features and browser seed generation have been tested. See the [test reports](reports/README.md) for what those checks actually covered.
-
-- **Still to test:** a full playthrough and seed generation on an actual Android device.
-- **Batch randomiser:** large batches still need sensible browser and device resources; passing scheduling checks isn't the same as testing every hardware configuration.
-- **Other ROM hacks:** successful patching doesn't prove the combined game is stable. Skipping a conflict also means you might not get every feature you selected.
-- **External Ironmon Tracker:** compatibility hasn't been established by this documentation. Don't assume it works just because the ROM boots or because tracker reference data appears in the credits.
-- **Challenge loopholes:** no dedicated exploit audit has been completed. The score log doesn't certify a legal run.
-- **Existing saves:** use a fresh run when changing the setup. The patcher doesn't migrate old save data.
-
-These are known limits of the testing, not a list of confirmed exploits. Please report anything reproducible rather than assuming it's already on the radar.
-
-If something breaks, tell me what happened, how to reproduce it and include the patcher's detailed report. Please keep ROMs, saves and save states out of public issues.
-
-## Changelog
-
-### Release build 1.0
-
-First packaged GitHub release of the modular browser patcher, with a downloadable HTML patcher and source ZIP. Includes Classic/Modern mechanics, selectable QoL features, the Nuz-guide and score log, and the core batch randomiser.
-
-### Documentation updates after 1.0
-
-Clarified the supported run types, optional Baconmon setup and rules compatibility. Added a quick-start, feature-impact table and testing limits. These are documentation changes, not new gameplay features or fixes.
-
-[Release notes and downloads](https://github.com/xbaconator9000x/Kaizo-Baconmon/releases)
+When reporting a problem, include the ROM base, selected preset, seed, patcher report and steps to reproduce it. Please do not upload ROMs, saves or save states to public issues.
 
 ## Credits
 
 Developed by **xbaconator9000x**.
 
-Thanks to DrMaple for Faster FireRed and permission to adapt it; iateyourpie for Ironmon; WaffleSmacker and the VS community for Ironmon VS; and UTDZac, besteon and contributors for the tracker reference data.
+- **DrMaple** — Faster FireRed 1.3.2 and permission to adapt aspects of it.
+- **iateyourpie** — Ironmon and the wider Ironmon community.
+- **WaffleSmacker and the Ironmon VS community** — VS ideas, rules and inspiration.
+- **UTDZac, besteon and contributors** — tracker reference data.
+- **UPR-ZX by Ajarmar and contributors**, based on Dabomstew's Universal Pokémon Randomizer.
+- **CheerpJ by Leaning Technologies**, plus the pret/pokefirered and mGBA projects used as references and testing tools.
 
-The browser randomiser uses UPR-ZX by Ajarmar and contributors, based on Dabomstew's randomiser, and CheerpJ by Leaning Technologies. Engine references come from pret/pokefirered. Testing uses mGBA and Rom Patcher JS, among other tools.
+See [full credits and permissions](Credits_and_Permissions.md).
 
-[Full credits and permissions](Credits_and_Permissions.md)
+## Source and reuse
 
-## Source
+The patcher code, randomiser integration, tests and ROM patch data are included in this repository. This is not a complete game ROM or a full decompilation.
 
-The patcher code, randomiser integration, tests and ROM patch data are included in this repository. This isn't a full decompilation of the game. [Developer notes](docs/Developer_Notes.md) cover rebuilding and the test reports.
+You are welcome to reuse my original Baconmon contributions in a non-commercial project. Credit **Kaizo Baconmon by xbaconator9000x** and keep the [reuse licence](LICENSE.txt) with the material. That permission only covers rights I hold in my own contributions; Pokémon, FireRed and other creators' work remain subject to their own rights and licences.
 
-The patcher software keeps its existing MIT/GPLv3 terms. The original projects keep their own terms too; their notices are included.
-
-## Reusing my changes
-
-You're welcome to use my original Baconmon ROM changes in your own non-commercial project. Credit **Kaizo Baconmon by xbaconator9000x** and keep the [reuse licence](LICENSE.txt) with the material. No notification or separate approval is required. Just playing privately doesn't require a credit or message.
-
-I'd love to see what you make, and I ask that you use the work respectfully. [A note on reuse](Reuse_Statement.md) explains those personal requests; they aren't extra licence conditions.
-
-That permission only covers rights I hold in my own contributions. Pokémon and the original game content belong to their respective rights holders. Other creators' work needs its own permission; DrMaple's permission for Baconmon doesn't automatically extend to another project. This isn't permission to distribute complete game ROMs, and it doesn't withdraw permissions already granted under other licences.
-
-## Disclosure
-
-I am not the best coder, and so I accessed external tools and advice to help with development. In some cases this included AI-assisted tools that helped with general guidance, coding, scripting, debugging, testing, and some text/title-screen graphics. The patcher itself was entirely created using ChatGPT with my directed input. AI useage was otherwise minimal and was not used when reasonably avoidable. I am hesitant to support the use of AI tools in any creative project. Without such tools in this case, I am not sure I would have ever figured out how to implement this project. All creative input was contributed by myself and the aforementioned sources.
-
-### Preset title artwork
-
-The optional title-screen patch now follows the selected profile: Kaizo Babymon shows Magby, Elekid and Cleffa in a Kanto countryside scene; other profiles retain Baconmon. Both the public patcher and development build use the same guarded image importer. [Native-resolution assets and import details](public-patcher/title/README.md). [Emulator and patcher evidence](reports/title/README.md).
-
-Babymon batch randomisation is available on the main patcher as well as the beta page. Select **Babymon** in the run profile or randomiser preset. It uses the dedicated Babymon starter bridge and writes independently seeded tiered evolution tables for every ROM. Babymon is included in the core patcher. [Batch output validation](reports/babymon-batches/README.md).
+[GitHub repository](https://github.com/xbaconator9000x/Kaizo-Baconmon/)
