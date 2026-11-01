@@ -64,7 +64,7 @@ The shared support only enables the features selected. Change the setup for a fr
 
 ## Randomiser
 
-The beta uses UPR-ZX 4.6.0 through BaconBridge and CheerpJ 4.3. CheerpJ loads from its vendor the first time, so randomisation needs internet. Patching works offline.
+The core patcher uses UPR-ZX 4.6.0 through BaconBridge and CheerpJ 4.3. CheerpJ loads from its vendor the first time, so randomisation needs internet. Patching works offline.
 
 Every new ROM starts from the same patched base. The same base, options, engine, settings and root seed should produce the same outputs. The manifest records those details, hashes and each ROM's seed. Selected rival levels are checked again after randomisation.
 
