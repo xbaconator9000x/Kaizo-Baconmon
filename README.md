@@ -38,6 +38,40 @@ Choose a complete preset or select individual features:
 
 The patcher is designed for compatibility. Changes that cannot be applied are skipped and listed in the output report. No particular modified ROM is guaranteed to work. Keep your original ROM and saves backed up, and use a fresh save when changing the setup.
 
+
+## Gameplay demonstrations
+
+### Classic vs Modern
+
+Same Pokémon, levels, stats and moves in each comparison. Only the mode changes. These are recorded emulator battles; the end frames pause so you can read the result.
+
+**Shadow Ball: Attack or Sp. Atk?**
+
+![Gengar uses Shadow Ball against the same Banette in Classic and Modern. Banette survives in Classic and faints in Modern.](docs/media/classic-modern-shadow-ball.gif)
+
+Shadow Ball is physical in Classic and special in Modern. Gengar gets a lot more out of that Sp. Atk stat.
+
+**Sturdy gets an upgrade**
+
+![A full-health Geodude takes Water Gun in both modes. It faints in Classic and survives with 1 HP using Sturdy in Modern.](docs/media/classic-modern-sturdy.gif)
+
+Classic Sturdy only blocks one-hit KO moves. Modern Sturdy also saves a full-health Pokémon from a knockout.
+
+### Quality-of-life features
+
+| Happiness machine | Nuz-guide | Move details: press L |
+| --- | --- | --- |
+| <img src="docs/media/happiness-machine.png" alt="Oak's lab happiness machine with Maximise, Plummet and Cancel options" width="260"> | <img src="docs/media/nuz-guide.png" alt="The open Nuz-guide with challenge, score and information sections" width="260"> | <img src="docs/media/battle-move-details.png" alt="In-battle Shadow Ball details showing category, type, power, accuracy and description" width="260"> |
+| Adjust your lead Pokémon's friendship. | Challenge guides, rules and your score log. | Check a move without leaving the battle. |
+
+### Preset title screens
+
+| Kaizo Baconmon | Kaizo Babymon |
+| --- | --- |
+| <img src="reports/title/baconmon-title.png" alt="Original Kaizo Baconmon title screen" width="360"> | <img src="reports/title/babymon-title.png" alt="Kaizo Babymon title screen captured in mGBA" width="360"> |
+
+The patcher can select the title artwork to match your preset. These are recorded title-screen captures; see the [title validation report](reports/title/README.md) for the tested build and boot checks.
+
 ## Ironmon VS+
 
 [Read the full Ironmon VS+ settings, reset instructions and limitations](docs/Run_Settings_Guide.md#ironmon-vs).
@@ -81,6 +115,9 @@ Babymon restrictions are a ruleset for players to follow, not a claim that the s
 Babymon batch generation uses the existing **Universal Pokémon Randomizer ZX 4.6.0** engine with a Baconmon adapter and a deterministic tiered evolution pass. It is not a novel replacement randomiser.
 
 The adapter supplies the parts ordinary UPR settings cannot express by themselves: the Tier 1 starter pool, Tier 1 → Tier 2 → Tier 3 destinations, normal evolution methods and a reproducible seed. Developers can reuse the [Babymon integration guide](public-patcher/randomizer/README.md), [integration manifest](public-patcher/randomizer/Babymon_Integration_Pack.json) and [randomiser integration notes](docs/Randomiser_Integration.md) in their own tools.
+
+
+[See the Babymon batch-generation test report](reports/babymon-batches/README.md) for the starter, tiered evolution and seed verification on generated ROMs. These checks cover the generated data, not a complete in-game playthrough of every evolution method.
 
 ## Examples of custom runs
 
